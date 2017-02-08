@@ -1,0 +1,5 @@
+ad_page_contract {}
+
+
+template::head::add_javascript -src "https://www.google.com/jsapi" -order 1
+template::head::add_javascript -src "/resources/1c-mandat/js/directions-google-maps.js" -order 2
