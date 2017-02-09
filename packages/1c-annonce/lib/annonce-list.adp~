@@ -1,0 +1,3 @@
+
+
+<listtemplate name="annonces"></listtemplate>

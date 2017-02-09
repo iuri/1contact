@@ -15,7 +15,7 @@
   </tr>
   <tr>
     <td width="10%">#1c-annonce.Reference#</td>
-    <td><input type="text" name="reference" id="reference" value="@reference@"></td>
+    <td><input type="text" name="reference" id="ref_number" value="@reference@"></td>
   </tr>
   <tr>
     <td width="10%">#1c-annonce.Type_of_Transaction#</td>

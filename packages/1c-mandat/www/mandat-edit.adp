@@ -10,8 +10,6 @@ function showForm(id) {
   alert("showForm" + id);
 
   if(id=="transaction") {
-    if($("#type_of_property") eq 'c')
-	.show();
     $("#form2").hide();
   } else {
     $("#form1").hide();	
