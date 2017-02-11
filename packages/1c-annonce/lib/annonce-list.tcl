@@ -1,7 +1,7 @@
 
 set actions {
-    "#c1-annonce.Add_annonce#" "annonce-edit?return_url=/1c-annonce" "#1c-annonce.Add_a_new_annonce#"
-    "#c1-annonce.Import_CSV_file#" "import-csv-file?return_url=/1c-annonce" "#1c-annonce.Import_csv_file#"
+    "#1c-annonce.Add_annonce#" "annonce-edit?return_url=/1c-annonce" "#1c-annonce.Add_a_new_annonce#"
+    "#1c-annonce.Import_CSV_file#" "import-csv-file?return_url=/1c-annonce" "#1c-annonce.Import_csv_file#"
 }
 
 set bulk_actions [list]
@@ -26,19 +26,19 @@ template::list::create \
     -key annonce_id \
     -row_pretty_plural "annonces" \
     -elements {
-	annonce_number {
-	    label "[_ 1c-annonce.Number]"
+	ref_code {
+	    label "[_ 1c-annonce.Refence_Code]"
 	    display_template {
-		<a href="@annonces.annonce_url@">@annonces.annonce_number;noquote@
+		<a href="@annonces.annonce_url@">@annonces.ref_code;noquote@</a>
 	    }
 	}
     } 
 
-db_multirow -extend {annonce_url delete_url annonce_number} annonces select_annonces {
-    SELECT ci.item_id, m.code AS annonce_number, m.type_of_transaction FROM cr_items ci, mandats m  WHERE m.mandat_id = ci.item_id
-    limit 10
+db_multirow -extend {annonce_url delete_url} annonces select_annonces {
+    SELECT ci.item_id, a.ref_code, a.type_of_transaction, a.type_of_property FROM cr_items ci, annonces a WHERE a.annonce_id =  ci.item_id
+   
 } {
-    set annonce_url ""
+    set annonce_url [export_vars -base "annonce-edit" {item_id}]
     set annonce_delete ""
 }
 

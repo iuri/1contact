@@ -1,4 +1,4 @@
-* { margin: 0; padding: 0; border: 0 }
+* { margin: 0; padding: 0; border: 1 }
 body { background: url(bg.png) }
 legend { display: none }
 
@@ -45,8 +45,11 @@ h1 {
 	font: 15px 'Open Sans',Arial; 
 	height: 16px;
 	padding: 9px;
-	width: 400px; 
+	width: 400px;
 }
+
+
+
 
 .campos input[type="button"] { 
 	background: #2679A5; 
@@ -73,7 +76,7 @@ h1 {
 	border: 10px solid #ccc;;
 	margin-bottom: 20px;
 }
-
+/*
 input[type="submit"] {
 	background: #2679A5; 
 	border-radius: 6px;
@@ -91,8 +94,8 @@ input[type="submit"] {
     -o-transition: background .2s ease-in;
     transition: background .2s ease-in;
 }
-
-input[type="submit"]:hover { background: #12587C }
+*/
+/* input[type="submit"]:hover { background: #12587C } */
 
 .autores { background: #e5e3df; bottom: 0; border-radius: 5px 5px 0 0; padding: 5px 10px; position: fixed; left: 38%; width: 345px }
 .autores p { color: #333; font: 13px Tahoma, Arial }

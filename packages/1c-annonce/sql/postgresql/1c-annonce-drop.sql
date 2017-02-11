@@ -12,27 +12,24 @@
 ------------------------------------
 -- Table c1_annonce
 ------------------------------------
+-- drop script
+--
+-- @author joel@aufrecht.org
+-- @cvs-id &Id:$
+--
+select content_folder__unregister_content_type(-100, 'annonce_object', 't');
+select content_type__drop_type('annonce_object', 't', 't');
 
-DROP FUNCTION 1c_annonce__edit (
-       integer,		   -- annonce_id
-       integer,            -- annonce_status
-       timestamptz	   -- annonce_date
+
+DROP FUNCTION annonce__new(integer, character varying, character varying, character varying, character varying, character varying, character varying, character varying, character varying, timestamptz, integer, integer, integer, integer, character varying, character varying, character varying, boolean, boolean, character varying, boolean
 );
 
-DROP FUNCTION 1c_annonce__new(
-       integer,		   -- annonce_number
-       timestamptz,	   -- annonce_date
-       varchar,		   -- creation_ip
-       integer,		   -- creation_user
-       integer		   -- context_id	   
-);
+DROP FUNCTION annonce__edit(integer, character varying, character varying, integer);
 
-SELECT acs_object_type__drop_type (
-    '1c_annonce', 	 -- object_type
-    't'
-);
+DROP FUNCTION annonce__delete(integer);
 
+DROP SEQUENCE annonce_id_seq; 
 
-DROP SEQUENCE 1c_annonce_id_seq;
+DROP TABLE annonces CASCADE;
 
-DROP TABLE 1c_annonces;
+     

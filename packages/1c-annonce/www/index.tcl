@@ -26,3 +26,5 @@ set cat_admin_link [export_vars -base "/categories/cadmin/one-object" {{object_i
 
 
 
+
+

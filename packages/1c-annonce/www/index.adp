@@ -6,10 +6,8 @@
 <br>
 <h1>@title;noquote@</h1>
 
-<a href="mandat-ae?return_url=/1contact/annonces">Add/Edit Annonce</a>
 
-<a href="@cat_admin_link@">Category Admin</a>
-
+<p align="right"><a href="@cat_admin_link@">Category Admin</a></p>
 
 
 

@@ -19,8 +19,25 @@ CREATE TABLE annonces(
        annonce_id		integer 
        				CONSTRAINT c1_annonce_annonce_id_pk PRIMARY KEY,
        ref_code			varchar(255),
-       title			varchar(255),
-       status			integer
+       type_of_transaction	varchar(1),
+       type_of_property		varchar(1),
+       type_of_residence	varchar(1),
+       type_of_commerce		varchar(1),
+       type_of_activity		varchar(50),	
+       other_property		varchar(255),
+       type_of_announcer	varchar(1),
+       available_date		timestamptz,
+       room_qty			integer,
+       lavatory_qty		integer,
+       bathroom_qty		integer,
+       floor			integer,
+       rent_price		numeric,		
+       rent_taxes		numeric,		
+       surface			numeric,
+       auto_commission_p	boolean,
+       on_demand_p		boolean,
+       status			varchar(1),
+       terms_conditions_p	boolean
 );
 
 CREATE SEQUENCE annonce_id_seq cache 1000; 
@@ -29,11 +46,11 @@ CREATE SEQUENCE annonce_id_seq cache 1000;
 
 
 select content_type__create_type(
-'annoce_object',	-- content_type
+'annonce_object',		-- content_type
 'content_revision',	-- supertype
-'Annonce Object',	-- pretty_name,
-'Annonce Objects',	-- pretty_plural
-'annonce',		-- table_name
+'Annonce',		-- pretty_name,
+'Annonces',		-- pretty_plural
+'annonces',		-- table_name
 'annonce_id',		-- id_column
 'annonce__get_code'	-- name_method
 );
@@ -45,27 +62,95 @@ SELECT content_folder__register_content_type(-100,'annonce_object','t');
 CREATE OR REPLACE FUNCTION annonce__new (
        integer,	  	   -- annonce_id
        varchar,		   -- ref_code
-       varchar,		   -- title
-       integer		   -- status
+       varchar,		   -- type_of_transaction
+       varchar,		   -- type_of_property
+       varchar,		   -- type_of_residence
+       varchar,		   -- type_of_commerce
+       varchar,		   -- type_of_activity
+       varchar,		   -- other_property
+       varchar,		   -- type_of_announcer
+       timestamptz,	   -- available_Date
+       integer,		   -- room_qty
+       integer,		   -- lavatory_qty		   
+       integer,		   -- bathroom_qty
+       integer,		   -- floor
+       numeric,		   -- rent_price
+       numeric,		   -- rent_taxes
+       numeric,		   -- surface
+       boolean,		   -- auto_commision_p
+       boolean,		   -- on_demand_p
+       varchar,		   -- status
+       boolean		   -- terms_conditions_p
 ) RETURNS integer AS '
   DECLARE
 	p_annonce_id		ALIAS FOR $1;
-       	p_ref_code		ALIAS FOR $2;
- 	p_title			ALIAS FOR $3;
-	p_status		ALIAS FOR $4;
+	p_ref_code		ALIAS FOR $2;
+	p_type_of_transaction	ALIAS FOR $3;
+	p_type_of_property	ALIAS FOR $4;
+	p_type_of_residence	ALIAS FOR $5;
+	p_type_of_commerce	ALIAS FOR $6;
+	p_type_of_activity	ALIAS FOR $7;
+	p_other_property	ALIAS FOR $8;
+	p_type_of_announcer	ALIAS FOR $9;
+	p_available_date	ALIAS FOR $10;
+	p_room_qty		ALIAS FOR $11;
+	p_lavatory_qty		ALIAS FOR $12;
+	p_bathroom_qty		ALIAS FOR $13;
+	p_floor			ALIAS FOR $14;
+	p_rent_price		ALIAS FOR $15;
+	p_rent_taxes		ALIAS FOR $16;
+	p_surface		ALIAS FOR $17;
+	p_auto_commission_p	ALIAS FOR $18;
+       	p_on_demand_p		ALIAS FOR $19;
+	p_status		ALIAS FOR $20;
+	p_terms_conditions_p	ALIAS FOR $21;
 
   BEGIN
 
-	INSERT INTO 1c_annonces (
+	INSERT INTO annonces (
 	       annonce_id,
 	       ref_code,
-	       title,
-	       status
+	       type_of_transaction,
+	       type_of_property,
+	       type_of_residence,
+	       type_of_commerce,
+	       type_of_activity,
+	       other_property,
+	       type_of_announcer,
+	       available_date,
+	       room_qty,
+	       lavatory_qty,
+	       bathroom_qty,
+	       floor,
+	       rent_price,
+	       rent_taxes,
+	       surface,
+	       auto_commission_p,
+	       on_demand_p,
+	       status,
+	       terms_conditions_p
 	) VALUES (
 	       p_annonce_id,
 	       p_ref_code,
-	       p_title,
-	       p_status
+	       p_type_of_transaction,
+	       p_type_of_property,
+	       p_type_of_residence,
+	       p_type_of_commerce,
+	       p_type_of_activity,
+	       p_other_property,
+	       p_type_of_announcer,
+	       p_available_date,
+	       p_room_qty,
+	       p_lavatory_qty,
+	       p_bathroom_qty,
+	       p_floor,
+	       p_rent_price,
+	       p_rent_taxes,
+	       p_surface,
+	       p_auto_commission_p,
+	       p_on_demand_p,
+	       p_status,
+	       p_terms_conditions_p
  	);
 
 
@@ -99,7 +184,7 @@ CREATE OR REPLACE FUNCTION annonce__edit (
 
 
 CREATE OR REPLACE FUNCTION annonce__delete(integer) RETURNS integer AS '
-DELCARE 
+DECLARE 
     p_item_id alias for $1;
     v_item_id cr_items.item_id%TYPE;
     v_file_item_id cr_items.item_id%TYPE;
