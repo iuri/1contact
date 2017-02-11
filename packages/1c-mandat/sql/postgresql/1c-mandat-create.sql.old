@@ -1,0 +1,109 @@
+-- creation script
+--
+-- @author joel@aufrecht.org
+-- @cvs-id &Id:$
+--q
+
+
+create table "1c_mandats" (
+       mandat_id integer,
+       type_of_transaction char(1),
+       type_of_property char(1),
+       file_p char(1),
+       remarks1 text,
+       remarks2 text,
+       confirmation text,
+       origin char(1),
+       origin_other varchar(255),
+       payment_p char(1),
+       status char(1),
+       link varchar(255),
+       terms_conditions_p char(1),
+       constraint mandat_id_pk primary key (mandat_id),
+       constraint mandat_id_fk foreign key (mandat_id) references acs_objects(object_id)
+);
+
+
+
+
+
+CREATE function inline_0 () returns integer as '
+BEGIN
+  PERFORM acs_object_type__create_type ( 
+    ''1c_mandat'',
+    ''Mandat'',
+    ''Mandats'',
+    ''acs_object'',
+    ''1c_mandats'',
+    ''mandat_id'',
+    ''1c-mandat'',
+    ''f'',
+     null,
+     null
+  );
+
+  return 0;
+END;' language 'plpgsql';
+
+SELECT inline_0 ();
+DROP function inline_0 ();
+
+
+
+
+CREATE OR REPLACE FUNCTION mandat__new(int, varchar, char, char, char, text, text, text, char, varchar, char, char, varchar, char, integer, varchar, integer) 
+RETURNS integer AS '
+DECLARE
+  p_mandat_id ALIAS FOR $1;
+  p_code ALIAS FOR $2;
+  p_type_of_transaction ALIAS FOR $3; 
+  p_type_of_property ALIAS FOR $4; 
+  p_file_p ALIAS FOR $5;
+  p_remarks1 ALIAS FOR $6; 
+  p_remarks2 ALIAS FOR $7; 
+  p_confirmation ALIAS FOR $8;
+  p_origin ALIAS FOR $9;
+  p_origin_other ALIAS FOR $10;
+  p_payment_p ALIAS FOR $11;
+  p_status ALIAS FOR $12;
+  p_link ALIAS FOR $13;
+  p_terms_conditions_p ALIAS FOR $14;
+  p_creation_user ALIAS FOR $15;
+  p_creation_ip ALIAS FOR $16; 
+  p_context_id ALIAS FOR $17;
+
+  v_id integer;
+
+BEGIN
+
+  v_id := acs_object__new( 
+    null, 
+    ''1c_mandat'', 
+    now(), 
+    p_creation_user, 
+    p_creation_ip, 
+    p_context_id::Integer, 
+    true);
+
+  INSERT INTO "1c_mandats"
+    (mandat_id, type_of_transaction, file_p, remarks1, remarks2, confirmation, origin, origin_other, payment_p, status, link, terms_conditions_p)
+  VALUES
+    (v_id, p_type_of_transaction, p_file_p, p_remarks1, p_remarks2, p_confirmation, p_origin, p_origin_other, p_payment_p, p_status, p_link, p_terms_conditions_p);
+
+  RETURN v_id;
+
+END; ' LANGUAGE 'plpgsql';
+
+
+CREATE OR REPLACE FUNCTION mandat__delete(integer) RETURNS VOID AS '
+DECLARE
+  p_mandat_id ALIAS FOR $1;
+
+BEGIN
+
+  DELETE FROM "1c_mandats" WHERE mandat_id = p_mandat_id;
+
+  PERFORM acs_object__delete(p_mandat_id);
+
+END;' LANGUAGE 'plpgsql';
+

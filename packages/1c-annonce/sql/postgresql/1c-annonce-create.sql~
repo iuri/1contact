@@ -1,0 +1,128 @@
+-- /package/c1-annonce/sql/postgresql/c1-annonce-create.sql
+
+--
+-- The C1 Annonce Package
+--
+-- @author Iuri Sampaio (iuri@iurix.com)
+-- @creation-date 2016-11-16
+--
+
+
+------------------------------------
+-- Table c1_annonce
+------------------------------------
+CREATE TABLE annonces(
+       annonce_id		integer 
+       				CONSTRAINT c1_annonce_annonce_id_pk PRIMARY KEY,
+       ref_code			varchar(255),
+       title			varchar(255),
+       status			integer
+);
+
+CREATE SEQUENCE annonce_id_seq cache 1000; 
+
+
+
+
+select content_type__create_type(
+'annoce_object',	-- content_type
+'content_revision',	-- supertype
+'Annonce Object',	-- pretty_name,
+'Annonce Objects',	-- pretty_plural
+'annonce',		-- table_name
+'annonce_id',		-- id_column
+'annonce__get_code'	-- name_method
+);
+-- necessary to work around limitation of content repository:
+SELECT content_folder__register_content_type(-100,'annonce_object','t');
+
+
+
+CREATE OR REPLACE FUNCTION annonce__new (
+       integer,	  	   -- annonce_id
+       varchar,		   -- ref_code
+       varchar,		   -- title
+       integer		   -- status
+) RETURNS integer AS '
+  DECLARE
+	p_annonce_id		ALIAS FOR $1;
+       	p_ref_code		ALIAS FOR $2;
+ 	p_title			ALIAS FOR $3;
+	p_status		ALIAS FOR $4;
+
+  BEGIN
+
+	INSERT INTO 1c_annonces (
+	       annonce_id,
+	       ref_code,
+	       title,
+	       status
+	) VALUES (
+	       p_annonce_id,
+	       p_ref_code,
+	       p_title,
+	       p_status
+ 	);
+
+
+	RETURN 0;
+  END;' language 'plpgsql';
+
+
+CREATE OR REPLACE FUNCTION annonce__edit (
+       integer,	  	   -- annonce_id
+       varchar,		   -- ref_code
+       varchar,		   -- title
+       integer		   -- status
+) RETURNS integer AS '
+  DECLARE
+	p_annonce_id		ALIAS FOR $1;
+       	p_ref_code		ALIAS FOR $2;
+ 	p_title			ALIAS FOR $3;
+	p_status		ALIAS FOR $4;
+
+  BEGIN
+	UPDATE annonces SET	
+	       ref_code = p_ref_code,
+	       title = p_title,
+	       status	    = p_status
+	WHERE annonce_id = p_annonce_id;
+
+
+	RETURN 0;
+  END;' language 'plpgsql';
+
+
+
+CREATE OR REPLACE FUNCTION annonce__delete(integer) RETURNS integer AS '
+DELCARE 
+    p_item_id alias for $1;
+    v_item_id cr_items.item_id%TYPE;
+    v_file_item_id cr_items.item_id%TYPE;
+
+BEGIN
+    v_item_id := p_item_id;
+    -- dbms_output.put_line(''Deleting associated comments...'');
+    -- delete acs_messages, images, comments to news item
+
+
+    SELECT c.item_id into v_file_item_id
+    FROM acs_rels a, cr_items c
+    WHERE a.object_id_two = c.item_id
+    AND a.object_id_one = v_item_id
+    AND a.rel_type = ''annonce_file_rel''
+    AND c.live_revision is not null;
+
+
+  DELETE FROM annonces WHERE annonce_id = p_id;
+
+  PERFORM content_item__delete(v_item_id);
+  PERFORM content_item__delete(v_file_item_id);
+
+  RETURN 0;
+
+END;' LANGUAGE 'plpgsql';
+
+
+
+
