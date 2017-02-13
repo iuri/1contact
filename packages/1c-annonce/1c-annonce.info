@@ -15,6 +15,7 @@
         <description format="text/html">Annonce PKG</description>
         <maturity>0</maturity>
 
+        <requires url="file-storage" version="5.9.1d1"/>
         <provides url="1c-annonce" version="0.1d"/>
 
         <callbacks>

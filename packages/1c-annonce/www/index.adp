@@ -7,7 +7,7 @@
 <h1>@title;noquote@</h1>
 
 
-<p align="right"><a href="@cat_admin_link@">Category Admin</a></p>
+<p align="right"><a href="@admin_link@">Admin</a></p>
 
 
 
