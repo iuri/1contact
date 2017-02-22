@@ -8,7 +8,13 @@
 <script>
 
 function showForm(id) {
-  alert("showForm" + id);
+//  alert("showForm" + id);
+
+// annonce:elements:cat_1071:1687
+ //   var checkedValue = document.getElementById('.annonce:elements:cat_1071').val();
+        
+ //  alert(checkedValue);
+
 }
 
 
@@ -23,6 +29,9 @@ function showUploadPopup() {
 
 <formtemplate id="annonce"></formtemplate>
 
+
+
+<!-- 
 <div id="locationField">
       <input id="autocomplete" placeholder="Enter your address"
                    onFocus="geolocate()" type="text"></input>
@@ -59,4 +68,4 @@ function showUploadPopup() {
     <script>
 
     </script>
-		 
+		 -->

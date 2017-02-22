@@ -1,4 +1,4 @@
-* { margin: 0; padding: 0; border: 0 }
+/* * { margin: 0; padding: 0; border: 0 } */
 body { background: url(bg.png) }
 legend { display: none }
 
@@ -45,7 +45,8 @@ h1 {
 	font: 15px 'Open Sans',Arial; 
 	height: 16px;
 	padding: 9px;
-	width: 400px; 
+	width: 400px;
+	border: 1px #000 solid;
 }
 
 .campos input[type="button"] { 
@@ -74,6 +75,7 @@ h1 {
 	margin-bottom: 20px;
 }
 
+/* 
 input[type="submit"] {
 	background: #2679A5; 
 	border-radius: 6px;
@@ -98,6 +100,8 @@ input[type="submit"]:hover { background: #12587C }
 .autores p { color: #333; font: 13px Tahoma, Arial }
 .autores p a { color: #333;	text-decoration: none }
 .autores p a:hover { text-decoration: underline }
+
+*/
 
 
 /* =============== Estilos do autocomplete =============== */

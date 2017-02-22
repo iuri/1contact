@@ -1,6 +1,8 @@
 
+set add_annonce_url [export_vars -base "annonce-edit" {return_url}] 
+
 set actions {
-    "#1c-annonce.Add_annonce#" "annonce-edit?return_url=/1c-annonce" "#1c-annonce.Add_a_new_annonce#"
+    "#1c-annonce.Add_annonce#" "annonce-edit?return_url=/annonces" "#1c-annonce.Add_a_new_annonce#"
     "#1c-annonce.Import_CSV_file#" "import-csv-file?return_url=/1c-annonce" "#1c-annonce.Import_csv_file#"
 }
 

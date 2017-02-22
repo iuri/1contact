@@ -37,6 +37,16 @@ CREATE TABLE annonces(
        auto_commission_p	boolean,
        on_demand_p		boolean,
        status			varchar(10),
+       lchars			text,
+       category_1		varchar(255),
+       category_2		varchar(255),
+       category_3		varchar(255),
+       category_4		varchar(255),
+       category_5		varchar(255),
+       category_6		varchar(255),
+       category_7		varchar(255),
+       category_8		varchar(255),
+       category_9		varchar(255),
        terms_conditions_p	boolean
 );
 
@@ -80,6 +90,7 @@ CREATE OR REPLACE FUNCTION annonce__new (
        boolean,		   -- auto_commision_p
        boolean,		   -- on_demand_p
        varchar,		   -- status
+       text,		   -- lchars
        boolean		   -- terms_conditions_p
 ) RETURNS integer AS '
   DECLARE
@@ -103,7 +114,8 @@ CREATE OR REPLACE FUNCTION annonce__new (
 	p_auto_commission_p	ALIAS FOR $18;
        	p_on_demand_p		ALIAS FOR $19;
 	p_status		ALIAS FOR $20;
-	p_terms_conditions_p	ALIAS FOR $21;
+	p_lchars		ALIAS FOR $21;
+	p_terms_conditions_p	ALIAS FOR $22;
 
   BEGIN
 
@@ -128,6 +140,7 @@ CREATE OR REPLACE FUNCTION annonce__new (
 	       auto_commission_p,
 	       on_demand_p,
 	       status,
+	       lchars,
 	       terms_conditions_p
 	) VALUES (
 	       p_annonce_id,
@@ -150,6 +163,7 @@ CREATE OR REPLACE FUNCTION annonce__new (
 	       p_auto_commission_p,
 	       p_on_demand_p,
 	       p_status,
+	       p_lchars,
 	       p_terms_conditions_p
  	);
 
@@ -179,6 +193,7 @@ CREATE OR REPLACE FUNCTION annonce__edit (
        boolean,		   -- auto_commission_p
        boolean,		   -- on_demand_p
        varchar,	   	   -- status
+       text,		   -- lchars
        boolean	   	   -- terms_conditions_p
 ) RETURNS integer AS '
   DECLARE
@@ -202,10 +217,11 @@ CREATE OR REPLACE FUNCTION annonce__edit (
     p_auto_commission_p		ALIAS FOR $18;
     p_on_demand_p		ALIAS FOR $19;
     p_status			ALIAS FOR $20;
-    p_terms_conditions_p	ALIAS FOR $21;
+    p_lchars			ALIAS FOR $21;
+    p_terms_conditions_p	ALIAS FOR $22;
 			     
   BEGIN
-	UPDATE annonces SET
+  	UPDATE annonces SET
 	       type_of_transaction = p_type_of_transaction,
 	       type_of_property	   = p_type_of_property,
 	       other_property = p_other_property,
@@ -225,12 +241,14 @@ CREATE OR REPLACE FUNCTION annonce__edit (
 	       auto_commission_p = p_auto_commission_p,
 	       on_demand_p = p_on_demand_p,
 	       status = p_status,
+	       lchars = p_lchars,
 	       terms_conditions_p = p_terms_conditions_p
 	WHERE annonce_id = p_annonce_id;
 
 
 	RETURN 0;
   END;' language 'plpgsql';
+
 
 
 
@@ -263,6 +281,48 @@ BEGIN
 
 END;' LANGUAGE 'plpgsql';
 
+
+
+
+CREATE OR REPLACE FUNCTION annonce__update_categories (
+       integer,	  	   -- annonce_id      
+       varchar,		   -- category 1
+       varchar,		   -- category 2
+       varchar,		   -- category 3
+       varchar,		   -- category 4
+       varchar,		   -- category 5
+       varchar,		   -- category 6
+       varchar,		   -- category 7
+       varchar,		   -- category 8
+       varchar		   -- category 9
+) RETURNS integer AS '
+  DECLARE
+    p_annonce_id		ALIAS FOR $1;
+    p_category_1		ALIAS FOR $2;
+    p_category_2		ALIAS FOR $3;
+    p_category_3		ALIAS FOR $4;
+    p_category_4		ALIAS FOR $5;
+    p_category_5		ALIAS FOR $6;
+    p_category_6		ALIAS FOR $7;
+    p_category_7		ALIAS FOR $8;
+    p_category_8		ALIAS FOR $9;
+    p_category_9		ALIAS FOR $10;
+			     
+  BEGIN
+    UPDATE annonces SET
+      category_1 = p_category_1,
+      category_2 = p_category_2,
+      category_3 = p_category_3,
+      category_4 = p_category_4,
+      category_5 = p_category_5,
+      category_6 = p_category_6,
+      category_7 = p_category_7,
+      category_8 = p_category_8,
+      category_9 = p_category_9
+    WHERE annonce_id = p_annonce_id;
+	
+    RETURN 0;
+  END;' language 'plpgsql';
 
 
 

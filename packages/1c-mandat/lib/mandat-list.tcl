@@ -3,7 +3,7 @@
 template::list::create \
     -name mandats \
     -multirow mandats \
-    -actions { "Add a Mandat" mandat-edit} \
+    -actions { "#1c-mandat.Add_Mandat#" mandat-edit} \
     -elements {
 	edit {
 	    link_url_col edit_url
@@ -13,15 +13,16 @@ template::list::create \
 	    sub_class narrow
 	}
 	code {
-	    label "#1c-mandat.Code#"
+	    label "[_ 1c-mandat.Code]"
 	}
-	type_of_transaction {
-	    label "#1c-mandat.Type_of_Transaction#"
+	type_of_transaction_pretty {
+	    label "[_ 1c-mandat.Type_of_Transaction]"
 	}
        	actions {
-	    link_url_col delete_url
+	    label {"[_ 1c-mandat.Actions]"}
 	    display_template {
-		<img src="/resources/acs-subsite/Delete16.gif" width="16" height =”16”>
+		<a href="@mandats.delete_url@"><img src="/resources/acs-subsite/Delete16.gif" width="16" height =”16”></a>
+		<a href="@mandats.matching_url@">Matching</a>
 	    }
 	    sub_class narrow
 	}
@@ -29,13 +30,38 @@ template::list::create \
 
 
 db_multirow  -extend {
-    mandat_url
+    edit_url
     delete_url
-} mandats mandats_select {
-    SELECT ci.item_id, m.code, m.type_of_transaction FROM cr_items ci, mandats m  WHERE m.mandat_id = ci.item_id
+    matching_url
+    type_of_transaction_pretty
+    type_of_property_pretty    
+} -unclobber mandats mandats_select {
+    SELECT m.mandat_id, m.code, m.type_of_transaction, m.type_of_property FROM cr_items ci, mandats m  WHERE m.mandat_id = ci.item_id
 } {
-    set edit_url [export_vars -base "mandat-edit" {item_id}]
-    set delete_url [export_vars -base "mandat-delete" {item_id return_url}]
+    set edit_url [export_vars -base "mandat-edit" {mandat_id}]
+    set delete_url [export_vars -base "mandat-delete" {mandat_id return_url}]
+    set matching_url [export_vars -base "mandat-matching" {mandat_id return_url}]
 
     
+    switch $type_of_transaction_pretty {
+	"a" {
+	    set type_of_transaction_pretty [lang::util::localize "[_ 1c-mandat.Achat]"] 
+	}
+
+	"p" {
+	    set type_of_transaction_pretty [lang::util::localize "[_ 1c-mandat.Purchase]"] 
+	}
+	default {
+	    set type_of_transaction_pretty [lang::util::localize "[_ 1c-mandat.No_message]"] 
+	}
+    }
+    
+    switch $type_of_property {
+	c {
+	    set type_of_property_pretty [lang::util::localize "1c-mandat.Commerce"] 
+	}
+	r {
+	    set type_of_property_pretty [lang::util::localize "Residence"] 
+	}
+    }
 }

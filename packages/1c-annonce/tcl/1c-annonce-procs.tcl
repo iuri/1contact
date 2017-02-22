@@ -19,7 +19,7 @@ ad_proc -public 1c_annonce::annonce::delete {
 } {
     Deletes annonces
 } {
-
+    
 
     content::item::delete -item_id $annonce_id
     db_transaction {
@@ -33,7 +33,8 @@ ad_proc -public 1c_annonce::annonce::delete {
 
 
 ad_proc -public 1c_annonce::get_categories {
-    {-package_id ""}
+    {-package_id}
+    {-tree_id}
 } {
     Returns cateogories
 } {
@@ -44,7 +45,6 @@ ad_proc -public 1c_annonce::get_categories {
 
     if {[exists_and_not_null category_trees]} {
 
-	set tree_id [lindex [lindex $category_trees 0] 0]
 	set cat_ids [category_tree::get_categories -tree_id $tree_id]
 	set categories [list]
 	foreach cat_id $cat_ids {
@@ -94,7 +94,7 @@ ad_proc -public 1c_annonce::get_fs_package_id {
 
 
 
-ad_proc -public 1c_mandat::annonce::add_file {
+ad_proc -public 1c_annonce::annonce::add_file {
     {-tmp_filename:required}
     {-parent_id:required}
 } {
@@ -163,6 +163,7 @@ ad_proc -public 1c_annonce::annonce::add {
     {-on_demand_p ""}
     {-description ""}
     {-status ""}
+    {-lchars ""}
     {-terms_conditions_p ""}
     {-creation_ip ""}
     {-creation_user ""}
@@ -222,11 +223,10 @@ ad_proc -public 1c_annonce::annonce::add {
 				    :auto_commission_p,
 				    :on_demand_p,
 				    :status,
+				    :lchars,
 				    :terms_conditions_p);
 	    }
-	}
-	
-	
+	}	
     }	
     
     return $item_id
@@ -235,7 +235,7 @@ ad_proc -public 1c_annonce::annonce::add {
 
     
 ad_proc -public 1c_annonce::annonce::edit {
-    {-item_id ""}
+    {-annonce_id ""}
     {-type_of_transaction ""}
     {-type_of_property ""}
     {-other_property ""}
@@ -257,40 +257,91 @@ ad_proc -public 1c_annonce::annonce::edit {
     {-on_demand_p ""}
     {-description ""}
     {-status ""}
+    {-lchars ""}
     {-terms_conditions_p ""}
 } {
-    it edits annonce
+    Ammends annonce's info
 } {
+    ns_log Notice "Running ad_proc edit"    
 
-    
-    
-    db_exec_plsql annonce_edit {
 
-	SELECT annonce__edit(
-			     :item_id,
-			     :type_of_transaction,
-			     :type_of_property,
-			     :other_property,
-			     :type_of_commerce,
-			     :type_of_residence,
-			     :type_of_activity,
-			     :type_of_announcer,
-			     :ref_code,
-			     :available_date,
-			     :room_qty,
-			     :lavatory_qty,
-			     :bathroom_qty,
-			     :floor,
-			     :rent_price,
-			     :rent_taxes,
-			     :surface,
-			     :auto_commission_p,
-			     :on_demand_p,
-			     :status,
-			     :terms_conditions_p);
-    }
-    
+    db_transaction {
+	
+	content::revision::new \
+	    -item_id $annonce_id \
+	    -title $title \
+	    -description $description
+	
+	
+	db_exec_plsql annonce_edit {
+	    
+	    SELECT annonce__edit(
+				 :annonce_id,
+				 :type_of_transaction,
+				 :type_of_property,
+				 :other_property,
+				 :type_of_commerce,
+				 :type_of_residence,
+				 :type_of_activity,
+				 :type_of_announcer,
+				 :ref_code,
+				 :available_date,
+				 :room_qty,
+				 :lavatory_qty,
+				 :bathroom_qty,
+				 :floor,
+				 :rent_price,
+				 :rent_taxes,
+				 :surface,
+				 :auto_commission_p,
+				 :on_demand_p,
+				 :status,
+				 :lchars,
+				 :terms_conditions_p);
+	}	
+       
+    }	
     return
 }
 
 
+    
+
+ad_proc -public 1c_annonce::annonce::update_categories {
+    {-annonce_id}
+    {-category_1 ""} 
+    {-category_2 ""} 
+    {-category_3 ""} 
+    {-category_4 ""} 
+    {-category_5 ""} 
+    {-category_6 ""} 
+    {-category_7 ""} 
+    {-category_8 ""} 
+    {-category_9 ""} 
+} {
+    Updates Annonce's categories 
+} {
+
+
+    ns_log Notice "INSERT CAT $category_1 $category_2 $category_3 $category_4 $category_5 $category_6 $category_7 $category_8 $category_9"
+    
+    
+    db_transaction {
+	db_exec_plsql annonce_edit {
+	    SELECT annonce__update_categories(
+				    :annonce_id,
+    				    :category_1,
+				    :category_2,
+				    :category_3,
+				    :category_4,
+				    :category_5,
+				    :category_6,
+				    :category_7,
+				    :category_8,
+				    :category_9
+	    );
+	}
+    }
+
+    return 
+}
