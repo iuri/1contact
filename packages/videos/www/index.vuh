@@ -1,0 +1,64 @@
+################## KLUDGE BY STAS ###############
+# Try and look up the item in the content repository
+#################################################
+ad_page_contract {
+   
+    @author Unknown
+    @creation-date Unknown
+    @cvs-id $Id: index.vuh,v 1.3 2006/08/08 21:26:49 donb Exp $
+} {    
+    { revision_id "" }
+}
+
+# Get the paths
+set the_url [ad_conn path_info]
+set splitted_url [split $the_url "/"]
+
+set splitted_url [split $splitted_url "."]
+set item_id [lindex $splitted_url 0]
+set file_extension [lindex $splitted_url 1]
+permission::require_permission -party_id [ad_conn user_id] -object_id $item_id -privilege read
+
+if {$file_extension == "jpg"} {
+	set video_id $item_id
+
+	set item_id [db_string get_item_id {
+         select c.item_id
+         from acs_rels a, cr_items c
+         where a.object_id_two = c.item_id
+           and a.object_id_one = :video_id
+           and a.rel_type = 'video_image_thumbnail_rel'
+	   and c.live_revision is not null
+	} -default ""]
+
+	if {[exists_and_not_null item_id]} { 
+		cr_write_content -item_id $item_id
+	}
+}
+
+
+#else 
+
+set path [cr_fs_path CR_FILES]
+set revision_id [db_string select_revision {select content_item__get_live_revision(:item_id)}]
+set filename [db_string write_file_content {select :path || content
+          					from cr_revisions
+	            				where revision_id = :revision_id}]
+
+# ns_log Notice "TTTT $filename - $path - $revision_id "
+set mime_type [db_string write_file_content {select mime_type
+          					from cr_revisions
+	            				where revision_id = :revision_id}]
+
+switch $mime_type {
+		video/x-flv {set file_extension "flv"}
+		video/mp4 {set file_extension "mp4"}
+		default {set file_extension "txt"}
+}
+
+ns_set update [ns_conn outputheaders] Content-Disposition "attachment; filename=\"${item_id}.${file_extension}\"" 
+ns_returnfile 200 $mime_type $filename
+ad_script_abort
+
+
+

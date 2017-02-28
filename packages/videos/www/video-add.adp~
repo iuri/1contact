@@ -1,0 +1,4 @@
+<master>
+
+<h1>Add Video</h1>
+Url: <input type="text" id="url" name="url">

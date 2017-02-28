@@ -1,0 +1,11 @@
+
+<table style="border-left:1px" width="100%">
+<multiple name="banners">
+  <tr>
+    <td><img src="@banners.publish_image;noquote@" width="200px"></td> 
+
+  </tr>
+</multiple>
+</table>
+
+

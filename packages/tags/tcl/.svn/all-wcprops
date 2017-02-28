@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/openacs/!svn/ver/1432/trunk/packages/tags/tcl
+END
+tags-procs.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/openacs/!svn/ver/1432/trunk/packages/tags/tcl/tags-procs.tcl
+END
+tags-procs.xql
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/openacs/!svn/ver/1432/trunk/packages/tags/tcl/tags-procs.xql
+END

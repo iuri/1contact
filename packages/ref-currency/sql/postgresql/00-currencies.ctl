@@ -1,0 +1,1 @@
+\COPY currencies FROM '/var/www/iurix/packages/ref-currency/sql/common/currencies.dat' WITH DELIMITER AS ',' NULL AS ''

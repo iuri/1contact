@@ -1,0 +1,77 @@
+# /packages/tags/www/edit.tcl
+
+ad_page_contract {
+
+    Creates or changes the item's tags.
+
+    @author cpasolini@oasisoftware.com
+    @creation-date 2009-05-02
+
+} {
+    item_id:integer
+    {return_url ""}
+}
+
+# Authorization 
+set user_id    [ad_conn user_id]
+set package_id [ad_conn package_id]
+permission::require_permission \
+    -party_id $user_id \
+    -object_id $package_id \
+    -privilege write
+
+set title "[_ tags.Edit_tags]"
+set context [list $title]
+
+set my_tags [tags::my_tags -item_id $item_id -user_id $user_id]
+# set a dummy value so that the 'where in' sql clause will always work 
+set my_exclude [list]
+foreach tag $my_tags {
+    lappend my_exclude '$tag'
+}
+
+
+set item_tags [tags::item_tags -item_id $item_id] 
+
+db_multirow system_tags system_tags {} 
+
+set buttons [list [list "[_ tags.Save]" edit]]
+ad_form -name "tags" \
+    -edit_buttons $buttons \
+    -export {item_id return_url} \
+    -form {
+    {my_tags:text(text) 
+        {label ""}
+        {html {size 60}}
+	{help_text "[_ tags.Use_spaces]"}
+    }
+
+} -on_request {
+
+
+} -on_submit {
+
+    db_transaction {
+
+	# deletes user's tags associated to item_id
+	db_dml clear_tags {}
+
+	foreach tag $my_tags {
+	    # create tag
+	    db_dml create_tag {}
+	}
+
+    }
+
+} -after_submit {
+
+    if {$return_url ne ""} {
+	ad_returnredirect -message "[_ tags.Tags_updated]" $return_url
+	ad_script_abort
+    } else {
+	ad_returnredirect [ad_conn url]?item_id=$item_id
+    }
+
+}
+
+ad_return_template

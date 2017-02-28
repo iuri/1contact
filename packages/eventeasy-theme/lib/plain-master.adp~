@@ -1,0 +1,89 @@
+<master src="/www/blank-master">
+<if @doc@ defined><property name="&doc">doc</property></if>
+<if @body@ defined><property name="&body">body</property></if>
+<if @head@ not nil><property name="head">@head;noquote@</property></if>
+<if @focus@ not nil><property name="focus">@focus;noquote@</property></if>
+<property name="skip_link">@skip_link;noquote@</property>
+
+
+<div id="wrapper">
+   <div class="b-content">
+
+        <div id="nav_with_text_logo_2" class="fr-widget fr-container fr_nav_with_text_logo_2">
+            <div id="navigation_dark_with_brand_name_3" class="fr-widget fr-navigation fr-navigation-active fr_navigation_dark_with_brand_name_3">
+                <a id="brand_name_3" class="fr-widget fr-text fr-wf fr_nav_logo_text fr_brand_name_3 fr-link" href="https://froont.com/s-g-regis/eventeasy-mainpage">
+                    <div class="fr-text">EventEasy</div>
+
+                </a><!--
+
+
+             --><div id="mobile_toggle_4" class="fr-widget fr-navigation-toggle fr_mobile_toggle_4">
+                    <div id="hamburger_icon_7" class="fr-widget fr-svg fr_hamburger_icon_7">
+                        <div class="fr-svg-inner">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" viewBox="0 0 73.2 61.6" xml:space="preserve">
+                                <path d="M4.2 8.6h64.7c2.3 0 4.2-1.9 4.2-4.3C73.2 1.9 71.3 0 68.9 0H4.2C1.9 0 0 1.9 0 4.3 0 6.7 1.9 8.6 4.2 8.6zM68.9 26.5H4.2C1.9 26.5 0 28.4 0 30.8c0 2.4 1.9 4.3 4.2 4.3h64.7c2.3 0 4.2-1.9 4.2-4.3C73.2 28.4 71.3 26.5 68.9 26.5zM68.9 53H4.2C1.9 53 0 54.9 0 57.3c0 2.4 1.9 4.3 4.2 4.3h64.7c2.3 0 4.2-1.9 4.2-4.3C73.2 54.9 71.3 53 68.9 53z" />
+                            </svg>
+                        </div>
+
+                    </div>
+
+
+                </div><!--
+
+
+             --><div id="items_4" class="fr-widget fr-container fr_items_4">
+                    <a id="text01_6" class="fr-widget fr-text fr-wf fr_nav_item_bright_right_center fr_text01_6 fr-link">
+                        <div class="fr-text">
+                            <p>Free advice: +55 71 2000-3001</p>
+                        </div>
+
+                    </a><!--
+
+
+                 --><a id="text01_7" class="fr-widget fr-text fr-wf fr_nav_item_bright_right_center fr_text01_7 fr-link">
+                        <div class="fr-text">Sign in</div>
+
+                    </a><!--
+
+
+                 --><a id="text02_5" class="fr-widget fr-text fr-wf fr_nav_item_bright_right_center fr_text02_5 fr-link">
+                        <div class="fr-text">Sign Up</div>
+
+                    </a><!--
+
+
+                 --><a id="text03_4" class="fr-widget fr-text fr-wf fr_nav_item_bright_right_center fr_text03_4 fr-link">
+                        <div class="fr-text">List your Service</div>
+
+                    </a><!--
+
+
+                 --><div id="sign_up_button_4" class="fr-widget fr-text fr-wf fr_button-1 fr_sign_up_button_4">
+                        <div class="fr-text">List your Venue</div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div><!--
+
+
+     --><div id="nav_without_logo" class="fr-widget fr-container fr_nav_without_logo">
+            <div id="navigation_without_logo" class="fr-widget fr-navigation fr-navigation-active fr_navigation_without_logo">
+                <div id="hamburger_icon_3" class="fr-widget fr-navigation-toggle fr_hamburger_icon_3">
+                    <div id="icon_6" class="fr-widget fr-svg fr_icon_6">
+                        <div class="fr-svg-inner">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" viewBox="0 0 73.2 61.6" xml:space="preserve">
+                                <path d="M4.2 8.6h64.7c2.3 0 4.2-1.9 4.2-4.3C73.2 1.9 71.3 0 68.9 0H4.2C1.9 0 0 1.9 0 4.3 0 6.7 1.9 8.6 4.2 8.6zM68.9 26.5H4.2C1.9 26.5 0 28.4 0 30.8c0 2.4 1.9 4.3 4.2 4.3h64.7c2.3 0 4.2-1.9 4.2-4.3C73.2 28.4 71.3 26.5 68.9 26.5zM68.9 53H4.2C1.9 53 0 54.9 0 57.3c0 2.4 1.9 4.3 4.2 4.3h64.7c2.3 0 4.2-1.9 4.2-4.3C73.2 54.9 71.3 53 68.9 53z" />
+                            </svg>
+                        </div>
+
+                    </div>
+
+
+                </div><!--

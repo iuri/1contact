@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="tags" locale="it_IT" charset="ISO-8859-1">
+
+  <msg key="Add_tag">Aggiungi un tag</msg>
+  <msg key="All">Tutti</msg>
+  <msg key="Author">Autore</msg>
+  <msg key="Click_a_tag">Clicca un tag per aggiungerlo a 'I tuoi Tag'.</msg>
+  <msg key="Creation_date">Data creazione</msg>
+  <msg key="Document">Nome Documento</msg>
+  <msg key="Edit_tags">Imposta tag</msg>
+  <msg key="goback">Torna dove eri</msg>
+  <msg key="item_tags_following">Di seguito una lista di tutti i tag associati alla pagina</msg>
+  <msg key="Last_modified">Ultima modifica</msg>
+  <msg key="Page_Tags">I Tag di questa pagina</msg>
+  <msg key="Popular_Tags">I Tag preferiti</msg>
+  <msg key="Rows_per_page">Righe per pagina</msg>
+  <msg key="Save">Salva</msg>
+  <msg key="system_tags_following">Di seguito sono indicati i tag utilizzati di frequente nel sistema.</msg>
+  <msg key="Tagged_items">Documenti con tag %tag%</msg>
+  <msg key="Tags_updated">Tags aggiornati.</msg>
+  <msg key="Type">Tipo Documento</msg>
+  <msg key="Use_spaces">Usa gli spazi per separare più tag, un carattere di sottolineatura per unire due parole</msg>
+  <msg key="Your_Tags">I tuoi Tag</msg>
+</message_catalog>

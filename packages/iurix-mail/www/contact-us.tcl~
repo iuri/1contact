@@ -1,0 +1,37 @@
+ad_page_contract {
+    @author Iuri Sampaio (iuri.sampaio@iurix.com)
+    @creation-date 2011-04-28
+}
+
+ad_form -name send-email -form {
+    {info:text(inform)
+	{label "<h1>Contact us</h1>"}
+    }
+    {name:text(text)
+	{label "Name"}
+    }
+    {email:text(text)
+	{label "Email"}
+    }
+    {phone:text(text),optional
+	{label "Phone"}
+    }    
+    {subject:text(text)
+	{label "Subject"}
+    }
+    {body:richtext(richtext)
+	{label "Body"}
+	{html {cols 60 rows 30}}
+    }
+} -on_submit {
+    
+    set msg "$name <br> $email <br> $phone <br><br><br> $subject <br><br> $body"
+    
+    acs_mail_lite::send -subject $subject -mime_type "text/html" \
+	-body $msg -to_addr "iuri.sampaio@iurix.com" \
+	-from_addr "contact@iurix.com" -send_immediately
+
+    set msg "Your message has been sent. We will contact you soon. Thank You!"
+    ad_returnredirect [export_vars -base . {msg}]
+    ad_script_abort
+}

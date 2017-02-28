@@ -1,0 +1,21 @@
+/authority-delete.tcl/1.4.2.1/Thu Sep 10 08:21:06 2015//Topenacs-5-9-compat
+/authority-oracle.xql/1.3/Thu Jan 13 13:54:41 2005//Topenacs-5-9-compat
+/authority-parameters.adp/1.5/Fri Jul  3 10:25:37 2015//Topenacs-5-9-compat
+/authority-parameters.tcl/1.5.2.1/Thu Sep 10 08:21:06 2015//Topenacs-5-9-compat
+/authority-postgresql.xql/1.2/Thu Jan 13 13:54:41 2005//Topenacs-5-9-compat
+/authority-registration-select.tcl/1.3.2.1/Thu Sep 10 08:21:06 2015//Topenacs-5-9-compat
+/authority-set-enabled-p.tcl/1.4.2.1/Thu Sep 10 08:21:06 2015//Topenacs-5-9-compat
+/authority-set-sort-order.tcl/1.4.2.1/Thu Sep 10 08:21:06 2015//Topenacs-5-9-compat
+/authority.adp/1.10.2.1/Thu Jun  9 08:52:50 2016//Topenacs-5-9-compat
+/authority.tcl/1.22.2.1/Thu Sep 10 08:21:06 2015//Topenacs-5-9-compat
+/batch-action.adp/1.4/Fri Jul  3 10:25:37 2015//Topenacs-5-9-compat
+/batch-action.tcl/1.6.2.1/Thu Sep 10 08:21:07 2015//Topenacs-5-9-compat
+/batch-document-download.tcl/1.2.2.1/Thu Sep 10 08:21:07 2015//Topenacs-5-9-compat
+/batch-job-run.adp/1.4.2.1/Thu Jun  9 08:52:50 2016//Topenacs-5-9-compat
+/batch-job-run.tcl/1.3.2.1/Thu Sep 10 08:21:07 2015//Topenacs-5-9-compat
+/batch-job.adp/1.5/Fri Jul  3 10:25:38 2015//Topenacs-5-9-compat
+/batch-job.tcl/1.13.2.2/Fri Sep 18 07:39:04 2015//Topenacs-5-9-compat
+/batch-job.xql/1.1/Tue Oct 28 14:32:12 2003//Topenacs-5-9-compat
+/index.adp/1.6/Fri Jul  3 10:25:38 2015//Topenacs-5-9-compat
+/index.tcl/1.11.2.1/Thu Sep 10 08:21:07 2015//Topenacs-5-9-compat
+D

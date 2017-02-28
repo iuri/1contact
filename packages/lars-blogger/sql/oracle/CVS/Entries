@@ -1,0 +1,13 @@
+/lars-blogger-blogroll-create.sql/1.1/Mon Mar  8 16:50:31 2004//
+/lars-blogger-blogroll-drop.sql/1.2/Mon Mar  8 20:12:16 2004//
+/lars-blogger-categories-create.sql/1.2/Fri Oct 31 14:12:55 2003//
+/lars-blogger-categories-drop.sql/1.1/Fri Oct 17 00:39:22 2003//
+/lars-blogger-create.sql/1.8/Mon Mar  8 17:53:59 2004//
+/lars-blogger-drop.sql/1.7/Mon Mar  8 20:12:16 2004//
+/lars-blogger-package-create.sql/1.10/Fri Apr  2 01:01:08 2004//
+/lars-blogger-package-drop.sql/1.2/Thu Aug 28 09:41:54 2003//
+/notifications-drop.sql/1.4/Mon Dec  8 05:10:23 2003//
+/notifications-init.sql/1.2/Tue Sep 30 12:10:08 2003//
+/rss-register.sql/1.4/Tue Sep 30 12:10:08 2003//
+/rss-unregister.sql/1.4/Mon Dec  8 05:10:23 2003//
+D

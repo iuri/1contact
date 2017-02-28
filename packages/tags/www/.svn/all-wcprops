@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/openacs/!svn/ver/1432/trunk/packages/tags/www
+END
+popular-tags.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/openacs/!svn/ver/1432/trunk/packages/tags/www/popular-tags.tcl
+END
+popular-tags.adp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/openacs/!svn/ver/1432/trunk/packages/tags/www/popular-tags.adp
+END
+edit.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/openacs/!svn/ver/1432/trunk/packages/tags/www/edit.tcl
+END
+edit.adp
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/openacs/!svn/ver/1432/trunk/packages/tags/www/edit.adp
+END
+edit.xql
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/openacs/!svn/ver/1432/trunk/packages/tags/www/edit.xql
+END
+index.vuh
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/openacs/!svn/ver/1432/trunk/packages/tags/www/index.vuh
+END
+tagged-items.tcl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/openacs/!svn/ver/1432/trunk/packages/tags/www/tagged-items.tcl
+END
+tagged-items.adp
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/openacs/!svn/ver/1432/trunk/packages/tags/www/tagged-items.adp
+END
+tagged-items-postgresql.xql
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/openacs/!svn/ver/1432/trunk/packages/tags/www/tagged-items-postgresql.xql
+END

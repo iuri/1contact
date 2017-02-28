@@ -1,0 +1,105 @@
+set url /[ad_conn extra_url]
+
+if { [regexp {^/(u|user)/([^/]+)/rss} $url ignore ignore2 screen_name] } {
+    #Support old model user/<screen_name>/rss/rss.xml
+
+    set package_id [ad_conn package_id]
+
+    set screen_name [lindex $extra_url_list 1]
+    
+    set sql "select channel_id as summary_context_id
+           from   weblogger_channels w, users u
+           where  w.user_id = u.user_id
+           and    u.screen_name = :screen_name
+           and    w.package_id = :package_id"
+
+    set summary_context_id [db_string select_user_id $sql]
+
+    set datasource [acs_sc_call RssGenerationSubscriber datasource \
+	    $summary_context_id pinds_blog_entries]
+    if { [empty_string_p $datasource] } {
+        ns_log Error "Empty datasource returned from $impl_name for context $summary_context_id in rss_gen_report. Probably because the implementation hasn't been bound."
+        return
+    }
+    set args ""
+    foreach {name val} $datasource {
+	regsub -all {[\]\[\{\}""\\$]} $val {\\&} val
+	append args "-$name \"$val\" "
+	if { [lsearch [list channel_link channel_title] $name] >= 0 } {
+	    set $name $val
+	}
+    }
+    set xml [apply rss_gen $args]
+    ns_set put [ns_conn outputheaders] "Content-Disposition" "attachment; filename=\"rss.xml\""
+    ReturnHeaders "application/xml"
+    ns_write $xml
+
+} else {
+
+    if { [regexp {^/+(u|user)/+([^/]+)(/*.*)} $url \
+        ignore_whole ignore_user screen_name rest_url] } {
+    	    rp_form_put screen_name $screen_name
+            # This is a /user/joe - style URL.  If there was something
+            # after /user/joe it is now stored in rest_url
+    } else {
+        # This is not a /user/joe style URL.
+        set rest_url $url
+    }
+
+     if {[regexp {^/+(c|cat|category)/+([^/]+)/*$} $rest_url \
+            ignore_whole ignore_cat category_short_name]} {
+         rp_form_put category_short_name $category_short_name
+    } elseif {[regexp {^/+(a|archive)/*([0-9]*)/*([0-9]*)/*([0-9]*)/*$} \
+                 $rest_url ignore_whole ignore_a year month day]} {
+          if {[empty_string_p $year] && [empty_string_p $month] && \
+                [empty_string_p $day]} {
+                    # get year, month, day
+                    set date_list [dt_ansi_to_list [dt_sysdate]]
+                    set year [lindex $date_list 0]
+                    set month [format "%02d" [lindex $date_list 1]]
+          }
+	
+	set form [rp_getform]
+	ns_set idelkey $form year
+	ns_set idelkey $form month
+	ns_set idelkey $form day
+	
+	rp_form_put year $year
+	rp_form_put month $month
+	rp_form_put day $day
+
+    } elseif {[regexp {^/+swcat/+([^/]+)/*} $rest_url \
+                  ignore_whole sw_category_id]} {
+
+	# MS: 27/11/06, copied from above
+	# We need to get rid of the first form element for sw_category_id
+	# Otherwise we would have it there twice, which does not make that much sense :)
+	
+	set form [rp_getform]
+	ns_set idelkey $form sw_category_id
+	
+	# SWC (Site-wide categories)
+	# As the categories package currently doesn't have short names we
+	# are using IDs. We don't check whether this is a valid integer here
+	# because index.tcl will take care of that.
+
+	rp_form_put sw_category_id $sw_category_id
+
+    } elseif { [regexp {one-entry$} $url] } {
+	      # Backwards compatibility with user/<screen_name>/one-entry?entry_id=<entry_id>
+	      rp_internal_redirect "/packages/lars-blogger/www/one-entry"
+
+    } elseif {[regexp {^/*$} $rest_url ignore_whole]} {
+
+          # This is just the home page, no categories or archives.
+          # Do nothing.
+
+    } else {
+          # This is not a known URL format.  Bail out
+          ad_return_exception_page 400 "Bad URL" "We are sorry.  The \
+            URL $url is in unrecognized format."
+    }
+
+}
+
+rp_internal_redirect "/packages/lars-blogger/www/index"

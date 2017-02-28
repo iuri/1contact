@@ -1,0 +1,77 @@
+9
+
+dir
+1512
+http://svn.softwarepublico.gov.br/svn/openacs/trunk/packages/tags
+http://svn.softwarepublico.gov.br/svn/openacs
+
+
+
+2010-07-25T11:48:45.714104Z
+1432
+andreluiz99@gmail.com
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+65270c51-0825-0410-a41e-fc8022ce9244
+
+sql
+dir
+
+tcl
+dir
+
+www
+dir
+
+lib
+dir
+
+tags.info
+file
+
+
+
+
+2010-11-09T17:36:14.000000Z
+4725ad5421f0a174fafb69911b8a3650
+2010-07-25T11:48:45.714104Z
+1432
+andreluiz99@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1109
+
+catalog
+dir
+

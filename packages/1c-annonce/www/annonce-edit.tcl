@@ -6,8 +6,8 @@ ad_page_contract {
 } {
     file_id:naturalnum,optional,notnull
     {folder_id 1432}
-    upload_file:trim,optional
-    upload_file.tmpfile:tmpfile,optional
+    fileupload:trim,optional
+    fileupload.tmpfile:tmpfile,optional
     annonce_id:optional
     {type_of_property:multiple,optional ""}
     {other_property ""}
@@ -41,8 +41,8 @@ ad_page_contract {
 	    ad_complain "The specified parent folder is not valid."
 	}
     }
-    max_size -requires {upload_file} {
-	set n_bytes [file size ${upload_file.tmpfile}]
+    max_size -requires {fileupload} {
+	set n_bytes [file size ${fileupload.tmpfile}]
 #	set max_bytes [parameter::get -parameter "MaximumFileSize"]
 	set max_bytes 100000000
 	if { $n_bytes > $max_bytes } {
@@ -192,6 +192,7 @@ ad_form -extend -name annonce -form {
 	{label "#1c-annonce.Surface#"}
 	{help_text "m2"}
     }
+    
 }
 
 
@@ -266,11 +267,9 @@ ad_form -extend -name annonce -form {
     {description:text(textarea) {label "Description"}
 	{html {rows 4 cols 50}}
     }
-    {upload_file:file,optional
+    {fileupload:file,optional
 	{label \#1c-annonce.Upload_a_file\#}
-	{html "size 30"
-	    {onclick "javascript:showUploadPopup();"}
-	}
+	{after_html "<div id=\"files\" class=\"files\"></div>"}
     }
 }
 
@@ -465,23 +464,23 @@ ad_form -extend -name annonce -form {
 	-category_8 $category_8 \
 	-category_9 $category_9 \
 	
-    if {$upload_file ne ""} {     
+    if {$fileupload ne ""} {     
 	
-	ns_log Notice "$upload_file"
+	ns_log Notice "$fileupload"
 	
 	if {(![info exists unpack_p] || $unpack_p eq "")} {
 	    set unpack_p f
 	}
 	if { $unpack_p
 	     && $unpack_binary ne ""
-	     && [file extension [template::util::file::get_property filename $upload_file]] eq ".zip"
+	     && [file extension [template::util::file::get_property filename $fileupload]] eq ".zip"
 	 } {
 	    
 	    set path [ad_tmpnam]
 	    file mkdir $path
 	    
 	    
-	    catch { exec $unpack_binary -jd $path ${upload_file.tmpfile} } errmsg
+	    catch { exec $unpack_binary -jd $path ${fileupload.tmpfile} } errmsg
 	    
 	    # More flexible parameter design could be:
 	    # zip {unzip -jd {out_path} {in_file}} tar {tar xf {in_file} {out_path}} tgz {tar xzf {in_file} {out_path}} 
@@ -495,8 +494,8 @@ ad_form -extend -name annonce -form {
 	    }
 	    
 	} else {
-	    set upload_files [list [template::util::file::get_property filename $upload_file]]
-	    set upload_tmpfiles [list [template::util::file::get_property tmp_filename $upload_file]]
+	    set upload_files [list [template::util::file::get_property filename $fileupload]]
+	    set upload_tmpfiles [list [template::util::file::get_property tmp_filename $fileupload]]
 	}
 	set mime_type ""
 	if { [lindex $upload_files 0] eq ""} {
@@ -521,21 +520,21 @@ ad_form -extend -name annonce -form {
 	foreach upload_file $upload_files tmpfile $upload_tmpfiles {
 	    set this_file_id $file_id
 	    set this_title $title
-	    set mime_type [cr_filename_to_mime_type -create -- $upload_file]
+	    set mime_type [cr_filename_to_mime_type -create -- $fileupload]
 	    
 	    # upload a new file
 	    # if the user choose upload from the folder view
 	    # and the file with the same name already exists
 	    # we create a new revision
 	    if {$this_title eq ""} {
-		set this_title $upload_file
+		set this_title $fileupload
 	    }
 	    
 	    if {$name ne ""} {
-		set upload_file $name
+		set fileupload $name
 	    }
 	    
-	    set existing_item_id [fs::get_item_id -name $upload_file -folder_id $folder_id]
+	    set existing_item_id [fs::get_item_id -name $fileupload -folder_id $folder_id]
 	    
 	    if {$existing_item_id ne ""} {
 		# file with the same name already exists in this folder
@@ -549,10 +548,10 @@ ad_form -extend -name annonce -form {
 		} else {
 		    # create a new file by altering the filename of the
                 # uploaded new file (append "-1" to filename)
-		    set extension [file extension $upload_file]
-		    set root [string trimright $upload_file $extension]
+		    set extension [file extension $fileupload]
+		    set root [string trimright $fileupload $extension]
 		    append new_name $root "-$this_file_id" $extension
-		    set upload_file $new_name
+		    set fileupload $new_name
 		}
 	    }
 
@@ -561,7 +560,7 @@ ad_form -extend -name annonce -form {
 	    # Annoces e mandats should have a homedir under Root
 	    # Create API to get folder_id for annonces 
 	    fs::add_file \
-		-name $upload_file \
+		-name $fileupload \
 		-item_id $this_file_id \
 		-parent_id $folder_id \
 		-tmp_filename $tmpfile\
@@ -579,7 +578,7 @@ ad_form -extend -name annonce -form {
 	    }
 	}
 	
-	file delete $upload_file.tmpfile
+	file delete $fileupload.tmpfile
     }
     
     
@@ -805,6 +804,59 @@ ad_form -extend -name annonce -form {
     ad_returnredirect "."
     ad_script_abort
 }
+
+
+
+
+# Bootstrap styles
+ template::head::add_css -href "http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+
+# Generic page styles
+ template::head::add_css -href "/resources/css/style.css"
+
+# CSS to style the file input field as button and adjust the Bootstrap progress bars 
+ template::head::add_css -href "/resources/1c-annonce/css/jquery.fileupload.css"
+
+
+#template::head::add_javascrip
+template::head::add_javascript -src "http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" -order 0
+
+# The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+template::head::add_javascript -src "/resources/1c-annonce/js/jquery.ui.widget.js" -order 1
+
+# The Load Image plugin is included for the preview images and image resizing functionality -->
+template::head::add_javascript -src "http://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js" -order 2
+
+# The Canvas to Blob plugin is included for image resizing functionality -->
+template::head::add_javascript -src "http://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js" -order 3
+
+# Bootstrap JS is not required, but included for the responsive demo navigation -->
+template::head::add_javascript -src "http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" -order 4
+
+# The Iframe Transport is required for browsers without support for XHR file uploads -->
+template::head::add_javascript -src "/resources/1c-annonce/js/jquery.iframe-transport.js" -order 5
+
+# The basic File Upload plugin 
+template::head::add_javascript -src "/resources/1c-annonce/js/jquery.fileupload.js" -order 6
+
+# The File Upload processing plugin
+template::head::add_javascript -src "/resources/1c-annonce/js/jquery.fileupload-process.js" -order 7
+
+# The File Upload image preview & resize plugin
+template::head::add_javascript -src "/resources/1c-annonce/js/jquery.fileupload-image.js" -order 8
+
+# The File Upload audio preview plugin
+template::head::add_javascript -src "/resources/1c-annonce/js/jquery.fileupload-audio.js" -order 9
+
+# The File Upload video preview plugin
+template::head::add_javascript -src "/resources/1c-annonce/js/jquery.fileupload-video.js" -order 10
+
+# The File Upload validation plugin
+template::head::add_javascript -src "/resources/1c-annonce/js/jquery.fileupload-validate.js" -order 11
+
+
+#
+template::head::add_javascript -src "/resources/1c-annonce/js/file-upload.js" -order 12
 
 
 

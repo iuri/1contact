@@ -1,0 +1,21 @@
+ad_page_contract
+
+set package_id [[[
+
+db_dml insert_tag {
+    
+    
+    insert into tags_tags ( 
+			   item_id,
+			   user_id,
+			   package_id,
+			   tag,
+			   time
+			   ) values (
+				     :package_id,
+				     :user_id,
+				     :package_id,
+				     :tag,
+				     current_timestamp
+				     )
+}

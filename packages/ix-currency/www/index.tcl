@@ -1,0 +1,74 @@
+ad_page_contract {} {
+    {rate ""}
+    {from ""}
+    {to ""}
+}
+
+set myform [ns_getform]
+if {[string equal "" $myform]} {
+ns_log Notice "No Form was submited"
+} else {
+ns_log Notice "FORM"
+ns_set print $myform
+
+
+
+   for {set i 0} {$i < [ns_set size $myform]} {incr i} {
+	set varname [ns_set key $myform $i]
+	set varvalue [ns_set value $myform $i]
+
+ns_log Notice " $varname - $varvalue"
+    }
+}
+
+
+set lcurrencies [db_list_of_lists select_rates {
+    SELECT cr1.currency_code AS currency, cast(cr1.rate as numeric) AS today, cast(cr1.rate as numeric)-cast(t1.rate as numeric) AS diff, 100-(cast(t1.rate as numeric)*100/cast(cr1.rate as numeric)) AS percent from ix_currency_rates cr1 RIGHT OUTER JOIN ( select * from ix_currency_rates cr1 WHERE cr1.creation_date > now() - interval '48 hour' AND creation_date < now() - interval '24 hours') as t1 ON (t1.currency_code = cr1.currency_code) WHERE cr1.creation_date > now() - interval '24 hour' ;
+}]
+
+
+template::multirow create currencies code
+
+foreach currency $lcurrencies {
+    template::multirow append currencies [lindex $currency 0]  
+}
+
+
+template::head::add_javascript -script "
+
+    function get_currency(){
+	alert(\"HEllO!\")
+	var amount = document.getElementById(\"amount\").value;
+//        var from = document.getElementsById(\"from\");
+//        var from = from.options(from.selectedIndex).value;
+//        var to = document.getElementsById(\"to\");
+//        var to = to.options(to.selectedIndex).value;
+
+
+//	alert(\"Hello2\" + amount + \" \" + from + \" \" + to);
+
+	var xmlhttp;
+	if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+	    xmlhttp=new XMLHttpRequest();
+	} else {// code for IE6, IE5
+	    xmlhttp=new ActiveXObject(\"Microsoft.XMLHTTP\");
+	}
+	xmlhttp.onreadystatechange=function(){
+	    if (xmlhttp.readyState==4 && xmlhttp.status==200){
+		document.getElementById(\"myDiv\").innerHTML=xmlhttp.responseText;
+	    }
+	}
+
+	var actionHandler = \"/ix-currency/index\";
+        var params = \"amount=1\";
+        xmlhttp.open(\"GET\",actionHandler,true);
+        
+        //Send the proper header information along with the request
+        http.setRequestHeader(\"Content-type\", \"application/x-www-form-urlencoded\");
+        //http.setRequestHeader(\"Content-length\", params.length);
+        //http.setRequestHeader(\"Connection\",\"close\");
+
+	xmlhttp.send();
+    }
+"
+

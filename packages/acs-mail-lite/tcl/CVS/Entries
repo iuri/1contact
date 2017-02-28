@@ -1,0 +1,15 @@
+/acs-mail-lite-callback-procs.tcl/1.23.2.2/Fri Jan  8 21:17:10 2016//Topenacs-5-9-compat
+/acs-mail-lite-callback-procs.xql/1.4/Fri Dec 22 07:57:43 2006//Topenacs-5-9-compat
+/acs-mail-lite-init.tcl/1.14.2.1/Thu Sep 10 08:21:31 2015//Topenacs-5-9-compat
+/acs-mail-lite-procs-oracle.xql/1.15/Mon Oct 27 16:39:40 2014//Topenacs-5-9-compat
+/acs-mail-lite-procs-postgresql.xql/1.14/Mon Oct 27 16:39:41 2014//Topenacs-5-9-compat
+/acs-mail-lite-procs.tcl/1.92.2.7/Mon Jan 11 16:14:37 2016//Topenacs-5-9-compat
+/acs-mail-lite-procs.xql/1.17/Wed Jan  9 16:51:30 2008//Topenacs-5-9-compat
+/apm-callback-procs.tcl/1.1.12.1/Thu Sep 10 08:21:31 2015//Topenacs-5-9-compat
+/bounce-procs-oracle.xql/1.1/Mon Apr  9 06:18:17 2007//Topenacs-5-9-compat
+/bounce-procs-postgresql.xql/1.1/Mon Apr  9 06:18:17 2007//Topenacs-5-9-compat
+/bounce-procs.tcl/1.11.2.1/Thu Sep 10 08:21:31 2015//Topenacs-5-9-compat
+/bounce-procs.xql/1.2/Thu Sep 13 13:52:05 2007//Topenacs-5-9-compat
+/incoming-mail-procs.tcl/1.7.2.1/Thu Sep 10 08:21:31 2015//Topenacs-5-9-compat
+/utils-procs.tcl/1.4.10.1/Thu Sep 10 08:21:31 2015//Topenacs-5-9-compat
+D

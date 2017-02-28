@@ -1,0 +1,1357 @@
+@charset "utf-8";
+/* CSS Document */
+@font-face {
+	font-family: 'RobotoMedium';
+	src: url('/resources/natopia-notifications/fonts/Roboto-Medium-webfont.eot');
+	src: url('/resources/natopia-notifications/fonts/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'), url('/resources/natopia-notifications/fonts/Roboto-Medium-webfont.woff') format('woff'), url('/resources/natopia-notifications/fonts/Roboto-Medium-webfont.ttf') format('truetype'), url('/resources/natopia-notifications/fonts/Roboto-Medium-webfont.svg#RobotoMedium') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'RobotoRegular';
+	src: url('/resources/natopia-notifications/fonts/Roboto-Regular-webfont.eot');
+	src: url('/resources/natopia-notifications/fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('/resources/natopia-notifications/fonts/Roboto-Regular-webfont.woff') format('woff'), url('/resources/natopia-notifications/fonts/Roboto-Regular-webfont.ttf') format('truetype'), url('/resources/natopia-notifications/fonts/Roboto-Regular-webfont.svg#RobotoRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'HelveticaNeueLTProRegular';
+	src: url('/resources/natopia-notifications/fonts/helveticaneue_medium_cond-webfont.eot');
+	src: url('/resources/natopia-notifications/fonts/helveticaneue_medium_cond-webfont.eot?#iefix') format('embedded-opentype'), url('/resources/natopia-notifications/fonts/helveticaneue_medium_cond-webfont.woff') format('woff'), url('/resources/natopia-notifications/fonts/helveticaneue_medium_cond-webfont.ttf') format('truetype'), url('/resources/natopia-notifications/fonts/helveticaneue_medium_cond-webfont.svg#HelveticaNeueLTProRegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'lucida_sans_unicoderegular';
+	src: url('/resources/natopia-notifications/fonts/lucida_sans_unicode-webfont.eot');
+	src: url('/resources/natopia-notifications/fonts/lucida_sans_unicode-webfont.eot?#iefix') format('embedded-opentype'), url('/resources/natopia-notifications/fonts/lucida_sans_unicode-webfont.woff') format('woff'), url('/resources/natopia-notifications/fonts/lucida_sans_unicode-webfont.ttf') format('truetype'), url('/resources/natopia-notifications/fonts/lucida_sans_unicode-webfont.svg#lucida_sans_unicoderegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'helvetica_neueregular';
+	src: url('/resources/natopia-notifications/fonts/helveticaneue-condensed-webfont.eot');
+	src: url('/resources/natopia-notifications/fonts/helveticaneue-condensed-webfont.eot?#iefix') format('embedded-opentype'), url('/resources/natopia-notifications/fonts/helveticaneue-condensed-webfont.woff') format('woff'), url('/resources/natopia-notifications/fonts/helveticaneue-condensed-webfont.ttf') format('truetype'), url('/resources/natopia-notifications/fonts/helveticaneue-condensed-webfont.svg#helvetica_neueregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+    font-family: 'swis721_lt_btlight';
+    src: url('/resources/natopia-notifications/fonts/swz721l-webfont.eot');
+    src: url('/resources/natopia-notifications/fonts/swz721l-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/resources/natopia-notifications/fonts/swz721l-webfont.woff') format('woff'),
+         url('/resources/natopia-notifications/fonts/swz721l-webfont.ttf') format('truetype'),
+         url('/resources/natopia-notifications/fonts/swz721l-webfont.svg#swis721_lt_btlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body
+	{
+	margin:0 auto;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#868686;	
+	}
+	
+#main_wrapper
+	{
+	width:941px;
+	margin:30px auto;	
+	}		
+.popup-main-contnr
+	{
+	width:100%;
+	height:auto;
+	/*padding-top:15px;*/
+	}
+		
+.repeat-imgbg
+	{
+	
+	width:1000px;
+	height:auto;
+	float:left;	
+	}
+.bottom-imgbg
+	{
+	background:url(/resources/natopia-notifications/images/popup-bottombg.png) no-repeat;
+	width:1000px;
+	height:28px;
+	float:left;	
+	}	
+		
+.step-area {
+     height: 67px;
+    margin: 2px auto;
+    width: 763px;
+}
+
+.step-box
+	{
+	width:251px;
+	float:left;	
+	height:auto;
+	}
+
+.span {
+    color: #525558;
+    float: left;
+    font-family: HelveticaNeueLTProRegular;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 16px 0 15px 11px;
+    text-transform: uppercase;
+}
+.span span
+	{
+	color:#ca1c27;		
+	}
+		
+.step-box2
+	{
+	float: left;
+    height: auto;
+    width: 185px;
+	}	
+	
+.step-img
+	{
+	background: url("/resources/natopia-notifications/images/round-step-off.png") no-repeat scroll 0 0 transparent;
+    height: 48px;
+    text-align: center;
+    width: 48px;
+	float:left;
+	}
+.step-img3 {
+     background: url("/resources/natopia-notifications/images/round-step-off.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 75px;
+    margin-left: 15px;
+    text-align: center;
+    width: 50px;
+}
+
+
+.step-img-text
+	{
+	color: #7C7C7C;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    padding-top: 14px;
+    text-align: center;
+    text-transform: uppercase;
+		
+	}
+.step-img-text span
+	{
+	font-size:20px;
+	color:#212121;
+	font-weight:bold;
+	text-align:center;	
+	}
+
+.step-box-on {
+    float: left;
+    height: auto;
+    width: 318px;
+}
+
+	
+.step-img-on
+	{
+	background: url("/resources/natopia-notifications/images/round-step-on.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 75px;
+    margin-left: 46px;
+    text-align: center;
+    width: 47px;	
+	}
+.step-img-text-on
+	{
+	 color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    font-weight: normal;
+    padding-top: 13px;
+    text-align: center;
+    text-transform: uppercase;
+		
+	}
+.step-img-text-on span
+	{
+	font-size:20px;
+	color:#fff;
+	font-weight:bold;
+	text-align:center;	
+	}	
+.main2
+	{
+	width:950px;
+	margin:20px auto;
+	margin-top:0px !important;	
+	}				
+		
+.h-work
+	{
+	background:#f2f2f2;
+	width:auto;
+	height:auto;
+	border:1px solid #bdbdbd;
+	padding:15px;
+	float:left;
+	font-size:13px;	
+	}
+.p-main-heading
+	{
+	font-family:'HelveticaNeueLTProRegular';
+	font-weight:bold;
+	font-size:22px;
+	color:#424242;	
+	}
+.h-work p
+	{
+	padding:5px 0 0 0px;
+	line-height:18px;
+	margin:0;	
+	}
+.booking_box {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #BDBDBD;
+    box-shadow: 0 2px 4px #888888;
+    float: left;
+    font-size: 13px;
+    height: auto;
+    margin: 20px 0;
+    width: 100%;
+}
+	
+.grey-hdBg
+	{
+	height:42px;
+	float:left;
+	width:100%;
+	background:#e7e7e7;
+		
+	}
+		
+.p_heading2 {
+    color: #424242;
+    float: left;
+    font-family: HelveticaCondensed;
+    font-size: 19px;
+    font-weight: bold;
+    padding: 6px 0 10px 10px;
+    width:470px;
+}
+.left-booking-area
+	{
+	width:482px;
+	margin:10px 0 0 0px;
+	float:left;
+	}
+.cntr_top	
+	{
+	width:100%;
+	float:left;	
+	}	
+	
+.pro_img {
+    float: left;
+    height: 108px;
+    padding: 8px;
+	padding-top:0px !important;
+    width: 143px;
+}
+.pro_content {
+    float: left;
+    margin: 0 0 0 10px;
+    width: 311px;
+}
+
+
+.pro_heading {
+    color: #585858;
+    font-size: 18px;
+    line-height: 25px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	letter-spacing:-.4px;
+}
+
+.pro_ctnt
+	{
+	display:block;
+	margin:10px 0 0 0px;
+	line-height:20px;	
+	}
+.clear
+	{
+	clear:both;	
+	}
+.check_box
+	{
+	margin:18px 0 12px 10px;
+	line-height:23px;
+	}
+.preferred_box
+	{
+	float:left;	
+	margin:0 0 0 15px;
+	width:560px;
+	}	
+	
+.preferred_boxHd
+	{
+	margin: 15px 0 10px;
+	float:left;
+	color:#434242;
+	font-size:14px;
+	font-family: Arial, Helvetica, sans-serif;
+	}
+.preferred_box span {
+    float: left;
+    padding: 7px 0 5px 3px;
+}
+
+.preferred_box span small {
+    color: #737373;
+    display: block;
+    float: left;
+    font-size: 12px;
+    padding: 5px 0 0;
+    width: 140px;
+}
+
+.style_input {
+    border: 1px solid #DBDBDB;
+    border-radius: 5px 5px 5px 5px;
+    margin: 0 3px 0 10px;
+    padding: 4px 0 4px 3px;
+    width: 165px;
+   
+}
+.drp {
+	margin-left:5px;
+   
+}
+.help_text
+	{
+	margin:0 0 0 20px;
+	padding:0 0 0 0px;
+	float:left;
+ 
+	}
+.help_text span {
+    color: #737373;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    padding: 8px 0 8px;
+	font-size:14px;
+}
+
+.p_heading2 span.stylehd {
+    background: none repeat scroll 0 0 transparent;
+    padding:7px 0 0 0;
+    width: 314px;
+	color:#424242;
+	font-family:'HelveticaNeueLTProRegular';
+	text-transform:uppercase;
+}
+	
+.c-hd {
+    clear: both;
+    color: #737373;
+    display: block;
+    font-weight: normal;
+    padding: 15px 0 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:16px;
+}		
+.help_text span small
+	{
+	font-weight:normal;
+	font-size:12px;	
+	}
+.quality_rightpanel
+	{
+  float: right;
+    margin: 0;
+    padding: 15px 0 0;
+    width: auto;	
+	}	
+.qty
+	{
+	 
+  color: #424242;
+    float: left;
+    font-size: 12px;
+    text-align: center;
+    width: 110px;
+}
+	
+.qty-box {
+    background-color: #FFFFFF;
+    border: 6px solid #EBEBEB;
+    border-radius: 18px 18px 18px 18px;
+    color: #7C7C7C;
+    float: left;
+    font-family: arial;
+    font-size: 14px;
+    height: 18px;
+    margin: 2px 0 0;
+    padding: 0;
+    width: 38px;
+}
+
+.qty-box span {
+    float: left;
+    width: 30px;
+}
+
+.qty-box .newListSelected {
+    background: url("/resources/natopia-notifications/images/arrow_dwn.png") no-repeat scroll 19px 2px transparent;
+    border-radius: 3px 3px 3px 3px;
+    color: #898989;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    height: 19px;
+    margin: 0;
+    padding: 3px 5px 0;
+    width: 19px;
+}
+
+
+.stylish-select ul.newList {
+    background: none repeat scroll 0 0 #EEEEEE;
+    left: -9999px;
+    margin-top: 5px;
+    overflow: hidden;
+    padding: 5px 0 0;
+    width: 100%;
+}
+
+ul.newList * {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+ul.newList li
+	{
+	list-style-type:none;
+	text-align:left;	
+	}
+	
+ul.newList li a {
+    display: block;
+    padding: 3px 8px;
+	color:#7c7c7c;
+	text-decoration:none;
+}
+ul.newList li a:hover
+	{
+	color:#1d2124;
+	text-decoration:underline;	
+	}
+	
+.unitPrice {
+    color: #BABABA;
+    float: left;
+    font-size: 12px;
+    height: 30px;
+    margin: 19px 0 0 18px;
+    padding: 0 0 0 5px;
+    text-transform: uppercase;
+    width: 128px;
+}
+.up_gry {
+	color:#737373 !important;
+}
+.unitPrice .smlprc {
+     color: #BABABA;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 0;
+    margin-top: 6px;
+}
+.unitPrice span
+	{
+	font-size:22px;
+	font-weight:bold;
+	}
+.unitPrice sup {
+    font-size: 12px;
+    vertical-align: top;
+}
+.style_1 sup {
+    font-size: 12px;
+    vertical-align:top;
+	color:#141414;
+	
+}	
+.right_area {
+    float: right;
+    height: auto;
+    margin: 10px 36px 28px 0;
+    top: 25px;
+    width: 350px;
+}
+
+.style_1 {
+    color: #709d2b;
+    float: right;
+    font-size:16px;
+    font-weight: bold;
+    padding: 1px 0 12px;
+    text-align: right;
+    width: 350px;
+}
+.style_1 span
+	{
+	color:#141414;
+	text-transform:uppercase;
+	 
+	font-size:11px;	
+	}
+	
+.style_1 span.pnd
+	{
+	font-size:22px;
+	font-weight: bold;
+	}
+.style_1 .smlprc {
+	font-weight:bold;
+    font-size: 14px;
+    margin-right: 0px;
+    margin-top: 6px;
+}
+.price_text .prc_sgn {
+    font-size: 14px;
+    margin-right: 0px;
+    margin-top: 6px;
+	font-weight:bold;
+}	
+.price_text span
+	{ 
+	
+	font-weight:bold;
+	}		
+
+.price_text {
+    color: #737373;
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+    width: 350px;
+}
+.cndi_txt
+	{
+  color: #0000FF;
+    float: left;
+    font-size: 11px;
+    margin: 15px 0 0;
+    text-align: right;
+    text-decoration: underline;
+    width: 350px;
+	}
+.cndi_txt a
+	{
+	color: #30C;
+	}
+
+.book_btn {
+    float: left;
+    margin: 25px 0 0;
+    text-align: right;
+    width: 280px;
+}
+.btn_sub {
+    background: url("/resources/natopia-notifications/images/book-nowbtn.png") no-repeat scroll right center transparent;
+    float: right;
+    height: 30px;
+    padding: 5px 0 0;
+    text-align: center;
+    width: 122px;
+}	
+.btn_sub a
+	{
+	font-family:'HelveticaNeueLTProRegular';
+	font-size:21px;
+	color:#fff;
+	text-decoration:none;	
+	}
+ .bottom_area-popup
+ 	{
+	width:950px;
+	float:left;	
+	margin-top:25px;
+	border-top:solid 2px #ebebeb;
+	}
+	
+
+
+/*=======
+12-11-12
+===========*/
+
+.popup_box {
+    background-repeat: no-repeat;
+    height: auto;
+    left: 163px;
+    margin: 0 auto;
+    padding: 0;
+    position: absolute;
+    top: 100px;
+    width: 945px;
+}
+
+.line_one{ text-align:justify; line-height:20px; padding-bottom:10px;font-family:Arial, Helvetica, sans-serif; font-size:14px; font-weight:bold;}
+.info_area{ width:381px; margin-left:50px; padding: 0px 0px;
+background:#FFFFFF;
+ overflow-x:none;  font-size:12px; font-family:Arial, Helvetica, sans-serif; 
+ 
+ -webkit-box-shadow: -1px -1px 5px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    -1px -1px 5px rgba(50, 50, 50, 0.75);
+box-shadow:         -1px -1px 5px rgba(50, 50, 50, 0.75);
+ -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=10, Color='#000000')";
+filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=10, Color='#000000');
+-webkit-border-radius: 5px;
+border-radius: 5px; 
+ }
+  .info_area_top{
+	width:381px;
+	overflow-x:none;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	background-color: #f9f9f9;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #edeae7;
+	float:left;
+	padding-bottom:10px;
+	-webkit-border-radius: 5px 5px 0px 0px;
+   border-radius: 5px 5px 0px 0px; 
+ }
+
+.buttons {
+    bottom: 792px;
+    height: auto;
+    margin-left: 914px;
+    position: absolute;
+    width: 50px;
+}
+
+.yes_button{float:right; margin:0 10px;}
+.no_button{float:right; margin:0 10px;}
+.foot_cont{ font-size:12px; font-family:Arial, Helvetica, sans-serif;color:#000; }
+
+
+.login_fcbk{border-bottom:1px dashed #cdcdcd; padding:10px 0;width:345px; margin:0 auto; padding:10px 0;height: 30px;}
+.login_fcbk h2{font-family: 'swis721_lt_btlight';font-size:28px; color:#e93f2c; margin:0; float:left; letter-spacing:-2px; }
+
+.popup_form{  margin:0; padding:10px 15px;}
+.popup_form input[type="text"], input[type="Password"]{ background:url(/resources/natopia-notifications/images/inputBg.png) no-repeat; color:#757575;width:327px; height:27px; padding:0 8px; border:none; outline:none; margin:5px 0; color: #757575;}
+.label{color:#000; font-family:Arial, Helvetica, sans-serif; font-weight:normal; font-size:13px; float:none; margin:auto 0 auto 5px; vertical-align:middle;}
+
+.popup_form ul{ list-style:none;   margin:7px 0 10px 0; padding:0;}
+.popup_form li{ display:inline-block;}
+.popup_form li a{ color:#e62c30; font-family:Arial, Helvetica, sans-serif; font-size:12px; text-decoration:none; padding:0 5px;}
+.enterbtn{ background:url(/resources/natopia-notifications/images/loginbtn.png) no-repeat; width:100px; height:35px; border:none; outline:none;}
+.footerPopup{ background:#fdfdfd; border-top:1px solid #edeae7; padding:5px 10px; color:#3b3b3b; line-height: 30px; font-size:11px!important;}
+.footerPopup a{ margin:10px 2px; color:#e52830; font-size:11px!important;}
+
+
+.fcbkBtn{ float:left; cursor:pointer; margin:10px 0 0 0; width:160px;}
+.fbkBtn_left{ width:7px; height:33px; float:left;}
+.fbkBtn_right{ background:url(/resources/natopia-notifications/images/fbkbtn_right.jpg) -48px 0 no-repeat; float:right; width:153px; height:33px;}
+.fbkBtn_right img{ float:left; margin:5px 0 0 0;}
+.fbkBtn_right a{  font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#FFF; text-decoration:none; font-weight:bold; margin-right: 10px; margin-top: 10px; float:right}
+
+.twitterBtn{float:left; cursor:pointer; margin:10px 0 0 10px; width:144px;}
+.twitterBtn_left{ width:8px; height:34px; float:left;}
+.twitterBtn_right{ background:url(/resources/natopia-notifications/images/twitbtn_right.jpg) -62px 0 no-repeat !important; float:right; width:136px; height:34px;}
+.twitterBtn_right img{ float:left; margin:8px 0 0 0;}
+.twitterBtn_right a{font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#FFF; text-decoration:none; font-weight:bold; margin-right: 10px; margin-top: 10px;
+float:right;}
+
+/* 2nd popup */
+
+.popup_form2{ margin:0; padding:10px 15px;}
+#pop2 .login_fcbk{border-bottom:1px dashed #cdcdcd; padding:10px 0;width:345px; margin:0 auto; padding:10px 0; height:auto !important;}
+.popup_form2 .bginput{ background:url(/resources/natopia-notifications/images/inputBg.png) no-repeat; color:#757575;width:327px; height:27px; padding:0 8px; border:none; outline:none; margin:5px 0;}
+.smallInput{background:url(/resources/natopia-notifications/images/smallinpuut.png) no-repeat !important; width:146px !important; height:28px !important; padding:0 7px; border:none; outline:none;
+ margin:3px 0px;  color: #757575;}
+ .smallInput1{background:url(/resources/natopia-notifications/images/smallinpuut.png) no-repeat !important; width:146px !important; height:28px !important; padding:0 7px; border:none; outline:none;
+ margin:3px 7px;  color: #757575;}
+ .bginput{background:url(/resources/natopia-notifications/images/inputBg.png) no-repeat; color:#757575;width:327px; height:27px; padding:0 8px; border:none; outline:none; margin:5px 0;}
+ 
+ 
+.select{ opacity:0; font-family:Arial, Helvetica, sans-serif; width:157px; height:25px; position:absolute; z-index:9999999; left:5px; top:23px; filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";color: #757575;}
+.select1{ opacity:0; font-family:Arial, Helvetica, sans-serif; width:157px; height:25px; position:absolute; z-index:9999999; left:5px; top:23px; filter: alpha(opacity=0);-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";color: #757575;}
+.input{ opacity:1;
+ font-family:Arial, Helvetica, sans-serif; 
+font-size:13px;
+position:absolute; 
+z-index:99;
+padding: 0 10px;
+ width:139px; height:27px; left:0;
+ border:0;
+ top:23px;color: #757575;
+ background:url(/resources/natopia-notifications/images/slectInputbg.jpg) no-repeat;
+ }
+.signup{ height:35px; float:left; padding-top:8px;}
+.signup_left{ float:left; height:35px; width:8px;}
+.signup_mid{ float:left;height:35px; background:url(/resources/natopia-notifications/images/signup_mid.png) repeat-x; font-family: 'helvetica_neueregular'; font-size:20px; padding:2px 0;color:#FFF; text-transform:uppercase;}
+#pop .signup_mid{ float:left;height:35px; background:url(/resources/natopia-notifications/images/signup_mid.png) repeat-x; font-family: 'helvetica_neueregular'; font-size:20px; padding:7px 10px;color:#FFF; text-transform:uppercase;}
+.signup_right{ float:left;height:35px; width:9px;}
+#pop2 .footerPopup{
+	padding:0px 10px;
+	color:#3b3b3b;
+	line-height:15px;
+	font-size:11px!important;
+	padding-bottom:13px;
+	background-color: #fafafa;
+	background-image: url(/resources/natopia-notifications/images/ftrbg.jpg);
+	background-repeat: repeat-x;
+	background-position: left top;
+	-webkit-border-radius: 0px 0px 5px 5px;
+border-radius: 0px 0px 5px 5px; 
+}
+#pop2 .signup_mid{
+	float:left;
+	height:35px;
+	background:url(/resources/natopia-notifications/images/signup_mid.png) repeat-x;
+	font-family: 'helvetica_neueregular';
+	font-size:20px;
+	color:#FFF;
+	text-transform:uppercase;
+	line-height: 16px;
+	padding-top: 9px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+	padding-left: 10px;
+}
+
+/*#pop .fbkBtn_right a{margin-top: 2px!important;}
+#pop .twitterBtn_right a{margin-top: 2px!important;}
+#pop .footerPopup{height:79px!important;}*/
+
+
+.or{float:left; margin-top:20px; margin-left:5px; font-weight:bold; font-family:Calibri; font-size:16px;}
+.or1{ margin-top:7px; margin-left:20px; font-weight:bold; font-family:Calibri; font-size:16px;}
+
+
+
+/*Step 2 Css Starts*/
+
+.p_heading2 span {
+    background: url("/resources/natopia-notifications/images/black-roundnumber-img.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: bold;
+    height: 28px;
+    padding-left: 10px;
+    padding-top:6px;
+    width: 30px;
+}
+.buttons1 {
+    height: auto;
+	top: -12px;
+    margin-left: 914px;
+    position: absolute;
+    width: 50px;
+}
+.youraccount {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #BDBDBD;
+    box-shadow: 0 2px 4px #888888;
+    float: left;
+    font-size: 13px;
+    height: auto;
+    margin: 20px 0;
+    width: 100%;
+	margin-top:20px;
+}
+.youraccount .create_account {
+ float: left;
+    height: auto;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    width: 480px;
+}
+.youraccount .create_account h2 {
+    color: #3A3A3A;
+    float: left;
+    font-family: 'HelveticaNeueLTProRegular';
+    font-size: 21px;
+    font-weight: normal;
+    margin: 0 0 0 15px;
+	font-weight:bold;
+}
+.youraccount .create_account .formmain{
+	width:475px;
+	height:auto;
+	margin-top:15px;
+	float:left;
+}
+.youraccount .create_account .formmain .formbox{
+	width:auto;
+	height:auto;
+	float:left;
+	margin-left:15px;
+	position:relative;
+}
+.youraccount .create_account .formmain .rgtpnl{
+	margin-left:25px !important;
+}
+.youraccount .create_account .formmain .formbox label {
+    color: #737373;
+    float: none;
+    font-family: Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 0 0 0px;
+    vertical-align: middle;
+}
+.youraccount .create_account .formmain .formbox .smallInput {
+    background: url("/resources/natopia-notifications/images/crt_acnt_txtsml.png") no-repeat scroll 0 0 transparent !important;
+    border: medium none;
+    color: #757575;
+    height: 32px !important;
+    margin: 3px 0;
+    outline: medium none;
+    padding: 0 7px;
+    width: 179px !important;
+}
+	
+.youraccount .create_account .formmain .formbox .lrgInput {
+    background: url("/resources/natopia-notifications/images/crt_acnt_txtlrg.png") no-repeat scroll 0 0 transparent !important;
+    border: medium none;
+    color: #757575;
+    height: 32px !important;
+    margin: 3px 0;
+    outline: medium none;
+    padding: 0 7px;
+    width: 394px !important;
+}
+
+.orng_btn {
+    float: left;
+    height: 35px;
+    padding-top: 8px;
+}
+.orng_btn_left {
+    float: left;
+    height: 35px;
+    width: 8px;
+}
+.orng_btn_mid {
+	background: url("/resources/natopia-notifications/images/signup_mid.png") repeat-x scroll 0 0 transparent;
+	color: #FFFFFF;
+	float: left;
+	font-size: 17px;
+	height: 35px;
+	line-height: 19px;
+	text-transform: uppercase;
+	padding-top: 9px;
+	padding-right: 25px;
+	padding-bottom: 0;
+	padding-left: 25px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.orng_btn_right {
+    float: left;
+    height: 35px;
+    width: 9px;
+}
+.youraccount .signin {
+	width:436px;
+	height:auto;
+	float: right;
+	min-height:240px;
+	padding-top:20px;
+	padding-bottom:30px;
+	background-color:#f5f5f5;
+	border-left:1px #d2d2d2 solid;
+}
+.youraccount .signin h2{
+	color: #3A3A3A;
+    float: left;
+    font-family: 'HelveticaNeueLTProRegular';
+    font-size: 22px;
+    font-weight: normal;
+    letter-spacing: -1px;
+    margin: 0 0 0 45px;
+	font-weight:bold;
+}
+
+.youraccount .signin .formbox1{
+	width:auto;
+	height:auto;
+	float:left;
+	margin-left:42px;
+	margin-top:12px;
+}
+.youraccount .signin .formbox1 label {
+    color: #737373;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    margin: auto 0 auto 5px;
+    vertical-align: middle;
+	width:88px;
+	line-height:38px;
+}
+.youraccount .signin .formbox1 .smallInput {
+    background: url("/resources/natopia-notifications/images/signin_acnt_txtsml.png") no-repeat scroll 0 0 transparent !important;
+    border: medium none;
+    color: #757575;
+    height: 32px !important;
+    margin: 3px 0;
+    outline: medium none;
+    padding: 0 7px;
+    width: 229px !important;
+}
+.youraccount .signin .signin_btn{
+     background: url("/resources/natopia-notifications/images/signin_orangbg.png") no-repeat scroll 0 0 transparent !important;
+    color: #FFFFFF;
+    float: left;
+   font-family: 'Fjalla One', sans-serif;
+    font-size: 17px;
+    height: 38px;
+    line-height: 36px;
+    margin-left: 135px;
+    margin-top: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 266px;
+}
+.youraccount .signin .connect_fb{
+    background: url("/resources/natopia-notifications/images/signin_fbbg.png") no-repeat scroll 0 0 transparent !important;
+    color: #fff;
+    height: 38px ;
+    width: 243px;
+	text-align:center;
+	float:left;
+	margin-left:135px;
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+	line-height:38px;
+	margin-top:14px;
+	padding-left:15px;
+}
+.youraccount .signin .or{
+    color: #737373;
+    height: 10px ;
+    width: 236px;
+	text-align:center;
+	float:left;
+	margin-left:137px;
+	font-family: HelveticaCondensed;
+    font-size: 17px;
+	line-height:10px;
+	margin-top:15px;
+}
+
+/*Step 2 Css Ends*/		
+
+
+
+/*Step 4 Css Starts*/		
+
+.information_txt	
+	{
+	float: left;
+    font-size: 12px;
+    padding: 10px 20px 10px 16px;
+    width: 910px;
+	line-height:18px;
+}	
+.information_txt a	
+	{
+	text-decoration:underline;
+	color:#868686;
+}
+.information_txt img	
+	{
+		float:left;
+		margin-right:5px;
+}	
+.cardInput{background:url(/resources/natopia-notifications/images/cardinput.png) no-repeat !important; width:46px !important; height:28px !important; padding:0 7px; border:none; outline:none;
+ margin:3px 0px;  color: #757575; float:left;}
+.cvv_img{ width:auto;
+ height:auto; float:left; margin-left:10px; margin-top:6px;}
+ 
+ .qty
+	{
+	 
+	color:#424242;
+	font-size:12px;	
+	float:left;
+	width:110px;
+	text-align:center;
+	}
+	
+.exp_dt {
+    background: url("/resources/natopia-notifications/images/drp_sml.png") no-repeat scroll 0 0 transparent;
+    color: #7C7C7C;
+    float: left;
+    font-family: arial;
+    font-size: 14px;
+    height: 30px;
+    margin: 5px 0 0 0px;
+    padding: 8px 0 0 12px;
+    width: 65px;
+}	
+.exp_dt span
+	{
+	width:40px;
+	float:left;
+}
+.card_img{ 
+ float: left;
+    height: auto;
+    margin-left: 3px;
+    margin-right: 14px;
+    width: auto;}
+.card_chkbox
+	{
+		width:auto;
+		height:auto;
+		float:left;
+		margin-top:5px;
+}
+.card_chkbox2
+	{
+		width:auto;
+		height:auto;
+		float:left;
+		margin-top:5px;
+		margin-left:7px;
+}
+.agree_main
+	{
+		 color: #666666;
+    float: left;
+    font-size: 11px;
+    height: auto;
+    line-height: 25px;
+    margin-left: 15px;
+    margin-top: 50px;
+    width: 460px;
+}
+.agree_main a
+	{
+		color:#666666;
+		text-decoration:underline;
+}
+.rcv_email
+	{
+		width:460px;
+		height:auto;
+		float:left;
+		font-size:11px;
+		margin-left:15px;
+		color:#666666;
+		line-height:25px;
+}
+.rcv_email a
+	{
+		color:#666666;
+		text-decoration:underline;
+}
+
+.step4_rgtmain {
+  float: right;
+    height: auto;
+    margin-right: 36px;
+    min-height: 280px;
+    padding-bottom: 30px;
+    padding-top: 15px;
+    width: 350px;
+}	
+.step4_rgtmain .formbox label {
+    color: #737373;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    margin: auto 0 auto 5px;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+.step4_rgtmain .formbox .smallInput {
+    background: url("/resources/natopia-notifications/images/crt_acnt_txtsml.png") no-repeat scroll 0 0 transparent !important;
+    border: medium none;
+    color: #757575;
+    height: 32px !important;
+    margin: 3px 0;
+    outline: medium none;
+    padding: 0 7px;
+    width: 179px !important;
+}
+.step4_rgtmain .order_ttl {
+	 color: #737373;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    height: auto;
+    margin-top: 25px;
+    width: 100%;
+}
+.step4_rgtmain .due_ttl {
+	height:auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+	width:43%;
+	float:left;
+}
+.step4_rgtmain .due_ttl span {
+    font-size: 14px;
+}
+.step4_rgtmain .sb_total {
+ height: auto;
+    margin-top: 10px;
+    width: 100%;
+	float:left;
+}
+.step4_rgtmain .sb_total .txt {
+	width:43%;
+	height:auto;
+	float:left;
+	font-size:20px;
+}
+.step4_rgtmain .sb_total .prc {
+	   float: right;
+    font-size: 20px;
+    height: auto;
+    text-align: right;
+    width: auto;
+}
+.step4_rgtmain .sb_total .prc span {
+    font-size: 14px;
+    font-weight:bold;
+}
+.step4_rgtmain .sb_total .txt1 {
+	 color: #737373;
+    float: left;
+    font-weight: bold;
+    height: auto;
+    width: 51%;
+}
+.step4_rgtmain .sb_total .prc1 {
+	color: #737373;
+    float: right;
+    font-weight: bold;
+    height: auto;
+    text-align: right;
+    width: auto;
+}
+.step4_rgtmain .sb_total .prc1 span {
+	font-size:16px;
+}
+.step4_rgtmain .total_main {
+	border-top: 2px solid #666666;
+    float: right;
+    height: auto;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.step4_rgtmain .booking {
+    background: url("/resources/natopia-notifications/images/booking.png") no-repeat scroll 0 0 transparent !important;
+    color: #FFFFFF;
+    float: right;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    height: 38px;
+    line-height: 40px;
+    margin-top: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 300px;
+}	
+.step4_rgtmain .ftrtxt{
+	height:auto;
+	float:right;
+	text-align:center;
+	font-size:11px;
+	color: #666666;
+	margin-top:14px;
+}
+
+/*Step 4 Css Ends*/	
+.radio {
+	height: 25px;
+	width: 19px;
+	float:left;
+	background: url("/resources/natopia-notifications/images/radio.png");
+	background-repeat:no-repeat;
+	cursor: default;
+	margin-top: 5px;
+	margin-right: 0;
+	margin-bottom: 3px;
+	margin-left: 0;
+	padding-top: 0;
+	padding-right: 0px;
+	padding-bottom: 0;
+	padding-left: 3px;
+}
+.checkbox {
+	height: 25px;
+	width: 19px;
+	float:left;
+	padding: 0 0 0 12px;
+	background: url("/resources/natopia-notifications/images/checkbox.png") no-repeat;
+	cursor: default;
+	text-align:left;
+}
+.checkbox input,.radio input {
+	display: none;
+}
+.checkbox input.show,.radio input.show {
+	display: inline;
+}
+.selected {
+	background-position: 0 -52px;
+}
+.block {
+	width: 50%;
+	float: left;
+}			
+
+.qty-box1 {
+    background: url("/resources/natopia-notifications/images/qty-img.png") no-repeat scroll 0 0 transparent;
+    color: #7C7C7C;
+    float: left;
+    font-family: arial;
+    font-size: 14px;
+    height: 30px;
+    margin: 9px 0 0 16px;
+    padding: 10px 0 0 15px;
+    width: 75px;
+}	
+.qty-box1 span
+	{
+	
+	width:40px;
+	float:left;
+	}	
+	
+.newListSelected {
+    background: url("/resources/natopia-notifications/images/arrow_dwn.png") no-repeat scroll 32px 2px transparent;
+    border-radius: 3px 3px 3px 3px;
+    color: #898989;
+    cursor: pointer;
+    float: left;
+    font-size: 12px;
+    height: 20px;
+    margin: 0;
+    padding: 3px 0 0 3px;
+    width: 45px;
+}
+.cardNum label.error{ position: absolute; width: 256px; top: 50px; }
+.cvv label.error{ position: absolute; width: 140px; top: 46px; }
+.cvv input.error{width:59px !important;}
+
+
+.buygft_formmain {
+    background-color: #F5F5F5;
+    float: left;
+    height: 284px;
+    margin-top: 10px;
+    padding: 15px;
+    width: 920px;
+}
+
+
+.buygft_formmain h2 {
+    color: #3A3A3A;
+    float: left;
+    font-family: 'HelveticaNeueLTProRegular';
+    font-size: 21px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.buygft_formmain .formboxmain .formbox {
+    float: left;
+    height: auto;
+    width: 264px;
+	 margin-top: 25px;
+}
+
+.buygft_formmain .formboxmain .formbox label {
+    color: #434242;
+    float: left;
+    font-family: 'helvetica_neueregular';
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    padding-left: 2px;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+.gift_margin {
+    margin-left: 50px;
+}
+
+.buygft_formmain .formboxmain .formbox .gftinput {
+    background: url("/resources/natopia-notifications/images/buygft_txt.png") no-repeat scroll 0 0 transparent !important;
+    border: medium none;
+    color: #757575;
+    float: left;
+    height: 40px !important;
+    margin: 3px 0;
+    outline: medium none;
+    padding: 0 7px;
+    width: 245px !important;
+}
+
+
+.radiobtn1 {
+    line-height: 23px;
+    margin: 5px 0 12px;
+}
+.radiomain {
+    color: #434242 !important;
+    float: left;
+    height: auto;
+    margin-right: 20px;
+    width: auto;
+}
+.buygft_formmain .formboxmain .formbox textarea {
+  
+    border: medium none;
+    color: #757575;
+    float: left;
+    height: 84px !important;
+    margin: 3px 0;
+    outline: medium none;
+    padding: 7px 7px 10px;
+    width: 560px !important;
+}
+
+.radio {
+    background: url("/resources/natopia-notifications/images/radio.png") no-repeat scroll 0 0 transparent;
+    cursor: default;
+    float: left;
+    height: 25px;
+    margin: 5px 0 3px;
+    padding: 0 0 0 3px;
+    width: 19px;
+}
+.radio_mrgn {
+    margin: 0 !important;
+}

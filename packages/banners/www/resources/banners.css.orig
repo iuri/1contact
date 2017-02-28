@@ -1,0 +1,33 @@
+.banners_images_portlet { width:773px; background:#E5E5E5; border:1px solid #D4D4D4; float:left; }
+.banners_images_portlet ul { display:block; margin-left:5px; float:left; }
+.banners_images_portlet li { width:140px; height:120px; background:#FFF; border:2px solid #DBDBDB; display:block; float:left; margin:9px 0 6px 0; }
+.banners_images_portlet li:hover { border:2px solid #999; }
+
+
+
+/* Horizontal Carousel */
+.banners_images_portlet #banner_carousel {  margin-bottom: 10px;  height:73px;  position: relative;}
+.banners_images_portlet #banner_carousel .container {float: left; width: 705px; position: relative; overflow: hidden; margin-right:5px;}
+.banners_images_portlet #banner_carousel ul { margin: 0; padding:0; width: 100000px; position: relative; top: 0; left: 0;}                      
+.banners_images_portlet #banner_carousel ul li { height: 72px; text-align: center; list-style:none; float:left;}
+.banners_images_portlet #banner_carousel .previous_button { float:left; width: 24px; height: 24px; background: url(/resources/banners/images/previous_button.gif); z-index: 100;  cursor: pointer; margin:30px 5px 0 5px;}
+.banners_images_portlet #banner_carousel .previous_button_over { background: url(/resources/banners/images/previous_button.gif);}
+.banners_images_portlet #banner_carousel .previous_button_disabled {background: url(/resources/banners/images/previous_button.gif); cursor: default;}
+.banners_images_portlet #banner_carousel .next_button {float:left; width: 24px; height: 24px; margin-top:30px; background: url(/resources/banners/images/next_button.gif);z-index: 100;cursor: pointer;}
+.banners_images_portlet #banner_carousel .next_button_over { background: url(/resources/banners/images/next_button.gif);}
+.banners_images_portlet #banner_carousel .next_button_disabled { background: url(/resources/banners/images/next_button.gif); cursor: default;}
+
+
+
+
+
+#banners_tworow { width:520px; background:#CDCED3; border:1px solid #D4D4D4; float:left;height: 190px;}
+#banners_tworow ul { display:block; margin-left:5px; float:left; height:200px;}
+#banners_tworow li { width:140px; display:block; margin-top:15px }
+#banners_tworow li img { margin-bottom:5px; }
+#banners_tworow div#banner_carousel { margin-bottom: 10px; height:73px; position: relative;}
+#banners_tworow div#banner_carousel #large { height: 200px;}
+#banners_tworow div#banner_carousel #large li a img { margin-bottom: 10px;}
+#banners_tworow div#banner_carousel #large li { margin-left: 10px;}
+
+.banners_list {padding:8px 5px;}

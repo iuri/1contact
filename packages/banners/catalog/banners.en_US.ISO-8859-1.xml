@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="banners" package_version="0.2d" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="Banner_new">Banner new</msg>
+  <msg key="Delete">Delete</msg>
+  <msg key="Edit">Edit</msg>
+  <msg key="Image">Image</msg>
+  <msg key="New">New</msg>
+</message_catalog>

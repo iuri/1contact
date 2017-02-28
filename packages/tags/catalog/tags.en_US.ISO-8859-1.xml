@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="tags" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="Add_tag">Add a tag</msg>
+  <msg key="All">All</msg>
+  <msg key="Author">Author</msg>
+  <msg key="Click_a_tag">Click a tag to add it to 'Your Tags' field.</msg>
+  <msg key="Creation_date">Creation date</msg>
+  <msg key="Document">Document Name</msg>
+  <msg key="Edit_tags">Edit tags</msg>
+  <msg key="goback">Return where you come from</msg>
+  <msg key="item_tags_following">A list of this page's tags follows</msg>
+  <msg key="Last_modified">Last modified</msg>
+  <msg key="Page_Tags">The page Tags</msg>
+  <msg key="Popular_Tags">Popular Tags</msg>
+  <msg key="Rows_per_page">Rows per page</msg>
+  <msg key="Save">Save</msg>
+  <msg key="system_tags_following">A list of the popular Tags used in the system follows</msg>
+  <msg key="Tagged_items">Tagged Items for %tag%</msg>
+  <msg key="Tags_updated">Tags updated.</msg>
+  <msg key="Type">Document Type</msg>
+  <msg key="Use_spaces">Use spaces to separate tags, an underline to join two words.</msg>
+  <msg key="Your_Tags">Your Tags</msg>
+</message_catalog>

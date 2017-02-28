@@ -1,0 +1,28 @@
+<master>
+
+
+
+
+
+
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+
+</script>
+
+
+
+<table class="table">
+        <thead>
+          <tr>
+            <th>Check in: <input type="text" class="span2" value="" id="dpd1" ></th>
+            <th>Check out: <input type="text" class="span2" value="" id="dpd2" ></th>
+          </tr>
+        </thead>
+      </table>
+          </div>
+          <pre class="prettyprint linenums">var nowTemp = new Date();&#10;var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);&#10;&#10;var checkin = $(&#39;#dpd1&#39;).datepicker({&#10;  onRender: function(date) {&#10;    return date.valueOf() &lt; now.valueOf() ? &#39;disabled&#39; : &#39;&#39;;&#10;  }&#10;}).on(&#39;changeDate&#39;, function(ev) {&#10;  if (ev.date.valueOf() &gt; checkout.date.valueOf()) {&#10;    var newDate = new Date(ev.date)&#10;    newDate.setDate(newDate.getDate() + 1);&#10;    checkout.setValue(newDate);&#10;  }&#10;  checkin.hide();&#10;  $(&#39;#dpd2&#39;)[0].focus();&#10;}).data(&#39;datepicker&#39;);&#10;var checkout = $(&#39;#dpd2&#39;).datepicker({&#10;  onRender: function(date) {&#10;    return date.valueOf() &lt;= checkin.date.valueOf() ? &#39;disabled&#39; : &#39;&#39;;&#10;  }&#10;}).on(&#39;changeDate&#39;, function(ev) {&#10;  checkout.hide();&#10;}).data(&#39;datepicker&#39;);</pre>
+          <hr>
+

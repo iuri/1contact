@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="videos" locale="pt_BR" charset="ISO-8859-1">
+
+  <msg key="Accept_Term">Aceito o Termo de Responsabilidade</msg>
+  <msg key="Add_video">Adicionar Vídeo</msg>
+  <msg key="Admin">Admin</msg>
+  <msg key="Ads">Propaganda</msg>
+  <msg key="Advertising">Propaganda</msg>
+  <msg key="author">autor</msg>
+  <msg key="Author">Ator</msg>
+  <msg key="By">Por</msg>
+  <msg key="CC">CC</msg>
+  <msg key="Class">Aula(Tutorial)</msg>
+  <msg key="Comments">Comentários</msg>
+  <msg key="Community">Comunidade</msg>
+  <msg key="community">comunidade</msg>
+  <msg key="Click_here">Clique Aqui</msg>
+  <msg key="Confirme_remove_Videos">Deseja realmente remover este vídeo?</msg>
+  <msg key="Creator">Criador/msg>
+  <msg key="creator">criador</msg>
+  <msg key="Debate">Debate</msg>
+  <msg key="Description">Descrição</msg>
+  <msg key="description">descrição</msg>
+  <msg key="DGPL">DGPL</msg>
+  <msg key="Documentary">Documentário</msg>
+  <msg key="Download_Video">Baixar Video</msg>
+  <msg key="file">arquivo</msg>
+  <msg key="File">Arquivo</msg>
+  <msg key="GPL">GPL</msg> 
+  <msg key="Go_Back">Voltar</msg> 
+  <msg key="in">em</msg>
+  <msg key="Interview">Entrevista</msg>
+  <msg key="Institutional">Institucional</msg>
+  <msg key="License">Licensa</msg>
+  <msg key="More">Mais</msg>
+  <msg key="More_Videos">Mais Videos</msg>
+  <msg key="Name">Nome</msg>
+  <msg key="name">nome</msg>
+  <msg key="New">Novo</msg>
+  <msg key="No">Não</msg>
+  <msg key="publish_date_select">Data de Publicação</msg>
+  <msg key="Posted_by">Postado por</msg>
+  <msg key="Recent_Videos">Videos Recentes</msg>
+  <msg key="Relationship_Videos">Relacionamento de Vídeos</msg>
+  <msg key="Related_Videos">Videos Relacionados</msg>
+  <msg key="Search">Busca</msg>
+  <msg key="See_others">Visualizar Outros</msg>
+  <msg key="Source">Fonte</msg>
+  <msg key="source">fonte</msg>
+  <msg key="Speech">Discurso</msg>
+  <msg key="Term">Termo</msg>
+  <msg key="This_file_isnt_video_file">Este não é um arquivo de vídeo</msg>
+  <msg key="Thumbnail">Thumbnail</msg>
+  <msg key="Type">Tipo</msg>
+  <msg key="Video">Video</msg>
+  <msg key="Video_del">Remover vídeo</msg>
+  <msg key="Video_dont_removed">Vídeo não removido</msg>
+  <msg key="Video_Edit">Editar Vídeo</msg>
+  <msg key="Videos">Videos</msg>
+  <msg key="Videos_removed">Vídeo removido</msg>
+  <msg key="Yes">Sim</msg>
+  <msg key="y-m-d">Formato YYYY-MM-DD</msg>
+</message_catalog>
+
+
+<message_catalog package_key="categories" locale="pt_BR" charset="ISO-8859-1">
+  <msg key="Type">Tipo<msg>
+  <msg key="Description">Descricao<msg>
+  <msg key="Interview">Entrevista<msg>
+  <msg key="Institutional">Institucional<msg>
+  <msg key="Ads">Propaganda<msg>
+  <msg key="Class">Aula<msg>
+  <msg key="Documentary">Documentario<msg>
+  <msg key="Speech">Discurso<msg>
+  <msg key="Debate">Debate<msg>
+  <msg key="License">Licensa<msg>
+  <msg key="CC">CC<msg>
+  <msg key="DGPL">DGPL<msg>
+  <msg key="GPL">GPL<msg>
+</message_catalog>
+

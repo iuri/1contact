@@ -1,0 +1,33 @@
+set extra_url_list [split [ad_conn extra_url] "/"]
+
+set package_id [ad_conn package_id]
+
+set summary_context_id [db_string package_id {
+     select channel_id as summary_context_id
+     from   weblogger_channels w
+     where  w.package_id = :package_id
+     and    w.user_id is null
+} -default {}]
+
+if { ![empty_string_p $summary_context_id] } {
+    set datasource [acs_sc_call RssGenerationSubscriber datasource \
+	    $summary_context_id pinds_blog_entries]
+    if { [empty_string_p $datasource] } {
+        ns_log Error "Empty datasource returned from $impl_name for context $summary_context_id in rss_gen_report. Probably because the implementation hasn't been bound."
+        return
+    }
+    set args ""
+    foreach {name val} $datasource {
+	regsub -all {[\]\[\{\}""\\$]} $val {\\&} val
+	append args "-$name \"$val\" "
+	if { [lsearch [list channel_link channel_title] $name] >= 0 } {
+	    set $name $val
+	}
+    }
+    set xml [ad_apply rss_gen $args]
+    ns_set put [ns_conn outputheaders] "Content-Disposition" "attachment; filename=\"rss.xml\""
+    ReturnHeaders "application/xml"
+    ns_write $xml
+} else {
+    ns_returnnotfound
+}

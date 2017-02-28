@@ -1,0 +1,255 @@
+-- /packages/iurix-mails/sql/postgresql/upgrade/upgrade-0.3d-0.4d.sql
+
+SELECT acs_log__debug('/packages/iurix-mails/sql/postgresql/upgrade/upgrade-0.3d-0.4d.sql', '');
+
+
+CREATE OR REPLACE FUNCTION inline_0 () 
+RETURNS integer AS '
+
+DECLARE
+	row	record;
+
+BEGIN
+	ALTER TABLE iurix_mails DROP COLUMN date_temp;
+	ALTER TABLE iurix_mails DROP COLUMN x_arrival_time_temp;
+	ALTER TABLE iurix_mails DROP COLUMN x_original_arrival_time_temp;
+
+	ALTER TABLE iurix_mails ADD COLUMN date_temp VARCHAR(255);
+	ALTER TABLE iurix_mails ADD COLUMN x_arrival_time_temp VARCHAR(255);
+	ALTER TABLE iurix_mails ADD COLUMN x_original_arrival_time_temp VARCHAR(255);
+
+
+	FOR row IN
+	    SELECT mail_id, date, x_arrival_time, x_original_arrival_time FROM iurix_mails
+ 	LOOP
+	    UPDATE iurix_mails SET 
+	    date_temp = row.date, 
+	    x_arrival_time_temp = row.x_arrival_time, 
+	    x_original_arrival_time_temp = row.x_original_arrival_time
+	    WHERE mail_id = row.mail_id;
+	END LOOP;
+
+		
+	ALTER TABLE iurix_mails DROP COLUMN date;
+	ALTER TABLE iurix_mails DROP COLUMN x_arrival_time;
+	ALTER TABLE iurix_mails DROP COLUMN x_original_arrival_time;
+
+
+	ALTER TABLE iurix_mails RENAME COLUMN date_temp TO date;
+	ALTER TABLE iurix_mails RENAME COLUMN x_arrival_time_temp TO x_arrival_time;
+	ALTER TABLE iurix_mails RENAME COLUMN x_original_arrival_time_temp TO x_original_arrival_time;
+
+
+	RETURN 0;
+
+END;' LANGUAGE 'PLPGSQL';
+
+
+--SELECT inline_0 ();
+DROP FUNCTION inline_0 ();
+
+
+
+CREATE OR REPLACE FUNCTION inline_1 () 
+RETURNS integer AS '
+
+DECLARE
+	row	record;
+
+BEGIN
+	
+	ALTER TABLE iurix_mails DROP COLUMN date_temp;
+	ALTER TABLE iurix_mails DROP COLUMN x_arrival_time_temp;
+	ALTER TABLE iurix_mails DROP COLUMN x_original_arrival_time_temp;
+
+
+	DROP RULE iurix_mails_r ON iurix_mailsi;
+	DROP FUNCTION iurix_mails_f(iurix_mailsi);
+	DROP VIEW iurix_mailsi;
+	DROP VIEW iurix_mailsx;
+
+	ALTER TABLE iurix_mails ALTER COLUMN date TYPE VARCHAR(255);
+	ALTER TABLE iurix_mails ALTER COLUMN x_arrival_time TYPE VARCHAR(255);
+	ALTER TABLE iurix_mails ALTER COLUMN x_original_arrival_time TYPE VARCHAR(255);
+
+
+	RETURN 0;
+
+END;' LANGUAGE 'PLPGSQL';
+
+SELECT inline_1 ();
+DROP FUNCTION inline_1 ();
+
+
+CREATE VIEW iurix_mailsx AS 
+       SELECT acs_objects.object_id, acs_objects.object_type, acs_objects.title AS object_title, acs_objects.package_id AS object_package_id, acs_objects.context_id, acs_objects.security_inherit_p, acs_objects.creation_user, acs_objects.creation_date, acs_objects.creation_ip, acs_objects.last_modified, acs_objects.modifying_user, acs_objects.modifying_ip, acs_objects.tree_sortkey, acs_objects.max_child_sortkey, cr.revision_id, cr.title, cr.item_id, cr.description, cr.publish_date, cr.mime_type, cr.nls_language, i.name, i.parent_id, iurix_mails.mail_id, iurix_mails.package_id, iurix_mails.user_id, iurix_mails.type, iurix_mails.subject, iurix_mails.bodies, iurix_mails.date, iurix_mails.to_address, iurix_mails.from_address, iurix_mails.delivered_to, iurix_mails.importance, iurix_mails.dkim_signature, iurix_mails.headers, iurix_mails.message_id, iurix_mails.received, iurix_mails.return_path, iurix_mails.x_arrival_time, iurix_mails.x_mailer, iurix_mails.x_original_to, iurix_mails.x_original_arrival_time, iurix_mails.x_originating_ip, iurix_mails.x_priority
+       FROM acs_objects, cr_revisions cr, cr_items i, cr_text, iurix_mails
+       WHERE acs_objects.object_id = cr.revision_id AND cr.item_id = i.item_id AND acs_objects.object_id = iurix_mails.mail_id;
+
+CREATE VIEW iurix_mail AS 
+       SELECT acs_objects.object_id, acs_objects.object_type, acs_objects.title AS object_title, acs_objects.package_id AS object_package_id, acs_objects.context_id, acs_objects.security_inherit_p, acs_objects.creation_user, acs_objects.creation_date, acs_objects.creation_ip, acs_objects.last_modified, acs_objects.modifying_user, acs_objects.modifying_ip, acs_objects.tree_sortkey, acs_objects.max_child_sortkey, cr.revision_id, cr.title, cr.item_id, content_revision__get_content(cr.revision_id) AS data, cr_text.text_data AS text, cr.description, cr.publish_date, cr.mime_type, cr.nls_language, iurix_mails.mail_id, iurix_mails.package_id, iurix_mails.user_id, iurix_mails.type, iurix_mails.subject, iurix_mails.bodies, iurix_mails.date, iurix_mails.to_address, iurix_mails.from_address, iurix_mails.delivered_to, iurix_mails.importance, iurix_mails.dkim_signature, iurix_mails.headers, iurix_mails.message_id, iurix_mails.received, iurix_mails.return_path, iurix_mails.x_arrival_time, iurix_mails.x_mailer, iurix_mails.x_original_to, iurix_mails.x_original_arrival_time, iurix_mails.x_originating_ip, iurix_mails.x_priority
+       FROM acs_objects, cr_revisions cr, cr_text, iurix_mails
+       WHERE acs_objects.object_id = cr.revision_id AND acs_objects.object_id = iurix_mails.mail_id;
+
+
+
+
+CREATE OR REPLACE FUNCTION iurix_mails_f (iurix_mailsi) RETURNS void AS '
+DECLARE 
+	v_revision_id integer;
+BEGIN
+
+	SELECT content_revision__new(
+                                                            p_new.title,
+                                                            p_new.description,
+                                                            now(),
+                                                            p_new.mime_type,
+                                                            p_new.nls_language,
+                                                            case when p_new.text is null
+                                                                     then p_new.data
+                                                                     else p_new.text
+                                                                  end,
+                                                            content_symlink__resolve(p_new.item_id),
+                                                            p_new.revision_id,
+                                                            now(),
+                                                            p_new.creation_user,
+                                                            p_new.creation_ip,
+                                                            p_new.object_packag) into v_revision_id;
+
+				       INSERT INTO iurix_mails ( mail_id ) values (v_revision_id);
+
+	RETURN;
+END;' LANGUAGE 'plpgsql';
+
+
+
+
+CREATE RULE iurix_mails_r AS ON INSERT 
+       TO iurix_mailsi 
+       DO INSTEAD SELECT iurix_mails_f(new.*) AS iurix_mails_f;
+
+
+DROP FUNCTION iurix_mails__new (
+       integer,	  	   -- mail_id
+       integer,	  	   -- package_id
+       integer,	    	   -- user_id
+       varchar,	    	   -- type
+       varchar,	    	   -- subject
+       text,	    	   -- bodies
+       timestamptz, 	   -- date
+       varchar(255),	   -- to
+       varchar(255),	   -- from
+       varchar(255),	   -- delivered_to
+       varchar(255),	   -- importance
+       text,		   -- dkim_signature
+       text,		   -- headers
+       text,		   -- message_id
+       text,		   -- received
+       varchar(255),	   -- return_path
+       varchar(255),	   -- x_mailer
+       varchar(255),	   -- x_original_to
+       timestamptz,	   -- x_arrival_time
+       varchar(255),	   -- x_originating_ip
+       varchar(255)	   -- x_priority
+);
+
+
+CREATE OR REPLACE FUNCTION iurix_mails__new (
+       integer,	  	   -- mail_id
+       integer,	  	   -- package_id
+       integer,	    	   -- user_id
+       varchar,	    	   -- type
+       varchar,	    	   -- subject
+       text,	    	   -- bodies
+       varchar(255), 	   -- date
+       varchar(255),	   -- to
+       varchar(255),	   -- from
+       varchar(255),	   -- delivered_to
+       varchar(255),	   -- importance
+       text,		   -- dkim_signature
+       text,		   -- headers
+       text,		   -- message_id
+       text,		   -- received
+       varchar(255),	   -- return_path
+       varchar(255),	   -- x_mailer
+       varchar(255),	   -- x_original_to
+       varchar(255),	   -- x_arrival_time
+       varchar(255),	   -- x_originating_ip
+       varchar(255)	   -- x_priority
+) RETURNS integer AS '
+  DECLARE
+	p_mail_id		ALIAS FOR $1;
+	p_package_id		ALIAS FOR $2;
+       	p_user_id		ALIAS FOR $3;
+	p_type			ALIAS FOR $4;
+	p_subject	      	ALIAS FOR $5;
+	p_bodies	      	ALIAS FOR $6;
+	p_date		      	ALIAS FOR $7;
+	p_to		      	ALIAS FOR $8;
+	p_from		      	ALIAS FOR $9;
+	p_delivered_to	      	ALIAS FOR $10;
+	p_importance	      	ALIAS FOR $11;
+	p_dkim_signature      	ALIAS FOR $12;
+	p_headers		ALIAS FOR $13;
+	p_message_id		ALIAS FOR $14;
+	p_received		ALIAS FOR $15;
+	p_return_path		ALIAS FOR $16;
+	p_x_mailer		ALIAS FOR $17;
+	p_x_original_to		ALIAS FOR $18;
+	p_x_arrival_time	ALIAS FOR $19;
+       	p_x_originating_ip	ALIAS FOR $20;
+	p_x_priority		ALIAS FOR $21;
+	
+  BEGIN
+	
+  	INSERT INTO iurix_mails (
+	       mail_id,
+	       package_id,
+	       user_id,
+	       type,
+	       subject,
+	       bodies,
+	       date,
+	       to_address,
+	       from_address,
+	       delivered_to,
+	       importance,
+	       dkim_signature,
+	       headers,
+	       message_id,
+	       received,
+	       return_path,
+	       x_mailer,
+	       x_original_to,
+	       x_arrival_time,
+	       x_originating_ip,
+	       x_priority
+  	) VALUES (
+	       p_mail_id,
+	       p_package_id,
+	       p_user_id,
+	       p_type,
+	       p_subject,
+	       p_bodies,
+	       p_date,
+	       p_to,
+	       p_from,
+	       p_delivered_to,
+	       p_importance,
+	       p_dkim_signature,
+	       p_headers,
+	       p_message_id,
+	       p_received,
+	       p_return_path,
+	       p_x_mailer,
+	       p_x_original_to,
+	       p_x_arrival_time,
+	       p_x_originating_ip,
+	       p_x_priority
+	);
+
+
+	RETURN 0;
+
+  END' language 'plpgsql';
+

@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>Videos Documentation</title>
+
+<script type="text/javascript" language="Javascript" src="/resources/videos/swfobject.js"></script>
+
+</head>
+
+<body bgcolor=white text=black>
+
+<h2>Videos Documentation</h2>
+by <a href="mailto:alessandro.landim@gmail.com">Alessandro Landim</a>
+
+<hr>
+
+
+
+<h3>I.	Introduction</h3>
+
+<p>This document describes the requirements for Videos
+application. The videos application allows individuals to place
+their video files and share them with other members of that web 
+community or with the public at large. The video clip is downloaded but 
+begins playing as soon as a portion of the file has been received, like Youtube. 
+</p>
+
+<div id='mediaspace'>This text will be replaced</div>
+ 
+<script type='text/javascript'>
+	 var so = new SWFObject('/resources/videos/player.swf','mpl','480','295','9');
+	 so.addParam('allowfullscreen','true');
+	 so.addVariable('autostart','false');
+	 so.addVariable('file','/doc/videos/video.flv');
+	 so.addVariable('image','/doc/videos/video-image.jpeg');
+	 so.write('mediaspace');
+</script>
+
+
+
+
+<h3>II.	Vision Statement</h3>
+
+<p>Everybody can see videos in Youtube or in the other web site that offer you upload videos. 
+This sentenses is true when you access your home network or your family network, but if you 
+need to access one video in youtube when you stay in your work, it's can be not realy easy. 
+The goal of this application is upload institucional videos in a website and it will 
+be accessible for everyone.
+</p>
+
+<h3>III.  System/Application Overview</h3>
+
+<p>The Videos application will consist primarily of a user
+interface that allows individuals to upload your videos files and, the public, see it
+in a web browser with a player.
+</p>
+
+<h3>IV.	Use Case and User Scenarios</h3>
+
+<h4>Using Videos in subsite</h4>
+
+<p>The government create one web site to publicity a program content. 
+The kind of content that they have include a lot of videos and they need
+to show for everyone. Upload to Youtube don't work, because the people 
+at the work can't access Youtube.com. So, to resolve this problem, they need 
+to create one instance of videos package and upload their videos. 
+</p>
+
+
+<h3>V.	 Documentation</h3>
+
+<ul>
+<li><a href="requirements.html">Requirements Document</a>
+<li><a href="design.html">Design Document (TODO)</a>
+</ul>
+
+
+<h3>VI.  Authors</h3>
+
+    <li> System creator: <br>
+	<blockquote>
+       1.x : <a href="mailto:alessandro.landim@gmail.com">Alessandro Landim</a><br>
+	</blockquote>
+</ul>
+
+
+
+
+<h3>VII.  Revision History</h3>
+
+<table cellpadding=2 cellspacing=2 width=90% bgcolor=#efefef>
+<tr bgcolor=#e0e0e0>
+    <th width=10%>Document Revision #</th>
+    <th width=50%>Action Taken, Notes</th>
+    <th>When?</th>
+    <th>By Whom?</th>
+</tr>
+
+<tr>
+   <td>0.1</td>
+   <td>Creation</td>
+   <td>12/11/2009</td>
+   <td>Alessandro Landim </td>
+</tr>
+</table>
+
+<p>
+<hr>
+
+
+
+<address>
+<a href="alessandro.landim@gmail.com">alessandro.landim@gmail.com</a>
+</address>
+
+</p>
+
+</body>
+</html>

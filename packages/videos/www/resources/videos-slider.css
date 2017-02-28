@@ -1,0 +1,225 @@
+#wrap{
+	background: #F9F2DA url(http://paramoreredd.com/images/site/bg-repeat_x_homedark.jpg) repeat-x 0 0;
+}
+
+#dark #wrap{ background: #1B1E15 url(http://paramoreredd.com/images/site/bg-dark_tile.gif) repeat 0 0; }
+#dark #wrap-inner{ background: transparent url(http://paramoreredd.com/images/site/bg-dark_border.gif) repeat-x 0 0; }
+
+#light #wrap{ 
+		background-image: url(http://paramoreredd.com/images/site/bg-repeat_x_headerlight.jpg); 
+		background-repeat: repeat-x;
+}
+	
+/* tooltip ------------- */
+	
+
+#tooltip {
+	position: absolute;
+	z-index: 3000;
+	border: 1px solid #7f4207;
+	background-color: #f9f2da;
+	padding: 5px;
+	opacity: 0.75;
+}
+
+#tooltip h3, #tooltip div { margin: 0; }
+#tooltip h3 {
+		color: #7f4207;
+		font-size: 12px;
+		font-weight: normal;
+}
+	
+/* MASTHEAD
+----------------------------------------------------------------------------- */
+
+#masthead{
+	width: 980px;
+}
+
+#masthead-inner{
+		background: transparent url(/resources/videos/images/fundo.jpg) no-repeat 4px bottom;
+		height: 336px;
+		position: relative;
+}
+	
+#masthead h2{
+		color: #AAAE44;
+		height: 47px;
+		font-size: 40px;
+		letter-spacing: -3px;
+		text-indent: -13000em;
+}
+	
+		#masthead h1.tagline{
+			color: #b66611;
+			font-family: "Arial", "Century Gothic" Sans-Serif;
+			font-size: 18px;
+			font-weight: normal;
+			text-align: center;
+			padding: 5px 0 30px;
+		}
+		
+/* case study ------------- */
+
+#section-header h2#case-study-header{ 
+	background: transparent url(http://paramoreredd.com/images/site/h-case_study.png) no-repeat 0 0;
+	color: #eedc94;
+	font: bold 40px 'Arial';
+	margin: 0;
+	padding: 1px 0 0 0;
+	text-indent: 276px;
+	width: 900px;
+}
+
+#featured{
+        background: transparent url(http://paramoreredd.com/images/site/bg-feat_frame.png) no-repeat scroll 0 0;
+	bottom: 25px;
+	height: 217px;
+	left: 313px;
+	position: absolute;
+	width: 344px;
+	z-index: 10;
+}
+
+	#featured img{
+		position: absolute;
+		right: 13px;
+		top: 13px;
+	}
+	
+	#featured #panel{
+		bottom: -10px;
+		height: 36px;
+		left: 42px;
+		overflow: hidden;
+		position: absolute;
+		width: 260px;
+		z-index: 1;
+	}
+	
+		#featured #panel h3{
+			font-size: 0;
+			text-indent: -13000em;
+		}
+		
+			#featured #panel h3 a:link,
+			#featured #panel h3 a:visited{
+				display: block;
+				height: 36px;
+			}
+
+			#featured #panel h3 a:hover,
+			#featured #panel h3 a:active{ background-position: 0 -36px; }
+			
+				#featured #panel h3 a:link.act,
+				#featured #panel h3 a:visited.act{ background-position: 0 -72px; }
+		
+		#featured #panel p{
+			color: #efd093;
+			font-size: 11px;
+			line-height: 20px;
+			margin: 0 20px 15px;
+			text-align: center;
+		}
+		
+/* home projects ------------- */
+
+#project-slider-wrap{
+	height: 250px;
+	overflow: hidden;
+	margin: 0 auto;
+	position: relative;
+	width: 975px;
+	z-index: 2;
+}
+
+#project-slider{
+	height: 187px;
+	list-style: none;
+	margin: 0 auto;
+	overflow: hidden;
+	position: absolute;
+	top: 10px;
+	width: 978px;
+	z-index: 0;
+}
+
+	#project-slider li{ 
+		background: url(http://paramoreredd.com/images/site/bg-project_frames_drops.png);
+		float: left;
+		height: 187px;
+		position: relative;
+		width: 326px; 
+	}	
+		#project-slider li img{
+			left: 29px;
+			position: absolute;
+			top: 11px;
+		}
+		
+		#project-slider li .panel{
+			bottom: 4px;
+			height: 26px;
+			left: 61px;
+			overflow: hidden;
+			position: absolute;
+			width: 192px;
+			z-index: 15;
+		}
+		
+		#project-slider li .panel h3{
+			font-size: 0;
+			text-indent: -13000em;
+		}
+		
+			#project-slider li .panel h3 a:link,
+			#project-slider li .panel h3 a:visited{
+				display: block;
+				height: 26px;
+			}
+
+			#project-slider li .panel h3 a:hover,
+			#project-slider li .panel h3 a:active{ background-position: 0 -26px; }
+			
+				#project-slider li .panel h3 a:link.act,
+				#project-slider li .panel h3 a:visited.act{ background-position: 0 -52px; }
+			
+	
+		#project-slider li .panel p{ 
+			color: #93945e;
+			font-size: 10px;
+			line-height: 18px;
+			margin: 0 20px 15px;
+			text-align: center;
+		}
+		
+#masthead a:link#back,
+#masthead a:visited#back,
+#masthead a:link#next,
+#masthead a:visited#next{
+	background: transparent url(http://paramoreredd.com/images/site/btn-cycle_right.png) no-repeat 0 0;
+	display: block;
+	height: 65px;
+	position: absolute;
+	right: 0;
+	top: 170px;
+	text-indent: -13000em;
+	width: 65px;
+	z-index: 10;
+}
+
+	#masthead a:link#back,
+	#masthead a:visited#back{ 
+		background-image: url(http://paramoreredd.com/images/site/btn-cycle_left.png); 
+		right: auto; 
+	}
+
+#masthead a:hover#back,
+#masthead a:active#back,
+#masthead a:hover#next,
+#masthead a:active#next{ background-position: 0 -65px; z-index: 7; }
+		
+/* CONTENT-WRAP
+----------------------------------------------------------------------------- */
+
+

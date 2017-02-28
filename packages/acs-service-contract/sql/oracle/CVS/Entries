@@ -1,0 +1,15 @@
+/acs-sc-msg-types-create.sql/1.7/Fri Mar 12 18:48:53 2004//Topenacs-5-9-compat
+/acs-sc-msg-types-drop.sql/1.1/Wed Sep 19 22:59:01 2001//Topenacs-5-9-compat
+/acs-sc-object-types-create.sql/1.2/Thu Aug 31 16:31:54 2006//Topenacs-5-9-compat
+/acs-sc-object-types-drop.sql/1.1/Wed Sep 19 22:59:01 2001//Topenacs-5-9-compat
+/acs-sc-packages-create.sql/1.15/Fri Mar 12 18:48:53 2004//Topenacs-5-9-compat
+/acs-sc-packages-drop.sql/1.2/Fri Feb 15 15:36:22 2002//Topenacs-5-9-compat
+/acs-sc-tables-create.sql/1.5/Tue Sep 26 15:17:06 2006//Topenacs-5-9-compat
+/acs-sc-tables-drop.sql/1.2/Sun Oct 21 18:16:34 2001//Topenacs-5-9-compat
+/acs-sc-views-create.sql/1.4/Tue Sep 16 08:29:58 2003//Topenacs-5-9-compat
+/acs-sc-views-drop.sql/1.1/Wed Sep 19 22:59:01 2001//Topenacs-5-9-compat
+/acs-service-contract-create.sql/1.1/Wed Sep 19 22:59:01 2001//Topenacs-5-9-compat
+/acs-service-contract-drop.sql/1.1/Wed Sep 19 22:59:01 2001//Topenacs-5-9-compat
+/sc-sample-create.sql/1.1/Wed Sep 19 22:59:01 2001//Topenacs-5-9-compat
+/sc-sample-drop.sql/1.2/Tue Sep 30 12:10:02 2003//Topenacs-5-9-compat
+D

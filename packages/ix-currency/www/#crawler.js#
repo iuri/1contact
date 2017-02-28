@@ -1,0 +1,167 @@
+/* Text and/or Image Crawler Script v1.53 (c)2009-2012 John Davenport Scheuer
+   as first seen in http://www.dynamicdrive.com/forums/
+   username: jscheuer1 - This Notice Must Remain for Legal Use
+   updated: 4/2011 for random order option, more (see below)
+   */
+
+/* Update 4/2011 to v1.5 - Adds optional random property. Set it to true to use.
+   Fixes browser crash from empty crawlers, ad and image blocking software/routines.
+   Fixes behavior in some IE of breaking script if an image is missing.
+   Adds alt attributes to images without them to aid in diagnosis of missing/corrupt
+   images. This may be disabled with the new optional noAddedAlt property set to true.
+   Internal workings enhanced for greater speed of execution, less memory usage.
+   */
+
+/* Update 11/2011 - Detect and randomize td elements within a single table with a single tr */
+
+// updated 7/2012 to 1.51 for optional integration with 3rd party initializing scripts -
+// ref: http://www.dynamicdrive.com/forums/showthread.php?p=278161#post278161
+// updated 8/2012 to 1.52 for greater compatibility with IE in Quirks Mode
+
+/* Update 10/2012 to v1.53 - Adds optional persist property to have the crawler remember its
+   position and direction page to page and on page reload. To enable it in the marqueeInit set
+   persist: true,
+   */
+
+///////////////// No Need to Edit - Configuration is Done in the On Page marqueeInit call(s) /////////////////
+
+
+function marqueeInit(config){
+    if(!document.createElement) return;
+    marqueeInit.ar.push(config);
+    marqueeInit.run(config.uniqueid);
+}
+
+(function(){
+
+    if(!document.createElement) return;
+ 
+    if(typeof opera === 'undefined'){window.opera = false;}
+
+    marqueeInit.ar = [];
+
+    document.write('<style type="text/css">.marquee{white-space:nowrap;overflow:hidden;visibility:hidden;}' +
+		   '#marq_kill_marg_bord{border:none!important;margin:0!important;}<\/style>');
+    var c = 0, tTRE = [/^\s*$/, /^\s*/, /\s*$/, /[^\/]+$/],
+    req1 = {'position': 'relative', 'overflow': 'hidden'}, defaultconfig = {
+	style: { //default style object for marquee containers without configured style
+	    'margin': '0 auto'
+	},
+	direction: 'left',
+	inc: 2, //default speed - pixel increment for each iteration of a marquee's movement
+	mouse: 'pause' //default mouseover behavior ('pause' 'cursor driven' or false)
+    }, dash, ie = false, oldie = 0, ie5 = false, iever = 0;
+ 
+ /*@cc_on @*/
+ /*@if(@_jscript_version >= 5)
+ ie = true;
+ try{document.documentMode = 2000}catch(e){};
+ iever = Math.min(document.documentMode, navigator.appVersion.replace(/^.*MSIE (\d+\.\d+).*$/, '$1'));
+ if(iever < 6)
+  oldie = 1;
+ if(iever < 5.5){
+  Array.prototype.push = function(el){this[this.length] = el;};
+  ie5 = true;
+  dash = /(-(.))/;
+  String.prototype.encamel = function(s, m){
+   s = this;
+   while((m = dash.exec(s)))
+    s = s.replace(m[1], m[2].toUpperCase());
+   return s;
+   };
+   }
+ @end @*/
+
+    if(!ie5){
+	dash = /-(.)/g;
+	function toHump(a, b){return b.toUpperCase();};
+	String.prototype.encamel = function(){return this.replace(dash, toHump);};
+    }
+
+    if(ie && iever < 8){
+	marqueeInit.table = [];
+	window.attachEvent('onload', function(){
+	    marqueeInit.OK = true;
+	    var i = -1, limit = marqueeInit.table.length;
+	    while(++i < limit)
+		marqueeInit.run(marqueeInit.table[i]);
+	});
+    }
+ 
+    function intable(el){
+	while((el = el.parentNode))
+	    if(el.tagName && el.tagName.toLowerCase() === 'table')
+		return true;
+	return false;
+    };
+
+    marqueeInit.run = function(id){
+	if(ie && !marqueeInit.OK && iever < 8 && intable(document.getElementById(id))){
+	    marqueeInit.table.push(id);
+	    return;
+	}
+	if(!document.getElementById(id))
+	    setTimeout(function(){marqueeInit.run(id);}, 300);
+   else
+       new Marq(c++, document.getElementById(id));
+    }
+
+    function trimTags(tag){
+	var r = [], i = 0, e;
+	while((e = tag.firstChild) && e.nodeType === 3 && tTRE[0].test(e.nodeValue))
+	    tag.removeChild(e);
+	while((e = tag.lastChild) && e.nodeType === 3 && tTRE[0].test(e.nodeValue))
+	    tag.removeChild(e);
+	if((e = tag.firstChild) && e.nodeType === 3)
+	    e.nodeValue = e.nodeValue.replace(tTRE[1], '');
+	if((e = tag.lastChild) && e.nodeType === 3)
+	    e.nodeValue = e.nodeValue.replace(tTRE[2], '');
+	while((e = tag.firstChild))
+	    r[i++] = tag.removeChild(e);
+	return r;
+    }
+
+    function randthem(tag){
+	var els = oldie? tag.all : tag.getElementsByTagName('*'), i = els.length, childels = [];
+	while (--i > -1){
+	    if(els[i].parentNode === tag){
+		childels.push(els[i]);
+	    }
+	}
+	childels.sort(function(){return 0.5 - Math.random();});
+	i = childels.length;
+	while (--i > -1){
+	    tag.appendChild(childels[i]);
+	}
+    }
+
+    function Marq(c, tag){
+	var p, u, s, a, ims, ic, i, marqContent, cObj = this;
+	this.mq = marqueeInit.ar[c];
+	if(this.mq.random){
+	    if(tag.getElementsByTagName && tag.getElementsByTagName('tr').length === 1 && tag.childNodes.length === 1){
+		randthem(tag.getElementsByTagName('tr')[0]);
+	    } else {
+		randthem(tag);
+	    }
+	}
+	for (p in defaultconfig)
+	    if((this.mq.hasOwnProperty && !this.mq.hasOwnProperty(p)) || (!this.mq.hasOwnProperty && !this.mq[p]))
+		this.mq[p] = defaultconfig[p];
+	this.mq.direction = this.mq.persist && this.cookie.get(this.mq.uniqueid)? this.cookie.get(this.mq.uniqueid).split(':')[2] : this.mq.direction;
+	this.mq.style.width = !this.mq.style.width || isNaN(parseInt(this.mq.style.width))? '100%' : this.mq.style.width;
+	if(!tag.getElementsByTagName('img')[0])
+	    this.mq.style.height = !this.mq.style.height || isNaN(parseInt(this.mq.style.height))? tag.offsetHeight + 3 + 'px' : this.mq.style.height;
+  else
+      this.mq.style.height = !this.mq.style.height || isNaN(parseInt(this.mq.style.height))? 'auto' : this.mq.style.height;
+	u = this.mq.style.width.split(/\d/);
+	this.cw = this.mq.style.width? [parseInt(this.mq.style.width), u[u.length - 1]] : ['a'];
+	marqContent = trimTags(tag);
+	tag.className = tag.id = '';
+	tag.removeAttribute('class', 0);
+	tag.removeAttribute('id', 0);
+	if(ie)
+	    tag.removeAttribute('className', 0);
+	tag.appendChild(tag.cloneNode(false));
+	tag.className = ['marquee', c].join('');
+	    .mousb = (w + this.

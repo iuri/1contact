@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>Videos Application Requirements</title>
+</head>
+
+<body bgcolor=white text=black>
+<h2>Videos Application Requirements</h2>
+by
+<a href="mailto:alessandro.landim@gmail.com">Alessandro Landim</a>
+<hr>
+
+
+
+<h3>Install ffmpeg with libx264 support</h3>
+
+<p>
+ffmpeg will convert videos to MP4 format and get one image to preview video. 
+
+To install, execute this commands:
+
+<h3>On ubuntu:</h3>
+
+<h4>1- Add in /etc/apt/sources.list this repository: </h4>
+
+<p>deb http://packages.medibuntu.org/ intrepid free non-free</p>
+
+
+<h4>2 - then update and install some packages:</h4>
+
+<p>sudo apt-get update<br>
+sudo apt-get install medibuntu-keyring<br>
+sudo apt-get install build-essential subversion git-core \<br>
+checkinstall yasm texi2html libfaac-dev libfaad-dev libmp3lame-dev \<br>
+libsdl1.2-dev libtheora-dev libx11-dev libxvidcore4-dev zlib1g-dev<br>
+</p>
+
+
+<h4>3 - before install ffmpeg, install x264 package</h4>
+
+<p>cd <br>
+git clone git://git.videolan.org/x264.git<br>
+cd x264<br>
+./configure<br>
+make<br>
+sudo checkinstall --fstrans=no --install=yes --pkgname=x264 \<br>
+--pkgversion "1:0.svn" --default<br>
+sudo dpkg -i x264-version.deb<br></p>
+
+
+
+
+
+<h4>4 - now, install ffmpeg</h4>
+
+<p>
+cd<br/>
+svn checkout svn://svn.ffmpeg.org/ffmpeg/trunk ffmpeg<br>
+cd ffmpeg<br>
+./configure --enable-gpl --enable-nonfree --enable-pthreads \<br>
+--enable-libfaac --enable-libfaad --enable-libmp3lame --enable-libtheora \<br>
+--enable-libx264 --enable-libxvid --enable-x11grab<br>
+make<br>
+sudo checkinstall --fstrans=no --install=yes --pkgname=ffmpeg \<br>
+--pkgversion "3:0.svn" --default<br>
+sudo dpkg -i ffmpeg_3:0.svn.deb<br>
+</p>
+
+
+
+
+</p>
+<p><b>Reference:</b> http://www.gdhpress.com.br/blog/recompilando-ffmpeg/</p>
+
+
+<h3>On FreeBSD:</h3>
+
+<h4>Install x264</h4>
+<p>cd /usr/ports/multimedia/x264/<br>
+make install clean
+</p>
+
+<h4>Install ffmpeg</h4>
+<p>cd /usr/ports/multimedia/ffmpeg/<br>
+make install clean
+</p>
+
+
+<h2>Add in config.tcl</h2>
+<p> In section ns/mimetypes, add two new params:<br><br>
+    ns_param   .flv               video/x-flv<br>
+    ns_param   .mp4               video/mp4
+</p>
+
+
+
+<h3> Related Links</h3>
+
+<ul>
+<li><a href="design.html">Design Document</a>
+<li><a href="index.html">System Overview Document</a>
+</ul>
+
+<hr>
+<address>
+<a href="mailto:alessandro.landim@gmail.com">alessandro.landim@gmail.com</a>
+</address>
+</body>
+</html>

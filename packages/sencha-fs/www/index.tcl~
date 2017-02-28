@@ -1,0 +1,10 @@
+ad_page_contract {}
+
+
+
+template::head::add_css -href "http://extjs.cachefly.net/extjs-4.1.1-gpl/resources/css/ext-all.css" 
+template::head::add_css -href "http://extjs.cachefly.net/extjs-4.1.1-gpl/examples/shared/example.css"
+
+template::head::add_css -href "/resources/sencha-fs/resourcess/css/upload.css"
+
+

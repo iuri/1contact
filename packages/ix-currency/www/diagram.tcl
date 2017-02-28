@@ -1,0 +1,57 @@
+ad_page_contract {} {
+    {code ""}
+    {rate ""}
+    {diff ""}
+    {percent ""}
+}
+ns_log Notice "CODE CURRENCY $code"
+
+
+db_multirow rate_history select_currency_rates {
+    SELECT rate_id, rate FROM ix_currency_rates WHERE currency_code = :code ORDER BY rate_id
+
+}
+
+
+
+#    select rate, to_char(creation_date,'HH12:MI::SS') FROM ix_currency_rates WHERE currency_code = 'BRL'
+
+template::diagram::create \
+    -name mydiagram \
+    -multirow rate_history \
+    -title "My Diagram" \
+    -x_label "Time" \
+    -y_label "Rate" \
+    -template "curve" \
+    -elements {
+	mycurve {
+	    color "\#c0c0c0"
+	    type 1
+	    label "My Curve"
+	    size 2
+	    dot_type 1
+	}
+    }
+	
+
+
+set l_rates [db_list_of_lists select_data {
+    SELECT rate_id, rate FROM ix_currency_rates WHERE currency_code = :code ORDER BY rate_id
+
+}]
+
+foreach elem $l_rates {
+    ns_log Notice "$elem"
+}
+#line 
+set data "66964, 100, 1313, 1313, 100, 66964"
+
+#diagonal down
+# http://www.html5canvastutorials.com/tutorials/html5-canvas-bezier-curves/
+set data "1313, 100, 66964, 66964, 100, 1313"
+
+# line
+set data "66964, 100, 1313,66964, 100, 1313"
+
+
+set data "1313, 100, 66964, 1313, 100, 66964"
