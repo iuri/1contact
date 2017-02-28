@@ -1,1 +1,0 @@
-views::record_view -object_id $displayed_object_id -viewer_id [ad_conn user_id]

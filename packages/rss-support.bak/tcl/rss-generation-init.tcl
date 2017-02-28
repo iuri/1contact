@@ -1,1 +1,0 @@
-ad_schedule_proc 1800 rss_gen_service
