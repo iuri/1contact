@@ -413,6 +413,8 @@ namespace eval acs_mail_lite {
         @param object_id Object id that caused this email to be sent
     } {
 
+
+
         # Package_id required by the callback (emmar: no idea what for)
         set mail_package_id [apm_package_id_from_key "acs-mail-lite"]
         if {$package_id eq ""} {
@@ -588,15 +590,17 @@ namespace eval acs_mail_lite {
         if { [llength $to_addr] eq 1 } {
             set rcpt_id [party::get_by_email -email $to_addr]
         }
+
         set rcpt_id [ad_decode $rcpt_id "" 0 $rcpt_id]
 
         set originator [bounce_address -user_id $rcpt_id \
                             -package_id $package_id \
                             -message_id $message_id]
-
+  
         set errorMsg ""
         set status ok
         
+
         if { $send_mode eq "log" } {
 
             # Add recipients to headers

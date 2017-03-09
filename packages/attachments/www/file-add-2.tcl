@@ -3,13 +3,13 @@ ad_page_contract {
 
     @author Kevin Scaldeferri (kevin@arsdigita.com)
     @creation-date 6 Nov 2000
-    @cvs-id $Id: file-add-2.tcl,v 1.7.2.2 2016/05/20 20:11:45 gustafn Exp $
+    @cvs-id $Id: file-add-2.tcl,v 1.6.4.4 2014/07/29 11:24:00 gustafn Exp $
 } {
     folder_id:naturalnum,notnull
     upload_file:notnull,trim
     upload_file.tmpfile:tmpfile
     object_id:naturalnum,notnull
-    return_url:localurl,notnull
+    return_url:notnull
     title:notnull,trim
     description
 } -validate {
@@ -76,9 +76,3 @@ set fs_package_id [db_string get_fs_package_id {}]
 
 
 ad_returnredirect $return_url
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

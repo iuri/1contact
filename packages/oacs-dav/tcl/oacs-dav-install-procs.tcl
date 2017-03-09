@@ -6,7 +6,7 @@ ad_library {
     
     @author Dave Bauer (dave@thedesignexperience.org)
     @creation-date 2003-09-11
-    @cvs-id $Id: oacs-dav-install-procs.tcl,v 1.3.14.1 2015/09/12 19:00:42 gustafn Exp $
+    @cvs-id $Id: oacs-dav-install-procs.tcl,v 1.3 2005/01/13 13:58:35 jeffd Exp $
     
 }
 
@@ -249,8 +249,3 @@ ad_proc -private oacs_dav::install::upgrade {
 	    }
 	}
 }
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

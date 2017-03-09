@@ -6,7 +6,7 @@
   <meta name="keywords" content="">
   <meta name="Robots" content="INDEX,FOLLOW">
 </property>
-
+<!--
 <include src="/packages/ecommerce/lib/toolbar">
 <include src="/packages/ecommerce/lib/searchbar">
 
@@ -18,7 +18,7 @@
 	Welcome!
       </else>
 
-      <include src="browse-categories">
+       <include src="browse-categories"> -->
 
       <if @recommendations:rowcount@>
 	<h4>We recommend:</h4>
@@ -46,3 +46,7 @@
       @prev_link;noquote@ @separator@ @next_link;noquote@
       </if>
     </blockquote>
+
+
+
+<img src="http://evex.co/file-storage/view/mainpage.png" width="1260px"> 

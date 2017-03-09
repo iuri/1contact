@@ -37,7 +37,7 @@
 </script>
 
   <div id="viewadp-mini-calendar">
-    <include src="mini-calendar" base_url="view" view="@view;literal@" date="@ansi_date;literal@">
+    <include src="mini-calendar" base_url="view" view="@view@" date="@ansi_date@">
     <include src="cal-options">	
   </div>
         

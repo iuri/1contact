@@ -12,7 +12,7 @@ ad_page_contract {
     product_id:integer,notnull
 }
 
-ad_require_permission [ad_conn package_id] admin
+permission::require_permission -object_id [ad_conn package_id] -privilege admin
 
 # Have to get everything about this product from ec_products,
 # ec_custom_product_field_values (along with the info about the fields

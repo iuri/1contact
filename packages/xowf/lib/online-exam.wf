@@ -88,8 +88,8 @@ my proc load_form {title} {
   set fullQuestionForm ""
   foreach q $questions {
     append fullQuestionForm \
-    "<h2>Frage [incr counter]</h2>\n" \
-    [$q property form] 
+	"<h2>Frage [incr counter]</h2>\n" \
+	[$q property form] 
   }
   
   # disable fields, remove wrapping form
@@ -115,14 +115,12 @@ my proc load_form {title} {
     set aLink "[$obj pretty_link]?m=answer"
     set pLink "[$obj pretty_link]?m=print-answers"
     #util_user_message -html -message "$survey is available as <a target='_blank' href='$pLink'>$pLink</a>"
-    set menu "\[<a href='[ns_quotehtml [::xo::cc url]]'>refresh</a>,\
-       <a href='[ns_quotehtml $lLink]'>listing</a>,\
-       <a href='[ns_quotehtml $pLink]'>print</a>\]"
+    set menu "\[<a href='[::xo::cc url]'>refresh</a>, <a href='$lLink'>listing</a>, <a href='$pLink'>print</a>\]"
   }
 
   set extraAction ""
   switch [my property _state] {
-    "created"   {set extraAction "<br>Do you want to <a href='[ns_quotehtml $tLink]'>try out</a> the exam?"}
+    "created"   {set extraAction "<br>Do you want to <a href='$tLink'>try out</a> the exam?"}
     "published" {set extraAction "<br>Students can now answer via $aLink"}
   }
   append text "$menu $extraAction\n"
@@ -134,12 +132,12 @@ my proc load_form {title} {
   append report "<br> $menu"
 
   set f [::xowiki::Form new \
-             -set name en:quesiton \
-             -form [subst {<form>$text<div style='$style'>$fullQuestionForm</div>$report</form> text/html}] \
-             -text {} \
-             -anon_instances t \
-             -form_constraints {@cr_fields:hidden} \
-        ]
+	     -set name en:quesiton \
+	     -form [subst {<form>$text<div style='$style'>$fullQuestionForm</div>$report</form> text/html}] \
+	     -text {} \
+	     -anon_instances t \
+	     -form_constraints {@cr_fields:hidden} \
+	    ]
 }
 
 ########################################################################
@@ -149,9 +147,9 @@ my proc get_questions {} {
   set questionNames [join [my property question] |]
   set object [my object]
   set questionForms [::xowiki::Weblog instantiate_forms \
-        -parent_id [$object parent_id] -package_id [$object package_id] \
-        -default_lang [$object lang] \
-        -forms $questionNames]
+		-parent_id [$object parent_id] -package_id [$object package_id] \
+		-default_lang [$object lang] \
+		-forms $questionNames]
   if {[llength $questionForms] < 1} {error "unknown form $questionNames"}
   #my msg "questionNames '$questionNames', questionForms 'questionForms'"
   return $questionForms
@@ -188,8 +186,8 @@ my proc create_answer_workflow {obj} {
     $doc documentElement root
     if {$root ne ""} {
       foreach node [$root selectNodes "//textarea|//input"] {
-    set newName $prefix[incr counter]
-    lappend attributeNames $newName
+	set newName $prefix[incr counter]
+	lappend attributeNames $newName
       }
     }
     lappend wfQuestionNames ../[$q name]
@@ -205,18 +203,18 @@ my proc create_answer_workflow {obj} {
   set attributeNames [join $attributeNames ,]
 
   set WF [::xowiki::Weblog instantiate_forms \
-          -parent_id [$obj parent_id] -package_id [$obj package_id] \
-          -default_lang [$obj lang] \
-          -forms $wfMaster]
+	      -parent_id [$obj parent_id] -package_id [$obj package_id] \
+	      -default_lang [$obj lang] \
+	      -forms $wfMaster]
   set f [$WF create_form_page_instance \
-         -name $wfName \
-         -nls_language [$obj nls_language] \
+	     -name $wfName \
+	     -nls_language [$obj nls_language] \
              -publish_status ready \
-         -parent_id [$obj item_id] \
-         -package_id [$obj package_id] \
-         -default_variables [list title $wfTitle] \
-         -instance_attributes [list workflow_definition $wfDef \
-                  form_constraints "@table:_name,_state,$attributeNames @cr_fields:hidden"]]
+	     -parent_id [$obj item_id] \
+	     -package_id [$obj package_id] \
+	     -default_variables [list title $wfTitle] \
+	     -instance_attributes [list workflow_definition $wfDef \
+				  form_constraints "@table:_name,_state,$attributeNames @cr_fields:hidden"]]
   $f save_new
   my log "create_answer_workflow $obj DONE [$f pretty_link]"
 }
@@ -226,9 +224,9 @@ my proc create_answer_workflow {obj} {
 #
 my proc get_answer_wf {obj} {
   return [::xowiki::Weblog instantiate_forms \
-              -parent_id [$obj item_id] -package_id [$obj package_id] \
-              -default_lang [$obj lang] \
-              -forms [$obj property wfName]]
+	      -parent_id [$obj item_id] -package_id [$obj package_id] \
+	      -default_lang [$obj lang] \
+	      -forms [$obj property wfName]]
 }
 
 ########################################################################
@@ -236,9 +234,9 @@ my proc get_answer_wf {obj} {
 #
 my proc get_wf_instances {{-initialize false} wf} {
   return [::xowiki::FormPage get_form_entries \
-              -base_item_ids [$wf item_id] -form_fields "" \
-              -always_queried_attributes "*" -initialize $initialize \
-              -publish_status all -package_id [$wf package_id]]
+	      -base_item_ids [$wf item_id] -form_fields "" \
+	      -always_queried_attributes "*" -initialize $initialize \
+	      -publish_status all -package_id [$wf package_id]]
 }
 
 ########################################################################
@@ -259,7 +257,7 @@ my proc delete_all_answer_data {obj} {
 #
 Action instproc publish_link {obj} {
   set aLink "[$obj pretty_link]?m=answer"
-  util_user_message -html -message "[$obj name] is available as <a target='_blank' href='[ns_quotehtml $aLink]'>[ns_quotehtml $aLink]</a>"
+  util_user_message -html -message "[$obj name] is available as <a target='_blank' href='$aLink'>$aLink</a>"
   # TODO: make it happen
 }
 
@@ -326,9 +324,3 @@ Action instproc unpublish_link {obj} {
   }
 }
 
-#
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 2
-#    indent-tabs-mode: nil
-# End:

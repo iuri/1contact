@@ -8,7 +8,7 @@ ad_library {
     @author Gary Jin (gjin@arsdigita.com)
     @author Ben Adida (ben@openforce.net)
     @creation-date Jan 11, 2001
-    @cvs-id $Id: cal-item-procs.tcl,v 1.26.2.1 2015/09/10 08:30:14 gustafn Exp $
+    @cvs-id $Id: cal-item-procs.tcl,v 1.25.4.1 2013/10/03 07:39:45 gustafn Exp $
 
 }
 
@@ -343,9 +343,3 @@ ad_proc -public calendar_item_add_recurrence {
         select event_id, (select on_which_calendar as calendar_id from cal_items where cal_item_id = :cal_item_id) from acs_events where recurrence_id= :recurrence_id and event_id <> :cal_item_id"
     }
 }
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

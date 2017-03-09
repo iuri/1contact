@@ -3,7 +3,7 @@ ad_page_contract {
     Add/Edit calendar
 
     @creation-date Dec 14, 2000
-    @cvs-id $Id: calendar-edit.tcl,v 1.5.2.1 2015/09/10 08:30:16 gustafn Exp $
+    @cvs-id $Id: calendar-edit.tcl,v 1.4.16.1 2014/07/29 11:14:17 gustafn Exp $
 } {
     {calendar_id:naturalnum,optional}
 }
@@ -33,9 +33,3 @@ ad_form -name calendar -form {
 }
 
 
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

@@ -5,8 +5,8 @@ ad_page_contract {
     @creation-date 2002-06-02
 } {
     cal_item_id:naturalnum,notnull
-    {return_url:localurl "view"}
-    {confirm_p:boolean 0}
+    {return_url "view"}
+    {confirm_p 0}
 }
 
 permission::require_permission -object_id $cal_item_id -privilege delete
@@ -19,9 +19,3 @@ if {!$confirm_p} {
 calendar::item::delete -cal_item_id $cal_item_id
 
 ad_returnredirect $return_url
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

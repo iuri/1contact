@@ -8,7 +8,7 @@ ad_library {
     @author Gary Jin (gjin@arsdigita.com)
     @author Ben Adida (ben@openforce.net)
     @creation-date Dec 14, 2000
-    @cvs-id $Id: calendar-procs.tcl,v 1.34.2.1 2015/09/10 08:30:14 gustafn Exp $
+    @cvs-id $Id: calendar-procs.tcl,v 1.32.4.1 2013/10/03 07:39:45 gustafn Exp $
 
 }
 
@@ -490,8 +490,8 @@ ad_proc -public calendar::do_notifications {
     set url "[ad_url][ad_conn package_url]"
 
     set new_content ""
-    append new_content "[_ calendar.Calendar]:  <a href=\"[ns_quotehtml $url]\">[ad_conn instance_name]</a><br>\n"
-    append new_content "[_ calendar.Calendar_Item]: <a href=\"[ns_quotehtml ${url}cal-item-view?cal_item_id=$cal_item_id]\">$cal_item(name)</a><br>\n"
+    append new_content "[_ calendar.Calendar]:  <a href=\"${url}\">[ad_conn instance_name]</a><br>\n"
+    append new_content "[_ calendar.Calendar_Item]: <a href=\"${url}cal-item-view?cal_item_id=$cal_item_id\">$cal_item(name)</a><br>\n"
     append new_content "[_ calendar.Start_Time]: $cal_item(start_date_ansi) $cal_item(start_time)<br>\n"
     append new_content "[_ calendar.to]: $cal_item(end_date_ansi) $cal_item(end_time)<br>\n"
 
@@ -529,9 +529,3 @@ ad_proc -public calendar::notification::get_url {
 }
     
 
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

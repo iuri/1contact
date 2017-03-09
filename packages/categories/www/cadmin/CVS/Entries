@@ -54,10 +54,10 @@
 /object-map.tcl/1.7.2.1/Thu Sep 10 08:30:21 2015//Topenacs-5-9-compat
 /object-map.xql/1.2/Tue Aug 28 16:30:03 2007//Topenacs-5-9-compat
 /one-object.tcl/1.9.2.1/Thu Sep 10 08:30:22 2015//Topenacs-5-9-compat
-/permission-manage.adp/1.4.2.1/Wed Jan 18 08:28:30 2017//Topenacs-5-9-compat
+/permission-manage.adp/1.4/Fri Jul  3 10:33:41 2015//Topenacs-5-9-compat
 /permission-manage.tcl/1.7.2.1/Thu Sep 10 08:30:22 2015//Topenacs-5-9-compat
 /site-wide-status-change.tcl/1.6.2.1/Thu Sep 10 08:30:22 2015//Topenacs-5-9-compat
-/site-wide-status-change.xql/1.2.20.1/Fri Nov 11 16:22:32 2016//Topenacs-5-9-compat
+/site-wide-status-change.xql/1.2/Sun Apr 27 11:37:12 2003//Topenacs-5-9-compat
 /synonym-delete-2-oracle.xql/1.1/Wed Feb 11 13:25:28 2004//Topenacs-5-9-compat
 /synonym-delete-2-postgresql.xql/1.1/Wed Feb 11 13:25:28 2004//Topenacs-5-9-compat
 /synonym-delete-2.tcl/1.4.2.1/Thu Sep 10 08:30:22 2015//Topenacs-5-9-compat
@@ -78,10 +78,10 @@
 /tree-copy.adp/1.4/Fri Jul  3 10:33:41 2015//Topenacs-5-9-compat
 /tree-copy.tcl/1.12.2.1/Thu Sep 10 08:30:22 2015//Topenacs-5-9-compat
 /tree-delete-2.tcl/1.9.2.1/Thu Sep 10 08:30:22 2015//Topenacs-5-9-compat
-/tree-delete.adp/1.6.2.2/Wed Jan 18 08:28:30 2017//Topenacs-5-9-compat
-/tree-delete.tcl/1.12.2.2/Tue Nov 29 17:55:32 2016//Topenacs-5-9-compat
+/tree-delete.adp/1.6.2.1/Fri Aug  5 14:11:57 2016//Topenacs-5-9-compat
+/tree-delete.tcl/1.12.2.1/Thu Sep 10 08:30:22 2015//Topenacs-5-9-compat
 /tree-delete.xql/1.1.1.1/Wed Apr 23 12:29:27 2003//Topenacs-5-9-compat
-/tree-form.adp/1.6.2.1/Fri Nov 11 16:22:32 2016//Topenacs-5-9-compat
+/tree-form.adp/1.6/Fri Jul  3 10:33:41 2015//Topenacs-5-9-compat
 /tree-form.tcl/1.10.2.1/Thu Sep 10 08:30:22 2015//Topenacs-5-9-compat
 /tree-map-2.adp/1.3/Fri Jul  3 10:33:41 2015//Topenacs-5-9-compat
 /tree-map-2.tcl/1.9.2.1/Thu Sep 10 08:30:23 2015//Topenacs-5-9-compat

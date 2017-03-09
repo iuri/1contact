@@ -147,6 +147,10 @@ ad_form -extend -name mandat -form {
 foreach {category_id category_name} [1c_mandat::get_categories -package_id $package_id] {
     
     if {[string equal $category_name "Garage"] } {
+
+
+
+
 	ad_form -extend -name mandat -form [list \
 						[list "cat_$category_id:integer(radio)" \
 						     [list label "${category_name}"] \

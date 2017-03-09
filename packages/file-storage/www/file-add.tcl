@@ -281,7 +281,6 @@ ad_form -extend -form {} -select_query_name get_file -new_data {
 								  -container_object_id $package_id \
 								  -element_name category_id]
     }
-
 } -after_submit {
 
     if {([info exists return_url] && $return_url ne "")} {

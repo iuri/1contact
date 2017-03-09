@@ -1,1 +1,0 @@
-Here are some logic and aids for the approval.

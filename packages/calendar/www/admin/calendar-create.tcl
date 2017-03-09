@@ -13,7 +13,7 @@ ad_page_contract {
     @calendar_permission the permissions of the calendar
 
     @creation-date Dec 14, 2000
-    @cvs-id $Id: calendar-create.tcl,v 1.2.2.1 2015/09/10 08:30:16 gustafn Exp $
+    @cvs-id $Id: calendar-create.tcl,v 1.1.1.1.24.3 2014/09/10 08:45:19 gustafn Exp $
 } {
     {party_id:naturalnum,notnull}
     {calendar_name:notnull}
@@ -50,9 +50,3 @@ if {$calendar_permission eq "public"} {
 
 
 
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

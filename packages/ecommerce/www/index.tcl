@@ -31,6 +31,7 @@ if { $user_id != 0 } {
     set user_name ""
 }
 
+ns_log Notice "USERID: $user_id"
 # for the template
 if { $user_id == 0 } {
     set user_is_logged_on 0
@@ -39,8 +40,10 @@ if { $user_id == 0 } {
 }
 
 # user session tracking
+# No idea why ec_user_session_id returns "". I used lindex as a palliative. REvise it later!!!!
+set user_session_id [lindex [ec_get_user_session_id] 0]
+#ns_log Notice "USESSION_ID: $user_session_id"
 
-set user_session_id [ec_get_user_session_id]
 ec_create_new_session_if_necessary "" cookies_are_not_required
 
 # if for some reason the user id on the session is incorrect, make a new session
@@ -49,6 +52,7 @@ ec_create_new_session_if_necessary "" cookies_are_not_required
 
 # TODO: improve session cleanup and add to all pages
 if { $user_is_logged_on && $user_session_id ne "0"} {
+
     if {[db_string check_session_user_id "select user_id from ec_user_sessions where user_session_id = $user_session_id" -default 0] != $user_id} {
         set user_session_id 0 ; # which will force creation of a new session below
     }
@@ -57,6 +61,7 @@ if { $user_is_logged_on && $user_session_id ne "0"} {
 #ec_create_new_session_if_necessary "" cookies_are_not_required
 
 set ec_user_string ""
+
 set register_url "/register/logout?return_url=[ns_urlencode [ec_url]]"
 
 # the base url allows us to switch connections to http from https if currently an https connection

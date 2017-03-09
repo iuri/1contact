@@ -5,7 +5,7 @@ ad_page_contract {
     @author Ben Adida (ben@openforce.net)
     
     @creation-date Mar 16, 2002
-    @cvs-id $Id: calendar-item-types.tcl,v 1.6.2.1 2015/09/10 08:30:15 gustafn Exp $
+    @cvs-id $Id: calendar-item-types.tcl,v 1.5.2.3 2014/08/05 13:07:00 gustafn Exp $
 } {
     calendar_id:naturalnum,notnull
 }
@@ -56,9 +56,3 @@ foreach item_type $item_types {
     }
     multirow append item_types "$type" "[_ acs-kernel.common_Delete]" [export_vars -base "item-type-delete" {calendar_id item_type_id}]
 }
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

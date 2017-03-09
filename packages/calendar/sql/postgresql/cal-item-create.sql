@@ -2,7 +2,7 @@
 --
 -- @author Gary Jin (gjin@arsdigita.com)
 -- @creation-date Nov 17, 2000
--- @cvs-id $Id: cal-item-create.sql,v 1.14 2014/10/27 16:41:07 victorg Exp $
+-- @cvs-id $Id: cal-item-create.sql,v 1.13.8.1 2014/09/08 06:44:42 gustafn Exp $
 --
 
 -- ported by Lilian Tong (tong@ebt.ee.usyd.edu.au)

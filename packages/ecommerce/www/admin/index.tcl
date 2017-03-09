@@ -10,7 +10,7 @@ ad_page_contract {
     {flush_db_cache 0}
 }
 
-ad_require_permission [ad_conn package_id] admin
+permission::require_permission -object_id [ad_conn package_id] -privilege admin
 
 set ec_url [ec_url]
 

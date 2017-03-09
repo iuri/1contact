@@ -3,11 +3,11 @@ ad_page_contract {
 
     @author Kevin Scaldeferri (kevin@arsdigita.com)
     @creation-date 6 Nov 2000
-    @cvs-id $Id: simple-add-2.tcl,v 1.6.2.2 2016/05/20 20:11:45 gustafn Exp $
+    @cvs-id $Id: simple-add-2.tcl,v 1.5.4.3 2014/07/29 11:24:00 gustafn Exp $
 } {
     folder_id:naturalnum,notnull
     object_id:naturalnum,notnull
-    return_url:localurl,notnull
+    return_url:notnull
     title:notnull,trim
     description
     url:notnull,trim
@@ -34,9 +34,3 @@ db_transaction {
 }
 
 ad_returnredirect "$return_url"
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

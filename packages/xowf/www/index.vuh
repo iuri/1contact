@@ -6,7 +6,7 @@
 
   @author Gustaf Neumann (gustaf.neumann@wu-wien.ac.at)
   @creation-date July, 2006
-  @cvs-id $Id: index.vuh,v 1.2.2.1 2016/06/09 09:13:26 gustafn Exp $
+  @cvs-id $Id: index.vuh,v 1.1.2.1 2014/09/01 11:01:22 gustafn Exp $
 
 } -parameter {
   {-m view}
@@ -17,9 +17,3 @@
 ::$package_id reply_to_user [::$package_id invoke -method $m]
 ::$package_id log "--i ::$package_id DONE"
 ad_script_abort
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

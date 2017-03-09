@@ -39,7 +39,7 @@ ad_page_contract {
 }
 # set_the_usual_form_variables
 
-ad_require_permission [ad_conn package_id] admin
+permission::require_permission  -object_id [ad_conn package_id] -privilege admin
 
 # product_id, product_name, sku, category_id_list, subcategory_id_list, subsubcategory_id_list, one_line_description, detailed_description, color_list, size_list, style_list, email_on_purchase_list, search_keywords, url, price, no_shipping_avail_p, present_p, available_date, shipping, shipping_additional, weight, template_id, dirname, stock_status
 # the custom product fields may or may not exist

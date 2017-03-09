@@ -3,7 +3,7 @@ ad_library {
 
     @author Dirk Gomez <openacs@dirkgomez.de>
     @creation-date 2005-06-12
-    @cvs-id $Id: calendar-callback-procs.tcl,v 1.7.2.1 2015/09/10 08:30:14 gustafn Exp $
+    @cvs-id $Id: calendar-callback-procs.tcl,v 1.6.8.1 2013/10/03 07:39:45 gustafn Exp $
 }
 
 ad_proc -callback merge::MergeShowUserInfo -impl calendar {
@@ -81,9 +81,3 @@ ad_proc -callback merge::MergePackageUser -impl calendar {
     # 	}
     return $return_msg
 }
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

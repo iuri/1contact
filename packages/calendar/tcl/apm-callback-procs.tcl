@@ -6,7 +6,7 @@ ad_library {
 
     @creation-date July 2007
     @author rmorales@innova.uned.es
-    @cvs-id $Id: apm-callback-procs.tcl,v 1.2.8.1 2015/09/10 08:30:14 gustafn Exp $
+    @cvs-id $Id: apm-callback-procs.tcl,v 1.2 2007/10/07 22:36:55 donb Exp $
 }
 
 namespace eval calendar {}
@@ -36,9 +36,3 @@ ad_proc -public calendar::apm::package_after_upgrade {
 
 
 
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

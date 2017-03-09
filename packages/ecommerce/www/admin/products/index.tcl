@@ -9,7 +9,7 @@ ad_page_contract {
 } {
 }
 
-ad_require_permission [ad_conn package_id] admin
+permission::require_permission -object_id [ad_conn package_id] -privilege admin
 
 set title "Product Administration"
 set context [list $title]

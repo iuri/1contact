@@ -6,7 +6,7 @@ ad_library {
     
     @author Dave Bauer (dave@thedesignexperience.org)
     @creation-date 2003-09-14
-    @cvs-id $Id: oacs-dav-procs.tcl,v 1.3.2.1 2015/09/12 19:00:43 gustafn Exp $
+    @cvs-id $Id: oacs-dav-procs.tcl,v 1.2.12.1 2013/10/11 18:19:56 gustafn Exp $
     
 }
 
@@ -104,8 +104,3 @@ aa_register_case oacs_dav_mkcol {
 	}
    
 }
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

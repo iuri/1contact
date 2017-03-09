@@ -12,7 +12,7 @@ ad_page_contract {
 
 }
 
-ad_require_permission [ad_conn package_id] admin
+permission::require_permission -object_id [ad_conn package_id]  -privilege admin
 
 set title "Add a Product"
 set context [list [list index Products] $title]

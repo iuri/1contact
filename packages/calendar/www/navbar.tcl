@@ -29,7 +29,7 @@ foreach test_view {list day week month calendar} {
 }
 
 if { [string match "/dotlrn*" $base_url] } {
-    set link "[export_vars -base $base_url -entire_form -exclude {export}]&export=print"
+    set link "[export_vars -url -base $base_url -entire_form -exclude {export}]&export=print"
 } else {
     set link "[export_vars -base $base_url {date {view day}}]&export=print"
 }
@@ -68,9 +68,3 @@ multirow append views \
     $list_selected_p \
     ""
 
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

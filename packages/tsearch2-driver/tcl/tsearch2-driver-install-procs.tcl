@@ -7,7 +7,7 @@ ad_library {
     @author Dave Bauer (dave@thedesignexperience.org)
     @creation-date 2004-06-05
     @arch-tag: 2006927e-7f1d-41c9-a111-ac552a4da185
-    @cvs-id $Id: tsearch2-driver-install-procs.tcl,v 1.6.2.1 2016/04/29 07:04:55 gustafn Exp $
+    @cvs-id $Id: tsearch2-driver-install-procs.tcl,v 1.6 2014/10/27 16:42:00 victorg Exp $
 }
 
 namespace eval tsearch2_driver::install {}
@@ -31,12 +31,12 @@ ad_proc -public tsearch2_driver::install::preinstall_checks {
 	# in psql we do this by checking the presense of a data type tsvector
 	# select typname from pg_type where typename='tsvector';
 
-	if { [db_0or1row tsearch_compile_check {
-	    select distinct(typname) from pg_type where typname='tsvector'
-	}] } {
-	    # if tsearch is installed
-	    ns_log Notice "******* Tsearch2 is compiled and installed. ***********"
-	    # continue with installation
+	if { [db_0or1row "tsearch_compile_check" "select distinct(typname) from pg_type where typname='tsvector'"] } {
+	
+		# if tsearch is installed
+		ns_log Notice "******* Tsearch2 is compiled and installed. ***********"
+		# continue with installation
+			
 	} else {
 	
 		# tsearch not installed

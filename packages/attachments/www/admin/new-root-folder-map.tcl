@@ -17,7 +17,7 @@ ad_page_contract {
     If it can't find one, it prompts to make new one.
 
     @author Arjun Sanyal (arjun@openforce.net)
-    @cvs-id $Id: new-root-folder-map.tcl,v 1.6.14.1 2015/09/10 08:30:13 gustafn Exp $
+    @cvs-id $Id: new-root-folder-map.tcl,v 1.6 2005/04/20 11:48:57 eduardop Exp $
 
 } -query {
     {package_id:notnull}
@@ -66,9 +66,3 @@ if {$root_folder_id == 0} {
         }
     }
 }
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

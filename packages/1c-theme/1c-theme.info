@@ -4,16 +4,15 @@
 <package key="1c-theme" url="http://openacs.org/repository/apm/packages/1c-mandate" type="apm_service">
     <package-name>1Contact Theme</package-name>
     <pretty-plural>1Contact Themes</pretty-plural>
-    <initial-install-p>f</initial-install-p>
-    <singleton-p>f</singleton-p>
+    <initial-install-p>t</initial-install-p>
+    <singleton-p>t</singleton-p>
     <implements-subsite-p>t</implements-subsite-p>
-    <inherit-templates-p>f</inherit-templates-p>
     
     <version name="0.1d" url="http://openacs.org/repository/download/apm/1c-theme-0.1d.apm">
         <owner url="mailto:iuri@iurix.com">Iuri Sampaio</owner>
         <summary>Theme package for 1Contact System</summary>
         <description format="text/html">Theme package for 1Contact System</description>
-        <maturity>0</maturity>
+        <maturity>3</maturity>
 
         <provides url="1c-theme" version="0.1d"/>
         <requires url="acs-subsite" version="5.7.0"/>

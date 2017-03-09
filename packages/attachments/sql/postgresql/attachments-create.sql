@@ -16,7 +16,7 @@
 -- attachments
 --
 -- @author arjun (arjun@openforce.net)
--- @version $Id: attachments-create.sql,v 1.4.20.1 2016/05/14 18:10:52 gustafn Exp $
+-- @version $Id: attachments-create.sql,v 1.4 2003/05/17 10:12:03 jeffd Exp $
 --
 
 create table attachments_fs_root_folder_map (
@@ -44,8 +44,10 @@ create table attachments (
 				constraint attachments_item_id_fk
                                 references acs_objects(object_id)
                                 on delete cascade,
-    approved_p                  boolean
-                                default true
+    approved_p                  char(1)
+                                default 't'
+                                constraint attachments_approved_p_ck
+                                check (approved_p in ('t', 'f'))
                                 constraint attachments_approved_p_nn
                                 not null,
     constraint                  attachments_pk

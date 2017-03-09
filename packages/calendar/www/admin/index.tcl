@@ -5,7 +5,7 @@ ad_page_contract {
 
     @author Gary Jin (gjin@arsdigita.com)
     @creation-date Dec 14, 2000
-    @cvs-id $Id: index.tcl,v 1.8.8.1 2015/09/10 08:30:16 gustafn Exp $
+    @cvs-id $Id: index.tcl,v 1.8 2008/01/04 15:47:49 emmar Exp $
 }
 
 # find out the user_id 
@@ -70,9 +70,3 @@ template::list::create \
     }
 
 set permissions_url [export_vars -base permissions { { object_id {[ad_conn package_id]} } }]
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

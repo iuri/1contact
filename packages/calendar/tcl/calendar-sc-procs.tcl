@@ -3,7 +3,7 @@ ad_library {
 
     @creation-date 2004-04-01
     @author Jeff Davis davis@xarg.net
-    @cvs-id $Id: calendar-sc-procs.tcl,v 1.3.2.1 2015/09/10 08:30:14 gustafn Exp $
+    @cvs-id $Id: calendar-sc-procs.tcl,v 1.2.8.2 2014/09/08 08:14:48 gustafn Exp $
 }
 
 namespace eval calendar::fts {}
@@ -94,9 +94,3 @@ ad_proc -private calendar::sc::register_acs_event_fts_impl {} {
 
    acs_sc::impl::new_from_spec -spec $spec
 }
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

@@ -12,8 +12,8 @@ namespace eval ::xowiki::includelet {
   #
   # Define additional elements for includelets
   #
-  Class create form-menu-button-wf-instances -superclass ::xowiki::includelet::form-menu-button-answers
-  Class create form-menu-button-wf -superclass form-menu-button -parameter {
+  Class form-menu-button-wf-instances -superclass ::xowiki::includelet::form-menu-button-answers
+  Class form-menu-button-wf -superclass form-menu-button -parameter {
     {method view}
   }
 
@@ -116,10 +116,10 @@ namespace eval ::xowiki::includelet {
     my instvar items
     set t [TableWidget new -volatile \
                -columns {
-                 Field create package -label Package
-                 AnchorField create wf -label Workflow
-                 AnchorField create title -label "Todo"
-                 Field create state -label [::xowiki::FormPage::slot::state set pretty_name]
+                 Field package -label Package
+                 AnchorField wf -label Workflow
+                 AnchorField title -label "Todo"
+                 Field state -label [::xowiki::FormPage::slot::state set pretty_name]
                }]
     foreach i [$items children] {
       $i instvar wf_name name title state xowiki_form_page_id pid parent_id

@@ -6,7 +6,7 @@ namespace eval ::xowiki::formfield {
   #
   ###########################################################
 
-  Class create FormGeneratorField -superclass CompoundField -parameter {
+  Class FormGeneratorField -superclass CompoundField -parameter {
   }
   FormGeneratorField set abstract 1
   FormGeneratorField instproc pretty_value {v} {
@@ -25,7 +25,7 @@ namespace eval ::xowiki::formfield {
   # ::xowiki::formfield::test_item
   #
   ###########################################################
-  Class create test_item -superclass FormGeneratorField -parameter {
+  Class test_item -superclass FormGeneratorField -parameter {
     {question_type mc}
     {nr_choices 5}
     {feedback_level full}
@@ -129,7 +129,7 @@ namespace eval ::xowiki::formfield {
   #
   ###########################################################
 
-  Class create mc_interaction -superclass FormGeneratorField -parameter {
+  Class mc_interaction -superclass FormGeneratorField -parameter {
     {feedback_level full}
     {inplace false}
     {shuffle false}
@@ -254,7 +254,7 @@ namespace eval ::xowiki::formfield {
   #
   ###########################################################
 
-  Class create mc_choice -superclass FormGeneratorField -parameter {
+  Class mc_choice -superclass FormGeneratorField -parameter {
     {feedback_level full}
     {inplace true}
     {multiple true}
@@ -307,7 +307,7 @@ namespace eval ::xowiki::formfield {
   #
   ###########################################################
 
-  Class create text_interaction -superclass FormGeneratorField -parameter {
+  Class text_interaction -superclass FormGeneratorField -parameter {
     {feedback_level full}
     {inplace true}
   }
@@ -356,7 +356,7 @@ namespace eval ::xowiki::formfield {
   #
   ###########################################################
 
-  Class create test_section -superclass {form_page} -parameter {
+  Class test_section -superclass {form_page} -parameter {
     {multiple true}
   }
 

@@ -1,4 +1,4 @@
-<master src="/www/blank-master">
+<master>
 <if @doc@ defined><property name="&doc">doc</property></if>
 <if @body@ defined><property name="&body">body</property></if>
 <if @head@ not nil><property name="head">@head;literal@</property></if>
@@ -6,6 +6,7 @@
 <property name="skip_link">@skip_link;literal@</property>
 
 <div id="wrapper">
+  <img src="/resources/1c-theme/images/LogoNoir.png">
     <div id="system-name">
       <if @system_url@ not nil><a href="@system_url@">@system_name@</a></if>
       <else>@system_name@</else>
