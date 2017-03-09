@@ -26,7 +26,7 @@
             <li><a href='#' >Meus anúncios</a></li>
             <li><a href='#' >Visualisados</a></li>
             <li><a href='#' >Selecionados</a></li>
-            <li><a href='#' >Crair um novo anúncio</a></li>
+            <li><a href='?page=create_annouce' >Crair um novo anúncio</a></li>
         </ul>
     </li>
 

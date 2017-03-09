@@ -131,3 +131,27 @@ hr {
 	color: #333;
 	background-color: #E6E6E6;
 }
+
+.radio_button input[type=radio]:not(old){
+  width   : 28px;
+  margin  : 0;
+  padding : 0;
+  opacity : 0;
+}
+
+.radio_button input[type=radio]:not(old) + label {
+	padding: .25rem;
+	display: inline-block;
+	background-color: #FFF;
+	border: 1px solid #d9d9d9;
+	color: #333;
+}
+
+.radio_button input[type=radio]:not(old) + label:hover {
+	border: 1px solid #333 ;
+}
+
+.radio_button input[type=radio]:not(old):checked + label {
+	color: #FFFF;
+	background-color: #505050;
+}
