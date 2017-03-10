@@ -9,6 +9,7 @@
 <div class='treeview' data-role='treeview' >
 <ul>
 
+    <!-- Agenda -->
     <li class='node' >
         <span class='mif-calendar' >&nbsp;<b class='normal_text' >Agenda</b></span>
         <span class='node-toggle' ></span>
@@ -18,6 +19,7 @@
         </ul>
     </li>
     
+    <!-- Anúncios -->
     <li class='node' >
         <span class='mif-tags' >&nbsp;<b class='normal_text' >Anúncios</b></span>
         <span class='node-toggle' ></span>
@@ -30,6 +32,7 @@
         </ul>
     </li>
 
+    <!-- Mandatos -->
     <li class='node' >
         <span class='mif-folder' >&nbsp;<b class='normal_text' >Mandatos</b></span>
         <span class='node-toggle' ></span>
@@ -39,7 +42,8 @@
         </ul>
     </li>
 
-    <li class='node' >
+    <!-- Perfil -->
+     <li class='node' >
         <span class='mif-user' >&nbsp;<b class='normal_text' >Perfis</b></span>
         <span class='node-toggle' ></span>
         <ul>
