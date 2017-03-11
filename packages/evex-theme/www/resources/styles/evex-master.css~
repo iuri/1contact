@@ -1,0 +1,114 @@
+/*  Filename: /packages/evex/www/resources/styles/default-master.css */
+
+@font-face {
+        font-family: 'lucida_sans_unicoderegular';
+        src: url('../fonts/lucida_sans_unicode-webfont.eot');
+        src: url('../fonts/lucida_sans_unicode-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/lucida_sans_unicode-webfon\
+t.woff') format('woff'), url('../fonts/lucida_sans_unicode-webfont.ttf') format('truetype'), url('../fonts/lucida_sans_unicode-webfont.sv\
+g#lucida_sans_unicoderegular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+
+}
+@font-face {
+        font-family: 'helvetica_neueregular';
+        src: url('../fonts/helveticaneue-condensed-webfont.eot');
+        src: url('../fonts/helveticaneue-condensed-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/helveticaneue-condensed-webfont.woff') format('woff'), url('../fonts/helveticaneue-condensed-webfont.ttf') format('truetype'), url('../fonts/helveticaneue-condensed-webfont.svg#helvetica_neueregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+}
+@font-face {
+    font-family: 'swis721_lt_btlight';
+    src: url('../fonts/swz721l-webfont.eot');
+    src: url('../fonts/swz721l-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/swz721l-webfont.woff') format('woff'),
+         url('../fonts/swz721l-webfont.ttf') format('truetype'),
+         url('../fonts/swz721l-webfont.svg#swis721_lt_btlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+}
+
+
+#wrapper {
+    background:;
+    color:#4CB2EF;
+    font-Family: Arial, Sans-Serif;
+    font-weight: normal;
+}
+
+.header {
+    margin-top:10px;
+}
+
+
+.header .subsite-name {
+    margin-left:50px;
+    width:40%;
+    font-size: 24px;
+    float: left;    
+}
+
+.header .subsite-name a {
+    color:#4CB2EF;
+  text-decoration: none;
+}
+
+.header .header-navigation {
+  float: left;
+}
+
+.header .header-navigation a {
+    color:#4CB2EF;
+  text-decoration: none;
+}
+
+
+/* LISTS -----------------------------------------------------------*/
+
+.header .header-navigation ul {
+  margin: 0px;
+  padding: 10px;
+}
+
+.header .header-navigation ul li {
+  list-style:none;
+  display: inline;
+}
+
+.header .header-navigation ul li a:link {
+   padding: 10px; 
+ text-decoration: none;
+}
+
+.header .header-navigation ul li a:visited {
+  padding: 10px; 
+  text-decoration: none;
+}
+
+.header .header-navigation ul li a:hover {
+  background-color:#4CB2EF;
+  border-radius: 5px;
+  color:#FFFFFF;
+  padding: 10px; 
+  text-decoration: none;
+}
+
+.header .header-navigation ul li a:active {
+  text-decoration: none;
+  padding: 10px; 
+}
+
+/* END OF LISTS */
+
