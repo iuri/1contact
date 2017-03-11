@@ -13,7 +13,7 @@
 
 /* Estilos padrão */
 html, body {
-	min-width: 950px;
+	min-width: 900px;
 	height: 100%;
 	min-height: 100%;
 }
@@ -30,7 +30,7 @@ body {
 
 a {
 	color: #333;
-	font-weight: bold;
+	font-weight: 600;
 }
 
 a:visited {
@@ -52,8 +52,8 @@ ul {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: Maitree;
-	font-weight: bold;
+	font-family: Abel;
+	font-weight: 600;
 	margin: 0;
 	padding: 0;
 }
@@ -64,7 +64,13 @@ hr {
 	background-color: #555;
 }
 
+b {
+	font-weight: 600;
+}
 
+input[type='radio'] {
+	margin: .25rem;
+}
 
 /* Classes */
 
@@ -111,6 +117,14 @@ hr {
 	background-color: #E6E6E6;
 }
 
+.box2 {
+	display: inline-block;
+	padding: .5rem;
+	margin: .15rem;
+	text-align: center;
+	background-color: rgba(0,0,0,0.1);
+}
+
 .normal_text {
 	font-family: Abel;
 }
@@ -119,15 +133,10 @@ hr {
 	background-color: rgba(0,0,0,0.5);
 }
 
-.treeview a {
-	font-weight: normal;
-}
-
-.treeview a:hover {
-	color: #333;
-}
-
 .colour_button {
-	color: #333;
 	background-color: #E6E6E6;
 }
+
+.button.error {
+  border: 1px solid #ce352c;
+ }
