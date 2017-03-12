@@ -1,0 +1,36 @@
+.header img {
+	height: 80px;
+	width: auto;
+}
+
+.header_wrapper {
+	width: 100%;
+	display: table;
+	font-size: .9rem;
+}
+
+.header_cell {
+	display: table-cell;
+}
+
+.header_logo {
+	width: 70px;
+}
+
+.header_title {
+	font-weight: 600;
+}
+
+.header_links {
+	text-align: right;
+}
+
+.login_form_wrapper {
+	display: table;
+	text-align: center;
+}
+
+.login_form_cell {
+	display: table-cell;
+	text-align: center;
+}

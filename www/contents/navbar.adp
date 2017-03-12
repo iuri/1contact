@@ -1,11 +1,3 @@
-<header>
-
-	<link rel='stylesheet' href='css/navbar.css' type='text/css' />
-
-</header>
-
-<body>
-
 	<div class='navbar_wrapper' >
 
 		<div class='navbar_row' >

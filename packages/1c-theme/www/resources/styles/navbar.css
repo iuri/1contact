@@ -1,0 +1,43 @@
+.navbar_wrapper {
+	width: 100%;
+	display: table;
+	background-color: #E6E6E6;
+}
+
+.navbar_row {
+	display: table-row;
+	text-align: left;
+	vertical-align: middle;
+}
+
+.navbar_cell {
+	padding: .25rem;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.radio_button input[type=radio]:not(old){
+  width : 0;
+  margin : 0;
+  padding : 0;
+  opacity : 0;
+}
+
+.radio_button input[type=radio]:not(old) + label {
+	width: 4.5em;
+	padding: .25rem;
+	display: inline-block;
+	background-color: #FFF;
+	border: 1px solid #d9d9d9;
+	color: #333;
+	text-align: center;
+}
+
+.radio_button input[type=radio]:not(old) + label:hover {
+	border: 1px solid #333 ;
+}
+
+.radio_button input[type=radio]:not(old):checked + label {
+	color: #FFF;
+	background-color: #505050;
+}

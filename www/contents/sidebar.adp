@@ -1,17 +1,10 @@
-<header>
-
-    <link rel='stylesheet' href='css/sidebar.css' type='text/css' />
-
-</header>
-
-<body>
 
 <div class='treeview' data-role='treeview' >
 <ul>
 
     <!-- Agenda -->
     <li class='node' >
-        <span class='mif-calendar' >&nbsp;<b class='normal_text' >Agenda</b></span>
+        <span class='mif-calendar' ><a href="/calendar/view">&nbsp;<b class='normal_text' >Agenda</b></a></span>
         <span class='node-toggle' ></span>
         <ul>
             <li><a href='#' >Visitas confirmadas</a></li>
@@ -55,5 +48,3 @@
 
 </ul>
 </div>
-
-</body>
