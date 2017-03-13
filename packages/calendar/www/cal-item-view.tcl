@@ -3,10 +3,10 @@ ad_page_contract {
     
     @author Ben Adida (ben@openforce.net)
     @creation-date April 09, 2002
-    @cvs-id $Id: cal-item-view.tcl,v 1.25.2.2 2016/05/20 20:14:43 gustafn Exp $
+    @cvs-id $Id: cal-item-view.tcl,v 1.24.4.2 2014/08/05 13:07:00 gustafn Exp $
 } {
     cal_item_id:naturalnum,notnull
-    {return_url:localurl [ad_return_url]}
+    {return_url [ad_return_url]}
 }
 
 set user_id [ad_conn user_id]
@@ -58,9 +58,3 @@ template::head::add_css -alternate -href "/resources/calendar/calendar-hc.css" -
 
 ad_return_template 
 
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

@@ -6,15 +6,9 @@ ad_page_contract {
     @creation-date April 25, 2002
 } {
     recurrence_id:naturalnum,notnull
-    {return_url:localurl "./"}
+    {return_url "./"}
 }
 
 calendar::item::delete_recurrence -recurrence_id $recurrence_id
 
 ad_returnredirect $return_url
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

@@ -5,7 +5,7 @@ ad_page_contract {
     
     @author Ben Adida (ben@openforce.net)
     @creation-date June 2, 2002
-    @cvs-id $Id: index.tcl,v 1.18.6.1 2015/09/10 08:30:15 gustafn Exp $
+    @cvs-id $Id: index.tcl,v 1.18 2008/09/08 20:13:37 donb Exp $
 } {
 }
 
@@ -21,9 +21,3 @@ if { ![calendar::have_private_p -party_id $user_id] } {
 } 
 
 ad_returnredirect "view"    
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

@@ -4,7 +4,7 @@ ad_library {
     @author Dave Bauer (dave@thedesignexperience.org)
     @creation-date 2004-06-05
     @arch-tag: 49a5102d-7c06-4245-8b8d-15a3b12a8cc5
-    @cvs-id $Id: tsearch2-driver-procs.tcl,v 1.32.2.3 2016/08/19 17:01:33 gustafn Exp $
+    @cvs-id $Id: tsearch2-driver-procs.tcl,v 1.32 2015/06/29 18:46:49 gustafn Exp $
 }
 
 namespace eval tsearch2 {}
@@ -106,13 +106,19 @@ ad_proc -callback search::search -impl tsearch2-driver {
     @creation-date 2004-06-05
 
     @param query
+
     @param offset
+
     @param limit
+
     @param user_id
+
     @param df
+
     @param packages list of packages to search for content in.
 
     @return
+
     @error
 } {
     set packages {}
@@ -204,9 +210,11 @@ ad_proc -public tsearch2::summary {
     @creation-date 2004-06-05
 
     @param query
+
     @param txt
 
     @return summary containing search query terms
+
     @error
 } {
     set query [tsearch2::build_query -query $query]
@@ -286,7 +294,7 @@ ad_proc tsearch2::build_query { -query } {
         regsub {([-/@.\d\w\(\)])\s+?([-/@.\d\w\(\)])} $query {\1 \& \2} query
     }
     # if a ! is by itself then prepend &
-    regsub -all {(\w+?)\s*(!)} $query {\1 \& !} query
+    regsub {(\w+?)\s*(!)} $query {\1 \& !} query
     # if there is )( then insert an & between them 
     # or if there is )\w or \w( insert an & between them
     regsub {(\))([\(\w])} $query {\1 \& \2} query
@@ -317,7 +325,7 @@ ad_proc -public tsearch2::seperate_query_and_operators {
     # match quotes
     set quote_count [regexp -all {\"} $query]
     # if quotes don't match, just remove all of them
-    if {$quote_count % 2 == 1} {
+    if {[expr {$quote_count % 2}] == 1} {
         regsub -all {\"} $query {} query
     }
 

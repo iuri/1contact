@@ -14,7 +14,7 @@ ad_library {
     Attachments
 
     @author Arjun Sanyal (arjun@openforce.net)
-    @cvs-id $Id: attachments-procs.tcl,v 1.18.2.1 2015/09/10 08:30:12 gustafn Exp $
+    @cvs-id $Id: attachments-procs.tcl,v 1.17.4.1 2013/10/02 23:08:44 gustafn Exp $
 }
 
 namespace eval attachments {
@@ -222,9 +222,3 @@ namespace eval attachments {
     }
     
 }
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

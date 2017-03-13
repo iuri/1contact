@@ -7,10 +7,10 @@ ad_page_contract {
     
     @author Ben Adida (ben@openforce.net)
     @creation-date 10 Mar 2002
-    @cvs-id $Id: cal-item-create-recurrence.tcl,v 1.9.2.2 2016/05/20 20:14:43 gustafn Exp $
+    @cvs-id $Id: cal-item-create-recurrence.tcl,v 1.8.4.3 2014/08/05 13:06:59 gustafn Exp $
 } {
     cal_item_id:naturalnum,notnull
-    {return_url:localurl "./"}
+    {return_url "./"}
     {days_of_week:multiple ""}
 } 
 
@@ -108,9 +108,3 @@ ad_form -name cal_item  -export {return_url} -form {
 
 ad_return_template
 
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

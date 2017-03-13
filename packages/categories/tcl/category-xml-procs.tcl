@@ -3,7 +3,7 @@ ad_library {
 
     @author Tom Ayles (tom@beatniq.net)
     @creation-date 2003-12-02
-    @cvs-id $Id: category-xml-procs.tcl,v 1.3.6.2 2016/11/27 12:19:35 gustafn Exp $
+    @cvs-id $Id: category-xml-procs.tcl,v 1.3.6.1 2015/09/10 08:30:19 gustafn Exp $
 }
 
 namespace eval ::category_tree::xml {}
@@ -35,7 +35,7 @@ ad_proc -public ::category_tree::xml::import {
     if {$site_wide_p} { set site_wide_p t } else { set site_wide_p f }
 
     set doc [dom parse $xml]
-    if {[catch {set root [$doc documentElement]} err]} {
+    if [catch {set root [$doc documentElement]} err] {
         error "Error parsing XML: $err"
     }
 
@@ -43,13 +43,14 @@ ad_proc -public ::category_tree::xml::import {
 
     db_transaction {
         foreach translation [$root selectNodes {translation}] {
-            if {[catch {set locale [$translation getAttribute locale]}]} {
+            if [catch {set locale [$translation getAttribute locale]}] {
                 error "Required attribute 'locale' not found"
             }
-            if {[catch {set name [[$translation selectNodes {name}] text]}]} {
+            if [catch {set name [[$translation selectNodes {name}] text]}] {
                 error "Required element 'name' not found"
             }
-            if {[catch {set description [[$translation selectNodes {description}] text]}]} {
+            if [catch {set description \
+                           [[$translation selectNodes {description}] text]}] {
                 set description {}
             }
             if {$tree_id} {
@@ -90,13 +91,14 @@ ad_proc -private ::category_tree::xml::add_category {
     
     # do translations
     foreach translation [$node selectNodes {translation}] {
-        if {[catch {set locale [$translation getAttribute locale]}]} {
+        if [catch {set locale [$translation getAttribute locale]}] {
             error "Required attribute 'locale' not found"
         }
-        if {[catch {set name [[$translation selectNodes {name}] text]}]} {
+        if [catch {set name [[$translation selectNodes {name}] text]}] {
             error "Required element 'name' not found"
         }
-        if {[catch {set description [[$translation selectNodes {description}] text]}]} {
+        if [catch {set description \
+                       [[$translation selectNodes {description}] text]}] {
             set description {}
         }
 

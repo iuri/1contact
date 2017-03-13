@@ -6,7 +6,7 @@ ad_library {
     
     @author Dave Bauer (dave@thedesignexperience.org)
     @creation-date 2003-09-11
-    @cvs-id $Id: oacs-dav-procs.tcl,v 1.17.2.2 2016/04/29 07:00:17 gustafn Exp $
+    @cvs-id $Id: oacs-dav-procs.tcl,v 1.16.2.2 2013/10/11 18:19:56 gustafn Exp $
     
 }
 
@@ -389,7 +389,7 @@ ad_proc -public oacs_dav::children_have_permission_p {
     return [expr {$child_count == 0}]
 }
 
-ad_proc -public oacs_dav::handle_request { args } {
+ad_proc -public oacs_dav::handle_request { uri method args } {
     dispatch request to the proper service contract implmentation
 } {
 
@@ -448,17 +448,17 @@ ad_proc -public oacs_dav::handle_request { args } {
     # content_revision if we don't find an implementation
     # implementation name is content_type
 
-    set real_content_type [oacs_dav::conn -set real_content_type $content_type]
+       set real_content_type [oacs_dav::conn -set real_content_type $content_type]
 
     while {![acs_sc_binding_exists_p dav $content_type]} {
         # go up content_type hierarchy
         # we do the query here to avoid running the query
         # when the implementation for the content_type does
         # exist
-        set content_type [db_string supertype "select supertype from acs_object_types where object_type = :content_type" -default ""]
-        if { $content_type eq "content_revision"} {break}
-        if { $content_type eq ""} { error "no dav implementation found for content_type $real_content_type" }
-        ns_log Notice "now looking for a dav implementation for content_type $content_type"
+                         set content_type [db_string supertype "select supertype from acs_object_types where object_type = :content_type" -default ""]
+                                          if { $content_type eq "content_revision"} {break}
+                                               if { $content_type eq ""} { error "no dav implementation found for content_type $real_content_type" }
+                                                    ns_log Notice "now looking for a dav implementation for content_type $content_type"
     }
 
     oacs_dav::conn -set content_type $content_type
@@ -1253,9 +1253,3 @@ ad_proc oacs_dav::impl::content_revision::unlock {} {
 
     return [list $ret_code $body]
 }
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

@@ -14,7 +14,7 @@ namespace eval ::xowiki::formfield {
   #
   ###########################################################
 
-  Class create workflow_definition -superclass textarea -parameter {
+  Class workflow_definition -superclass textarea -parameter {
     {rows 20}
     {cols 80}
     {dpi 120}
@@ -60,7 +60,7 @@ namespace eval ::xowiki::formfield {
   # ::xowiki::formfield::current_state
   #
   ###########################################################
-  Class create current_state -superclass label -parameter {
+  Class current_state -superclass label -parameter {
     {as_graph true}
   }
   current_state instproc render_input {} {
@@ -70,7 +70,7 @@ namespace eval ::xowiki::formfield {
                    -all_roles true -in_role none \
                    -workflow_definition [[my object] wf_property workflow_definition] ]
       #set ctx   [::xowf::Context require [my object]]
-      set graph [$ctx as_graph -current_state [my value] -visited [[my object] visited_states]  -style "max-height: 250px;"]
+      set graph [$ctx as_graph -current_state [my value] -visited [[my object] visited_states]]
       ::html::div -style "width: 35%; float: right;" {
         ::html::t -disableOutputEscaping $graph
       }
@@ -94,7 +94,7 @@ namespace eval ::xowiki::formfield {
 # these definitons are only here for the time being 
 #
 namespace eval ::xo::role {
-  Class create Role
+  Class Role
   Role instproc get_members args {
     error "get_members are not implemented for [self]"
   }
@@ -133,9 +133,9 @@ namespace eval ::xo::role {
     return [::xo::cc permission -object_id $package_id -privilege admin -party_id $user_id]
   }
   admin proc get_members {-object_id:required} {
-    set members [permission::get_parties_with_permission \
-                     -privilege admin \
-                     -object_id $object_id]
+    set members [xo::dc list_of_lists get_admins "select distinct o.title, p.party_id
+      from acs_object_party_privilege_map p, acs_objects o
+      where p.object_id = :object_id and p.privilege = 'admin' and o.object_id = p.party_id"]
     #my msg members=$members
     return $members
   }
@@ -186,7 +186,7 @@ namespace eval ::xowiki::formfield {
   #
   ###########################################################
 
-  Class create role_member -superclass candidate_box_select -parameter {
+  Class role_member -superclass candidate_box_select -parameter {
     role 
     {online_state off}
   }
@@ -232,7 +232,7 @@ namespace eval ::xowiki::formfield {
   #
   ###########################################################
 
-  Class create mc_exercise -superclass CompoundField -parameter {
+  Class mc_exercise -superclass CompoundField -parameter {
     {feedback full}
     {inplace true}
   }
@@ -306,7 +306,7 @@ namespace eval ::xowiki::formfield {
   #
   ###########################################################
 
-  Class create mc_alternative -superclass CompoundField -parameter {
+  Class mc_alternative -superclass CompoundField -parameter {
     {feedback full}
     {inplace true}
   }

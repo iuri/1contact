@@ -1,0 +1,39 @@
+<master src="/www/blank-master">
+<if @doc@ defined><property name="&doc">doc</property></if>
+<if @body@ defined><property name="&body">body</property></if>
+<if @head@ not nil><property name="head">@head;noquote@</property></if>
+<if @focus@ not nil><property name="focus">@focus;noquote@</property></if>
+<property name="skip_link">@skip_link;noquote@</property>
+
+<div id="wrapper">
+  <div class="header">
+    <div class="subsite-name">
+      <if @system_url@ not nil><a href="@system_url@">@subsite_name@</a></if>
+      <else>@subsite_name@</else>
+
+    </div>
+    <div class="header-navigation">
+      <ul>
+        <li>Free advice: +55 71 2000-3001</li>
+        <if @logout_url@ not nil>
+          <li><a href="">List your Service</a></li>
+          <li><a href="">List your Venue</a></li>
+          <li><a href="@logout_url@" title="#acs-subsite.Logout_from_system#">#acs-subsite.Logout#</a></li>
+        </if>
+        <if @login_url@ not nil>
+          <li><a href="@login_url@" title="#acs-subsite.Log_in_to_system#">#acs-subsite.Log_In#</a></li>
+          <li>Sign Up</li>
+        </if>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+
+<slave>
+
+
+<!-- <img src="http://evex.co/file-storage/view/EvExMainPage.png"> -->
+

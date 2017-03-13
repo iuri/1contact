@@ -3,14 +3,14 @@ ad_page_contract {
 
     @author Kevin Scaldeferri (kevin@arsdigita.com)
     @creation-date 6 Nov 2000
-    @cvs-id $Id: file-add.tcl,v 1.8.2.2 2016/05/20 20:11:45 gustafn Exp $
+    @cvs-id $Id: file-add.tcl,v 1.6.4.3 2014/07/29 11:24:00 gustafn Exp $
 } {
     folder_id:naturalnum,notnull
     object_id:naturalnum,notnull
-    return_url:localurl,notnull
+    return_url:notnull
     pretty_object_name:notnull
     {title ""}
-    {lock_title_p:boolean 0}
+    {lock_title_p 0}
 } -validate {
     valid_folder -requires {folder_id:integer} {
 	if {![fs_folder_p $folder_id]} {
@@ -41,9 +41,3 @@ if {$title eq ""} {
     set lock_title_p 0
 }
 
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

@@ -4,7 +4,7 @@ ad_page_contract {
 
     @author arjun@openforce.net
     @author ben@openforce
-    @cvs-id $Id: attach.tcl,v 1.12.2.1 2015/09/10 08:30:12 gustafn Exp $
+    @cvs-id $Id: attach.tcl,v 1.11.4.1 2013/10/02 23:08:45 gustafn Exp $
 
 } -query {
     {object_id:notnull}
@@ -83,9 +83,3 @@ template::head::add_style -style "
 set file_add_url [export_vars -base "file-add" { {object_id $to_object_id} folder_id return_url pretty_object_name}]
 
 set simple_add_url [export_vars -base "simple-add" { {object_id $to_object_id} folder_id return_url pretty_object_name}]
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

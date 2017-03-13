@@ -1,0 +1,3 @@
+ad_page_contract {}
+
+template::head::add_css -href "/www/css/sidebar.css"

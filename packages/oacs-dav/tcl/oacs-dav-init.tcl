@@ -6,7 +6,7 @@ ad_library {
     
     @author Dave Bauer (dave@thedesignexperience.org)
     @creation-date 2003-12-18
-    @cvs-id $Id: oacs-dav-init.tcl,v 1.3.10.1 2015/09/12 19:00:42 gustafn Exp $
+    @cvs-id $Id: oacs-dav-init.tcl,v 1.3 2006/08/08 21:27:07 donb Exp $
     
 }
 
@@ -42,9 +42,3 @@ ns_register_proc MKCOL ${url} oacs_dav::handle_request
 ns_register_proc MOVE ${url} oacs_dav::handle_request
 ns_register_proc LOCK ${url} oacs_dav::handle_request
 ns_register_proc UNLOCK ${url} oacs_dav::handle_request
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

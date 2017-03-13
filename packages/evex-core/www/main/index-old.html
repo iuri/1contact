@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <title>EvEx</title>
+    <meta name="DC.title" content="EvEx">
+    <meta property="og:title" content="EvEx">
+    <meta name="twitter:title" content="EvEx">
+    <meta property="og:image" content="images/froont.png">
+    <meta name="twitter:image" content="images/froont.png">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="EvEx">
+    <meta name="DC.language" scheme="ISO639-1" content="en">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="vendor/jquery.min.js"></script>
+    <script type="text/javascript" src="vendor/noframework.waypoints.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery.magnific-popup.min.js"></script>
+    <script type="text/javascript" src="js/responsive-nav.js"></script>
+    <script type="text/javascript" src="vendor/swiper.jquery.js"></script>
+    <script type="text/javascript" src="js/form-submit.js"></script>
+    <script type="text/javascript" src="js/popup.js"></script>
+    <script type="text/javascript" src="js/reveal-animation.js"></script>
+    <script type="text/javascript" src="js/bg-videos.js"></script>
+    <script type="text/javascript" src="js/background-parallax.js"></script>
+    <script type="text/javascript" src="js/page-script.js"></script>
+    <script type="text/javascript">
+        var fonts = {
+            "Montserrat": {
+                "family": "Montserrat",
+                "source": "google",
+                "subsets": [
+                    "latin"
+                ],
+                "variants": [
+                    "700",
+                    "regular"
+                ]
+            },
+            "Roboto": {
+                "family": "Roboto",
+                "source": "google",
+                "subsets": [
+                    "cyrillic",
+                    "cyrillic-ext",
+                    "greek",
+                    "greek-ext",
+                    "latin",
+                    "latin-ext",
+                    "vietnamese"
+                ],
+                "variants": [
+                    "100",
+                    "100italic",
+                    "300",
+                    "300italic",
+                    "500",
+                    "500italic",
+                    "700",
+                    "700italic",
+                    "900",
+                    "900italic",
+                    "italic",
+                    "regular"
+                ]
+            }
+        };
+    </script>
+    <script type="text/javascript" src="vendor/webfontloader.js"></script>
+    <script type="text/javascript" src="js/fontloader.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $("a[rel=modal]").click( function(ev){
+        ev.preventDefault();
+      	var id = $(this).attr("href");
+      	var alturaTela = $(document).height();
+      	var larguraTela = $(window).width();
+      	//colocando o fundo preto
+      	$('#mascara').css({'width':larguraTela,'height':alturaTela});
+        $(".window1").hide();
+      	$('#mascara').fadeIn(1000);
+      	$('#mascara').fadeTo("slow",0.8);
+      	var left = ($(window).width() /2) - ( $(id).width() / 2 );
+      	var top = ($(window).height() / 2) - ( $(id).height() / 2 );
+      	$(id).css({'top':top,'left':left});
+      	$(id).show();
+      });
+
+      $("#mascara").click( function(){
+        $(this).hide();
+        $(".window").hide();
+        $(".window1").show();
+      });
+
+      $('.fechar').click(function(ev){
+        ev.preventDefault();
+        $("#mascara").hide();
+        $(".window").hide();
+        $(".window1").show();
+      	
+      });
+
+
+
+      $("#submit").click( function(){
+        alert("TESTE");
+        $(".confirm").show();
+      });
+
+
+
+
+    });
+    </script>
+
+
+
+  <style type="text/css">
+    .confirm{ display:none; }
+    .window1{ display:block; }
+    .window {
+      display:none;
+      color:#FFF;
+      font-weight: bold;
+      position:absolute;
+      width:60%;
+      height:43%;
+      border: solid 1px #FFF;
+      background:transparent;
+      z-index:9900;
+      padding:0px;
+      border-radius:10px;
+    }
+
+    #mascara{
+      position:absolute;
+      left:0;
+      top:0;
+      z-index:9000;
+      background-color:#000;
+      display:none;
+    }
+
+    .fechar{display:block; text-align:right; margin:0;}
+
+  </style>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+<!-- BEGIN JANELA 2 - Contact --> 
+
+  <div class="window" id="janela2">
+    <a href="#" class="fechar"><img src="images/cross.png"></a>
+    <form action="/mail/send-mail" method="post">
+      <table width="90%"><tr><td>
+      <input style="background: transparent; border:0;" type="text" name="name" id="nome" value="Nome" onfocus="if(this.value == 'Nome') { this.value = '';}"><br><input style="background: transparent; border:0;" type="text" name="email" id="email" value="Email" onfocus="if(this.value == 'Email') { this.value = '';}"><br><input style="background: transparent; border:0;" type="text" name="phone" id="phone" value="Telefone" onfocus="if(this.value == 'Telefone') { this.value = '';}"></td></tr>
+	<tr><td><br><br><textarea name="body" style="background: transparent; border:0;" cols="66" rows="4" onfocus="if(this.value == 'Mensagem') { this.value = '';}">Mensagem</textarea></td></tr>
+	<tr><td align="middle"><input style="background: transparent;" type="submit" value="Enviar"></td></tr></table>
+  </div>
+
+<!-- END JANELA 2 CONTACT LINK  -->
+
+
+<!-- BEGIN JANELA 3 Owners LINK  -->
+
+  <div class="window" id="janela3">
+    <a href="#" class="fechar"><img src="images/cross.png"></a>
+    <form action="/mail/send-mail" method="post">
+     
+      <table cellpadding="0" cellspacing="0" width="90%"><tr><td>
+	<input style="background: transparent; border:0;" type="text" name="name" id="nome" value="Nome" onfocus="if(this.value == 'Nome') { this.value = '';}"><br><input style="background: transparent; border:0;" type="text" name="email" id="email" value="Email" onfocus="if(this.value == 'Email') { this.value = '';}"><br><input style="background: transparent; border:0;" type="text" name="phone" id="phone" value="Telefone" onfocus="if(this.value == 'Telefone') { this.value = '';}"><br><br></td></tr>
+	<tr><td><input style="background: transparent;border:0;"  type="text" name="subject" size="66" id="subject" value="Nome do Espaco" onfocus="if(this.value == 'Nome do Espaco') { this.value = ''; }"><br><br></td></tr>
+	<tr><td><textarea name="body" style="background: transparent; border:0;" cols="65" rows="4" onfocus="if(this.value == 'Descricao Resumida do Espaco') { this.value = '';}">Descricao Resumida do Espaco</textarea><br><br></td></tr>
+	<tr><td><input style="background: transparent;" type="submit" value="Enviar"><br><br></td></tr></table>
+      
+    </form>
+ </div>
+
+
+<!-- END JANELA 3 Owner's  LINK  -->
+
+
+<!-- BEGIN JANELA 4 Agent's LINK  -->
+
+  <div class="window" id="janela4">
+    <a href="#" class="fechar"><img src="images/cross.png"></a>
+    <form action="/mail/send-mail" method="post">
+      
+        <table cellpadding="0" cellspacing="0" width="90%"><tr><td>
+	<input style="background: transparent; border:0;" type="text" name="name" size="30" id="nome" value="Nome" onfocus="if(this.value == 'Nome') { this.value = '';}"><br><input style="background: transparent; border:0;" type="text" name="email"  size="30" id="email" value="Email" onfocus="if(this.value == 'Email') { this.value = '';}"><br><input style="background: transparent; border:0;" type="text" name="phone"  size="30"  id="phone" value="Telefone" onfocus="if(this.value == 'Telefone') { this.value = '';}"><br><br></td></tr>
+	<tr><td><input style="background: transparent; border:0;"  type="text" name="subject" size="66" id="subject" value="Servico" onfocus="if(this.value == 'Nome do Espaco') { this.value = ''; }"><br><br></td></tr>
+	<tr><td><textarea name="body" style="background: transparent; border:0;" cols="65" rows="4" onfocus="if(this.value == 'Descricao dos Servicos') { this.value = '';}">Descricao dos Servicos</textarea><br><br></td></tr>
+	<tr><td><input style="background: transparent;" type="submit" value="Enviar"></td></tr></table>
+    </form>
+  </div>
+
+
+<!-- END JANELA 4 Agent's  LINK  -->
+
+<!-- BEGIN JANELA 5 Client's LINK  -->
+
+  <div class="window" id="janela5">
+    <a href="#" class="fechar"><img src="images/cross.png"></a>
+    <form action="/mail/send-mail" method="post">
+      <div style="padding:10px">
+	<input style="background: transparent; border:0;" type="text" name="name" size="30" id="nome" value="Nome" onfocus="if(this.value == 'Nome') { this.value = '';}">
+	<input style="background: transparent; border:0;" type="text" name="email"  size="30" id="email" value="Email" onfocus="if(this.value == 'Email') { this.value = '';}">
+	<input style="background: transparent; border:0;" type="text" name="phone"  size="30"  id="phone" value="Telefone" onfocus="if(this..value == 'Telefone') { this.value = '';}"><br><br>
+	<input style="background: transparent; border:0;"  type="text" name="subject" size="66" id="subject" value="O que esta procurando" onfocus="if(this.value == 'O que esta procurando') { this.value = ''; }"><br><br>
+	<textarea name="body" style="background: transparent; border:0;" cols="65" rows="4" onfocus="if(this.value == 'Descricao Resumida do Espaco') { this.value = '';}">Fale mais sobre seu evento (tipo de evento, quantas pessoas, data, etc)</textarea><br><br>
+	<input style="background: transparent;" type="submit" value="Enviar">
+	</div>
+    </form>
+  </div>
+
+
+<!-- END JANELA 5 Client's  LINK  -->
+
+
+ 
+
+    <div id="mascara"></div>
+
+
+
+
+
+
+
+
+
+
+    <div class="b-content">
+        <div id="nav_with_logo" class="fr-widget fr-container fr_nav_with_logo">
+            <div id="navigation_dark_with_logo_2" class="fr-widget fr-navigation fr-navigation-active fr_navigation_dark_with_logo_2">
+                <div id="imagewidget" class="fr-widget fr-img fr_imagewidget"> <img src="images/thumbnail/evex-logo-r01-transparente_1.png_229x81.png" />
+                </div><!--
+             --><div id="mobile_toggle_2" class="fr-widget fr-navigation-toggle fr_mobile_toggle_2">
+                    <div id="hamburger_icon_2" class="fr-widget fr-svg fr_hamburger_icon_2">
+                        <div class="fr-svg-inner">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" viewBox="0 0 73.2 61.6" xml:space="preserve"><path d="M4.2 8.6h64.7c2.3 0 4.2-1.9 4.2-4.3C73.2 1.9 71.3 0 68.9 0H4.2C1.9 0 0 1.9 0 4.3 0 6.7 1.9 8.6 4.2 8.6zM68.9 26.5H4.2C1.9 26.5 0 28.4 0 30.8c0 2.4 1.9 4.3 4.2 4.3h64.7c2.3 0 4.2-1.9 4.2-4.3C73.2 28.4 71.3 26.5 68.9 26.5zM68.9 53H4.2C1.9 53 0 54.9 0 57.3c0 2.4 1.9 4.3 4.2 4.3h64.7c2.3 0 4.2-1.9 4.2-4.3C73.2 54.9 71.3 53 68.9 53z"/></svg>
+                        </div>
+                    </div>
+                </div><!--
+             --><div id="items_2" class="fr-widget fr-container fr_items_2">
+                    <a id="text02" class="fr-widget fr-text fr-wf fr_text02 fr-link" href="#container_29">
+                        <div class="fr-text">Sobre Nós</div>
+                    </a><!--
+                 --><a id="text02_3" class="fr-widget fr-text fr-wf fr_text02_3 fr-link" href="#gallery_18">
+                        <div class="fr-text">Benefícios</div>
+                    </a><!--
+                 --><a id="text02_4" class="fr-widget fr-text fr-wf fr_text02_4 fr-link" href="#gallery_17">
+                        <div class="fr-text">Como Funciona</div>
+                    </a><!--
+                 --><a id="text02_5" class="fr-widget fr-text fr-wf fr_text02_5 fr-link" href="#container_8">
+                        <div class="fr-text">Espaços</div>
+                    </a><!--
+                 --><a id="text02_6" class="fr-widget fr-text fr-wf fr_text02_6 fr-link" href="#content_17">
+                        <div class="fr-text">Serviços</div>
+                    </a><!--
+                 --><div id="text02_7" class="fr-widget fr-text fr-wf fr_text02_7">
+                        <div class="fr-text">  <a href="#janela2" rel="modal" style="text-decoration:none;">Contato</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+   <div id="container" class="fr-widget fr-container fr_container">
+
+    <!-- mascara para cobrir o site --> 
+
+     <div class="window1" id="janela2">
+
+     
+
+            <div id="image" class="fr-widget fr-img fr_image"> <img src="images/thumbnail/logocomeventoexperience_4.png_471x228.png" />
+            </div><!--
+         --><div id="text_26" class="fr-widget fr-text fr-wf fr_button fr_text_26">
+                <div class="fr-text">
+                    <h2>Encontre e contrate&nbsp;espaços e serviços para eventos de forma fácil e rápida</h2>
+                </div>
+            </div><!--
+         --><div id="grid" class="fr-widget fr-grid fr_grid">
+                <div id="button2" class="fr-widget fr-text fr-wf fr_button_fill_red fr_button2">
+                    <div class="fr-text">
+                        <a href="#janela3" rel="modal" style="text-decoration:none;">
+			<div>Tem espaço de eventos para Alugar?</div>
+                        <div><u>Clique aqui&nbsp;</u></div></a>
+                    </div>
+                </div><!--
+             --><div id="button2_2" class="fr-widget fr-text fr-wf fr_button_fill_red fr_button2_2">
+                    <a href="#janela4" rel="modal" style="text-decoration:none;"><div class="fr-text">
+                        <div>Presta serviços na área de eventos?</div>
+                        <div><u>Clique aqui&nbsp;</u></div>
+                    </div></a>
+                </div><!--
+             --><div id="button2_3" class="fr-widget fr-text fr-wf fr_button_fill_red fr_button2_3">
+                    <a href="#janela5" rel="modal" style="text-decoration:none;"><div class="fr-text">Busca&nbsp;espaço e/ou serviços para seu evento?&nbsp;<u>Clique Aqui</u></div>
+                </div></a>
+            </div>
+        </div><!--
+     -->
+</div>
+
+  <div id="slideshow_without_text" class="fr-widget fr-slideshow swiper-container swiper-container-vertical fr_slideshow_without_text" data-swiper-enabled data-slideshow-autoplay="2000" data-slideshow-direction="vertical" data-slideshow-effect="fade">
+            <div class="fr-subwidgets-container swiper-wrapper">
+                <div id="image_46" class="fr-widget fr-img fr_image_46"> <img src="images/thumbnail/arrow-left.png_70x80.png" />
+                </div><!--
+             --><div id="image_45" class="fr-widget fr-img fr_image_45"> <img src="images/thumbnail/arrow-right.png_70x80.png" />
+                </div><!--
+             --><div id="slide_4" class="fr-widget fr-container fr_slide_4">
+                </div><!--
+             --><div id="slide_3" class="fr-widget fr-container fr_slide_3">
+                </div><!--
+             --><div id="slide" class="fr-widget fr-container fr_slide">
+                </div><!--
+             --><div id="slide_5" class="fr-widget fr-container fr_slide_5">
+                </div><!--
+             --><div id="slide_6" class="fr-widget fr-container fr_slide_6">
+                </div><!--
+             --><div id="slide_7" class="fr-widget fr-container fr_slide_7">
+                </div><!--
+             --><div id="slide_8" class="fr-widget fr-container fr_slide_8">
+                </div><!--
+             --><div id="slide_9" class="fr-widget fr-container fr_slide_9">
+                </div>
+            </div>
+            <div class="swiper-pagination swiper-pagination-bullets" style="display:none">
+                <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div>
+        </div><!--
+     --><div id="container_29" class="fr-widget fr-container fr_container_29">
+            <div id="2_column_grid_right" class="fr-widget fr-grid fr_2_column_grid_right">
+                <div id="c07_one" class="fr-widget fr-container fr_c07_one">
+                    <div id="image_31" class="fr-widget fr-img fr_image_31"> <img src="images/thumbnail/desktop.png_841x493.png" />
+                    </div><!--
+                 --><div id="image_51" class="fr-widget fr-img fr_image_51"> <img src="images/thumbnail/mobile.png_262x548.png" />
+                    </div>
+                </div><!--
+             --><div id="c07_two" class="fr-widget fr-container fr_c07_two">
+                    <div id="text_89" class="fr-widget fr-text fr-wf fr_text_89">
+                        <div class="fr-text">
+                            <h2>Sobre EvEx</h2>
+                            <p>Um dos fundadores do EvEx teve que visitar 9 espaços para encontrar o local de realização do natal da empresa em que trabalhava. Neste processo identificou diversos problemas como poucas opções de qualidade, informações não confiáveis, tempo de resposta muito lento e&nbsp;serviços ineficientes.</p>
+                            <p>Toda a perda de tempo e desgaste o fez questionar como seria ter uma plataforma digital em que fosse&nbsp;possível&nbsp;identificar e avaliar espaços antes de realizar visitas. Aliando essa ideia à paixão por inovações tecnológicas surgiu a EvEx.</p>
+                            <p>EvEx é uma plataforma digital (versões desktop e aplicativos para IOS / Android) onde qualquer pessoa organizando um evento&nbsp;encontra os mais variados espaços e profissionais de eventos de qualidade de forma rápida e gratuita.</p>
+                            <p> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--
+     --><div id="gallery_18" class="fr-widget fr-container fr_gallery_18">
+            <div id="text_151" class="fr-widget fr-text fr-wf fr_text_dark_center fr_text_151">
+                <div class="fr-text">
+                    <h2>Porque usar EvEx</h2>
+                </div>
+            </div><!--
+         --><div id="container_9" class="fr-widget fr-container fr_container_9">
+                <div id="c09_3_column_grid" class="fr-widget fr-grid fr_c09_3_column_grid">
+                    <div id="c09_one" class="fr-widget fr-container fr_c09_one">
+                        <div id="image_3" class="fr-widget fr-img fr_image_3"> <img src="https://images.unsplash.com/photo-1427751840561-9852520f8ce8?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=c2531b1191dd33edca046f12aea3b357" />
+                        </div><!--
+                     --><div id="text_103" class="fr-widget fr-text fr-wf fr_text_103">
+                            <div class="fr-text">
+                                <h4>Organizador do evento</h4>
+                                <ul>
+                                    <li>Espaços e profissionais variados e surpreeendentes</li>
+                                    <li>Rápido, fácil e prático</li>
+                                    <li>Melhor preço garantido</li>
+                                    <li>Clareza, confiança e segurança</li>
+                                    <li>Avaliações de outros clientes</li>
+                                    <li>Gratuito</li>
+                                    <li>Possibilidade de tour virtual</li>
+                                    <li>Suporte de especialistas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!--
+                 --><div id="c09_two" class="fr-widget fr-container fr_c09_two">
+                        <div id="image_4" class="fr-widget fr-img fr_image_4"> <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=f9deffe7101df1e5c727a76bda5e7e36" />
+                        </div><!--
+                     --><div id="text_104" class="fr-widget fr-text fr-wf fr_text_104">
+                            <div class="fr-text">
+                                <h4>Espaços e Profissionais</h4>
+                                <ul>
+                                    <li>Amplificação do mercado e receita</li>
+                                    <li>Registro fácil e gratuito</li>
+                                    <li>Marketing gratuito</li>
+                                    <li>Sem custos fixos</li>
+                                    <li>Ganha-Ganha (Evex cobra % sobre reserva contrada)</li>
+                                    <li>Gestão de reservas simples</li>
+                                    <li>Notificações instantâneas</li>
+                                    <li>Suporte de especialistas</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!--
+                 --><div id="c09_two_2" class="fr-widget fr-container fr_c09_two_2">
+                        <div id="image_52" class="fr-widget fr-img fr_image_52"> <img src="https://images.unsplash.com/photo-1473177027534-53d906e9abcf?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=ee6b601143827fe966dc7db813f4c42c" />
+                        </div><!--
+                     --><div id="text_215" class="fr-widget fr-text fr-wf fr_text_215">
+                            <div class="fr-text">
+                                <h4>Participantes</h4>
+                                <p>Nós acreditamos que cada evento deva ser único e memorável. Com EvEx, desejamos que os organizadores de evento tenham mais tempo e recurso para pensar em como conseguir isso.</p>
+                                <p>Além do mais, na plataforma ele encontrará todos os elementos criativos para construir uma experiência inesquecível para os participantes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--
+     --><div id="gallery_17" class="fr-widget fr-container fr_gallery_17">
+            <div id="text_203" class="fr-widget fr-text fr-wf fr_text_dark_center fr_text_203">
+                <div class="fr-text">
+                    <h2>Como Funciona</h2>
+                </div>
+            </div><!--
+         --><div id="gry1_3_column_images_4" class="fr-widget fr-grid fr_gry1_3_column_images_4">
+                <div id="gry1_image_one_4" class="fr-widget fr-container fr_gry1_image_one_4">
+                    <div id="container_25" class="fr-widget fr-container fr_container_25">
+                        <div id="grid_2" class="fr-widget fr-grid fr_grid_2">
+                            <div id="map_marker_icon" class="fr-widget fr-svg fr_map_marker_icon">
+                                <div class="fr-svg-inner">
+                                    <svg width="1024" height="1536" viewBox="384 128 1024 1536" xmlns="http://www.w3.org/2000/svg"><path d="M1152 640q0-106-75-181t-181-75-181 75-75 181 75 181 181 75 181-75 75-181zm256 0q0 109-33 179l-364 774q-16 33-47.5 52t-67.5 19-67.5-19-46.5-52l-365-774q-33-70-33-179 0-212 150-362t362-150 362 150 150 362z"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--
+                 --><div id="text_204" class="fr-widget fr-text fr-wf fr_text_dark_center fr_text_204">
+                        <div class="fr-text">
+                            <h3>Pesquisar Espaços</h3>
+                            <p>Pesquise entre os mais variados e surpreendentes espaços para todos os tipos de evento.</p>
+                            <p>Filtre e organize sua pesquisa por local, avaliações, amenidades e preços.</p>
+                        </div>
+                    </div>
+                </div><!--
+             --><div id="gry1_image_two_4" class="fr-widget fr-container fr_gry1_image_two_4">
+                    <div id="container_26" class="fr-widget fr-container fr_container_26">
+                        <div id="grid_3" class="fr-widget fr-grid fr_grid_3">
+                            <div id="info_icon" class="fr-widget fr-svg fr_info_icon">
+                                <div class="fr-svg-inner">
+                                    <svg width="640" height="1408" viewBox="576 128 640 1408" xmlns="http://www.w3.org/2000/svg"><path d="M1216 1344v128q0 26-19 45t-45 19h-512q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h64v-384h-64q-26 0-45-19t-19-45v-128q0-26 19-45t45-19h384q26 0 45 19t19 45v576h64q26 0 45 19t19 45zm-128-1152v192q0 26-19 45t-45 19h-256q-26 0-45-19t-19-45v-192q0-26 19-45t45-19h256q26 0 45 19t19 45z"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--
+                 --><div id="text_205" class="fr-widget fr-text fr-wf fr_text_dark_center fr_text_205">
+                        <div class="fr-text">
+                            <h3>Analisar Opções</h3>
+                            <p>Explore fotos e tour virtual. Observe detalhes sobre a estrutura, condições do local e fornecedores parceiros.&nbsp;</p>
+                            <p>Tire dúvidas de forma rápida com o próprio espaço e conte com o apoio de nossa equipe.</p>
+                        </div>
+                    </div>
+                </div><!--
+             --><div id="gry1_image_three_4" class="fr-widget fr-container fr_gry1_image_three_4">
+                    <div id="container_27" class="fr-widget fr-container fr_container_27">
+                        <div id="grid_4" class="fr-widget fr-grid fr_grid_4">
+                            <div id="basic_calendar_icon" class="fr-widget fr-svg fr_basic_calendar_icon">
+                                <div class="fr-svg-inner">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path d="M53 5h-8v4H19V5h-8v4H0v50h64V9H53V5zm-6 2h4v6h-4V7zM13 7h4v6h-4V7zM2 57V19h60v38H2zm60-46v6H2v-6h9v4h8v-4h26v4h8v-4h9z"/><path d="M9 35h12V23H9v12zm2-10h8v8h-8v-8zM9 53h12V41H9v12zm2-10h8v8h-8v-8zM43 35h12V23H43v12zm2-10h8v8h-8v-8zM43 53h12V41H43v12zm2-10h8v8h-8v-8zM26 35h12V23H26v12zm2-10h8v8h-8v-8zM26 53h12V41H26v12zm2-10h8v8h-8v-8z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--
+                 --><div id="text_206" class="fr-widget fr-text fr-wf fr_text_dark_center fr_text_206">
+                        <div class="fr-text">
+                            <h3>Reservar Espaço</h3>
+                            <p>Reserve espaço de forma ágil e segura. Garanta assim o evento na data e condições desejadas.</p>
+                            <p>Várias formas e condições de pagamento&nbsp;diretamente com o fornecedor.</p>
+                        </div>
+                    </div>
+                </div><!--
+             --><div id="gry1_image_four_4" class="fr-widget fr-container fr_gry1_image_four_4">
+                    <div id="container_28" class="fr-widget fr-container fr_container_28">
+                        <div id="grid_5" class="fr-widget fr-grid fr_grid_5">
+                            <div id="users_icon" class="fr-widget fr-svg fr_users_icon">
+                                <div class="fr-svg-inner">
+                                    <svg width="1920" height="1792" viewBox="-64 0 1920 1792" xmlns="http://www.w3.org/2000/svg"><path d="M529 896q-162 5-265 128h-134q-82 0-138-40.5t-56-118.5q0-353 124-353 6 0 43.5 21t97.5 42.5 119 21.5q67 0 133-23-5 37-5 66 0 139 81 256zm1071 637q0 120-73 189.5t-194 69.5h-874q-121 0-194-69.5t-73-189.5q0-53 3.5-103.5t14-109 26.5-108.5 43-97.5 62-81 85.5-53.5 111.5-20q10 0 43 21.5t73 48 107 48 135 21.5 135-21.5 107-48 73-48 43-21.5q61 0 111.5 20t85.5 53.5 62 81 43 97.5 26.5 108.5 14 109 3.5 103.5zm-1024-1277q0 106-75 181t-181 75-181-75-75-181 75-181 181-75 181 75 75 181zm704 384q0 159-112.5 271.5t-271.5 112.5-271.5-112.5-112.5-271.5 112.5-271.5 271.5-112.5 271.5 112.5 112.5 271.5zm576 225q0 78-56 118.5t-138 40.5h-134q-103-123-265-128 81-117 81-256 0-29-5-66 66 23 133 23 59 0 119-21.5t97.5-42.5 43.5-21q124 0 124 353zm-128-609q0 106-75 181t-181 75-181-75-75-181 75-181 181-75 181 75 75 181z"></path></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--
+                 --><div id="text_207" class="fr-widget fr-text fr-wf fr_text_dark_center fr_text_207">
+                        <div class="fr-text">
+                            <h3>Adicionar Serviços</h3>
+                            <p>Planeje e contrate serviços de uma rede de fornecedores indicados e credenciados pelos próprios espaços e demais usuários.</p>
+                            <p>Todo o seu evento organizado e realizado de formá ágil.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--
+     --><div id="container_8" class="fr-widget fr-container fr_container_8">
+            <div id="text_114" class="fr-widget fr-text fr-wf fr_text_114">
+                <div class="fr-text">
+                    <h2>Espaços variados e surpreendentes</h2>
+                    <p>Pesquise por todos os tipos de espaço como: hotéis, prédios comerciais, salões, casas na praia, memoriais, clubes e centros esportivos. Com isso você encontrará espaços para atender diversos formatos de evento como confraternizações corporativas, treinamentos, aniversários, casamentos e produções. Pesquise e filtre em função de preços, localização, avaliações e amenidades.</p>
+                </div>
+            </div><!--
+         --><div id="2_column_grid_2" class="fr-widget fr-grid fr_2_column_grid_2">
+                <div id="c06_one_6" class="fr-widget fr-container fr_c06_one_6">
+                    <div id="image_53" class="fr-widget fr-img fr_image_53"> <img src="https://images.unsplash.com/photo-1477120128765-a0528148fed2?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=575689df7cf06feaae338b25c583515d" />
+                    </div><!--
+                 --><div id="text_216" class="fr-widget fr-text fr-wf fr_text_216">
+                        <div class="fr-text">
+                            <h3>Hotéis</h3>
+                        </div>
+                    </div>
+                </div><!--
+             --><div id="c06_one_7" class="fr-widget fr-container fr_c06_one_7">
+                    <div id="image_54" class="fr-widget fr-img fr_image_54"> <img src="https://images.unsplash.com/photo-1416453072034-c8dbfa2856b5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=6d3ea744ea3708a87c037c6fdfd757a9" />
+                    </div><!--
+                 --><div id="text_217" class="fr-widget fr-text fr-wf fr_text_217">
+                        <div class="fr-text">
+                            <h3>Restaurantes e Bares</h3>
+                        </div>
+                    </div>
+                </div><!--
+             --><div id="c06_one_8" class="fr-widget fr-container fr_c06_one_8">
+                    <div id="image_55" class="fr-widget fr-img fr_image_55"> <img src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=776672d584510320e88310e8c6513f5f" />
+                    </div><!--
+                 --><div id="text_218" class="fr-widget fr-text fr-wf fr_text_218">
+                        <div class="fr-text">
+                            <h3>Casas</h3>
+                        </div>
+                    </div>
+                </div><!--
+             --><div id="c06_one_9" class="fr-widget fr-container fr_c06_one_9">
+                    <div id="image_56" class="fr-widget fr-img fr_image_56"> <img src="https://images.unsplash.com/photo-1420316078344-6149cb82b2c7?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=a75a5e25f99eeab23550add5d96da639" />
+                    </div><!--
+                 --><div id="text_219" class="fr-widget fr-text fr-wf fr_text_219">
+                        <div class="fr-text">
+                            <h3>Centros Esportivos</h3>
+                        </div>
+                    </div>
+                </div><!--
+             --><div id="c06_one_10" class="fr-widget fr-container fr_c06_one_10">
+                    <div id="image_57" class="fr-widget fr-img fr_image_57"> <img src="https://images.unsplash.com/photo-1479243396208-be1751535cdb?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=e8f4e4b170a4672888c21037c6449946" />
+                    </div><!--
+                 --><div id="text_220" class="fr-widget fr-text fr-wf fr_text_220">
+                        <div class="fr-text">
+                            <h3>Prédios Comerciais</h3>
+                        </div>
+                    </div>
+                </div><!--
+             --><div id="c06_two_2" class="fr-widget fr-container fr_c06_two_2">
+                    <div id="image_58" class="fr-widget fr-img fr_image_58"> <img src="https://images.unsplash.com/photo-1470753937643-efeb931202a9?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=4d9b7dea3562c700be6b25a70cfb404d" />
+                    </div><!--
+                 --><div id="text_221" class="fr-widget fr-text fr-wf fr_text_221">
+                        <div class="fr-text">
+                            <h3>Lugares Inusitados</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--
+     --><div id="content_17" class="fr-widget fr-container fr_content_17">
+            <div id="text_210" class="fr-widget fr-text fr-wf fr_text_dark_center fr_text_210">
+                <div class="fr-text">
+                    <h2>Adicione serviços de profissionais credenciados</h2>
+                </div>
+            </div><!--
+         --><div id="2_column_grid" class="fr-widget fr-grid fr_2_column_grid">
+                <div id="c06_one" class="fr-widget fr-container fr_c06_one">
+                    <div id="image_33" class="fr-widget fr-img fr_image_33"> <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=41c49c751977187db83b25aace207afc" />
+                    </div><!--
+                 --><div id="text_87" class="fr-widget fr-text fr-wf fr_text_87">
+                        <div class="fr-text">
+                            <h3>Alimentos e Bebidas</h3>
+                        </div>
+                    </div>
+                </div><!--
+             --><div id="c06_one_2" class="fr-widget fr-container fr_c06_one_2">
+                    <div id="image_47" class="fr-widget fr-img fr_image_47"> <img src="https://images.unsplash.com/photo-1445985543470-41fba5c3144a?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=b43135ba4384447468c0071880c6c535" />
+                    </div><!--
+                 --><div id="text_211" class="fr-widget fr-text fr-wf fr_text_211">
+                        <div class="fr-text">
+                            <h3>Entretenimento</h3>
+                        </div>
+                    </div>
+                </div><!--
+             --><div id="c06_one_3" class="fr-widget fr-container fr_c06_one_3">
+                    <div id="image_48" class="fr-widget fr-img fr_image_48"> <img src="https://images.unsplash.com/photo-1479909031872-133432b2d7c1?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=2a5b54ea5a27a16d41ecf94b5052698c" />
+                    </div><!--
+                 --><div id="text_212" class="fr-widget fr-text fr-wf fr_text_212">
+                        <div class="fr-text">
+                            <h3>Foto e Video</h3>
+                        </div>
+                    </div>
+                </div><!--
+             --><div id="c06_one_4" class="fr-widget fr-container fr_c06_one_4">
+                    <div id="image_49" class="fr-widget fr-img fr_image_49"> <img src="https://images.unsplash.com/photo-1457734933360-81bb2e6ed002?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=6b41d6f46be69f1c438d6f88b669b902" />
+                    </div><!--
+                 --><div id="text_213" class="fr-widget fr-text fr-wf fr_text_213">
+                        <div class="fr-text">
+                            <h3>Curadoria e Produção</h3>
+                        </div>
+                    </div>
+                </div><!--
+             --><div id="c06_one_5" class="fr-widget fr-container fr_c06_one_5">
+                    <div id="image_50" class="fr-widget fr-img fr_image_50"> <img src="https://images.unsplash.com/photo-1480435240725-b619deab3a01?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=a751452537f1804779f725011b365328" />
+                    </div><!--
+                 --><div id="text_214" class="fr-widget fr-text fr-wf fr_text_214">
+                        <div class="fr-text">
+                            <h3>Equipamentos e Móveis</h3>
+                        </div>
+                    </div>
+                </div><!--
+             --><div id="c06_two" class="fr-widget fr-container fr_c06_two">
+                    <div id="image_32" class="fr-widget fr-img fr_image_32"> <img src="https://images.unsplash.com/photo-1471286574339-6221bad711e9?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;s=74528f9830b1e24b9ed0a747a9a22bbb" />
+                    </div><!--
+                 --><div id="text_88" class="fr-widget fr-text fr-wf fr_text_88">
+                        <div class="fr-text">
+                            <h3>Logística</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--
+     --><div id="footer_4" class="fr-widget fr-container fr_footer_4">
+            <div id="f4_2_columns" class="fr-widget fr-grid fr_f4_2_columns">
+                <div id="f4_container_one" class="fr-widget fr-container fr_f4_container_one">
+                </div><!--
+             --><div id="f4_text_cont" class="fr-widget fr-container fr_f4_text_cont">
+                    <div id="text_75" class="fr-widget fr-text fr-wf fr_text_bright_left fr_text_75">
+                        <div class="fr-text">
+                            <h4>Contato</h4>
+                            <p>Quer se tornar um parceiro, fazer parte do time, sugestões ou críticas, não hesite em nos contactar.</p>
+                        </div>
+                    </div><!--
+                 --><div id="wf_soc_icons_4" class="fr-widget fr-grid fr_wf_soc_icons_4">
+                        <div id="wf_twitter_3" class="fr-widget fr-container fr_wf_twitter_3">
+                            <a id="svg_27" class="fr-widget fr-svg fr_icon_medium_bright fr_svg_27 fr-widget-hover-opacity-60 fr-link" href="#" target="_blank">
+                                <div class="fr-svg-inner">
+                                    <?xml version="1.0" encoding="utf-8"?>
+                                    <!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                                    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+<path d="M20,0C9,0,0,9,0,20c0,11,9,20,20,20s20-9,20-20C40,9,31,0,20,0z M28,16.9c0,0.2,0,0.4,0,0.5  c0,5.4-4.1,11.7-11.7,11.7c-2.3,0-4.5-0.7-6.3-1.8c0.3,0,0.7,0.1,1,0.1c1.9,0,3.7-0.7,5.1-1.8c-1.8,0-3.3-1.2-3.8-2.9  c0.2,0,0.5,0.1,0.8,0.1c0.4,0,0.7,0,1.1-0.1c-1.9-0.4-3.3-2-3.3-4v-0.1c0.6,0.3,1.2,0.5,1.9,0.5c-1.1-0.7-1.8-2-1.8-3.4  c0-0.8,0.2-1.5,0.6-2.1c2,2.5,5.1,4.1,8.5,4.3c-0.1-0.3-0.1-0.6-0.1-0.9c0-2.3,1.8-4.1,4.1-4.1c1.2,0,2.3,0.5,3,1.3  c0.9-0.2,1.8-0.5,2.6-1c-0.3,1-1,1.8-1.8,2.3c0.8-0.1,1.6-0.3,2.4-0.6C29.5,15.6,28.8,16.3,28,16.9z"/>
+</svg>
+                                </div>
+                            </a>
+                        </div><!--
+                     --><div id="wf_facebook_3" class="fr-widget fr-container fr_wf_facebook_3">
+                            <a id="svg_26" class="fr-widget fr-svg fr_icon_medium_bright fr_svg_26 fr-widget-hover-opacity-60 fr-link" href="#" target="_blank">
+                                <div class="fr-svg-inner">
+                                    <?xml version="1.0" encoding="utf-8"?>
+                                    <!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                                    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+<path d="M20,0C9,0,0,9,0,20c0,11,9,20,20,20c11,0,20-9,20-20C40,9,31,0,20,0z M24.4,16.6l-0.2,3h-3.1V30h-3.9V19.6  h-2.1v-3h2.1v-2c0-0.9,0-2.3,0.7-3.1c0.7-0.9,1.6-1.5,3.2-1.5c2.6,0,3.7,0.4,3.7,0.4l-0.5,3.1c0,0-0.9-0.2-1.7-0.2  c-0.8,0-1.5,0.3-1.5,1.1v2.3H24.4z"/>
+</svg>
+                                </div>
+                            </a>
+                        </div><!--
+                     --><div id="wf_youtube_3" class="fr-widget fr-container fr_wf_youtube_3">
+                            <a id="svg_25" class="fr-widget fr-svg fr_icon_medium_bright fr_svg_25 fr-widget-hover-opacity-60 fr-link" href="https://www.linkedin.com/company/evex?trk=biz-companies-cym" target="_blank">
+                                <div class="fr-svg-inner">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="128 128 1536 1536"><path d="M365 1414h231v-694h-231v694zm246-908q-1-52-36-86t-93-34-94.5 34-36.5 86q0 51 35.5 85.5t92.5 34.5h1q59 0 95-34.5t36-85.5zm585 908h231v-398q0-154-73-233t-193-79q-136 0-209 117h2v-101h-231q3 66 0 694h231v-388q0-38 7-56 15-35 45-59.5t74-24.5q116 0 116 157v371zm468-998v960q0 119-84.5 203.5t-203.5 84.5h-960q-119 0-203.5-84.5t-84.5-203.5v-960q0-119 84.5-203.5t203.5-84.5h960q119 0 203.5 84.5t84.5 203.5z"/></svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div><!--
+                 --><a id="text_76" class="fr-widget fr-text fr-wf fr_text_bright_left fr_text_76 fr-widget-hover-opacity-60 fr-link" href="mailto:contato@evex.co">
+                        <div class="fr-text">
+                            <p>contato@evex.co</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fr-copyright-footer">
+        <div class="fr-widget fr-container">
+            <div class="fr-widget fr-text fr-wf fr-made-with-froont">
+                <a href="#" class="fr-text" target="_blank">
+        COPYRIGHT @ 2016 Silvio Gesteira Regis. All rights reserved. <span class="heart">&hearts;</span> <b></b>
+      </a>
+            </div>
+        </div>
+        <div class="fr-bottom-em-spacer"></div>
+    </div>
+    <div id="footer-assets">
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

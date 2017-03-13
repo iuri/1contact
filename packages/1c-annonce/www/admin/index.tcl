@@ -21,6 +21,7 @@ set return_url [ad_return_url]
 
 set package_id [ad_conn package_id]
 set cat_admin_url [export_vars -base "/categories/cadmin/one-object" {{object_id $package_id}}]
+set perm_admin_url [export_vars -base "/permissions/one" {{object_id $package_id}}]
 set add_annonce_url [export_vars -base "../annonce-edit"]
 
 

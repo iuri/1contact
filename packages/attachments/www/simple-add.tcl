@@ -4,15 +4,15 @@ ad_page_contract {
     @author Ben Adida (ben@openforce.net)
     @author arjun (arjun@openforce.net)
     @creation-date 01 April 2002
-    @cvs-id $Id: simple-add.tcl,v 1.11.2.2 2016/05/20 20:11:45 gustafn Exp $
+    @cvs-id $Id: simple-add.tcl,v 1.9.4.3 2014/07/29 11:24:00 gustafn Exp $
 } {
     folder_id:naturalnum,notnull
     object_id:naturalnum,notnull
-    return_url:localurl,notnull
+    return_url:notnull
     pretty_object_name:notnull
     {type "fs_url"}
     {title ""}
-    {lock_title_p:boolean 0}
+    {lock_title_p 0}
 } -validate {
     valid_folder -requires {folder_id:integer} {
         if {![fs_folder_p $folder_id]} {
@@ -45,9 +45,3 @@ set context [_ attachments.Add_pretty_name [list pretty_name $pretty_name]]
 if {$title eq ""} {
     set lock_title_p 0
 }
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

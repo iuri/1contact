@@ -3,7 +3,7 @@ ad_library {
 
     @creation-date 2004-04-01
     @author Jeff Davis davis@xarg.net
-    @cvs-id $Id: calendar-install-procs.tcl,v 1.2.14.1 2015/09/10 08:30:14 gustafn Exp $
+    @cvs-id $Id: calendar-install-procs.tcl,v 1.2 2004/04/01 22:44:35 jeffd Exp $
 }
 
 namespace eval calendar::install {}
@@ -36,9 +36,3 @@ ad_proc -private calendar::install::package_upgrade {
             }
         }
 }
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

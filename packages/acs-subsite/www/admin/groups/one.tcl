@@ -42,8 +42,6 @@ set return_url_enc [ad_urlencode $return_url]
 # Select out the group name and the group's object type. Note we can
 # use 1row because the validate filter above will catch missing groups
 
-set group_type_pretty_name ""
-
 db_1row group_info {
     select g.group_name, g.join_policy,
            o.object_type as group_type,
@@ -53,6 +51,9 @@ db_1row group_info {
        and o.object_type = t.object_type
        and g.group_id = :group_id
 }
+
+ns_log Notice "GRPUP $group_id"
+
 
 set context [list [list "[ad_conn package_url]admin/groups/" "Groups"] "One Group"]
 

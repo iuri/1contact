@@ -5,7 +5,7 @@ ad_page_contract {
     @author Dirk Gomez (openacs@dirkgomez.de)
     @author Ben Adida (ben@openforce.net)
     @creation-date May 29, 2002
-    @cvs-id $Id: cal-item-new.tcl,v 1.39.2.2 2016/05/20 20:14:43 gustafn Exp $
+    @cvs-id $Id: cal-item-new.tcl,v 1.38.4.4 2014/08/05 13:07:00 gustafn Exp $
 } {
     {calendar_id:naturalnum ""}
     cal_item_id:naturalnum,optional
@@ -15,7 +15,7 @@ ad_page_contract {
     {start_time ""}
     {end_time ""}
     {view "day"}
-    {return_url:localurl "./"}
+    {return_url "./"}
 }
 auth::require_login
 
@@ -329,9 +329,3 @@ ad_form -extend -name cal_item -validate {
 }
 
 
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

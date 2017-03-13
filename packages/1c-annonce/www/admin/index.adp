@@ -11,5 +11,6 @@
 <p align="right">
    <a href="@add_annonce_url@">#1c-annonce.Add_Annonce#</a>
    | <a href="@cat_admin_url@">#1c-annonce.Category_Admin#</a>
+   | <a href="@perm_admin_url@">#1c-annonce.Permission_Admin#</a>
 </p>
 

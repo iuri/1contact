@@ -1648,9 +1648,3 @@ if {![nsv_exists tdav_filters_installed filters_installed]} {
         }
     }
 }
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

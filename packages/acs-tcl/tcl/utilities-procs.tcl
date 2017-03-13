@@ -948,7 +948,7 @@ ad_proc -public export_vars {
     if { [info exists anchor] && $anchor ne "" } {
         append export_string "\#$anchor"
     }
-
+    
     return $export_string
 }
 

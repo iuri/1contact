@@ -3,7 +3,7 @@
     <property name="context">#calendar.Delete#</property>
 
     <div id="viewadp-mini-calendar">
-      <include src="mini-calendar" base_url="view" view="day" date="@date;literal@">
+      <include src="mini-calendar" base_url="view" view="day" date="@date@">
     </div>	
 
     <div id="viewadp-cal-table" class="margin-form margin-form-div">

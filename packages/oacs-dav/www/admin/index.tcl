@@ -6,7 +6,7 @@ ad_page_contract {
     
     @author Dave Bauer (dave@thedesignexperience.org)
     @creation-date 2004-02-15
-    @cvs-id $Id: index.tcl,v 1.1.1.1.18.1 2015/09/12 19:00:43 gustafn Exp $
+    @cvs-id $Id: index.tcl,v 1.1.1.1 2004/02/16 16:49:28 daveb Exp $
 } {
     
 } -properties {
@@ -45,9 +45,3 @@ db_multirow -extend {folder_url package_key package_name status} folders get_fol
 set title [_ oacs-dav.WebDAV_Folder_Administration]
 set context $title
 ad_return_template
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

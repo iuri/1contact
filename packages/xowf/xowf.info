@@ -8,17 +8,16 @@
     <singleton-p>f</singleton-p>
     <implements-subsite-p>f</implements-subsite-p>
     <inherit-templates-p>t</inherit-templates-p>
-    <auto-mount>xowf</auto-mount>
     
-    <version name="5.9.1d3" url="http://openacs.org/repository/download/apm/xowf-5.9.1d3.apm">
+    <version name="0.44" url="http://openacs.org/repository/download/apm/xowf-0.44.apm">
         <owner url="mailto:neumann@wu-wien.ac.at">Gustaf Neumann</owner>
         <summary>XoWiki Content Flow - an XoWiki based workflow system implementing state-based behavior of wiki pages and forms</summary>
-        <release-date>2015-10-04</release-date>
+        <release-date>2015-03-23</release-date>
         <vendor url="http://wu.ac.at">WU Vienna</vendor>
         <maturity>2</maturity>
 
-        <provides url="xowf" version="5.9.1d3"/>
-        <requires url="xowiki" version="5.9.1d6"/>
+        <provides url="xowf" version="0.44"/>
+        <requires url="xowiki" version="0.157"/>
 
         <callbacks>
             <callback type="before-uninstall"  proc="::xowiki::before-uninstall"/>

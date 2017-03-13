@@ -24,11 +24,12 @@ ns_register_filter postauth GET /register/user-login* ec_user_session_logout
 ad_proc ec_system_name {} {
     @return ec_system_name
 } {
+    ns_log Notice "Running ad_proc ec_system_name"
     return [util_memoize [list ec_system_name_mem] [ec_cache_refresh]]
 }
 
 ad_proc -private ec_system_name_mem {} {} {
-    return [parameter::get -package_id [ec_id] SystemName "" Store]
+    return [parameter::get -package_id [ec_id] -parameter SystemName -default "Store"]
 }
 
 ad_proc ec_system_owner {} {
@@ -38,7 +39,7 @@ ad_proc ec_system_owner {} {
 }
 
 ad_proc -private ec_system_owner_mem {} {} {
-    set so [parameter::get -package_id [ec_id] SystemOwner "" ""]
+    set so [parameter::get -package_id [ec_id] -parameter SystemOwner -default ""]
     if {[string equal "" $so]} {
         return [ad_system_owner]
     } else {
@@ -51,12 +52,16 @@ ad_proc -private ec_system_owner_mem {} {} {
 ############################################################
 ad_proc -private ec_cache_refresh {} {
  } {
+     ns_log Notice "Running ad_proc ec_cache_refresh"
+
      return [util_memoize [list ec_cache_refresh_mem] 300]
 }
 
 ad_proc -private ec_cache_refresh_mem {} {
  } {
-     return [util_memoize [list parameter::get -package_id [ec_id] CacheRefresh 600] 600]
+     ns_log Notice "Running ad_proc ec_cache_refresh"
+
+     return [util_memoize [list parameter::get -package_id [ec_id] -parameter CacheRefresh -default 600] 600]
 }
 
 ############################################################
@@ -140,7 +145,7 @@ ad_proc ec_acs_admin_url {} {
 ad_proc -public ec_pageroot {} {
     @return The pathname in the filesystem of the ecommerce www/ directory
  } {
-     return [util_memoize [list ec_pageroot_mem] [ec_cache_refresh]]
+     return [util_memoize {ec_pageroot_mem} [ec_cache_refresh]]
 }
 
 ad_proc -private ec_pageroot_mem {} {} {
@@ -151,40 +156,44 @@ ad_proc ec_data_directory {} {
     @return Pathname in the filesystem of ecommerce data directories
     (where product file like images exist.)
 } {
-    return [util_memoize [list ec_data_directory_mem] [ec_cache_refresh]]
+    return [util_memoize {ec_data_directory_mem} [ec_cache_refresh]]
 }
 
 ad_proc -private ec_data_directory_mem {} {
 } {
-    return [util_memoize [list parameter:get -package_id [ec_id] EcommerceDataDirectory "" [ec_pageroot]] [ec_cache_refresh]]
+    return [util_memoize [
+			  list parameter::get -package_id [ec_id] -parameter EcommerceDataDirectory -default [ec_pageroot]][ec_cache_refresh]
+	   ]
 }
 
 ad_proc -public ec_convert_path {} {
     @ return The pathname in the local filesystem of ImageMagick
 } {
-    return [util_memoize [list ec_convert_path_mem] [ec_cache_refresh]] 
+    return [util_memoize {ec_convert_path_mem} [ec_cache_refresh]] 
 }
 
 ad_proc -private ec_convert_path_mem {} {} {
-    return [util_memoize [list parameter::get -package_id [ec_id] ImageMagickPath "" /usr/local/bin/convert] [ec_cache_refresh]]
+    return [util_memoize {
+        ad_parameter -package_id [ec_id] ImageMagickPath "" /usr/local/bin/convert
+    } [ec_cache_refresh]]
 }
 
 ad_proc ec_product_directory {} {
     @return Pathname in the filesystem of ecommerce product directories
     (where product file like images exist.)
 } {
-    return [util_memoize [list ec_product_directory_mem] [ec_cache_refresh]]
+    return [util_memoize {ec_product_directory_mem} [ec_cache_refresh]]
 }
 
 ad_proc -private ec_product_directory_mem {} {
 } {
-    return [parameter::get -package_id [ec_id] ProductDataDirectory "" product/]
+    return [ad_parameter -package_id [ec_id] ProductDataDirectory "" product/]
 }
 
 # For administrators
 ad_proc ec_shipping_cost_summary { base_shipping_cost default_shipping_per_item weight_shipping_cost add_exp_base_shipping_cost add_exp_amount_per_item add_exp_amount_by_weight } { returns cost summary } {
 
-    set currency [parameter::get -package_id [ec_id] Currency ecommerce]
+    set currency [ad_parameter -package_id [ec_id] Currency ecommerce]
 
     if { ([empty_string_p $base_shipping_cost] || $base_shipping_cost == 0) && ([empty_string_p $default_shipping_per_item] || $default_shipping_per_item == 0) && ([empty_string_p $weight_shipping_cost] || $weight_shipping_cost == 0) && ([empty_string_p $add_exp_base_shipping_cost] || $add_exp_base_shipping_cost == 0) && ([empty_string_p $add_exp_amount_per_item] || $add_exp_amount_per_item == 0) && ([empty_string_p $add_exp_amount_by_weight] || $add_exp_amount_by_weight == 0) } {
 	return "Customers are not charged for shipping beyond what is specified for each product individually."
@@ -498,14 +507,14 @@ ad_proc ec_professional_reviews_if_they_exist { product_id } { returns professio
 # this won't show anything if ProductCommentsAllowP=0
 ad_proc ec_customer_comments { product_id {comments_sort_by ""} {prev_page_url ""} {prev_args_list ""} } { returns customer comments } {
 
-    if { [parameter::get -package_id [ec_id] ProductCommentsAllowP ecommerce] == 0 } {
+    if { [ad_parameter -package_id [ec_id] ProductCommentsAllowP ecommerce] == 0 } {
 	return ""
     }
 
     set end_of_comment_query ""
     set sort_blurb ""
 
-    if { [parameter::get -package_id [ec_id] ProductCommentsNeedApprovalP ecommerce] == 1 } {
+    if { [ad_parameter -package_id [ec_id] ProductCommentsNeedApprovalP ecommerce] == 1 } {
 	append end_of_comment_query "and c.approved_p = 't'"
     } else {
 	append end_of_comment_query "and (c.approved_p = 't' or c.approved_p is null)\n"
@@ -1387,6 +1396,8 @@ ad_proc ec_log_user_as_user_id_for_this_session {} { logs user as user id for th
 }
 
 ad_proc ec_get_user_session_id {} { Gets the user session from cookies } {
+    ns_log Notice "Running ad_proc ec_user_session_id"
+
     set headers [ns_conn headers]
     set cookie [ns_set get $headers Cookie]
 

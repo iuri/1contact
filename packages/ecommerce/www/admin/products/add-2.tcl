@@ -74,7 +74,7 @@ ad_page_contract {
 set title "Add A Product continued"
 set context [list [list index Products] $title]
 
-ad_require_permission [ad_conn package_id] admin
+permission::require_permission -object_id [ad_conn package_id] -privilege admin
 
 # set_the_usual_form_variables
 # product_name, sku, one_line_description, detailed_description, color_list,

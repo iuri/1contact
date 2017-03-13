@@ -540,8 +540,7 @@ ad_proc -private xmlrpc::httppost {
     ns_set put $req_hdrs "Content-type" "text/xml"
     ns_set put $req_hdrs "Content-length" [string length $content]
 
-#    set http [ns_httpopen POST $url $req_hdrs 30 $content]
-     set http [ns_httpopen POST $url $req_hdrs 30 $content]
+    set http [ns_httpopen POST $url $req_hdrs 30 $content]
     set rfd [lindex $http 0]
     set wfd [lindex $http 1]
     set rpset [lindex $http 2]

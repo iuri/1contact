@@ -6,11 +6,11 @@ ad_page_contract {
     
     @author Deds Castillo (deds@i-manila.com.ph)
     @creation-date 2006-07-13
-    @cvs-id $Id: detach.tcl,v 1.4.2.2 2016/05/20 20:11:45 gustafn Exp $
+    @cvs-id $Id: detach.tcl,v 1.3.6.2 2014/08/05 13:05:44 gustafn Exp $
 } {
     object_id:naturalnum,notnull
     attachment_id:naturalnum,notnull
-    {return_url:localurl ""}
+    {return_url ""}
 } -properties {
 } -validate {
 } -errors {
@@ -80,8 +80,3 @@ ad_form \
     } -after_submit {
 	ad_returnredirect $return_url
     }
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

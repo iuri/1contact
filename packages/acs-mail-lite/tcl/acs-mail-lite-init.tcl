@@ -15,7 +15,7 @@ set queue_dir [parameter::get_from_package_key -parameter "BounceMailDir" -packa
 
 if {$queue_dir ne ""} {
     # if BounceMailDir is set then handle incoming mail
-    ad_schedule_proc -thread t 600 acs_mail_lite::load_mails -queue_dir $queue_dir
+    ad_schedule_proc -thread t 20 acs_mail_lite::load_mails -queue_dir $queue_dir
 }
 
 

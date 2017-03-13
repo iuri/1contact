@@ -4,7 +4,7 @@ ad_page_contract {
 
     @author Arjun Sanyal (arjun@openforce.net)
     @author Ben Adida (ben@openforce.net)
-    @cvs-id $Id: attach-2.tcl,v 1.4.18.1 2015/09/10 08:30:12 gustafn Exp $
+    @cvs-id $Id: attach-2.tcl,v 1.4 2003/12/11 21:39:57 jeffd Exp $
 
 } -query {
     {object_id:notnull}
@@ -24,9 +24,3 @@ if {[catch {
 }
 
 ad_returnredirect $return_url
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

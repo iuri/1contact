@@ -6,7 +6,7 @@ ad_page_contract {
 
     @author Ben Adida
     @creation-date 2 July 2002
-    @cvs-id $Id: index.vuh,v 1.2.2.1 2016/06/09 09:13:25 gustafn Exp $
+    @cvs-id $Id: index.vuh,v 1.1.22.2 2014/07/29 11:37:29 gustafn Exp $
 } {
     object_id:naturalnum,notnull
     attachment_id:naturalnum,notnull
@@ -26,9 +26,3 @@ if {$version_id eq ""} {
 }
 
 cr_write_content -revision_id $version_id
-
-# Local variables:
-#    mode: tcl
-#    tcl-indent-level: 4
-#    indent-tabs-mode: nil
-# End:

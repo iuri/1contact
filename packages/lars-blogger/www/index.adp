@@ -52,7 +52,6 @@
 
 
          <center><a href="http://www.natopia.com" target="blank"> <img src="http://www.natopia.com/img/pt/logo_experince_nw.png" width="100px"></a></center>
-   <a href="https://www.000webhost.com/" target="blank"> <img src="http://www.000webhost.com/static/default.000webhost.com/images/logo.png" width="200px"></a>
    <a href="http://hostgator.com" target="blank"> <img src="http://frip.in/wp-content/uploads/2012/01/hostgator.png" width="200px"></a>
       <center><a href="http://www.alligator.com" target="blank"> <img src="http://alligator.com/siteart/alligator-records-logo.png" width="100px"></a></center>
 
