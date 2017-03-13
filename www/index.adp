@@ -36,15 +36,16 @@
 	<div class='header' >
 		<!-- Carregando Header -->
 		<include src='contents/header' />
+		<!-- Carregando barra de navegação -->
+		<div class='navbar' >
+			<include src='contents/navbar' />
+		</div>
 	</div>
 	<!-- Fim da header -->
 
 	<!-- Início da tela -->
 	<div class='plane' >
-		<!-- Carregando barra de navegação -->
-		<div class='navbar' >
-			<include src='contents/navbar' />
-		</div>
+		
 		<!-- Carregando o conteúdo -->
 		<div class='content_wrapper' >
 			<!-- Carregando barra lateral -->

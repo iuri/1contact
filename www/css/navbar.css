@@ -1,7 +1,6 @@
 .navbar_wrapper {
 	width: 100%;
 	display: table;
-	background-color: #E6E6E6;
 }
 
 .navbar_row {
@@ -39,5 +38,6 @@
 
 .radio_button input[type=radio]:not(old):checked + label {
 	color: #FFF;
-	background-color: #505050;
+	background-color: #555;
+	border: 1px solid #555;
 }

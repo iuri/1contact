@@ -20,6 +20,7 @@ html, body {
 
 html, body, a, input, select {
 	font-family: Abel;
+	font-size: 1em;
 	color: #333;
 }
 
@@ -68,10 +69,6 @@ b {
 	font-weight: 600;
 }
 
-input[type='radio'] {
-	margin: .25rem;
-}
-
 /* Classes */
 
 .wrapper {
@@ -83,7 +80,11 @@ input[type='radio'] {
 .header {
 	width: 100%;
 	padding: .5rem;
-	border-bottom: 2px solid #555;
+	font-size: 1em;
+	background: url('../images/bg.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 .plane {
@@ -114,16 +115,18 @@ input[type='radio'] {
 .box {
 	display: inline-block;
 	padding: .5rem;
-	margin: .25rem;
-	background-color: #E6E6E6;
+	margin: .5rem;
+	border: 1px solid #c8c8c8;
+	/** background-color: rgba(0,0,0,0.1); */
 }
 
 .box2 {
 	display: inline-block;
 	padding: .5rem;
-	margin: .15rem;
+	margin: .25rem;
 	text-align: center;
-	background-color: rgba(0,0,0,0.1);
+	border: 1px solid #c8c8c8;
+	/* background-color: rgba(0,0,0,0.1); */
 }
 
 .normal_text {
@@ -144,7 +147,7 @@ input[type='submit'] {
 
 .button:hover {
 	color: #FFF;
-	background-color: #505050;
+	background-color: #555;
 }
 
 .button.clear {

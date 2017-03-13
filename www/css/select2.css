@@ -288,7 +288,7 @@
             padding-left: 6em; }
 
 .select2-container--default .select2-results__option--highlighted[aria-selected] {
-  background-color: #505050;
+  background-color: #555555;
   color: white; }
 
 .select2-container--default .select2-results__group {
@@ -307,7 +307,7 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFEEEEEE', GradientType=0); }
   .select2-container--classic .select2-selection--single:focus {
-    border: 1px solid #505050; }
+    border: 1px solid #555555; }
   .select2-container--classic .select2-selection--single .select2-selection__rendered {
     color: #444;
     line-height: 2.125rem; }
@@ -359,7 +359,7 @@
   right: auto; }
 
 .select2-container--classic.select2-container--open .select2-selection--single {
-  border: 1px solid #505050; }
+  border: 1px solid #555555; }
   .select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow {
     background: transparent;
     border: none; }
@@ -394,7 +394,7 @@
   cursor: text;
   outline: 0; }
   .select2-container--classic .select2-selection--multiple:focus {
-    border: 1px solid #505050; }
+    border: 1px solid #555555; }
   .select2-container--classic .select2-selection--multiple .select2-selection__rendered {
     list-style: none;
     margin: 0;
@@ -417,7 +417,7 @@
     font-weight: bold;
     margin-right: 2px; }
     .select2-container--classic .select2-selection--multiple .select2-selection__choice__remove:hover {
-      color: #555; }
+      color: #555555; }
 
 .select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
   float: right; }
@@ -431,7 +431,7 @@
   margin-right: auto; }
 
 .select2-container--classic.select2-container--open .select2-selection--multiple {
-  border: 1px solid #505050; }
+  border: 1px solid #555555; }
 
 .select2-container--classic.select2-container--open.select2-container--above .select2-selection--multiple {
   border-top: none;
@@ -481,4 +481,4 @@
   padding: 6px; }
 
 .select2-container--classic.select2-container--open .select2-dropdown {
-  border-color: #505050; }
+  border-color: #555555; }

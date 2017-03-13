@@ -79,6 +79,11 @@
 				</div>
 			</div>
 
+			<!-- Botão de pesquisar -->
+			<div class='navbar_cell' >
+				<input type='submit' class='button' value='Ok' />
+			</div>
+
 		</div>
 
 	</div>

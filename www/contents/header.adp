@@ -8,12 +8,15 @@
 	<div class='header_cell header_logo' >
 		<a href='./' ><img src='images/logo.png' /></a>
 	</div>
-	<div class='header_cell header_title' >
+	<div class='header_cell header_title' style='width:12em;' >
 		Rue de la Servette 45<br>1202 Genève SUISSE<br>+41 022 782 8370
 	</div>
-	<div class='header_cell header_links' >
+	<div class='header_cell' style='text-align:left;vertical-align:middle;' >
+		<a href='#' ><span class='mif-menu mif-2x'></span></a>
+	</div>
+	<div class='header_cell header_links' style='vertical-align:top;' >
 		
-		<div class='input-control select' style='width:5.5em;' >
+		<div class='input-control select' style='width:5.5em;height:.75em;' >
 			<select>
 				<option>Francês</option>
 				<option>Inglês</option>
