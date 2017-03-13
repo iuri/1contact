@@ -18,7 +18,7 @@
 
 		<!-- Contato -->
 		<div class='footer_detail' >
-			+41(0)22 782 83 70<br><a href='mailto:info@1contact.ch' >info@1contact.ch</a>
+			+41 022 782 8370<br><a href='mailto:info@1contact.ch' >info@1contact.ch</a>
 		</div>
 
 	</div>

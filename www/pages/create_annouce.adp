@@ -5,9 +5,11 @@
 </header>
 
 <body>
+<div style='position:relative;' >
+
 	<h3>Criar um novo anúncio</h3>
 
-	<div class='box' style='margin-bottom:.5rem;' >
+	<div class='box' >
 
 		<h4>Características gerais</h4>
 
@@ -17,7 +19,7 @@
 		</div>
 
 		<!-- Tipo de negociação (locação ou venda) -->
-		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='Negócio' style='width:11.5em;' >
+		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='Tipo de negócio' style='width:11.5em;' >
 			<select name='announce_business' multiple='multiple' style='width:100%;' >
 				<option value='0' >Locação</option>
 				<option value='1' >Venda</option>
@@ -46,7 +48,7 @@
 		<!-- Data de disponibilidade -->
 		<div class='input-control text' data-role='datepicker' data-scheme='darcula' data-locale='pt' data-format='dd.mm.yyyy' style='width:13em;' >
 			<input type='text' name='announce_availability' placeholder='Data de disponibilidade' style='width:100%;' />
-			<button class='button' ><span class='mif-calendar' ></span></button>
+			<button class='button clear' ><span class='mif-calendar' ></span></button>
 		</div>
 
 		<!-- Num de cômodos -->
@@ -87,198 +89,21 @@
 
 	<br>
 
-	<div class='box' style='margin-bottom:.5rem;' >
-
+	<div class='box' >
 		<h4>Características obrigatórias</h4>
-
-		<!-- Características do matching -->
-		<div style='display:table;' >
-			
-			<div style='display:table-cell;' >
-				
-				<!-- Mobiliado -->
-				<div class='box2' >
-					<b>Mobiliado</b><br>
-					<input type='radio' name='characteristics_furnished' id='furnished_yes' /><label for='furnished_yes' />Sim</label>
-					<input type='radio' name='characteristics_furnished' id='furnished_no' /><label for='furnished_no' />Não</label>
-					<input type='radio' name='characteristics_furnished' id='furnished_notmatter' /><label for='furnished_notmatter' />Indiferente</label>
-					<input type='radio' name='characteristics_furnished' id='furnished_ondemmand' /><label for='furnished_ondemmand' />Sob encomenda</label>
-				</div>
-
-				<!-- Elevador -->
-				<div class='box2' >
-					<b>Elevador</b><br>
-					<input type='radio' name='characteristics_elevator' id='elevator_yes' style='margin:.25rem;' /><label for='elevator_yes' />Sim</label>
-					<input type='radio' name='characteristics_elevator' id='elevator_no' style='margin:.25rem;' /><label for='elevator_no' />Não</label>
-					<input type='radio' name='characteristics_elevator' id='elevator_notmatter' style='margin:.25rem;' /><label for='elevator_notmatter' />Indiferente</label>
-				</div>
-
-				<!-- Quintal -->
-				<div class='box2' >
-					<b>Quintal</b><br>
-					<input type='radio' name='characteristics_yard' id='yard_yes' style='margin:.25rem;' /><label for='yard_yes' />Sim</label>
-					<input type='radio' name='characteristics_yard' id='yard_no' style='margin:.25rem;' /><label for='yard_no' />Não</label>
-					<input type='radio' name='characteristics_yard' id='yard_notmatter' style='margin:.25rem;' /><label for='yard_notmatter' />Indiferente</label>
-				</div>
-
-				<!-- Acesso ao exterior -->
-				<div class='box2' >
-					<b>Acesso ao exteror</b><br>
-					<input type='radio' name='characteristics_exterioraccess' id='exterioraccess_yes' style='margin:.25rem;' /><label for='exterioraccess_yes' />Sim</label>
-					<input type='radio' name='characteristics_exterioraccess' id='exterioraccess_no' style='margin:.25rem;' /><label for='exterioraccess_no' />Não</label>
-					<input type='radio' name='characteristics_exterioraccess' id='exterioraccess_notmatter' style='margin:.25rem;' /><label for='exterioraccess_notmatter' />Indiferente</label>
-				</div>
-				
-				<!-- Parque -->
-				<div class='box2' >
-					<b>Parque</b><br>
-					<input type='radio' name='characteristics_park' id='park_yes' style='margin:.25rem;' /><label for='park_yes' />Sim</label>
-					<input type='radio' name='characteristics_park' id='park_no' style='margin:.25rem;' /><label for='park_no' />Não</label>
-					<input type='radio' name='characteristics_park' id='park_notmatter' style='margin:.25rem;' /><label for='park_notmatter' />Indiferente</label>
-					<input type='radio' name='characteristics_park' id='park_ondemmand' style='margin:.25rem;' /><label for='park_demmand' />Sob encomenda</label>
-				</div>
-
-				<!-- Terraço -->
-				<div class='box2' >
-					<b>Terraço</b><br>
-					<input type='radio' name='characteristics_terrace' id='terrace_yes' style='margin:.25rem;' /><label for='terrace_yes' />Sim</label>
-					<input type='radio' name='characteristics_terrace' id='terrace_no' style='margin:.25rem;' /><label for='terrace_no' />Não</label>
-					<input type='radio' name='characteristics_terrace' id='terrace_notmatter' style='margin:.25rem;' /><label for='terrace_notmatter' />Indiferente</label>
-				</div>
-
-				<!-- Varanda -->
-				<div class='box2' >
-					<b>Varanda</b><br>
-					<input type='radio' name='characteristics_balcony' id='balcony_yes' style='margin:.25rem;' /><label for='balcony_yes' />Sim</label>
-					<input type='radio' name='characteristics_balcony' id='balcony_no' style='margin:.25rem;' /><label for='balcony_no' />Não</label>
-					<input type='radio' name='characteristics_balcony' id='balcony_notmatter' style='margin:.25rem;' /><label for='balcony_notmatter' />Indiferente</label>
-				</div>
-
-				<!-- Jardim -->
-				<div class='box2' >
-					<b>Jardim</b><br>
-					<input type='radio' name='characteristics_garden' id='garden_yes' style='margin:.25rem;' /><label for='garden_yes' />Sim</label>
-					<input type='radio' name='characteristics_garden' id='garden_no' style='margin:.25rem;' /><label for='garden_no' />Não</label>
-					<input type='radio' name='characteristics_garden' id='garden_notmatter' style='margin:.25rem;' /><label for='garden_notmatter' />Indiferente</label>
-				</div>
-
-				<!-- Garagem -->
-				<div class='box2' >
-					<b>Garagem</b><br>
-					<input type='radio' name='characteristics_garage' id='garage_yes' style='margin:.25rem;' /><label for='garage_yes' />Sim</label>
-					<input type='radio' name='characteristics_garage' id='garage_no' style='margin:.25rem;' /><label for='garage_no' />Não</label>
-					<input type='radio' name='characteristics_garage' id='garage_notmatter' style='margin:.25rem;' /><label for='garage_notmatter' />Indiferente</label>
-					<input type='radio' name='characteristics_garage' id='garage_ondemmand' style='margin:.25rem;' /><label for='garage_ondemmand' />Sob encomenda</label>
-				</div>
-
-				<!-- Cozinha agenciada -->
-				<div class='box2' >
-					<b>Cozinha agenciada</b><br>
-					<input type='radio' name='characteristics_arranged_kitchen' id='ak_yes' style='margin:.25rem;' /><label for='ar_yes' />Sim</label>
-					<input type='radio' name='characteristics_arranged_kitchen' id='ak_no' style='margin:.25rem;' /><label for='ar_no' />Não</label>
-					<input type='radio' name='characteristics_arranged_kitchen' id='ak_notmatter' style='margin:.25rem;' /><label for='ak_notmatter' />Indiferente</label>
-				</div>
-
-				<!-- Cozinha equipada -->
-				<div class='box2' >
-					<b>Cozinha equipada</b><br>
-					<input type='radio' name='characteristics_equipped_kitchen' id='ek_yes' style='margin:.25rem;' /><label for='er_yes' />Sim</label>
-					<input type='radio' name='characteristics_equipped_kitchen' id='ek_no' style='margin:.25rem;' /><label for='ek_no' />Não</label>
-					<input type='radio' name='characteristics_equipped_kitchen' id='ek_notmatter' style='margin:.25rem;' /><label for='ek_notmatter' />Indiferente</label>
-				</div>
-
-				<!-- Andar térreo -->
-				<div class='box2' >
-					<b>Andar térreo</b><br>
-					<input type='radio' name='characteristics_groundfloor' id='groundfloor_yes' style='margin:.25rem;' /><label for='groundfloor_yes' />Sim</label>
-					<input type='radio' name='characteristics_groundfloor' id='groundfloor_no' style='margin:.25rem;' /><label for='groundfloor_no' />Não</label>
-					<input type='radio' name='characteristics_groundfloor' id='groundfloor_notmatter' style='margin:.25rem;' /><label for='groundfloor_notmatter' />Indiferente</label>
-				</div>
-
-				<!-- Andar superior -->
-				<div class='box2' >
-					<b>Andar superior</b><br>
-					<input type='radio' name='characteristics_superiorfloor' id='superiorfloor_yes' style='margin:.25rem;' /><label for='superiorfloor_yes' />Sim</label>
-					<input type='radio' name='characteristics_superiorfloor' id='superiorfloor_no' style='margin:.25rem;' /><label for='superiorfloor_no' />Não</label>
-					<input type='radio' name='characteristics_superiorfloor' id='superiorfloor_notmatter' style='margin:.25rem;' /><label for='superiorfloor_notmatter' />Indiferente</label>
-				</div>
-
-				<!-- Acesso à deficientes -->
-				<div class='box2' >
-					<b>Acesso à deficientes</b><br>
-					<input type='radio' name='characteristics_handicap' id='handicap_yes' style='margin:.25rem;' /><label for='handicap_yes' />Sim</label>
-					<input type='radio' name='characteristics_handicap' id='handicap_no' style='margin:.25rem;' /><label for='handicap_no' />Não</label>
-					<input type='radio' name='characteristics_handicap' id='handicap_notmatter' style='margin:.25rem;' /><label for='handicap_notmatter' />Indiferente</label>
-				</div>
-
-				<!-- Porão -->
-				<div class='box2' >
-					<b>Porão</b><br>
-					<input type='radio' name='characteristics_basement' id='basement_yes' style='margin:.25rem;' /><label for='basement_yes' />Sim</label>
-					<input type='radio' name='characteristics_basement' id='basement_no' style='margin:.25rem;' /><label for='basement_no' />Não</label>
-					<input type='radio' name='characteristics_basement' id='basement_notmatter' style='margin:.25rem;' /><label for='basement_notmatter' />Indiferente</label>
-				</div>
-
-			</div>
-
-		</div>
-
+		<include src='../contents/matching' />
 	</div>
 
 	<br>
 
-	<div class='box' style='margin-bottom:.5rem;' >
-
+	<div class='box' >
 		<h4>Características opcionais</h4>
-
-		<!-- Propriedades opcionais -->
-		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='Arquitetura' style='width:28em;' >
-			<select name='announce_architecture' multiple='multiple' style='width:100%;' >
-				<option value='0' >Prédio novo</option>
-				<option value='1' >Arquitetura antiga</option>
-				<option value='2' >Prestigiosa</option>
-				<option value='3' >Vertical</option>
-				<option value='4' >Anos 70</option>
-			</select>
-		</div>
-
-		<!-- Propriedades da vizinhança -->
-		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='Vizinhança' style='width:28em;' >
-			<select name='announce_architecture' multiple='multiple' style='width:100%;' >
-				<option value='0' >Aeroporto</option>
-				<option value='1' >Comércio</option>
-				<option value='2' >Centro</option>
-				<option value='3' >Lago</option>
-				<option value='4' >Organizações</option>
-				<option value='5' >Transporte público</option>
-				<option value='6' >Escolas</option>
-				<option value='7' >Estações de trem</option>
-			</select>
-		</div>
-
-		<!-- Caracteríscicas gerais -->
-		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='Características' style='width:56.25em;' >
-			<select name='announce_characteristics' multiple='multiple' style='width:100%;' >
-				<option value='0' >Bela Vista</option>
-				<option value='1' >Lareira</option>
-				<option value='2' >Teto alto</option>
-				<option value='3' >Piso antigo</option>
-				<option value='4' >Máquina de lavar</option>
-				<option value='5' >Local para máquina de lavar</option>
-				<option value='6' >Secadora de roupas</option>
-				<option value='7' >Lavadoura de louças</option>
-				<option value='8' >Local para lavadoura de louças</option>
-				<option value='9' >Cozinha habitável</option>
-				<option value='10' >Cozinha grande</option>
-				<option value='11' >Cozinha aberta</option>
-			</select>
-		</div>
-
+		<include src='../contents/characteristics' />
 	</div>
 
 	<br>
 
-	<div class='box' style='margin-right:.5rem;' >
+	<div class='box' >
 		<h4>Descrição</h4>
 		<div class='input-control textarea' data-role='input' data-text-auto-resize='true' style='width:25em;' >
 			<textarea></textarea>
@@ -288,25 +113,43 @@
 	<div class='box' style='vertical-align:top;' >
 		<h4>Adicionar fotos</h4>
 		<div class='input-control file' data-role='input' >
-    		<input type='file' >
-    		<button class='button' ><span class='mif-folder' ></span></button>
+    		<input type='file' multiple='multiple' >
+    		<button class='button clear' ><span class='mif-folder' ></span></button>
 		</div>
 	</div>
 
 	<div class='box' style='vertical-align:top;' >
 		<h4>Status</h4>
-		<div class='select' >
-    		<select>
-    			<option value='1' >Ativo</option>
-    			<option value='0' >Inativo</option>
-    			<option value='2' >Encerrado</option>
-    		</select>
-		</div>
+		<label class='input-control radio small-check' >
+			<input type='radio' name='announce_status' id='announce_status_inactive' checked='checked' />
+			<span class='check' ></span>
+			<span class='caption' >Inativo</span>
+		</label>
+		<label class='input-control radio small-check' >
+			<input type='radio' name='announce_status' id='announce_status_ctive' />
+			<span class='check' ></span>
+			<span class='caption' >Ativo</span>
+		</label>
+		<label class='input-control radio small-check' >
+			<input type='radio' name='announce_status' id='announce_status_closed' />
+			<span class='check' ></span>
+			<span class='caption' >Encerrado</span>
+		</label>
 	</div>
 
 	<div class='box' style='vertical-align:top;' >
 		<h4>Termos e condições</h4>
-		<input type='checkbox' name='terms' id='terms' />&nbsp;<label for='terms' >Concordo com os termos e condições</label>
+		<label class='input-control checkbox small-check' >
+			<input type='checkbox' name='announce_terms' id='announce_terms' />
+			<span class='check' ></span>
+			<span class='caption' >Concordo com os termos e condições</span>
+		</label>
 	</div>
+
+	<span style='position:absolute;right:0;bottom:0;' >
+		<input type='submit' class='button' value='Salvar' />
+	</span>
+
+</div>
 
 </body>

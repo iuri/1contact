@@ -114,6 +114,7 @@ input[type='radio'] {
 .box {
 	display: inline-block;
 	padding: .5rem;
+	margin: .25rem;
 	background-color: #E6E6E6;
 }
 
@@ -133,10 +134,20 @@ input[type='radio'] {
 	background-color: rgba(0,0,0,0.5);
 }
 
-.colour_button {
+input[type='submit'] {
 	background-color: #E6E6E6;
 }
 
-.button.error {
-  border: 1px solid #ce352c;
- }
+.button {
+	background-color: #E6E6E6;
+}
+
+.button:hover {
+	color: #FFF;
+	background-color: #505050;
+}
+
+.button.clear {
+  background: #FFF;
+  color: #333;
+}

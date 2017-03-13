@@ -9,10 +9,19 @@
 		<a href='./' ><img src='images/logo.png' /></a>
 	</div>
 	<div class='header_cell header_title' >
-		Rue de la Servette 45<br>1202 Genève SUISSE<br>+41(0)22 782 83 70
+		Rue de la Servette 45<br>1202 Genève SUISSE<br>+41 022 782 8370
 	</div>
 	<div class='header_cell header_links' >
-		<a href='' >Idioma</a><br>
+		
+		<div class='input-control select' style='width:5.5em;' >
+			<select>
+				<option>Francês</option>
+				<option>Inglês</option>
+				<option>Portugês</option>
+			</select>
+		</div>
+
+		<br>
 		<a href="javascript:metroDialog.open('#login_form')" >Login</a><br>
 		<a href='#' >Contato</a>
 	</div>
@@ -25,7 +34,7 @@
 		<form>
 			<div class='input-control text' style='width:12em;' ><input name='login_field' type='text' placeholder='Email' /></div><br>
 			<div class='input-control text' style='width:12em;' ><input name='password_field' type='password' placeholder='Senha' /></div><br>
-			<div class='button colour_button' style='width:12em;' >Login</div><br>
+			<div class='button' style='width:12em;' >Login</div><br>
 			<div style='text-align:right;' >
 				<label class='input-control checkbox small-check' >
 					<input type='checkbox' name='remember_field' />

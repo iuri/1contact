@@ -38,7 +38,7 @@
         <span class='node-toggle' ></span>
         <ul>
             <li><a href='#' >Meus mandatos</a></li>
-            <li><a href='#' >Criar novo mandato</a></li>
+            <li><a href='?page=create_mandat' >Criar um novo mandato</a></li>
         </ul>
     </li>
 
