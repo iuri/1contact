@@ -18,17 +18,12 @@
 }
 
 .header_title {
-	font-weight: 600;
+	font-family: Maitree;
+	font-weight: bold;
 }
 
 .header_links {
-    text-align: right;
-}
-
-.header_links a {
-    text-align: right;
-    color:#000000;
-    text-decoration:none;
+	text-align: right;
 }
 
 .login_form_wrapper {

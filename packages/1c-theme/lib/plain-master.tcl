@@ -17,16 +17,15 @@ ad_page_contract {
 }
 
 
-# Início da importação de estilos -->
-template::head::add_css -href "/resources/1c-theme/styles/metro.css"
-template::head::add_css -href "/resources/1c-theme/styles/metro-icons.css"
-template::head::add_css -href "/resources/1c-theme/styles/metro-responsive.css"
-template::head::add_css -href "/resources/1c-theme/styles/metro-schemes.css"
-template::head::add_css -href "/resources/1c-theme/styles/select2.css"
-template::head::add_css -href "/resources/1c-theme/styles/footer.css"
-template::head::add_css -href "/resources/1c-theme/styles/header.css"
-template::head::add_css -href "/resources/1c-theme/styles/stylesheet.css"
-#Fim da importação de estilos -->
+
+#<!-- Início da importação de estilos -->
+template::head::add_css -href "/resources/1c-theme/styles/metro.css" -order 0
+template::head::add_css -href "/resources/1c-theme/styles/metro-icons.css" -order 2
+template::head::add_css -href "/resources/1c-theme/styles/metro-responsive.css" -order 2
+template::head::add_css -href "/resources/1c-theme/styles/metro-schemes.css" -order 2
+template::head::add_css -href "/resources/1c-theme/styles/select2.css" -order 2
+template::head::add_css -href "/resources/1c-theme/styles/stylesheet.css" -order 3
+#<!-- Fim da importação de estilos -->
 
 
 template::head::add_javascript -src "https://code.jquery.com/jquery-2.2.4.min.js" -order 0

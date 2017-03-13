@@ -1,8 +1,3 @@
-<head>
-	<link rel='stylesheet' href='css/footer.css' type='text/css' />
-</head>
-
-<body>
 
 	<div class='footer_details' >
 			
@@ -22,5 +17,3 @@
 		</div>
 
 	</div>
-
-</body>
