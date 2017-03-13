@@ -13,7 +13,7 @@
 
 	<!-- Início da header -->
 	<div class='header' >
-		<include src='contents/header' />
+		<include src='header' />
 		<!-- Carregando Header -->
 	</div>
 	<!-- Fim da header -->
@@ -41,7 +41,7 @@
         </if>
       </else>
       </ul>
-      		<include src='contents/footer' />
+      		<include src='footer' />
 
     </div>
   </div> <!-- /footer -->
