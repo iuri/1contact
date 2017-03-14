@@ -1,10 +1,3 @@
-<header>
-
-    <link rel='stylesheet' href='css/sidebar.css' type='text/css' />
-
-</header>
-
-<body>
 <div class='treeview' data-role='treeview' >
 <ul>
 
@@ -53,6 +46,8 @@
     </li>
 
 </ul>
+
+<img src='/resources/1c-theme/images/logo.png' />
+
 </div>
 
-</body>

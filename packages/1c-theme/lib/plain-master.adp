@@ -1,25 +1,24 @@
-<master src="/www/blank-master">
+<master src="/www/blank-master" >
+
 <!-- Início do Wrapper -->
 <div class='wrapper' >
 
   <!-- Início da header -->
   <div class='header' >
-    <!-- Carregando Header -->
-    <div class='header_row' >
-      <include src='header' />
-    </div>
-    <!-- Carregando barra de navegação -->
-    <div class='header_row' >
-      <include src='navbar' />
-    </div>
-
+    <include src='header' />
   </div>
   <!-- Fim da header -->
-<slave>
 
-<!-- Início do footer -->
+  <!-- Carregando barra de navegação -->
+  <div class='navbar' >
+    <include src='navbar' />
+  </div>
+  <!-- Fim da barra de navegação -->
+
+  <slave>
+
+  <!-- Início do footer -->
   <div class='footer' >
-    <!-- Carregando footer -->
     <include src='footer' />
   </div>
   <!-- Fim do footer -->

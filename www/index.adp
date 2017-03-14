@@ -1,20 +1,17 @@
 <master>
 
-	<!-- Início da tela -->
-	<div class='plane' >
-		
+<!-- Início da tela -->
+<div class='plane' >
+	
+	<div class='content_wrapper' >
+		<!-- Carregando barra lateral -->
+		<div class='sidbar' >
+			<include src='/packages/1c-theme/lib/sidebar' />
+		</div>
 		<!-- Carregando o conteúdo -->
-		<div class='content_wrapper' >
-			<!-- Carregando barra lateral -->
-			<div class='sidbar' >
-				<include src='contents/sidebar' />
-			</div>
-			<!-- Carregando o conteúdo -->
-			<div class='content' >
-				<include src='pages/@page@' />
-			</div>
+		<div class='content' >
+			<include src='pages/@page@' />
 		</div>
 	</div>
-	<!-- Fim da tela -->
-
-	
+</div>
+<!-- Fim da tela -->

@@ -1,23 +1,16 @@
-<head>
-	<link rel='stylesheet' href='css/header.css' type='text/css' />
-</head>
-
-<body>
-<div class='top' >
+<div class='header' >
 	<!--
-	<div class='top_cell top_logo' >
+	<div class='header_cell header_logo' >
 		<a href='./' ><img src='images/logo.png' /></a>
 	</div>
 	-->
-	<div class='top_cell top_title' >
+	<div class='header_cell header_title' >
 		Rue de la Servette 45<br>1202 Genève SUISSE<br>+41 022 782 8370
 	</div>
-	<!--
-	<div class='top_cell' style='text-align:left;vertical-align:middle;' >
+	<div class='header_cell' style='text-align:left;vertical-align:middle;' >
 		<a href='#' ><span class='mif-menu mif-2x'></span></a>
 	</div>
-	-->
-	<div class='top_cell top_links' style='vertical-align:top;' >
+	<div class='header_cell header_links' style='vertical-align:top;' >
 		<div class='input-control select' style='width:5.5em;height:.75em;' >
 			<select>
 				<option>Francês</option>
@@ -61,5 +54,3 @@
 		<br style='line-height:1.5rem;height:1.5rem;' >
 	</div>
 </div>
-
-</body>

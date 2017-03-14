@@ -1,39 +1,39 @@
-.top {
+.header {
 	width: 100%;
 	height: 100%;
 	display: table;
 }
 
-.top_cell {
+.header_cell {
 	padding: .5rem;
 	display: table-cell;
-	vertical-align: bottom;
-}
-
-.top_logo {
 	vertical-align: middle;
 }
 
-.top_logo a img {
-	width: 40px;
+.header_logo {
+	vertical-align: middle;
+}
+
+.header_logo {
+	width: 80px;
+}
+
+.header_logo a img {
+	width: 100%;
 	height: auto;
 }
 
-.top_title {
-	color: #FFF;
+.header_title {
+	width: 11em;
 	font-weight: 600;
-	text-shadow: 1px 1px 1px black,
-		-1px -1px 1px black,
-		-1px 1px 1px black,
-		1px -1px 1px black;
 }
 
-.top_links {
+.header_links {
 	text-align: right;
 }
 
-.top img {
-	height: 80px;
+.header img {
+	height: 150px;
 	width: auto;
 }
 
