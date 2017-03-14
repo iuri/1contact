@@ -3,6 +3,8 @@
 <!-- Início do Wrapper -->
 <div class='wrapper' >
 
+  <!-- <div style="background: url('/resources/1c-theme/images/bg.jpg');background-position: bottom; background-size: cover;" > -->
+
   <!-- Início da header -->
   <div class='header' >
     <include src='header' />
@@ -14,6 +16,8 @@
     <include src='navbar' />
   </div>
   <!-- Fim da barra de navegação -->
+
+  <!-- </div> -->
 
   <!-- Início da tela -->
   <div class='plane' >

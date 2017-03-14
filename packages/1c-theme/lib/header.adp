@@ -1,9 +1,7 @@
 <div class='header' >
-	<!--
 	<div class='header_cell header_logo' >
 		<a href='./' ><img src='images/logo.png' /></a>
 	</div>
-	-->
 	<div class='header_cell header_title' >
 		Rue de la Servette 45<br>1202 Genève SUISSE<br>+41 022 782 8370
 	</div>
@@ -11,13 +9,11 @@
 		<a href='#' ><span class='mif-menu mif-2x'></span></a>
 	</div>
 	<div class='header_cell header_links' style='vertical-align:top;' >
-		<div class='input-control select' style='width:5.5em;height:.75em;' >
-			<select>
-				<option>Francês</option>
-				<option>Inglês</option>
-				<option>Portugês</option>
-			</select>
-		</div>
+		<select name='select_language' id='select_language' style='margin:0;padding:0;' >
+			<option>Francês</option>
+			<option>Inglês</option>
+			<option>Portugês</option>
+		</select>
 		<br>
            <if @login_url@ not nil>
              <a href="javascript::metroDialog.open('#login_form');" title="#acs-subsite.Log_in_to_system#">#acs-subsite.Log_In#</a>

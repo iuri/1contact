@@ -4,9 +4,9 @@
 
 		<input type='radio' name='search_origin' id='search_research' />
 		<label for='search_research' >Procura</label>
-					
+
 		<br>
-					
+
 		<input type='radio' name='search_origin' id='search_offer' />
 		<label for='search_offer' >Oferta</label>
 
@@ -69,7 +69,7 @@
 
 <!-- Botão de pesquisar -->
 <div class='navbar_cell' >
-	<input type='submit' class='button' value='Ok' />
+	<input type='submit' class='button white' value='Ok' />
 </div>
 
 <script type='text/javascript' >
