@@ -43,6 +43,9 @@
 	</div>
 	<!-- Fim da header -->
 
+
+
+	
 	<!-- Início da tela -->
 	<div class='plane' >
 		
@@ -60,6 +63,8 @@
 	</div>
 	<!-- Fim da tela -->
 
+
+	
 	<!-- Início do footer -->
 	<div class='footer' >
 		<!-- Carregando footer -->
