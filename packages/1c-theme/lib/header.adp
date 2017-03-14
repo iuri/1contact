@@ -1,9 +1,7 @@
 <div class='header' >
-	<!--
 	<div class='header_cell header_logo' >
 		<a href='./' ><img src='images/logo.png' /></a>
 	</div>
-	-->
 	<div class='header_cell header_title' >
 		Rue de la Servette 45<br>1202 Genève SUISSE<br>+41 022 782 8370
 	</div>
@@ -11,13 +9,11 @@
 		<a href='#' ><span class='mif-menu mif-2x'></span></a>
 	</div>
 	<div class='header_cell header_links' style='vertical-align:top;' >
-		<div class='input-control select' style='width:5.5em;height:.75em;' >
-			<select>
-				<option>Francês</option>
-				<option>Inglês</option>
-				<option>Portugês</option>
-			</select>
-		</div>
+		<select name='select_language' id='select_language' style='margin:0;padding:0;' >
+			<option>Francês</option>
+			<option>Inglês</option>
+			<option>Portugês</option>
+		</select>
 		<br>
 		<a href="javascript:metroDialog.open('#login_form')" >Login</a><br>
 		<a href='#' >Contato</a>
@@ -29,8 +25,8 @@
 	<div style='text-align:center;position:relative;padding: 1rem 4rem;' >
 		<p style='text-align:center;' ><b>Fazer login com sua conta:</b></p>
 		<form>
-			<div class='input-control text' style='width:12em;' ><input name='login_field' type='text' placeholder='Email' /></div><br>
-			<div class='input-control text' style='width:12em;' ><input name='password_field' type='password' placeholder='Senha' /></div><br>
+			<div class='input-control text' style='width:12em;' ><input name='login_login_field' type='text' placeholder='Email' /></div><br>
+			<div class='input-control text' style='width:12em;' ><input name='login_password_field' type='password' placeholder='Senha' /></div><br>
 			<div class='button' style='width:12em;' >Login</div><br>
 			<div style='text-align:right;' >
 				<label class='input-control checkbox small-check' >
