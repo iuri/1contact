@@ -1,10 +1,4 @@
-<header>
 
-    <link rel='stylesheet' href='css/create_annouce.css' type='text/css' />
-
-</header>
-
-<body>
 <div style='position:relative;' >
 
 	<h3>Criar um novo anúncio</h3>
