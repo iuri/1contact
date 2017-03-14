@@ -16,7 +16,7 @@
 		</select>
 		<br>
            <if @login_url@ not nil>
-             <a href="javascript::metroDialog.open('#login_form');" title="#acs-subsite.Log_in_to_system#">#acs-subsite.Log_In#</a>
+             <a href="javascript:metroDialog.open('#login_form');" title="#acs-subsite.Log_in_to_system#">#acs-subsite.Log_In#</a>
           </if>
           <if @logout_url@ not nil>
             <a href="@logout_url@" title="#acs-subsite.Logout_from_system#">#acs-subsite.Logout#</a>
