@@ -78,13 +78,21 @@ b {
 }
 
 .header {
-	width: 100%;
-	padding: .5rem;
 	font-size: 1em;
+	width: 100%;
+	height: 200px;
+	display: table;
 	background: url('../images/bg.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: bottom;
+}
+
+.header_row {
+	width: 100%;
+	height: 100%;
+	display: table-row;
+	vertical-align: bottom;
 }
 
 .plane {

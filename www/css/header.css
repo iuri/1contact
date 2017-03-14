@@ -1,31 +1,40 @@
-.header {
-	color: #FFF;
-}
-
-.header img {
-	height: 80px;
-	width: auto;
-}
-
-.header_wrapper {
+.top {
 	width: 100%;
+	height: 100%;
 	display: table;
 }
 
-.header_cell {
+.top_cell {
+	padding: .5rem;
 	display: table-cell;
+	vertical-align: bottom;
 }
 
-.header_logo {
-	width: 70px;
+.top_logo {
+	vertical-align: middle;
 }
 
-.header_title {
+.top_logo a img {
+	width: 40px;
+	height: auto;
+}
+
+.top_title {
+	color: #FFF;
 	font-weight: 600;
+	text-shadow: 1px 1px 1px black,
+		-1px -1px 1px black,
+		-1px 1px 1px black,
+		1px -1px 1px black;
 }
 
-.header_links {
+.top_links {
 	text-align: right;
+}
+
+.top img {
+	height: 80px;
+	width: auto;
 }
 
 .login_form_wrapper {

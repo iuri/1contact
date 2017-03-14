@@ -1,0 +1,39 @@
+.sidbar {
+	padding: .5rem;
+	width: 210px;
+	display: table-cell;
+	vertical-align: top;
+	background-color: #404040;
+	border-top: 2px solid #FFF;
+}
+
+.sidebar_list ul {
+	margin-left: -30px;
+	padding-left: -30px;
+	list-style: none;
+}
+
+.sidebar_list li {
+	color: #FFF;
+	margin-left: -20px;
+	padding-left: 0;
+	list-style: none;
+}
+
+.sidebar_list li li {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.sidebar_list li li a {
+	color: #FFF;
+	font-weight: normal;
+}
+
+.sidebar_list div {
+	font-size: 1.1em;
+	font-weight: normal;
+	color: #E6E6E6;
+	margin-left: -25px;
+	margin-right: -25px;
+}
