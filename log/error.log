@@ -56776,3 +56776,1583 @@ ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 148950370
 [0;32m[14/Mar/2017:17:02:31][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: rp_sources_filter: file "/var/www/1contact/packages/acs-subsite/www//resources/1c-theme/styles/1c-master.css" does not exists trying to serve as a normal request[0m
 [0;32m[14/Mar/2017:17:03:29][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: / has no doc(title) set.[0m
 [0;32m[14/Mar/2017:17:03:29][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: rp_sources_filter: file "/var/www/1contact/packages/acs-subsite/www//resources/1c-theme/styles/1c-master.css" does not exists trying to serve as a normal request[0m
+[0;32m[14/Mar/2017:17:04:33][1944.7fe34effd700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:04:33][1944.7fe34effd700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:07:07][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:07:07][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:09:41][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:09:41][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:12:15][1944.7fe34effd700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:12:15][1944.7fe34effd700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:14:49][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:14:49][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:16:24][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: 1 ef fef[0m
+[0;32m[14/Mar/2017:17:16:24][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: checking entry <192.168.0.252> from host_node_map -> [0m
+[0;32m[14/Mar/2017:17:16:24][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: ignore untrusted host header field: '192.168.0.252:8000'[0m
+[0;32m[14/Mar/2017:17:16:24][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: ignore non-existing or untrusted host header, fall back to <1c.1contact.ch>[0m
+[0;32m[14/Mar/2017:17:16:24][1944.7fe35591c700][-conn:1contact:0-] [0m[1;31mError: lang::message::lookup: Key '1c-users.Login_to_your_account' does not exist in en_US
+    called from template::adp_parse /var/www/1contact/packages/1c-users/lib/login {return_url /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/header {/ /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/plain-master {__adp_slave {\n\n<div class='content' >\n	\n</div>}}
+    called from template::adp_parse /var/www/1contact/www/index {}
+    called from adp_parse_ad_conn_file
+    called from rp_serve_concrete_file /var/www/1contact/www/index.adp
+    called from rp_serve_abstract_file 0 0 .* /var/www/1contact/www/
+    called from rp_handler
+        GET http://1c.1contact.ch:8000/? referred by '' peer 192.168.0.9 user_id 0
+
+ Accept:	text/html, application/xhtml+xml, image/jxr, */*
+ Accept-Language:	pt-BR
+ User-Agent:	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393
+ Accept-Encoding:	gzip, deflate
+ Host:	192.168.0.252:8000
+ DNT:	1
+ Connection:	Keep-Alive
+ Cookie:	ad_session_id="640046%252c0%252c0%252c1489499580%2b%257b132%2b1489500780%2bEF1400E8144075D436986704462BDDF97BCE4430%257d"
+[0m
+[0;32m[14/Mar/2017:17:16:24][1944.7fe35591c700][-conn:1contact:0-] [0m[1;31mError: lang::message::lookup: Key '1c-users.or_using' does not exist in en_US
+    called from template::adp_parse /var/www/1contact/packages/1c-users/lib/login {return_url /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/header {/ /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/plain-master {__adp_slave {\n\n<div class='content' >\n	\n</div>}}
+    called from template::adp_parse /var/www/1contact/www/index {}
+    called from adp_parse_ad_conn_file
+    called from rp_serve_concrete_file /var/www/1contact/www/index.adp
+    called from rp_serve_abstract_file 0 0 .* /var/www/1contact/www/
+    called from rp_handler
+        GET http://1c.1contact.ch:8000/? referred by '' peer 192.168.0.9 user_id 0
+
+ Accept:	text/html, application/xhtml+xml, image/jxr, */*
+ Accept-Language:	pt-BR
+ User-Agent:	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36 Edge/14.14393
+ Accept-Encoding:	gzip, deflate
+ Host:	192.168.0.252:8000
+ DNT:	1
+ Connection:	Keep-Alive
+ Cookie:	ad_session_id="640046%252c0%252c0%252c1489499580%2b%257b132%2b1489500780%2bEF1400E8144075D436986704462BDDF97BCE4430%257d"
+[0m
+[0;32m[14/Mar/2017:17:16:24][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: / has no doc(title) set.[0m
+[0;32m[14/Mar/2017:17:16:24][1944.7fe34e7fc700][-conn:1contact:2-] [0m[1;39mWarning: rp_sources_filter: file "/var/www/1contact/packages/acs-subsite/www//resources/1c-theme/styles/1c-master.css" does not exists trying to serve as a normal request[0m
+[0;32m[14/Mar/2017:17:16:24][1944.7fe35511b700][-driver:nssock_v4-] [0m[0;39mNotice: ... sockAccept accepted 3 connections[0m
+[0;32m[14/Mar/2017:17:17:17][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: 1 ef fef[0m
+[0;32m[14/Mar/2017:17:17:17][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: checking entry <192.168.0.252> from host_node_map -> [0m
+[0;32m[14/Mar/2017:17:17:17][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: ignore untrusted host header field: '192.168.0.252:8000'[0m
+[0;32m[14/Mar/2017:17:17:17][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: ignore non-existing or untrusted host header, fall back to <1c.1contact.ch>[0m
+[0;32m[14/Mar/2017:17:17:17][1944.7fe35591c700][-conn:1contact:0-] [0m[1;31mError: lang::message::lookup: Key '1c-users.Login_to_your_account' does not exist in en_US
+    called from template::adp_parse /var/www/1contact/packages/1c-users/lib/login {return_url /?page=create_annouce}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/header {/ /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/p... __adp_slave\ \{\\n\\n<div\ class='content'\ >\\n...
+    called from template::adp_parse /var/www/1contact/www/index {}
+    called from adp_parse_ad_conn_file
+    called from rp_serve_concrete_file /var/www/1contact/www/index.adp
+    called from rp_serve_abstract_file 0 0 .* /var/www/1contact/www/
+    called from rp_handler
+        GET http://1c.1contact.ch:8000/?page=create_annouce referred by '' peer 192.168.0.9 user_id 0
+
+ Host:	192.168.0.252:8000
+ Connection:	keep-alive
+ User-Agent:	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36 OPR/43.0.2442.1144
+ Accept-Encoding:	gzip, deflate, sdch
+ Accept-Language:	pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4
+[0m
+[0;32m[14/Mar/2017:17:17:17][1944.7fe35591c700][-conn:1contact:0-] [0m[1;31mError: lang::message::lookup: Key '1c-users.or_using' does not exist in en_US
+    called from template::adp_parse /var/www/1contact/packages/1c-users/lib/login {return_url /?page=create_annouce}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/header {/ /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/p... __adp_slave\ \{\\n\\n<div\ class='content'\ >\\n...
+    called from template::adp_parse /var/www/1contact/www/index {}
+    called from adp_parse_ad_conn_file
+    called from rp_serve_concrete_file /var/www/1contact/www/index.adp
+    called from rp_serve_abstract_file 0 0 .* /var/www/1contact/www/
+    called from rp_handler
+        GET http://1c.1contact.ch:8000/?page=create_annouce referred by '' peer 192.168.0.9 user_id 0
+
+ Host:	192.168.0.252:8000
+ Connection:	keep-alive
+ User-Agent:	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36 OPR/43.0.2442.1144
+ Accept-Encoding:	gzip, deflate, sdch
+ Accept-Language:	pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4
+[0m
+[0;32m[14/Mar/2017:17:17:17][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: / has no doc(title) set.[0m
+[0;32m[14/Mar/2017:17:17:19][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: 1 ef fef[0m
+[0;32m[14/Mar/2017:17:17:19][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: checking entry <192.168.0.252> from host_node_map -> [0m
+[0;32m[14/Mar/2017:17:17:19][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: ignore untrusted host header field: '192.168.0.252:8000'[0m
+[0;32m[14/Mar/2017:17:17:19][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: ignore non-existing or untrusted host header, fall back to <1c.1contact.ch>[0m
+[0;32m[14/Mar/2017:17:17:19][1944.7fe35591c700][-conn:1contact:0-] [0m[1;31mError: lang::message::lookup: Key '1c-users.Login_to_your_account' does not exist in en_US
+    called from template::adp_parse /var/www/1contact/packages/1c-users/lib/login {return_url /?page=create_annouce}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/header {/ /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/p... __adp_slave\ \{\\n\\n<div\ class='content'\ >\\n...
+    called from template::adp_parse /var/www/1contact/www/index {}
+    called from adp_parse_ad_conn_file
+    called from rp_serve_concrete_file /var/www/1contact/www/index.adp
+    called from rp_serve_abstract_file 0 0 .* /var/www/1contact/www/
+    called from rp_handler
+        GET http://1c.1contact.ch:8000/?page=create_annouce referred by '' peer 192.168.0.9 user_id 0
+
+ Host:	192.168.0.252:8000
+ Connection:	keep-alive
+ User-Agent:	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36 OPR/43.0.2442.1144
+ Accept-Encoding:	gzip, deflate, sdch
+ Accept-Language:	pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4
+[0m
+[0;32m[14/Mar/2017:17:17:19][1944.7fe35591c700][-conn:1contact:0-] [0m[1;31mError: lang::message::lookup: Key '1c-users.or_using' does not exist in en_US
+    called from template::adp_parse /var/www/1contact/packages/1c-users/lib/login {return_url /?page=create_annouce}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/header {/ /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/p... __adp_slave\ \{\\n\\n<div\ class='content'\ >\\n...
+    called from template::adp_parse /var/www/1contact/www/index {}
+    called from adp_parse_ad_conn_file
+    called from rp_serve_concrete_file /var/www/1contact/www/index.adp
+    called from rp_serve_abstract_file 0 0 .* /var/www/1contact/www/
+    called from rp_handler
+        GET http://1c.1contact.ch:8000/?page=create_annouce referred by '' peer 192.168.0.9 user_id 0
+
+ Host:	192.168.0.252:8000
+ Connection:	keep-alive
+ User-Agent:	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36 OPR/43.0.2442.1144
+ Accept-Encoding:	gzip, deflate, sdch
+ Accept-Language:	pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4
+[0m
+[0;32m[14/Mar/2017:17:17:19][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: / has no doc(title) set.[0m
+[0;32m[14/Mar/2017:17:17:19][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: 1 ef fef[0m
+[0;32m[14/Mar/2017:17:17:19][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: checking entry <192.168.0.252> from host_node_map -> [0m
+[0;32m[14/Mar/2017:17:17:19][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: ignore untrusted host header field: '192.168.0.252:8000'[0m
+[0;32m[14/Mar/2017:17:17:19][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: ignore non-existing or untrusted host header, fall back to <1c.1contact.ch>[0m
+[0;32m[14/Mar/2017:17:17:19][1944.7fe35591c700][-conn:1contact:0-] [0m[1;31mError: lang::message::lookup: Key '1c-users.Login_to_your_account' does not exist in en_US
+    called from template::adp_parse /var/www/1contact/packages/1c-users/lib/login {return_url /?page=create_annouce}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/header {/ /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/p... __adp_slave\ \{\\n\\n<div\ class='content'\ >\\n...
+    called from template::adp_parse /var/www/1contact/www/index {}
+    called from adp_parse_ad_conn_file
+    called from rp_serve_concrete_file /var/www/1contact/www/index.adp
+    called from rp_serve_abstract_file 0 0 .* /var/www/1contact/www/
+    called from rp_handler
+        GET http://1c.1contact.ch:8000/?page=create_annouce referred by '' peer 192.168.0.9 user_id 698
+
+ Host:	192.168.0.252:8000
+ Connection:	keep-alive
+ Upgrade-Insecure-Requests:	1
+ User-Agent:	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36 OPR/43.0.2442.1144
+ Accept:	text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+ Accept-Encoding:	gzip, deflate, sdch
+ Accept-Language:	pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4
+ Cookie:	ad_user_login="698%252c1489500357%252cE280E7FE3%252c1%2b%257b467%2b0%2bBC5FC3041187F130C9A13C7675C7DF486824A9E5%257d"; ad_session_id="640048%252c698%252c1%252c1489521496%2b%257b88%2b0%2bDB514BF937E616FDC9506B0069102AFE8DB9318D%257d"
+[0m
+[0;32m[14/Mar/2017:17:17:19][1944.7fe35591c700][-conn:1contact:0-] [0m[1;31mError: lang::message::lookup: Key '1c-users.or_using' does not exist in en_US
+    called from template::adp_parse /var/www/1contact/packages/1c-users/lib/login {return_url /?page=create_annouce}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/header {/ /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/p... __adp_slave\ \{\\n\\n<div\ class='content'\ >\\n...
+    called from template::adp_parse /var/www/1contact/www/index {}
+    called from adp_parse_ad_conn_file
+    called from rp_serve_concrete_file /var/www/1contact/www/index.adp
+    called from rp_serve_abstract_file 0 0 .* /var/www/1contact/www/
+    called from rp_handler
+        GET http://1c.1contact.ch:8000/?page=create_annouce referred by '' peer 192.168.0.9 user_id 698
+
+ Host:	192.168.0.252:8000
+ Connection:	keep-alive
+ Upgrade-Insecure-Requests:	1
+ User-Agent:	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36 OPR/43.0.2442.1144
+ Accept:	text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+ Accept-Encoding:	gzip, deflate, sdch
+ Accept-Language:	pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4
+ Cookie:	ad_user_login="698%252c1489500357%252cE280E7FE3%252c1%2b%257b467%2b0%2bBC5FC3041187F130C9A13C7675C7DF486824A9E5%257d"; ad_session_id="640048%252c698%252c1%252c1489521496%2b%257b88%2b0%2bDB514BF937E616FDC9506B0069102AFE8DB9318D%257d"
+[0m
+[0;32m[14/Mar/2017:17:17:19][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: / has no doc(title) set.[0m
+[0;32m[14/Mar/2017:17:17:19][1944.7fe34e7fc700][-conn:1contact:2-] [0m[1;39mWarning: rp_sources_filter: file "/var/www/1contact/packages/acs-subsite/www//resources/1c-theme/styles/1c-master.css" does not exists trying to serve as a normal request[0m
+[0;32m[14/Mar/2017:17:17:23][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:17:23][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:17:25][1944.7fe34e7fc700][-conn:1contact:2-] [0m[0;39mNotice: 1 ef fef[0m
+[0;32m[14/Mar/2017:17:17:25][1944.7fe34e7fc700][-conn:1contact:2-] [0m[0;39mNotice: checking entry <192.168.0.252> from host_node_map -> [0m
+[0;32m[14/Mar/2017:17:17:25][1944.7fe34e7fc700][-conn:1contact:2-] [0m[1;39mWarning: ignore untrusted host header field: '192.168.0.252:8000'[0m
+[0;32m[14/Mar/2017:17:17:25][1944.7fe34e7fc700][-conn:1contact:2-] [0m[0;39mNotice: ignore non-existing or untrusted host header, fall back to <1c.1contact.ch>[0m
+[0;32m[14/Mar/2017:17:17:25][1944.7fe34e7fc700][-conn:1contact:2-] [0m[1;31mError: lang::message::lookup: Key '1c-users.Login_to_your_account' does not exist in en_US
+    called from template::adp_parse /var/www/1contact/packages/1c-users/lib/login {return_url /?page=create_annouce}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/header {/ /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/p... __adp_slave\ \{\\n\\n<div\ class='content'\ >\\n...
+    called from template::adp_parse /var/www/1contact/www/index {}
+    called from adp_parse_ad_conn_file
+    called from rp_serve_concrete_file /var/www/1contact/www/index.adp
+    called from rp_serve_abstract_file 0 0 .* /var/www/1contact/www/
+    called from rp_handler
+        GET http://1c.1contact.ch:8000/?page=create_annouce referred by '' peer 192.168.0.9 user_id 0
+
+ Host:	192.168.0.252:8000
+ Connection:	keep-alive
+ User-Agent:	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36 OPR/43.0.2442.1144
+ Accept-Encoding:	gzip, deflate, sdch
+ Accept-Language:	pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4
+[0m
+[0;32m[14/Mar/2017:17:17:25][1944.7fe34e7fc700][-conn:1contact:2-] [0m[1;31mError: lang::message::lookup: Key '1c-users.or_using' does not exist in en_US
+    called from template::adp_parse /var/www/1contact/packages/1c-users/lib/login {return_url /?page=create_annouce}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/header {/ /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/p... __adp_slave\ \{\\n\\n<div\ class='content'\ >\\n...
+    called from template::adp_parse /var/www/1contact/www/index {}
+    called from adp_parse_ad_conn_file
+    called from rp_serve_concrete_file /var/www/1contact/www/index.adp
+    called from rp_serve_abstract_file 0 0 .* /var/www/1contact/www/
+    called from rp_handler
+        GET http://1c.1contact.ch:8000/?page=create_annouce referred by '' peer 192.168.0.9 user_id 0
+
+ Host:	192.168.0.252:8000
+ Connection:	keep-alive
+ User-Agent:	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36 OPR/43.0.2442.1144
+ Accept-Encoding:	gzip, deflate, sdch
+ Accept-Language:	pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4
+[0m
+[0;32m[14/Mar/2017:17:17:25][1944.7fe34e7fc700][-conn:1contact:2-] [0m[1;39mWarning: / has no doc(title) set.[0m
+[0;32m[14/Mar/2017:17:17:33][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: rp_sources_filter: file "/var/www/1contact/packages/acs-subsite/www//resources/1c-theme/styles/1c-master.css" does not exists trying to serve as a normal request[0m
+[0;32m[14/Mar/2017:17:19:57][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:19:57][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:22:31][1944.7fe34effd700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:22:31][1944.7fe34effd700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:25:05][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:25:05][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:27:39][1944.7fe34effd700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:27:39][1944.7fe34effd700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:30:13][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:30:13][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:31:41][1944.7fe360a7b700][-sched-] [0m[0;39mNotice: dbdrv: opening database 'postgres:localhost::1contact'[0m
+[0;32m[14/Mar/2017:17:31:41][1944.7fe360a7b700][-sched-] [0m[0;39mNotice: nsdbpg: Opening 1contact on localhost[0m
+[0;32m[14/Mar/2017:17:31:41][1944.7fe360a7b700][-sched-] [0m[0;39mNotice: nsdbpg(postgres):  Opened connection to localhost::1contact.[0m
+[0;32m[14/Mar/2017:17:32:47][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:32:47][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:35:21][1944.7fe34effd700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:35:21][1944.7fe34effd700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:37:55][1944.7fe34effd700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:37:55][1944.7fe34effd700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:40:29][1944.7fe34effd700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:40:29][1944.7fe34effd700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:43:03][1944.7fe34effd700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:43:03][1944.7fe34effd700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:45:37][1944.7fe34effd700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:45:37][1944.7fe34effd700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:48:11][1944.7fe34effd700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:48:11][1944.7fe34effd700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:50:45][1944.7fe34effd700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:50:45][1944.7fe34effd700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:53:19][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:53:19][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: 1 ef fef[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: checking entry <192.168.0.252> from host_node_map -> [0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: ignore untrusted host header field: '192.168.0.252:8000'[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: ignore non-existing or untrusted host header, fall back to <1c.1contact.ch>[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[1;31mError: lang::message::lookup: Key '1c-users.Login_to_your_account' does not exist in en_US
+    called from template::adp_parse /var/www/1contact/packages/1c-users/lib/login {return_url /?page=create_annouce}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/header {/ /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/p... __adp_slave\ \{\\n\\n<div\ class='content'\ >\\n...
+    called from template::adp_parse /var/www/1contact/www/index {}
+    called from adp_parse_ad_conn_file
+    called from rp_serve_concrete_file /var/www/1contact/www/index.adp
+    called from rp_serve_abstract_file 0 0 .* /var/www/1contact/www/
+    called from rp_handler
+        GET http://1c.1contact.ch:8000/?page=create_annouce referred by '' peer 192.168.0.9 user_id 0
+
+ Host:	192.168.0.252:8000
+ Connection:	keep-alive
+ User-Agent:	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36 OPR/43.0.2442.1144
+ Accept-Encoding:	gzip, deflate, sdch
+ Accept-Language:	pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4
+[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[1;31mError: lang::message::lookup: Key '1c-users.or_using' does not exist in en_US
+    called from template::adp_parse /var/www/1contact/packages/1c-users/lib/login {return_url /?page=create_annouce}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/header {/ /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/p... __adp_slave\ \{\\n\\n<div\ class='content'\ >\\n...
+    called from template::adp_parse /var/www/1contact/www/index {}
+    called from adp_parse_ad_conn_file
+    called from rp_serve_concrete_file /var/www/1contact/www/index.adp
+    called from rp_serve_abstract_file 0 0 .* /var/www/1contact/www/
+    called from rp_handler
+        GET http://1c.1contact.ch:8000/?page=create_annouce referred by '' peer 192.168.0.9 user_id 0
+
+ Host:	192.168.0.252:8000
+ Connection:	keep-alive
+ User-Agent:	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36 OPR/43.0.2442.1144
+ Accept-Encoding:	gzip, deflate, sdch
+ Accept-Language:	pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4
+[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: / has no doc(title) set.[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: 1 ef fef[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: checking entry <192.168.0.252> from host_node_map -> [0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: ignore untrusted host header field: '192.168.0.252:8000'[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: ignore non-existing or untrusted host header, fall back to <1c.1contact.ch>[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[1;31mError: lang::message::lookup: Key '1c-users.Login_to_your_account' does not exist in en_US
+    called from template::adp_parse /var/www/1contact/packages/1c-users/lib/login {return_url /?page=create_annouce}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/header {/ /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/p... __adp_slave\ \{\\n\\n<div\ class='content'\ >\\n...
+    called from template::adp_parse /var/www/1contact/www/index {}
+    called from adp_parse_ad_conn_file
+    called from rp_serve_concrete_file /var/www/1contact/www/index.adp
+    called from rp_serve_abstract_file 0 0 .* /var/www/1contact/www/
+    called from rp_handler
+        GET http://1c.1contact.ch:8000/?page=create_annouce referred by '' peer 192.168.0.9 user_id 0
+
+ Host:	192.168.0.252:8000
+ Connection:	keep-alive
+ User-Agent:	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36 OPR/43.0.2442.1144
+ Accept-Encoding:	gzip, deflate, sdch
+ Accept-Language:	pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4
+[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[1;31mError: lang::message::lookup: Key '1c-users.or_using' does not exist in en_US
+    called from template::adp_parse /var/www/1contact/packages/1c-users/lib/login {return_url /?page=create_annouce}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/header {/ /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/p... __adp_slave\ \{\\n\\n<div\ class='content'\ >\\n...
+    called from template::adp_parse /var/www/1contact/www/index {}
+    called from adp_parse_ad_conn_file
+    called from rp_serve_concrete_file /var/www/1contact/www/index.adp
+    called from rp_serve_abstract_file 0 0 .* /var/www/1contact/www/
+    called from rp_handler
+        GET http://1c.1contact.ch:8000/?page=create_annouce referred by '' peer 192.168.0.9 user_id 0
+
+ Host:	192.168.0.252:8000
+ Connection:	keep-alive
+ User-Agent:	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36 OPR/43.0.2442.1144
+ Accept-Encoding:	gzip, deflate, sdch
+ Accept-Language:	pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4
+[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: / has no doc(title) set.[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: 1 ef fef[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: checking entry <192.168.0.252> from host_node_map -> [0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: ignore untrusted host header field: '192.168.0.252:8000'[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[0;39mNotice: ignore non-existing or untrusted host header, fall back to <1c.1contact.ch>[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[1;31mError: lang::message::lookup: Key '1c-users.Login_to_your_account' does not exist in en_US
+    called from template::adp_parse /var/www/1contact/packages/1c-users/lib/login {return_url /?page=create_annouce}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/header {/ /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/p... __adp_slave\ \{\\n\\n<div\ class='content'\ >\\n...
+    called from template::adp_parse /var/www/1contact/www/index {}
+    called from adp_parse_ad_conn_file
+    called from rp_serve_concrete_file /var/www/1contact/www/index.adp
+    called from rp_serve_abstract_file 0 0 .* /var/www/1contact/www/
+    called from rp_handler
+        GET http://1c.1contact.ch:8000/?page=create_annouce referred by '' peer 192.168.0.9 user_id 698
+
+ Host:	192.168.0.252:8000
+ Connection:	keep-alive
+ Upgrade-Insecure-Requests:	1
+ User-Agent:	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36 OPR/43.0.2442.1144
+ Accept:	text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+ Accept-Encoding:	gzip, deflate, sdch
+ Accept-Language:	pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4
+ Cookie:	ad_user_login="698%252c1489500357%252cE280E7FE3%252c1%2b%257b467%2b0%2bBC5FC3041187F130C9A13C7675C7DF486824A9E5%257d"; ad_session_id="640048%252c698%252c1%252c1489522639%2b%257b461%2b0%2bBFC986B8DEF0772F225396C4E8BC1D074315B474%257d"
+[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[1;31mError: lang::message::lookup: Key '1c-users.or_using' does not exist in en_US
+    called from template::adp_parse /var/www/1contact/packages/1c-users/lib/login {return_url /?page=create_annouce}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/header {/ /}
+    called from template::adp_parse /var/www/1contact/packages/1c-theme/lib/p... __adp_slave\ \{\\n\\n<div\ class='content'\ >\\n...
+    called from template::adp_parse /var/www/1contact/www/index {}
+    called from adp_parse_ad_conn_file
+    called from rp_serve_concrete_file /var/www/1contact/www/index.adp
+    called from rp_serve_abstract_file 0 0 .* /var/www/1contact/www/
+    called from rp_handler
+        GET http://1c.1contact.ch:8000/?page=create_annouce referred by '' peer 192.168.0.9 user_id 698
+
+ Host:	192.168.0.252:8000
+ Connection:	keep-alive
+ Upgrade-Insecure-Requests:	1
+ User-Agent:	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36 OPR/43.0.2442.1144
+ Accept:	text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+ Accept-Encoding:	gzip, deflate, sdch
+ Accept-Language:	pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4
+ Cookie:	ad_user_login="698%252c1489500357%252cE280E7FE3%252c1%2b%257b467%2b0%2bBC5FC3041187F130C9A13C7675C7DF486824A9E5%257d"; ad_session_id="640048%252c698%252c1%252c1489522639%2b%257b461%2b0%2bBFC986B8DEF0772F225396C4E8BC1D074315B474%257d"
+[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe35591c700][-conn:1contact:0-] [0m[1;39mWarning: / has no doc(title) set.[0m
+[0;32m[14/Mar/2017:17:53:53][1944.7fe34e7fc700][-conn:1contact:2-] [0m[1;39mWarning: rp_sources_filter: file "/var/www/1contact/packages/acs-subsite/www//resources/1c-theme/styles/1c-master.css" does not exists trying to serve as a normal request[0m
+[0;32m[14/Mar/2017:17:55:53][1944.7fe34effd700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:55:53][1944.7fe34effd700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:17:58:27][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:17:58:27][1944.7fe34f7fe700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
+[0;32m[14/Mar/2017:18:01:01][1944.7fe34effd700][-sched:20-] [0m[1;31mError: nsdbpg: result status: 7 message: ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+[0m
+[0;32m[14/Mar/2017:18:01:01][1944.7fe34effd700][-sched:20-] [0m[1;31mError: Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+Database operation "select" failed (exception ERROR, "ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+")
+
+ERROR:  relation "qf_key_map" does not exist
+LINE 1: select sh_key_id from qf_key_map 
+                              ^
+
+SQL: select sh_key_id from qf_key_map 
+        where submit_timestamp is not null
+    while executing
+"ns_pg_bind select nsdb0 {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null}"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel $ulevel [list ns_pg_bind $type $db $sql]"
+    invoked from within
+"db_exec select $db $full_statement_name $sql"
+    ("uplevel" body line 2)
+    invoked from within
+"uplevel 1 $code_block "
+    invoked from within
+"db_with_handle -dbn $dbn db {
+        set selection [db_exec select $db $full_statement_name $sql]
+        set result [list]
+        while { [db_getro..."
+    (procedure "::nsf::procs::db_list" line 23)
+    invoked from within
+"db_list qf_sched_keys_r {select sh_key_id from qf_key_map 
+        where submit_timestamp is not null} "
+    (procedure "qf::schedule::flush" line 5)
+    invoked from within
+"$proc {*}$args"
+    (procedure "ad_run_scheduled_proc" line 40)
+    invoked from within
+"ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}"
+    while executing callback
+ns:tclschedproc ad_run_scheduled_proc {{t f 154 qf::schedule::flush {} 1489503701 0 f}}[0m
