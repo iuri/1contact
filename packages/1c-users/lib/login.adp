@@ -6,7 +6,7 @@
     <p style='text-align:center;' ><b>#1c-users.Login_to_your_account#</b></p>
 
 
-      <formtemplate id="login"></formtemplate>
+    <formtemplate class="" id="login"></formtemplate>
 
       <p style='text-align:center;' ><b>#1c-users.or_using#</b></p>
 		<div>
