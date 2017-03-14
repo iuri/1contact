@@ -5,10 +5,11 @@
 <body>
 
 	<div class='footer_details' >
-			
+
 		<!-- Nome da empresa -->
 		<div class='footer_detail' >
-			1Contact Sàrl
+			1Contact Sàrl<br>
+			Copyright &copy; 2015
 		</div>
 
 		<!-- Endereço -->

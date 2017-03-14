@@ -1,10 +1,6 @@
-.navbar_wrapper {
+.navbar {
 	width: 100%;
 	display: table;
-}
-
-.navbar_row {
-	display: table-row;
 	text-align: left;
 	vertical-align: middle;
 }

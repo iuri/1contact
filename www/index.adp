@@ -35,11 +35,14 @@
 	<!-- Início da header -->
 	<div class='header' >
 		<!-- Carregando Header -->
-		<include src='contents/header' />
+		<div class='header_row' >
+			<include src='contents/header' />
+		</div>
 		<!-- Carregando barra de navegação -->
-		<div class='navbar' >
+		<div class='header_row' >
 			<include src='contents/navbar' />
 		</div>
+
 	</div>
 	<!-- Fim da header -->
 
