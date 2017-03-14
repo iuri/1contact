@@ -1,0 +1,1 @@
+template::head::add_css -href "/resources/1c-theme/css/header.css"
