@@ -1,7 +1,0 @@
-ALTER TABLE annonces ALTER COLUMN type_of_transaction TYPE varchar(10);
-ALTER TABLE annonces ALTER COLUMN type_of_property TYPE varchar(10);
-ALTER TABLE annonces ALTER COLUMN type_of_residence TYPE varchar(10);
-ALTER TABLE annonces ALTER COLUMN type_of_commerce TYPE varchar(10);
-ALTER TABLE annonces ALTER COLUMN type_of_activity TYPE varchar(50);	
-ALTER TABLE annonces ALTER COLUMN type_of_announcer TYPE varchar(10);
-ALTER TABLE annonces ALTER COLUMN status TYPE varchar(10);

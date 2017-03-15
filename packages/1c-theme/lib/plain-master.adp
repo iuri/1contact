@@ -25,7 +25,9 @@
       </div>
       
       <!-- Carregando o conteúdo -->
-      <slave>
+      <div class='content'>
+        <slave>
+      </div>
       <!-- Fim do conteúdo -->
 
     </div>
