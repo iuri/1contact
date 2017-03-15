@@ -22,7 +22,7 @@
     <li style='text-align:center;' >
         <span class='mif-bookmarks' >&nbsp;<b class='normal_text' ><span style='font-size:1.3em;' >A</span>NUNCIADORES</b></span>
         <ul style='text-align:left;' >
-            <li><a href='?page=create_annonce' >Crair um novo anúncio</a></li>
+            <li><a href='/annonces/create-annonce' >Crair um novo anúncio</a></li>
             <li><a href='#' >Meus anúncios</a></li>
         </ul>
 

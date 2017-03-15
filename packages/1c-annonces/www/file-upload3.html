@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Page Attributes -->
+    <title>Upload &middot; Formstone</title>
+    <meta name="description" content="Formstone &middot; A Collection of Modular Front End Components.">
+
+    <!-- Favions / Touch Icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="https://formstone.it/images/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://formstone.it/images/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://formstone.it/images/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://formstone.it/images/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://formstone.it/images/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://formstone.it/images/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://formstone.it/images/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://formstone.it/images/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://formstone.it/images/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="https://formstone.it/images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://formstone.it/images/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="https://formstone.it/images/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://formstone.it/images/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://formstone.it/images/favicons/manifest.json">
+    <link rel="mask-icon" href="https://formstone.it/images/favicons/safari-pinned-tab.svg" color="#00bcd4">
+    <link rel="shortcut icon" href="https://formstone.it/images/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="https://formstone.it/images/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="https://formstone.it/images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#455a64">
+
+    <!-- G+ & Facebook -->
+    <meta property="og:title" content="Upload">
+    <meta property="og:url" content="https://formstone.it/components/upload/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://formstone.it/images/social.jpg">
+    <meta property="og:description" content="Formstone &middot; A Collection of Modular Front End Components.">
+    <meta property="og:site_name" content="Formstone">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@formstoneit">
+    <meta name="twitter:creator" content="@formstoneit">
+    <meta name="twitter:url" content="https://formstone.it/">
+    <meta name="twitter:title" content="Upload">
+    <meta name="twitter:description" content="Formstone &middot; A Collection of Modular Front End Components.">
+    <meta name="twitter:image" content="https://formstone.it/images/social.jpg">
+
+    <!-- Modernizer -->
+    <script src="https://formstone.it/js/modernizr.js?v=1.1.0"></script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:Fira+Mono">
+
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="https://formstone.it/formstone/demo/css/demo.css?v=1.1.0">
+    <link rel="stylesheet" href="https://formstone.it/css/site.css?v=1.1.0">
+
+    <script src="https://formstone.it/js/site.js?v=1.1.0"></script>
+    <script src="https://formstone.it/formstone/demo/js/demo.js?v=1.1.0"></script>
+    <script src="https://formstone.it/js/site-prism.js?v=1.1.0"></script>
+    <!--<![endif]-->
+
+    <!--[if IE 8]>
+	<script>var IE8 = true;</script>
+	<script src="https://formstone.it/js/site-ie8.js?v=1.1.0"></script>
+	<link rel="stylesheet" href="https://formstone.it/css/site-ie8.css?v=1.1.0">
+	<![endif]-->
+    <!--[if IE 9]>
+	<script>var IE9 = true;</script>
+	<script src="https://formstone.it/js/site-ie9.js?v=1.1.0"></script>
+	<link rel="stylesheet" href="https://formstone.it/css/site-ie9.css?v=1.1.0">
+	<![endif]-->
+    <!--[if lte IE 9]>
+	<link rel="stylesheet" href="https://formstone.it/css/site-ie.css?v=1.1.0">
+	<![endif]-->
+  </head>
+  <body class="fs-grid fs-grid-fluid">
+
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T4HSP3"
+		      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-T4HSP3');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- BuySellAds -->
+    <script type="text/javascript">
+      (function(){
+      var bsa = document.createElement('script');
+      bsa.type = 'text/javascript';
+      bsa.async = true;
+      bsa.src = '//s3.buysellads.com/ac/bsa.js';
+      (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+      })();
+    </script>
+    <!-- End BuySellAds -->
+    <a href="#page" id="skip_to_content" class="offscreen">Skip to Main Content</a>
+
+    <div class="page_wrapper js-mobile_navigation_content">
+
+      <header class="header">
+	<div class="fs-row">
+	  <div class="fs-cell">
+	    <a href="https://formstone.it/" class="header_logo icon-logo">Formstone</a>
+	    <div class="header_meta">
+	      v1.3.1<span>
+		&nbsp;&middot;&nbsp;
+		<a href="https://formstone.it/changelog/">Changelog</a>
+	      </span>
+	    </div><span class="header_handle js-mobile_navigation_handle icon-menu">Menu</span>
+	  </div>
+	</div>
+      </header><main id="page" class="page" role="main" tabindex="-1">
+	<div class="typography">
+	  <header class="page_header js-scroll_lock" data-scroll-offset="52">
+	    <div class="fs-row js-scroll_contents">
+	      <div class="fs-cell">
+		<h1 class="page_heading">Upload</h1>
+		<div class="page_intro">
+		  <p>A jQuery plugin for simple drag and drop uploads.</p></div>
+	      </div>
+	    </div>
+	  </header>
+	  <div class="page_content page_content_component">
+	    <div class="fs-row">
+	      <div class="fs-cell fs-lg-9 fs-xl-10">
+
+		<!-- NAV START --><div class="section_nav_wrapper js-scroll_lock" data-scroll-offset="-100"><div class="fs-row js-scroll_contents"><nav class="fs-cell section_nav js-scroll_spy">
+		      <ul>
+			<li><a href="#demo">Demo</a></li><li><a href="#use">Use</a></li>
+			<li><a href="#options">Options</a></li>
+			<li><a href="#events">Events</a></li>
+			<li><a href="#methods">Methods</a></li>
+			<li><a href="#css">CSS</a></li>
+		      </ul>
+	      </nav></div></div></div>
+	    </div>
+	    <div class="fs-row page_row">
+	      <div class="fs-cell fs-lg-9 fs-xl-10">
+
+		<h2><a name="demo"></a> Demo</h2><p>Demos are largely unstyled to give developers a better idea of how the plugin can drop into a new or existing project.</p><div class="demo_content clear">
+
+		  <style>
+		    .filelists {
+		    margin: 20px 0;
+		    }
+
+		    .filelists h5 {
+		    margin: 10px 0 0;
+		    }
+
+		    .filelists .cancel_all {
+		    color: red;
+		    cursor: pointer;
+		    clear: both;
+		    font-size: 10px;
+		    margin: 0;
+		    text-transform: uppercase;
+		    }
+
+		    .filelist {
+		    margin: 0;
+		    padding: 10px 0;
+		    }
+
+		    .filelist li {
+		    background: #fff;
+		    border-bottom: 1px solid #ECEFF1;
+		    font-size: 14px;
+		    list-style: none;
+		    padding: 5px;
+		    position: relative;
+		    }
+
+		    .filelist li:before {
+		    display: none !important;
+		    }
+		    /* main site demos */
+
+		    .filelist li .bar {
+		    background: #eceff1;
+		    content: '';
+		    height: 100%;
+		    left: 0;
+		    position: absolute;
+		    top: 0;
+		    width: 0;
+		    z-index: 0;
+		    -webkit-transition: width 0.1s linear;
+		    transition: width 0.1s linear;
+		    }
+
+		    .filelist li .content {
+		    display: block;
+		    overflow: hidden;
+		    position: relative;
+		    z-index: 1;
+		    }
+
+		    .filelist li .file {
+		    color: #455A64;
+		    float: left;
+		    display: block;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    max-width: 50%;
+		    white-space: nowrap;
+		    }
+
+		    .filelist li .progress {
+		    color: #B0BEC5;
+		    display: block;
+		    float: right;
+		    font-size: 10px;
+		    text-transform: uppercase;
+		    }
+
+		    .filelist li .cancel {
+		    color: red;
+		    cursor: pointer;
+		    display: block;
+		    float: right;
+		    font-size: 10px;
+		    margin: 0 0 0 10px;
+		    text-transform: uppercase;
+		    }
+
+		    .filelist li.error .file {
+		    color: red;
+		    }
+
+		    .filelist li.error .progress {
+		    color: red;
+		    }
+
+		    .filelist li.error .cancel {
+		    display: none;
+		    }
+		  </style>
+
+		  <script>
+		    $(document).ready(function() {
+		    $(".upload").upload({
+		    maxSize: 1073741824,
+		    beforeSend: onBeforeSend
+		    }).on("start.upload", onStart)
+		    .on("complete.upload", onComplete)
+		    .on("filestart.upload", onFileStart)
+		    .on("fileprogress.upload", onFileProgress)
+		    .on("filecomplete.upload", onFileComplete)
+		    .on("fileerror.upload", onFileError)
+		    .on("chunkstart.upload", onChunkStart)
+		    .on("chunkprogress.upload", onChunkProgress)
+		    .on("chunkcomplete.upload", onChunkComplete)
+		    .on("chunkerror.upload", onChunkError)
+		    .on("queued.upload", onQueued);
+
+		    $(".filelist.queue").on("click", ".cancel", onCancel);
+		    $(".cancel_all").on("click", onCancelAll);
+		    });
+
+		    function onCancel(e) {
+		    console.log("Cancel");
+		    var index = $(this).parents("li").data("index");
+		    $(this).parents("form").find(".upload").upload("abort", parseInt(index, 10));
+		    }
+
+		    function onCancelAll(e) {
+		    console.log("Cancel All");
+		    $(this).parents("form").find(".upload").upload("abort");
+		    }
+
+		    function onBeforeSend(formData, file) {
+		    console.log("Before Send");
+		    formData.append("test_field", "test_value");
+		    // return (file.name.indexOf(".jpg") < -1) ? false : formData; // cancel all jpgs
+							   return formData;
+							   }
+
+							   function onQueued(e, files) {
+							   console.log("Queued");
+							   var html = '';
+							   for (var i = 0; i < files.length; i++) {
+									       html += '<li data-index="' + files[i].index + '"><span class="content"><span class="file">' + files[i].name + '</span><span class="cancel">Cancel</span><span class="progress">Queued</span></span><span class="bar"></span></li>';
+									       }
+
+									       $(this).parents("form").find(".filelist.queue")
+									       .append(html);
+									       }
+
+									       function onStart(e, files) {
+									       console.log("Start");
+									       $(this).parents("form").find(".filelist.queue")
+									       .find("li")
+									       .find(".progress").text("Waiting");
+									       }
+
+									       function onComplete(e) {
+									       console.log("Complete");
+									       // All done!
+									       }
+
+									       function onFileStart(e, file) {
+									       console.log("File Start");
+									       $(this).parents("form").find(".filelist.queue")
+									       .find("li[data-index=" + file.index + "]")
+									       .find(".progress").text("0%");
+									       }
+
+									       function onFileProgress(e, file, percent) {
+									       console.log("File Progress");
+									       var $file = $(this).parents("form").find(".filelist.queue").find("li[data-index=" + file.index + "]");
+
+									       $file.find(".progress").text(percent + "%")
+									       $file.find(".bar").css("width", percent + "%");
+									       }
+
+									       function onFileComplete(e, file, response) {
+									       console.log("File Complete");
+									       if (response.trim() === "" || response.toLowerCase().indexOf("error") > -1) {
+							   $(this).parents("form").find(".filelist.queue")
+							   .find("li[data-index=" + file.index + "]").addClass("error")
+							   .find(".progress").text(response.trim());
+							   }
+							   else {
+							   var $target = $(this).parents("form").find(".filelist.queue").find("li[data-index=" + file.index + "]");
+							   $target.find(".file").text(file.name);
+							   $target.find(".progress").remove();
+							   $target.find(".cancel").remove();
+							   $target.appendTo($(this).parents("form").find(".filelist.complete"));
+							   }
+							   }
+
+							   function onFileError(e, file, error) {
+							   console.log("File Error");
+							   $(this).parents("form").find(".filelist.queue")
+							   .find("li[data-index=" + file.index + "]").addClass("error")
+							   .find(".progress").text("Error: " + error);
+							   }
+
+							   function onChunkStart(e, file) {
+							   console.log("Chunk Start");
+							   }
+
+							   function onChunkProgress(e, file, percent) {
+							   console.log("Chunk Progress");
+							   }
+
+							   function onChunkComplete(e, file, response) {
+							   console.log("Chunk Complete");
+							   }
+
+							   function onChunkError(e, file, error) {
+							   console.log("Chunk Error");
+							   }
+							   </script>
+
+		  <div class="demo_container">
+		    <div class="demo_example">
+		      <form action="#" method="GET" class="form demo_form">
+			<div class="upload" data-upload-options='{"action":"https://formstone.it/demo/_extra/upload-target.php"}'></div>
+			<div class="filelists">
+			  <h5>Complete</h5>
+			  <ol class="filelist complete">
+			  </ol>
+			  <h5>Queued</h5>
+			  <ol class="filelist queue">
+			  </ol>
+			  <span class="cancel_all">Cancel All</span>
+			</div>
+		      </form>
+		    </div>
+		    <div class="demo_code">
+		      <pre><code class="language-html">&lt;div class=&quot;upload&quot;&gt;&lt;/div&gt;</code></pre>
+		      <pre><code class="language-javascript">$(".upload").upload({
+			  action: "//example.com/handle-upload.php"
+			  });</code></pre>
+		    </div>
+		  </div>
+
+		</div><a href="https://formstone.it/components/upload/demo/" class="button" target="_blank">View All Demos</a><div class="content_friends">
+		  <!-- BuySellAds Zone -->
+		  <div id="bsap_1305819" class="bsarocks bsap_c5d0dbd4698a2fc9419d663ba33e37cb"></div>
+		  <!-- End BuySellAds Zone -->
+		</div>
+		<h2><a name="use"></a> Using Upload</h2>
+		<h4>Main</h4>
+		<pre><code class="language-markup">upload.js
+		    upload.css</code></pre>
+		<h4>Dependencies</h4>
+		<pre><code class="language-markup">jQuery
+		    core.js</code></pre>
+		<h3>Basic</h3>
+		<p>Upload will create a simple 'drop zone' for file uploads:</p>
+		<pre><code class="language-javascript">$(".target").upload({
+		    action: "upload.php"
+		    });</code></pre>
+		<pre><code class="language-markup">&lt;div class="target"&gt;&lt;/div&gt;</code></pre>
+		<p>Note: IE9 does not support the <a href="http://caniuse.com/#feat=fileapi" target="_blank">File API</a>. The developer will need to provide a proper fallback. Support can be checked in the <code>Formstone.support</code> object:</p>
+		<pre><code class="language-js">if (Formstone.support.file) {
+		    ...
+		    }</code></pre>
+		<h3>Form Data</h3>
+		<p>Form Data can be modified before the request is made. The request can also be aborted based on file attributes:</p>
+		<pre><code class="language-javascript">$(".target").upload({
+		    beforeSend: onBeforeSend
+		    });
+
+		    function onBeforeSend(formData, file) {
+		    // Cancel request
+		    if (file.name.indexOf(".jpg") &lt; 0) {
+		    return false;
+		    }
+
+		    // Modify and return form data
+		    formdata.append("input_name", "input_value");
+
+		    return formData;
+		    }</code></pre>
+		<h3>Abort</h3>
+		<p>Active uploads can be aborted one at a time by passing the file's index, or abort the entire queue by excluding the second parameter:</p>
+		<pre><code class="language-javascript">// Abort single file
+		    $(".target").upload("abort", file.index);
+
+		    // Abort entire queue
+		    $(".target").upload("abort");</code></pre>
+		<h3>Uploads</h3>
+		<p>Upload does not store or manipulate uploaded files on the server, it simply facilitates the asynchronous upload process from the front end.</p>
+		<h2><a name="options"></a> Options</h2>
+		<p>Set instance options by passing a valid object at initialization, or to the public <code>defaults</code> method. Custom options for a specific instance can also be set by attaching a <code>data-upload-options</code> attribute to the target elment. This attribute should contain the properly formatted JSON object representing the custom options.</p>
+		<table>
+		  <thead>
+		    <tr>
+		      <th>Name</th>
+		      <th>Type</th>
+		      <th>Default</th>
+		      <th>Description</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td><code>accept</code></td>
+		      <td><code>string</code></td>
+		      <td>&nbsp;</td>
+		      <td>Input accept attribute</td>
+		    </tr>
+		    <tr>
+		      <td><code>action</code></td>
+		      <td><code>string</code></td>
+		      <td>&nbsp;</td>
+		      <td>Where to submit uploads</td>
+		    </tr>
+		    <tr>
+		      <td><code>autoUpload</code></td>
+		      <td><code>boolean</code></td>
+		      <td><code>false</code></td>
+		      <td>Beging upload when files are dropped</td>
+		    </tr>
+		    <tr>
+		      <td><code>beforeSend</code></td>
+		      <td><code>function</code></td>
+		      <td>&nbsp;</td>
+		      <td>Run before request sent, must return modified formdata or <code>false</code> to cancel</td>
+		    </tr>
+		    <tr>
+		      <td><code>chunked</code></td>
+		      <td><code>boolean</code></td>
+		      <td><code>false</code></td>
+		      <td>Use chunked uploading, if supported</td>
+		    </tr>
+		    <tr>
+		      <td><code>chunkSize</code></td>
+		      <td><code>int</code></td>
+		      <td><code>100</code></td>
+		      <td>Size to chunk, in kB</td>
+		    </tr>
+		    <tr>
+		      <td><code>customClass</code></td>
+		      <td><code>string</code></td>
+		      <td><code>''</code></td>
+		      <td>Class applied to instance</td>
+		    </tr>
+		    <tr>
+		      <td><code>dataType</code></td>
+		      <td><code>string</code></td>
+		      <td><code>'html'</code></td>
+		      <td>Data type of AJAX request</td>
+		    </tr>
+		    <tr>
+		      <td><code>label</code></td>
+		      <td><code>string</code></td>
+		      <td><code>'Drag and drop files or click to select'</code></td>
+		      <td>Drop target text; <code>false</code> to disable</td>
+		    </tr>
+		    <tr>
+		      <td><code>leave</code></td>
+		      <td><code>string</code></td>
+		      <td><code>'You have uploads pending, are you sure you want to leave this page?'</code></td>
+		      <td>Before leave message</td>
+		    </tr>
+		    <tr>
+		      <td><code>maxConcurrent</code></td>
+		      <td><code>int</code></td>
+		      <td><code>2</code></td>
+		      <td>Number of files to simultaneously upload</td>
+		    </tr>
+		    <tr>
+		      <td><code>maxFiles</code></td>
+		      <td><code>int OR boolean</code></td>
+		      <td><code>false</code></td>
+		      <td>Total number of files that can be uploaded; <code>false</code> to disable</td>
+		    </tr>
+		    <tr>
+		      <td><code>maxSize</code></td>
+		      <td><code>int</code></td>
+		      <td><code>5242880</code></td>
+		      <td>Max file size allowed</td>
+		    </tr>
+		    <tr>
+		      <td><code>multiple</code></td>
+		      <td><code>true</code></td>
+		      <td><code>true</code></td>
+		      <td>Flag to allow mutiple file uploads</td>
+		    </tr>
+		    <tr>
+		      <td><code>postData</code></td>
+		      <td><code>object</code></td>
+		      <td>&nbsp;</td>
+		      <td>Extra data to post with upload</td>
+		    </tr>
+		    <tr>
+		      <td><code>postKey</code></td>
+		      <td><code>string</code></td>
+		      <td><code>'file'</code></td>
+		      <td>Key to upload file as</td>
+		    </tr>
+		    <tr>
+		      <td><code>theme</code></td>
+		      <td><code>string</code></td>
+		      <td><code>"fs-light"</code></td>
+		      <td>Theme class name</td>
+		    </tr>
+		  </tbody>
+		</table>
+		<hr>
+		<h2><a name="events"></a> Events</h2>
+		<p>Events are triggered on the target instance's element, unless otherwise stated.</p>
+		<table>
+		  <thead>
+		    <tr>
+		      <th>Event</th>
+		      <th>Description</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td><code>chunkcomplete</code></td>
+		      <td>File chunk complete</td>
+		    </tr>
+		    <tr>
+		      <td><code>chunkstart</code></td>
+		      <td>File chunk starting</td>
+		    </tr>
+		    <tr>
+		      <td><code>chunkerror</code></td>
+		      <td>File chunk error</td>
+		    </tr>
+		    <tr>
+		      <td><code>complete</code></td>
+		      <td>All uploads are complete</td>
+		    </tr>
+		    <tr>
+		      <td><code>filecomplete</code></td>
+		      <td>Specific upload complete</td>
+		    </tr>
+		    <tr>
+		      <td><code>filedragenter</code></td>
+		      <td>File dragged into target</td>
+		    </tr>
+		    <tr>
+		      <td><code>filedragleave</code></td>
+		      <td>File dragged from target</td>
+		    </tr>
+		    <tr>
+		      <td><code>filedragover</code></td>
+		      <td>File dragged over target</td>
+		    </tr>
+		    <tr>
+		      <td><code>fileerror</code></td>
+		      <td>Specific upload error</td>
+		    </tr>
+		    <tr>
+		      <td><code>fileprogress</code></td>
+		      <td>Specific upload progress</td>
+		    </tr>
+		    <tr>
+		      <td><code>filestart</code></td>
+		      <td>Specific upload starting</td>
+		    </tr>
+		    <tr>
+		      <td><code>start</code></td>
+		      <td>Uploads starting</td>
+		    </tr>
+		    <tr>
+		      <td><code>queued</code></td>
+		      <td>Files are queued for upload</td>
+		    </tr>
+		  </tbody>
+		</table>
+		<hr>
+		<h2><a name="methods"></a> Methods</h2>
+		<p>Methods are publicly available to all active instances, unless otherwise stated.</p>
+		<h3>abort</h3>
+		<p>Cancels all active uploads.</p>
+		<pre><code class="language-javascript">$(".target").upload("abort");</code></pre>
+		<h3>defaults</h3>
+		<p>Extends plugin default settings; effects instances created hereafter.</p>
+		<pre><code class="language-javascript">$.upload("defaults", { ... });</code></pre>
+		<h4>Parameters</h4>
+		<table>
+		  <thead>
+		    <tr>
+		      <th>Name</th>
+		      <th>Type</th>
+		      <th>Default</th>
+		      <th>Description</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td><code>options</code></td>
+		      <td><code>object</code></td>
+		      <td><code>{}</code></td>
+		      <td>New plugin defaults</td>
+		    </tr>
+		  </tbody>
+		</table>
+		<h3>destroy</h3>
+		<p>Removes plugin instance.</p>
+		<pre><code class="language-javascript">$(".target").upload("destroy");</code></pre>
+		<h3>disable</h3>
+		<p>Disables target instance.</p>
+		<pre><code class="language-javascript">$(".target").upload("disable");</code></pre>
+		<h3>enable</h3>
+		<p>Enables target instance.</p>
+		<pre><code class="language-javascript">$(".target").upload("enable");</code></pre>
+		<h3>start</h3>
+		<p>Starts queued uploads; Use when autoUpload is set to false.</p>
+		<pre><code class="language-javascript">$(".target").upload("start");</code></pre>
+		<hr>
+		<h2><a name="css"></a> CSS</h2>
+		<table>
+		  <thead>
+		    <tr>
+		      <th>Class</th>
+		      <th>Type</th>
+		      <th>Description</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		    <tr>
+		      <td><code>.fs-upload-element</code></td>
+		      <td><code>element</code></td>
+		      <td>Target elmement</td>
+		    </tr>
+		    <tr>
+		      <td><code>.fs-upload</code></td>
+		      <td><code>element</code></td>
+		      <td>Base widget class</td>
+		    </tr>
+		    <tr>
+		      <td><code>.fs-upload.fs-upload-dropping</code></td>
+		      <td><code>modifier</code></td>
+		      <td>Indicates dropping state</td>
+		    </tr>
+		    <tr>
+		      <td><code>.fs-upload.fs-upload-disabled</code></td>
+		      <td><code>modifier</code></td>
+		      <td>Indicates disabled state</td>
+		    </tr>
+		    <tr>
+		      <td><code>.fs-upload-input</code></td>
+		      <td><code>element</code></td>
+		      <td>Masked Input</td>
+		    </tr>
+		    <tr>
+		      <td><code>.fs-upload-target</code></td>
+		      <td><code>element</code></td>
+		      <td>Drop target</td>
+		    </tr>
+		  </tbody>
+	      </table></div>
+	    </div>
+	  </div>
+	</div>
+      </main>
+      <footer id="footer" class="footer" role="contentinfo">
+	<div class="fs-row">
+	  <div class="fs-cell footer_meta">
+	    <a href="https://github.com/Formstone/Formstone/" class="footer_link icon_link icon-github">GitHub</a>
+	    <a href="https://twitter.com/FormstoneIt" class="footer_link icon_link icon-twitter">Twitter</a>
+	    <div class="footer_badges margined">
+	      <a href="http://gruntjs.com" target="_blank"><img src="https://cdn.gruntjs.com/builtwith.png" alt="Built with Grunt"></a>
+	      <a href="http://badge.fury.io/bo/formstone"><img src="https://badge.fury.io/bo/formstone.svg" alt="Bower version" height="18"></a>
+	      <a href="https://badge.fury.io/js/formstone"><img src="https://badge.fury.io/js/formstone.svg" alt="npm version" height="18"></a>
+	      <a href="https://travis-ci.org/Formstone/Formstone"><img src="https://travis-ci.org/Formstone/Formstone.svg?branch=master" alt="Travis CI" height="18"></a>
+	      <a href="https://david-dm.org/formstone/formstone"><img src="https://david-dm.org/formstone/formstone.svg" alt="David DM" height="18"></a>
+	      <a href="https://david-dm.org/formstone/formstone#info=devDependencies&view=table"><img src="https://david-dm.org/formstone/formstone/dev-status.svg" alt="David DM" height="18"></a>
+
+	    </div>
+	    <p class="footer_copyright">&copy; 2017 </p>
+	  </div>
+	</div>
+      </footer>
+    </div>
+
+    <div class="navigation js-mobile_navigation" data-navigation-handle=".js-mobile_navigation_handle" data-navigation-content=".js-mobile_navigation_content" data-navigation-options="{&quot;gravity&quot;:&quot;right&quot;,&quot;type&quot;:&quot;overlay&quot;,&quot;theme&quot;:&quot;&quot;}" data-analytics-open="mobile nav, open" data-analytics-close="mobile nav, close">
+
+      <div class="nav_header">
+	<a href="https://formstone.it/" class="header_logo icon-logo">Formstone</a>
+	<div class="header_meta">
+	  v1.3.1<span>
+	    &nbsp;&middot;&nbsp;
+	    <a href="https://formstone.it/changelog/">Changelog</a>
+	  </span>
+      </div></div>
+
+      <div class="nav_set js-nav_set_0">
+	<h4 class="nav_heading" data-swap-target=".js-nav_set_0">About</h4>
+	<div class="nav_children">
+	  <a class="nav_link" href="https://formstone.it/start/">Getting Started</a>
+	  <a class="nav_link" href="https://formstone.it/themes/">Theming </a>
+	  <a class="nav_link" href="https://formstone.it/contribute/">Contributing</a>
+	  <a class="nav_link" href="https://formstone.it/license/">Licensing</a>
+	  <a class="nav_link" href="https://formstone.it/blog/">Blog</a>
+	</div>
+      </div>
+      <div class="nav_set js-nav_set_1">
+	<h4 class="nav_heading" data-swap-target=".js-nav_set_1">Library</h4>
+	<div class="nav_children">
+	  <a class="nav_link" href="https://formstone.it/components/core/">Core</a>
+	  <a class="nav_link" href="https://formstone.it/components/grid/">Grid</a>
+	</div>
+      </div>
+      <div class="nav_set js-nav_set_2">
+	<h4 class="nav_heading" data-swap-target=".js-nav_set_2">Utility</h4>
+	<div class="nav_children">
+	  <a class="nav_link" href="https://formstone.it/components/analytics/">Analytics</a>
+	  <a class="nav_link" href="https://formstone.it/components/asap/">ASAP</a>
+	  <a class="nav_link" href="https://formstone.it/components/cookie/">Cookie</a>
+	  <a class="nav_link" href="https://formstone.it/components/mediaquery/">Media Query</a>
+	</div>
+      </div>
+      <div class="nav_set js-nav_set_3 fs-swap-active">
+	<h4 class="nav_heading fs-swap-active" data-swap-target=".js-nav_set_3" data-swap-active="true">Widget</h4>
+	<div class="nav_children">
+	  <a class="nav_link" href="https://formstone.it/components/background/">Background</a>
+	  <a class="nav_link" href="https://formstone.it/components/carousel/">Carousel</a>
+	  <a class="nav_link" href="https://formstone.it/components/checkbox/">Checkbox</a>
+	  <a class="nav_link" href="https://formstone.it/components/dropdown/">Dropdown</a>
+	  <a class="nav_link" href="https://formstone.it/components/equalize/">Equalize</a>
+	  <a class="nav_link" href="https://formstone.it/components/lightbox/">Lightbox</a>
+	  <a class="nav_link" href="https://formstone.it/components/navigation/">Navigation</a>
+	  <a class="nav_link" href="https://formstone.it/components/number/">Number</a>
+	  <a class="nav_link" href="https://formstone.it/components/pagination/">Pagination</a>
+	  <a class="nav_link" href="https://formstone.it/components/range/">Range</a>
+	  <a class="nav_link" href="https://formstone.it/components/scrollbar/">Scrollbar</a>
+	  <a class="nav_link" href="https://formstone.it/components/swap/">Swap</a>
+	  <a class="nav_link" href="https://formstone.it/components/tabs/">Tabs</a>
+	  <a class="nav_link" href="https://formstone.it/components/tooltip/">Tooltip</a>
+	  <a class="nav_link" href="https://formstone.it/components/touch/">Touch</a>
+	  <a class="nav_link" href="https://formstone.it/components/transition/">Transition</a>
+	  <a class="nav_link nav_link_active" href="https://formstone.it/components/upload/">Upload</a>
+	  <a class="nav_link" href="https://formstone.it/components/viewer/">Viewer</a>
+	</div>
+      </div>
+    </div>
+
+  </body>
+  </html>
