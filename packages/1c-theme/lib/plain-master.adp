@@ -1,16 +1,7 @@
-<master src="/www/blank-master">
-<if @doc@ defined><property name="&doc">doc</property></if>
-<if @body@ defined><property name="&body">body</property></if>
-<if @head@ not nil><property name="head">@head;literal@</property></if>
-<if @focus@ not nil><property name="focus">@focus;literal@</property></if>
-<property name="skip_link">@skip_link;literal@</property>
-
-
+<master src='/www/blank-master' >
 
 <!-- Início do Wrapper -->
 <div class='wrapper' >
-
-  <!-- <div style="background: url('/resources/1c-theme/images/bg.jpg');background-position: bottom; background-size: cover;" > -->
 
   <!-- Início da header -->
   <div class='header' >
@@ -23,8 +14,6 @@
     <include src='navbar' />
   </div>
   <!-- Fim da barra de navegação -->
-
-  <!-- </div> -->
 
   <!-- Início da tela -->
   <div class='plane' >

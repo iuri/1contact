@@ -1,6 +1,6 @@
 <div class='header' >
 	<div class='header_cell header_logo' >
-		<a href='./' ><img src='images/logo.png' /></a>
+		<a href='./' ><img src='/resources/1c-theme/images/logo.png' /></a>
 	</div>
 	<div class='header_cell header_title' >
 		Rue de la Servette 45<br>1202 Genève SUISSE<br>+41 022 782 8370
@@ -15,15 +15,12 @@
 			<option>Portugês</option>
 		</select>
 		<br>
-           <if @login_url@ not nil>
-             <a href="javascript:metroDialog.open('#login_form');" title="#acs-subsite.Log_in_to_system#">#acs-subsite.Log_In#</a>
-          </if>
-          <if @logout_url@ not nil>
-            <a href="@logout_url@" title="#acs-subsite.Logout_from_system#">#acs-subsite.Logout#</a>
-          </if><br>
-
+		<a href="javascript:metroDialog.open('#login_form')" >Login</a><br>
 		<a href='#' >Contato</a>
 	</div>
 </div>
 
-<include src="/packages/1c-users/lib/login" return_url=@return_url@>
+<!-- Popup com formulário de login -->
+<div id='login_form' data-role='dialog' data-close-button='true' data-overlay='true' data-overlay-color='dialog_overlay' >
+	<include src='../../1c-login/www/login' />
+</div>

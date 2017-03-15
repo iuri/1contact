@@ -1,5 +1,5 @@
 <master>
 
 <div class='content' >
-	<include src='pages/@page@' />
+	<include src='../packages/1c-@page@/www/@page@' />
 </div>
