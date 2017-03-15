@@ -3,7 +3,7 @@
     <li style='text-align:center;' >
         <span class='mif-user' >&nbsp;<b class='normal_text' ><span style='font-size:1.3em;' >P</span>ESQUISADOR</b></span>
         <ul style='text-align:left;' >
-            <li><a href='?page=create_mandat' >Criar um mandato de pesquisa</a></li>
+            <li><a href='/mandats/create-mandat' >Criar um mandato de pesquisa</a></li>
             <li><a href='#' >Meus mandatos de pesquisa</a></li>
         </ul>
     </li>

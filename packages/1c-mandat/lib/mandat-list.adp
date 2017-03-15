@@ -1,3 +1,0 @@
-
-
-<listtemplate name="mandats"></listtemplate>

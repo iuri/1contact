@@ -1,14 +1,5 @@
 /* Definindo as fontes */
-@font-face {
-     font-family: Abel;
-     src: url(../fonts/abel.woff);
-}
-
-@font-face {
-     font-family: Maitree;
-     src: url(../fonts/maitree.woff);
-}
-
+@import url('https://fonts.googleapis.com/css?family=Abel');
 
 
 /* Estilos padrão */
