@@ -86,14 +86,14 @@
 
 	<div class='box' >
 		<h4>Características obrigatórias</h4>
-		<include src='../../1c-matching/www/matching' />
+		<include src='../../1c-realties/lib/charaq-req' />
 	</div>
 
 	<br>
 
 	<div class='box' >
 		<h4>Características opcionais</h4>
-		<include src='../../1c-characteristics/www/characteristics' />
+		<include src='../../1c-realties/lib/charaq-opt' />
 	</div>
 
 	<br>
