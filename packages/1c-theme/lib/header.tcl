@@ -1,4 +1,27 @@
+ad_page_contract {} {
+    {locale ""}
+}
+
 template::head::add_css -href "/resources/1c-theme/css/header.css"
+
+template::head::add_javascript -script {
+
+  function change_locale() {
+      var locale = $('#select_language').val();
+      var url = window.location.href + '?locale='+locale; 
+      top.location.href=url;
+  }
+}
+
+
+if {$locale ne ""} {
+    lang::user::set_locale $locale
+
+    ad_returnredirect /
+    ad_script_abort
+}
+
+
 
 set system_name [ad_system_name]
 set subsite_name [lang::util::localize [subsite::get_element -element instance_name]]

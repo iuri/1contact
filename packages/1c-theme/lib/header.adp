@@ -9,10 +9,10 @@
 		<a href='#' ><span class='mif-menu mif-2x'></span></a>
 	</div>
 	<div class='header_cell header_links' style='vertical-align:top;' >
-		<select name='select_language' id='select_language' style='margin:0;padding:0;' >
-			<option>Francês</option>
-			<option>Inglês</option>
-			<option>Portugês</option>
+		<select name='select_language' onChange='change_locale();' id='select_language' style='margin:0;padding:0;' >
+			<option value="fr_FR">#1c-theme.French#</option>
+			<option value="en_US">#1c-theme.English#</option>
+			<option value="pt_BR">#1c-theme.Portuguese#</option>
 		</select>
 		<br>
 		
@@ -29,5 +29,9 @@
 	</div>
 </div>
 
+
 <!-- Popup com formulário de login -->
 <include src='../../1c-users/lib/login' />
+
+
+
