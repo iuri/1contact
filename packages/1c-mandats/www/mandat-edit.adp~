@@ -1,0 +1,58 @@
+
+<master>
+<property name="title">@page_title;noquote@</property>
+<property name="context">@context;noquote@</property>
+<property name="focus">mandat.title</property>
+
+<script>
+
+function showForm(id) {
+  alert("showForm" + id);
+
+  if(id=="transaction") {
+    if($("#type_of_transaction"))
+	.show();
+    $("#form2").hide();
+  } else {
+    $("#form1").hide();	
+    $("#form2").show();
+  }				  
+
+  if(id=="transaction") {
+    $("#form2").hide(); 
+  }
+
+
+}
+
+
+
+
+
+</script>
+
+
+
+<header>
+<br>	
+<nav>
+  <ul>
+    <li id="selected">
+      <a href="javascript:showForm('property');">#1c-mandat.Property_Info#</a></li>
+    <li>
+      <a href="javascript:showForm('users');">#1c-mandat.Personal_Info#</a></li>
+  </ul>
+</nav>
+
+</header>
+
+<div id="form_garant" style="display:none;">
+Test
+</div>
+<div id="form1">
+  <formtemplate id="mandat"></formtemplate>
+
+</div>
+<div id="form2" style="display:none;">
+     <include src="/packages/1c-users/lib/user-add">
+</div>

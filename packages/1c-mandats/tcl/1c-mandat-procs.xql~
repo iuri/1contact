@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<queryset>
+
+<fullquery name="1c_mandat::get_keywords_not_cached.select_package_keywords">
+    <querytext>
+        
+    </querytext>
+</fullquery>
+ 
+</queryset>

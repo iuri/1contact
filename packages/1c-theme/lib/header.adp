@@ -1,6 +1,6 @@
 <div class='header' >
 	<div class='header_cell header_logo' >
-		<a href='./' ><img src='/resources/1c-theme/images/logo.png' /></a>
+		<a href='index' ><img src='/resources/1c-theme/images/logo.png' /></a>
 	</div>
 	<div class='header_cell header_title' >
 		Rue de la Servette 45<br>1202 Genève SUISSE<br>+41 022 782 8370
@@ -21,6 +21,4 @@
 </div>
 
 <!-- Popup com formulário de login -->
-<div id='login_form' data-role='dialog' data-close-button='true' data-overlay='true' data-overlay-color='dialog_overlay' >
-	<include src='../../1c-login/www/login' />
-</div>
+<include src='../../1c-users/lib/login' />

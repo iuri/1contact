@@ -1,0 +1,163 @@
+ad_page_contract {
+    This is the matching script.
+    It displays all annonces matching with the mandat
+    @author Iuri Sampaio (iuri@iurix.com)
+    @cvs-id $Id: index.tcl,v 1.2 2017/01/30 16:47:34 joela Exp $
+} {
+    mandat_id
+}
+
+set page_title [ad_conn instance_name]
+set context [list]
+
+
+
+db_1row select_mandat {
+    SELECT lchars AS mandat_chars FROM mandats m WHERE m.mandat_id = :mandat_id
+}
+
+
+set annonce_ids [list]
+    
+db_foreach select_annonces {
+    select annonce_id, lchars FROM annonces a, cr_revisions cr, cr_items ci
+    WHERE a.annonce_id = ci.item_id
+    AND cr.revision_id = ci.latest_revision
+    
+} {
+    
+    ns_log Notice "Start $annonce_id"
+    set matching_p t
+    
+    for {set i 0} {$i<[llength $lchars] && $matching_p} {incr i} {
+	
+	if {[string equal [category::get_name [lindex [lindex $mandat_chars $i] 1]] "Pas Indiqué"]} {
+	    ns_log Notice "MATCHING"
+	    set matching_p t   
+	}
+	if {[lindex [lindex $lchars $i] 1] eq [lindex [lindex $mandat_chars $i] 1]} {
+	    ns_log Notice "MATCHING"
+	    set matching_p t
+	} else {
+	    ns_log Notice "UNMATCHING"
+	    set matching_p f
+	}
+	
+	
+    }
+    
+    if {$matching_p} {
+	lappend annonce_ids $annonce_id 	
+    }
+    
+} if_no_rows {
+    
+    ns_write "No rows"
+}
+
+
+ns_log Notice "MATCHING IDS $annonce_ids"
+
+
+
+
+
+
+
+
+
+
+set add_annonce_url [export_vars -base "annonce-edit" {return_url}] 
+
+set actions {
+    "#1c-annonce.Add_annonce#" "annonce-edit?return_url=/annonces" "#1c-annonce.Add_a_new_annonce#"
+    "#1c-annonce.Import_CSV_file#" "import-csv-file?return_url=/1c-annonce" "#1c-annonce.Import_csv_file#"
+}
+
+set bulk_actions [list]
+
+
+set where_clause ""
+
+if {[exists_and_not_null keyword]} {
+    if {[string length $keyword] ne 17} {
+	ad_return_complaint 1 "Annonce Invalid"
+    }
+
+    set where_clause "WHERE cv.vin = :keyword"
+}
+
+
+
+template::list::create \
+    -name annonces \
+    -multirow annonces \
+    -actions $actions \
+    -key annonce_id \
+    -row_pretty_plural "annonces" \
+    -elements {
+	ref_code {
+	    label "[_ 1c-annonce.Refence_Code]"
+	    display_template {
+		<a href="@annonces.annonce_url@">@annonces.ref_code;noquote@</a>
+	    }
+	}
+	title {
+	    label "[_ 1c-annonce.Title]"
+	    display_template {
+		@annonces.title;noquote@
+	    }
+	}
+	available_date {
+	    label "[_ 1c-annonce.Availability]"
+	}
+	status_pretty {
+	    label "[_ 1c-annonce.Status]"
+	}
+	creation_user_name {
+	    label "[_ 1c-annonce.Creation_user]"
+	    display_template {
+		<a href="@annonces.creation_user_url@">@annonces.creation_user_name;noquote@</a>
+	    }
+	}
+       	actions {
+	    link_url_col delete_url
+	    display_template {
+		<img src="/resources/acs-subsite/Delete16.gif" width="16" height =”16”>
+	    }
+	    sub_class narrow
+	}
+    } 
+
+
+db_multirow -extend { annonce_url delete_url creation_user_url creation_user_name status_pretty} -unclobber annonces select_annonces "
+    SELECT ci.item_id, a.ref_code, a.lchars, cr.title, a.available_date, o.creation_user, a.status, a.type_of_transaction, a.type_of_property
+    FROM cr_items ci, cr_revisions cr, acs_objects o, annonces a
+    WHERE ci.latest_revision = cr.revision_id
+    AND o.object_id = ci.item_id
+    AND a.annonce_id =  ci.item_id   
+    AND a.annonce_id IN ([join :annonce_ids ,])
+" {
+
+    ns_log Notice "ANNONCE $lchars"
+
+    
+
+    
+    set annonce_url [export_vars -base "/annonces/annonce-edit" {{annonce_id $item_id}}]
+    set delete_url [export_vars -base "annonce-del" {{annonce_id $item_id}}]
+    
+    acs_user::get -user_id $creation_user -array user
+    
+    set creation_user_name "$user(first_names) $user(last_name)"
+    set creation_user_url [acs_community_member_url -user_id $creation_user]
+
+    switch $status {
+	a {
+	    set status_pretty "[_ 1c-annonce.Active]"
+	    
+	}
+    }
+	
+}
+
