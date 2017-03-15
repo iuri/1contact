@@ -15,7 +15,16 @@
 			<option>Portugês</option>
 		</select>
 		<br>
-		<a href="javascript:metroDialog.open('#login_form')" >Login</a><br>
+		
+		<!-- Início do botão de login -->
+		<if @logout_url@ not nil>
+			<a href="@logout_url@" title="#acs-subsite.Logout_from_system#">#acs-subsite.Logout#</a>
+		</if>
+		<else>
+			<a href="javascript:metroDialog.open('#login_form');" title="#acs-subsite.Log_in_to_system#" >#acs-subsite.Log_In#</a>
+        </else>
+
+        <br>
 		<a href='#' >Contato</a>
 	</div>
 </div>
