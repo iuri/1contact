@@ -1,18 +1,10 @@
 ad_page_contract {} {
     {locale ""}
+    
 }
 
-template::head::add_css -href "/resources/1c-theme/css/header.css"
 
-template::head::add_javascript -script {
-
-  function change_locale() {
-      var locale = $('#select_language').val();
-      var url = window.location.href + '?locale='+locale; 
-      top.location.href=url;
-  }
-}
-
+set selected_lang [lang::user::locale]
 
 if {$locale ne ""} {
     lang::user::set_locale $locale
@@ -37,3 +29,22 @@ if { $untrusted_user_id == 0 } {
     set logout_url [ad_get_logout_url]
 
 }
+
+
+template::head::add_css -href "/resources/1c-theme/css/header.css"
+
+template::head::add_javascript -script {
+
+  function change_locale() {
+      var locale = $('#select_language').val();
+      var url = window.location.href + '?locale='+locale; 
+      top.location.href=url;
+  }
+
+  function get_locale(x) {
+      $('#select_language').val(x);
+  }
+  
+}
+
+

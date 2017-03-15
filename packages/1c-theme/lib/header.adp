@@ -30,6 +30,15 @@
 </div>
 
 
+
+<script type="text/javascript">
+
+  get_locale('@selected_lang@');
+
+</script>
+
+
+
 <!-- Popup com formulário de login -->
 <include src='../../1c-users/lib/login' />
 
