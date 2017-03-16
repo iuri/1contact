@@ -2,7 +2,7 @@
 
 <div id='login_form' data-role='dialog' data-close-button='true' data-overlay='true' data-overlay-color='dialog_overlay' >
 	<div style='text-align:center;position:relative;padding: 1rem 4rem;' >
-		<p style='text-align:center;' ><b>#1c-users.Login_to_your_account#</b></p>
+		<p style='text-align:center;' ><b>#1c-users.Login#</b></p>
 
 		<!-- Início do formulário -->
 		<formtemplate class='' id='login' ></formtemplate>
@@ -12,7 +12,6 @@
 		<div>
 			<a href='#' ><img src='/resources/1c-users/images/logo-google.svg' style='height:50px;width:auto;margin-right:1rem;' /></a>
 			<a href='#' ><img src='/resources/1c-users/images/logo-facebook.svg' style='height:50px;width:auto;margin-right:1rem;' /></a>
-			<a href='#' ><img src='/resources/1c-users/images/logo-paypal.svg' style='height:50px;width:auto' /></a>
 		</div>
 		<br>
 		<div style='position:absolute;right:.75rem;text-align:right;' >

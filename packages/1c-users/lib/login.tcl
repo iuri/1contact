@@ -13,7 +13,6 @@ set self_registration [parameter::get_from_package_key \
 			          -parameter AllowSelfRegister \
 			          -default 1]   
 
-ns_log Notice "$self_registration ef fef"
 if { ![info exists subsite_id] || $subsite_id eq "" } {
     set subsite_id [subsite::get_element -element object_id]
 }
