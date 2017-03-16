@@ -1,52 +1,56 @@
 <ul class='sidebar_list' >
 
     <li style='text-align:center;' >
-        <span class='mif-user' >&nbsp;<b class='normal_text' ><span style='font-size:1.3em;' >P</span>ESQUISADOR</b></span>
+        <span class='mif-user' >&nbsp;<b class='normal_text' >#1c-theme.Researcher#</b></span>
         <ul style='text-align:left;' >
-            <li><a href='/mandats/create-mandat' >Criar um mandato de pesquisa</a></li>
-            <li><a href='#' >Meus mandatos de pesquisa</a></li>
+            <li><a href='/mandats/create-mandat' >#1c-theme.Create_mandat_lt#</a></li>
+            <li><a href='#' >#1c-theme.My_mandats_lt#</a></li>
         </ul>
     </li>
     
     <li style='text-align:left;' >
-        <span class='mif-search' >&nbsp;<b class='normal_text' style='font-size:.85em;' ><span style='font-size:1.3em;' >P</span>ESQUISA</b></span>
+        <span class='mif-search' >&nbsp;<b class='normal_text' >#1c-theme.Research#</b></span>
         <ul style='text-align:left;' >
-            <li><a href='#' >Todos os perfis</a></li>
-            <li><a href='#' >Perfis selecionados</a></li>
-            <li><a href='#' >Perfis visualisados</a></li>
+            <li><a href='#' >#1c-theme.All_profiles#</a></li>
+            <li><a href='#' >#1c-theme.Selected_profiles#</a></li>
+            <li><a href='#' >#1c-theme.Visualized_profiles#</a></li>
         </ul>
     </li>
 
     <br>
 
     <li style='text-align:center;' >
-        <span class='mif-bookmarks' >&nbsp;<b class='normal_text' ><span style='font-size:1.3em;' >A</span>NUNCIADORES</b></span>
+        <span class='mif-bookmarks' >&nbsp;<b class='normal_text' >#1c-theme.Annonceurs#</b></span>
         <ul style='text-align:left;' >
-            <li><a href='/annonces/create-annonce' >Crair um novo anúncio</a></li>
-            <li><a href='#' >Meus anúncios</a></li>
+            <li><a href='/annonces/create-annonce' >#1c-theme.Create_annonce#</a></li>
+            <li><a href='#' >#1c-theme.My_annonces#</a></li>
         </ul>
 
     </li>
     <li style='text-align:left;' >
-        <span class='mif-tag' >&nbsp;<b class='normal_text' style='font-size:.85em;' ><span style='font-size:1.3em;' >O</span>FERTAS</b></span>
+        <span class='mif-tag' >&nbsp;<b class='normal_text' >#1c-theme.Offerings#</b></span>
         <ul style='text-align:left;' >
-            <li><a href='#' >Todos os anúncios</a></li>
-            <li><a href='#' >Anúncios selecionados</a></li>
-            <li><a href='#' >Anúncios visualisados</a></li>
+            <li><a href='#' >#1c-theme.All_annonces#</a></li>
+            <li><a href='#' >#1c-theme.Selected_annonces#</a></li>
+            <li><a href='#' >#1c-theme.Visualized_annonces#</a></li>
         </ul>
     </li>
 
     <br>
 
     <li style='text-align:center;' >
-        <span class='mif-calendar' >&nbsp;<b class='normal_text' ><span style='font-size:1.3em;' >A</span>GENDA</b></span>
+        <span class='mif-calendar' >&nbsp;<b class='normal_text' >#1c-theme.Agenda#</b></span>
         <ul style='text-align:left;' >
-            <li><a href='#' >Visitas propostas</a></li>
-            <li><a href='#' >Visitas confirmadas</a></li>
+            <li><a href='#' >#1c-theme.Suggested_visits#</a></li>
+            <li><a href='#' >#1c-theme.Confirmed_visits#</a></li>
         </ul>
     </li>
 
 </ul>
+
+<div style='background-color:black;height:30px;' >
+    <ing src='/resources/1c-theme/images/button.svg' />
+</div>
 
 <!--
 <div style='text-align:center;' >

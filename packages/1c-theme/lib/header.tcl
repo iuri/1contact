@@ -33,18 +33,17 @@ if { $untrusted_user_id == 0 } {
 
 template::head::add_css -href "/resources/1c-theme/css/header.css"
 
-template::head::add_javascript -script {
+template::head::add_javascript -script "
+    
+    function change_locale(l) {
+        var url = window.location.href + '?locale='+l;
+        top.location.href=url;
+    }
 
-  function change_locale() {
-      var locale = $('#select_language').val();
-      var url = window.location.href + '?locale='+locale; 
-      top.location.href=url;
-  }
+    function get_locale(l) {
+    }
 
-  function get_locale(x) {
-      $('#select_language').val(x);
-  }
-  
-}
+
+"
 
 

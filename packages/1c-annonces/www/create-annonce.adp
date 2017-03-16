@@ -2,22 +2,22 @@
 
 <div style='position:relative;' >
 
-	<h3>Criar um novo anúncio</h3>
+	<h3>#1c-annonces.Create_new_annonce#</h3>
 
 	<div class='box' >
 
-		<h4>Características gerais</h4>
+		<h4>#1c-annonces.General_Characteristics#</h4>
 
 		<!-- Título -->
 		<div class='input-control text' style='width:16em;' >
-			<input type='text' name='announce_title' placeholder='Título' style='width:100%;' />
+			<input type='text' name='announce_title' placeholder='#1c-annonces.Title#' style='width:100%;' />
 		</div>
 
 		<!-- Tipo de negociação (locação ou venda) -->
-		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='Tipo de negócio' style='width:11.5em;' >
+		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='#1c-annonces.Type_of_business#' style='width:11.5em;' >
 			<select name='announce_business' multiple='multiple' style='width:100%;' >
-				<option value='0' >Locação</option>
-				<option value='1' >Venda</option>
+				<option value='0' >#1c-annonces.Rent#</option>
+				<option value='1' >#1c-annonces.Purchase#</option>
 			</select>
 		</div>
 
