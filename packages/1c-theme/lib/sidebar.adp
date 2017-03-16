@@ -47,13 +47,3 @@
     </li>
 
 </ul>
-
-<div style='background-color:black;height:30px;' >
-    <ing src='/resources/1c-theme/images/button.svg' />
-</div>
-
-<!--
-<div style='text-align:center;' >
-    <img src='/resources/1c-theme/images/logo.png' />
-</div>
--->

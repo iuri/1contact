@@ -8,7 +8,7 @@
 
 	<!-- Endereço -->
 	<div class='footer_detail' >
-		Rue de la Servette 45<br>1202 Genève SUISSE
+		45 Rue de la Servette<br>1202 Genève SUISSE
 	</div>
 
 	<!-- Contato -->
