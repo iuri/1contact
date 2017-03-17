@@ -1,9 +1,15 @@
 ad_page_contract {} {
+    {error ""}
+    {error_code ""}
+    {error_description ""}
+    {error_reason ""}
     {locale ""}
     {return_url ""}
     
 }
 
+
+ns_log Notice "$error \n $error_code \n $error_description \n $error_reason"
 
 set selected_lang [lang::user::locale]
 

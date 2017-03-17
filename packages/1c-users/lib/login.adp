@@ -11,7 +11,8 @@
 		<p style='text-align:center;' ><b>#1c-users.or_using#</b></p>
 		<div>
 			<a href='#' ><img src='/resources/1c-users/images/logo-google.svg' style='height:50px;width:auto;margin-right:1rem;' /></a>
-			<a href='#' ><img src='/resources/1c-users/images/logo-facebook.svg' style='height:50px;width:auto;margin-right:1rem;' /></a>
+
+			<a href="https://www.facebook.com/v2.8/dialog/oauth?client_id=1352605191467865&redirect_uri=@return_url@"><img src='/resources/1c-users/images/logo-facebook.svg' style='height:50px;width:auto;margin-right:1rem;' /></a>
 		</div>
 		<br>
 		<div style='position:absolute;right:.75rem;text-align:right;' >

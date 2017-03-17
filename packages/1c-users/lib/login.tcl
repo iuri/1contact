@@ -1,6 +1,7 @@
 ad_page_contract {
-
+    {return_url ""}
 }
+
 
 
 # Redirect to HTTPS if so configured

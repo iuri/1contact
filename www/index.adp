@@ -26,15 +26,3 @@
 <div id="status">
 </div>
 
-
-
-
-
-
-<div id="fb-root"></div>
-
-
-
-
-
-<a href="https://www.facebook.com/v2.8/dialog/oauth?client_id=1352605191467865&redirect_uri=@return_url@">Login</a>
