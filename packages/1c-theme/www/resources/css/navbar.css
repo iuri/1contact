@@ -6,10 +6,16 @@
 	background-color: #404040;
 }
 
+.navbar_row {
+	text-align: center;
+	display: table-row;
+	background-color: blue;
+}
+
 .navbar_cell {
 	display: table-cell;
 	vertical-align: middle;
-	margin: .1rem;
+	padding: .1rem;
 }
 
 .radio_button {

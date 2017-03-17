@@ -18,6 +18,7 @@ ad_page_contract {
     search_form
 }
 
+
 # We rename to avoid conflict in queries
 set current_locale $locale
 set default_locale en_US

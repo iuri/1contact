@@ -21,7 +21,16 @@ if {$locale ne ""} {
 
 set return_url [ad_return_url]
 
+
 set system_name [ad_system_name]
+
+if {[ad_conn url] eq "/"} {
+    set system_url ""
+} else {
+    set system_url [ad_url]
+}
+
+
 set subsite_name [lang::util::localize [subsite::get_element -element instance_name]]
 set user_id [ad_conn user_id]
 set untrusted_user_id [ad_conn untrusted_user_id]
@@ -40,17 +49,11 @@ if { $untrusted_user_id == 0 } {
 template::head::add_css -href "/resources/1c-theme/css/header.css"
 
 template::head::add_javascript -script "
-    
     function change_locale(l) {
         var return_url = '$return_url';
         var url = window.location.href + '?locale='+l+'&return_url='+return_url;
         top.location.href=url;
     }
-
-    function get_locale(l) {
-    }
-
-
 "
 
 

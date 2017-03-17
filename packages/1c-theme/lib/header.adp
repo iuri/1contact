@@ -1,6 +1,6 @@
 <div class='header' >
 	<div class='header_cell header_logo' >
-		<a href='index' ><img src='/resources/1c-theme/images/logo.png' /></a>
+		<a href='@system_url@' ><img src='/resources/1c-theme/images/logo.png' /></a>
 	</div>
 	<div class='header_cell header_title' >
 		45 Rue de la Servette<br>1202 Genève SUISSE<br>+41 022 782 8370
@@ -37,9 +37,6 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-  get_locale('@selected_lang@');
-</script>
 
 <!-- Popup com formulário de login -->
 <include src='../../1c-users/lib/login' />

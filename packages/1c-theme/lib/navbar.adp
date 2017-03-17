@@ -1,3 +1,5 @@
+<div > <!-- class='navbar_row' > -->
+
 <!-- Botoões de pesquisa ou oferta -->
 <div class='navbar_cell' >
 	<div class='radio_button' >
@@ -46,7 +48,7 @@
 	<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='Caracteristicas' style='width:14em;' >
 		<select name='search_characteristics' id='search_characteristics' multiple='multiple' style='width:14em;' >
 		  <multiple name='characs'>
-			<option value='@characs.id@' >@characs.name;noquote@</option>
+			<option value='@characs.id@'>@characs.name@</option>
 		  </multiple>
 		</select>
 	</div>
@@ -65,6 +67,8 @@
 <!-- Botão de pesquisar -->
 <div class='navbar_cell' >
 	<input type='submit' class='button white' value='Ok' />
+</div>
+
 </div>
 
 <script type='text/javascript' >
