@@ -10,10 +10,10 @@ ad_page_contract {} {
 
 
 ns_log Notice "$error \n $error_code \n $error_description \n $error_reason"
+if {$error ne ""} {
+    ad_returnredirect [export_vars -base "/users/login" {error_description} ]
 
-set selected_lang [lang::user::locale]
-
-
+}
 
 
 if {$locale ne ""} {
@@ -24,8 +24,7 @@ if {$locale ne ""} {
 }
 
 
-
-set return_url [ad_return_url]
+set return_url "[ad_return_url]"
 
 
 set system_name [ad_system_name]
