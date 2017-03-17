@@ -1,7 +1,6 @@
 .header {
 	width: 100%;
 	height: 100%;
-	font-size: 1em;
 	display: table;
 }
 
@@ -16,12 +15,12 @@
 }
 
 .header_logo a img {
-	width: 100%;
-	height: auto;
+	width: auto;
+	height: 80px;
 }
 
 .header_title {
-	width: 13em;
+	width: 11em;
 	font-weight: 600;
 }
 

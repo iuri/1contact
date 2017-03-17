@@ -3,30 +3,8 @@ ad_page_contract {
 }
 
 
-ad_proc -public category_get_options {
-    {-parent_id:required}
-} {
-    @return Returns the category types for this instance as an
-    array-list of { parent_id1 heading1 parent_id2 heading2 ... }
-} {
 
-    set children_ids [category::get_children -category_id $parent_id]
-
-    set children [list]
-    foreach child_id $children_ids {
-	set child_name [category::get_name $child_id]
-	set temp "\"$child_name\" $child_id"
-	lappend children $temp
-    }
-    
-    lappend children ""
-
-    return $children
-}
-
-
-
-set package_id 2372
+set package_id 2393
 set tree_id 1067
 
 
@@ -45,7 +23,7 @@ foreach {cat_id cat_name} [1c_annonce::get_categories -package_id $package_id -t
     
     ns_log Notice "$cat_id $cat_name"
     
-    foreach option [category_get_options -parent_id $cat_id] {
+    foreach option [1c_annonce::category_get_options -parent_id $cat_id] {
 	
 	ns_log Notice "[lindex $option 0]"
 	set option [lindex $option 0]

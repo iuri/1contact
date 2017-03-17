@@ -1,19 +1,25 @@
 ad_page_contract {} {
     {locale ""}
+    {return_url ""}
     
 }
 
 
 set selected_lang [lang::user::locale]
 
+
+
+
 if {$locale ne ""} {
     lang::user::set_locale $locale
 
-    ad_returnredirect /
+    ad_returnredirect $return_url
     ad_script_abort
 }
 
 
+
+set return_url [ad_return_url]
 
 set system_name [ad_system_name]
 set subsite_name [lang::util::localize [subsite::get_element -element instance_name]]
@@ -36,7 +42,8 @@ template::head::add_css -href "/resources/1c-theme/css/header.css"
 template::head::add_javascript -script "
     
     function change_locale(l) {
-        var url = window.location.href + '?locale='+l;
+        var return_url = '$return_url';
+        var url = window.location.href + '?locale='+l+'&return_url='+return_url;
         top.location.href=url;
     }
 
