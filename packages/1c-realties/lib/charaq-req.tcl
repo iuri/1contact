@@ -1,4 +1,8 @@
 ad_page_contract {
+    Returns required characteristics
+
+    @author Iuri Sampaio (iuri@iurix.com)
+    @creation-date 2017-03-17
 
 }
 
@@ -18,14 +22,10 @@ foreach {cat_id cat_name} [1c_annonce::get_categories -package_id $package_id -t
       <div class='box2' >
   	<b>$cat_name</b><br> 
     "
-    
     set options_html ""
-    
-    ns_log Notice "$cat_id $cat_name"
     
     foreach option [1c_annonce::category_get_options -parent_id $cat_id] {
 	
-	ns_log Notice "[lindex $option 0]"
 	set option [lindex $option 0]
 	append options_html "
 	    <label class='input-control radio small-check' >
@@ -38,8 +38,6 @@ foreach {cat_id cat_name} [1c_annonce::get_categories -package_id $package_id -t
     }
 
     append chars_html "$options_html </div>"
-
-    ns_log Notice "$options_html"
     
 }
 

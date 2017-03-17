@@ -12,7 +12,7 @@
 
 		<!-- Título -->
 		<div class='input-control text' style='width:16em;' >
-			<input type='text' name='announce_title' placeholder='Título' required style='width:100%;' />
+			<input type='text' name='announce_title' id='announce_title' placeholder='Título' required style='width:100%;' />
 		</div>
 
 		<!-- Tipo de negociação (locação ou venda) -->
