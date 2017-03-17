@@ -45,15 +45,9 @@
 <div class='navbar_cell' >
 	<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='Caracteristicas' style='width:14em;' >
 		<select name='search_characteristics' id='search_characteristics' multiple='multiple' style='width:14em;' >
-			<option value='0' >Bela Vista</option>
-			<option value='1' >Lareira</option>
-			<option value='2' >Teto alto</option>
-			<option value='3' >Piso antigo</option>
-			<option value='4' >Máquina de lavar</option>
-			<option value='5' >Secadora de roupas</option>
-			<option value='6' >Lavadoura de louças</option>
-			<option value='7' >Cozinha aberta</option>
-			<option value='8' >Cozinha grande</option>
+		  <multiple name='characs'>
+			<option value='@characs.id@' >@characs.name;noquote@</option>
+		  </multiple>
 		</select>
 	</div>
 </div>
