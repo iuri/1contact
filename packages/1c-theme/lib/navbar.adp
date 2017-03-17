@@ -2,7 +2,7 @@
 <div class='navbar_cell' >
 	<div class='radio_button' >
 
-		<div style='margin-bottom:.1rem;' >
+		<div>
 			<input type='radio' name='search_origin' id='search_research' />
 			<label for='search_research' >Procura</label>
 		</div>

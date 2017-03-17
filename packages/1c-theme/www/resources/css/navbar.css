@@ -1,15 +1,18 @@
 .navbar {
 	width: 100%;
 	display: table;
-	text-align: left;
+	text-align: center;
 	vertical-align: middle;
 	background-color: #404040;
 }
 
 .navbar_cell {
-	padding: .25rem;
 	display: table-cell;
 	vertical-align: middle;
+}
+
+.radio_button {
+	margin: .15rem;
 }
 
 .radio_button input[type=radio]:not(old){
@@ -20,8 +23,9 @@
 }
 
 .radio_button input[type=radio]:not(old) + label {
-	width: 4.5em;
-	padding: .25rem;
+	width: 4.5rem;
+	padding: .25em;
+	margin: .15em;
 	display: inline-block;
 	background-color: #FFF;
 	border: 1px solid #d9d9d9;
