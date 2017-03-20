@@ -33,10 +33,13 @@
 	width: 4.5em;
 	padding: .25rem;
 	margin: .15rem;
+	background: url('/resouces/1c-theme/images/recherche.svg');
+/*
 	display: inline-block;
 	background-color: #FFF;
 	border: 1px solid #d9d9d9;
 	color: #333;
+*/
 	text-align: center;
 }
 

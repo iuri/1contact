@@ -399,7 +399,6 @@ ad_form -extend -name annonce -form {
 } -new_data {
     
     
-    set available_date "[template::util::date::get_property year $available_date] [template::util::date::get_property month $available_date] [template::util::date::get_property day $available_date]"
     #        set start_date [calendar::to_sql_datetime -date $date -time $start_time -time_p $time_p]
     
     set lchars [list]

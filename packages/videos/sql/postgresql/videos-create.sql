@@ -59,9 +59,9 @@ select content_folder__register_content_type(-100,'video_object','t');
 select content_folder__register_content_type(-100,'video_image_object','t');
 
 select acs_rel_type__create_role(
-       'video_object',		--role
-       'Video',			--pretty_name
-       'Videos'			--pretty_plural
+'video_object',		--role
+'Video',			--pretty_name
+'Videos'			--pretty_plural
 );
 
 

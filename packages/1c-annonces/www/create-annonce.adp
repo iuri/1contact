@@ -1,6 +1,6 @@
 <master>
 
-<form method='post' action='javascript:form_submit()' id='create_annonce_form' >
+<form method='post' action='javascript:form_submit()' id='create_form' >
 
 <div style='position:relative;' >
 
@@ -12,7 +12,7 @@
 
 		<!-- Título -->
 		<div class='input-control text' style='width:16em;' >
-			<input type='text' name='annonce_title' id='annonce_title' placeholder='Título' required style='width:100%;' />
+			<input type='text' name='title' id='title' placeholder='Título' required style='width:100%;' />
 		</div>
 
 		<!-- Tipo de negociação (locação ou venda) -->
@@ -21,7 +21,7 @@
 				<option value='1' >#1c-realties.Rent#</option>
 				<option value='2' >#1c-realties.Purchase#</option>
 			</select>
-			<input type='text' name='annonce_business' id='annonce_business' hidden />
+			<input type='text' name='business' id='business' hidden />
 		</div>
 
 		<!-- Tipo de imóvel -->
@@ -31,58 +31,58 @@
 				<option value='2' >Apartamento</option>
 				<option value='3' >Comércio</option>
 			</select>
-			<input type='text' name='annonce_type' id='annonce_type' hidden />
+			<input type='text' name='type' id='type' hidden />
 		</div>
 
 		<!-- Preço  -->
 		<div class='input-control text' style='width:5em;' >
-			<input type='text' name='annonce_price' id='annonce_price' placeholder='Preço' min='0' required style='width:100%;' />
+			<input type='text' name='price' id='price' placeholder='Preço' min='0' required style='width:100%;' />
 		</div>
 
 		<!-- Taxas -->
 		<div class='input-control text' style='width:5em;' >
-			<input type='text' name='annonce_taxes' id='annonce_taxes' placeholder='Taxas' min-='0' required style='width:100%;' />
+			<input type='text' name='taxes' id='taxes' placeholder='Taxas' min-='0' required style='width:100%;' />
 		</div>
 
 		<!-- Data de disponibilidade -->
 		<div class='input-control text' data-role='datepicker' data-scheme='darcula' data-locale='pt' data-format='dd.mm.yyyy' style='width:13em;' >
-			<input type='text' name='annonce_availability' id='annonce_availability' placeholder='Data de disponibilidade' required style='width:100%;' />
+			<input type='text' name='availability_date' id='availability_date' placeholder='Data de disponibilidade' required style='width:100%;' />
 			<button class='button clear' ><span class='mif-calendar' ></span></button>
 		</div>
 
 		<!-- Num de cômodos -->
 		<div class='input-control text' style='width:5.5em;' >
-			<input type='number' name='annonce_rooms' id='annonce_rooms' placeholder='Cômodos' min='0' max='999' required style='width:100%;' />
+			<input type='number' name='room_qty' id='room_qty' placeholder='Cômodos' min='0' max='999' required style='width:100%;' />
 		</div>
 
 		<!-- Num de lavabos -->
 		<div class='input-control text' style='width:5.5em;' >
-			<input type='number' name='annonce_lavatory' id='annonce_lavatory' placeholder='Lavabo' min='0' max='999' required style='width:100%;' />
+			<input type='number' name='lavatory_qty' id='lavatory_qty' placeholder='Lavabo' min='0' max='999' required style='width:100%;' />
 		</div>
 
 		<!-- Num de banheiros -->
 		<div class='input-control text' style='width:5.5em;' >
-			<input type='number' name='annonce_bathroom' id='annonce_bathroom' placeholder='Banheiro' min='0' max='999' required style='width:100%;' />
+			<input type='number' name='bathroom_qty' id='bathroom_qty' placeholder='Banheiro' min='0' max='999' required style='width:100%;' />
 		</div>
 
 		<!-- Num de andares -->
 		<div class='input-control text' style='width:5.5em;' >
-			<input type='number' name='annonce_floorsnmb' id='annonce_floorsnmb' placeholder='Andares' min='0' max='999' required style='width:100%;' />
+			<input type='number' name='floors_aty' id='floors_aty' placeholder='Andares' min='0' max='999' required style='width:100%;' />
 		</div>
 
 		<!-- Área total -->
 		<div class='input-control text' style='width:5.5em;' >
-			<input type='text' name='annonce_surface' id='annonce_surface' placeholder='Área total' required style='width:100%;' />
+			<input type='text' name='surface' id='surface' placeholder='Área total' required style='width:100%;' />
 		</div>
 
 		<!-- Tipo de anunciante -->
 		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='Tipo de anunciante' required style='width:14.5em;' >
-			<select name='aannoncer' id='aannoncer' multiple='multiple' style='width:100%;' >
+			<select name='aannouncer' id='aannouncer' multiple='multiple' style='width:100%;' >
 				<option value='1' >Dono</option>
 				<option value='2' >Fiador</option>
 				<option value='3' >Agente</option>
 			</select>
-			<input type='text' name='annonce_annoncer' id='annonce_annoncer' hidden />
+			<input type='text' name='announcer' id='announcer' hidden />
 		</div>
 
 	</div>
@@ -102,9 +102,9 @@
 	<div class='box' >
 		<h4>Características opcionais</h4>
 		<include src='../../1c-realties/lib/charac-opt' />
-		<input type='text' name='annonce_charac_opt_gen' id='annonce_charac_opt_gen' hidden />
-		<input type='text' name='annonce_charac_opt_arc' id='annonce_charac_opt_arc' hidden />
-		<input type='text' name='annonce_charac_opt_vic' id='annonce_charac_opt_vic' hidden />
+		<input type='text' name='charac_opt_gen' id='charac_opt_gen' hidden />
+		<input type='text' name='charac_opt_arc' id='charac_opt_arc' hidden />
+		<input type='text' name='charac_opt_vic' id='charac_opt_vic' hidden />
 	</div>
 
 	<br>
@@ -113,7 +113,7 @@
 	<div class='box' >
 		<h4>Descrição</h4>
 		<div class='input-control textarea' data-role='input' data-text-auto-resize='true' required style='width:25em;' >
-			<textarea name='annonce_description' id='annonce_description' ></textarea>
+			<textarea name='description' id='description' ></textarea>
 		</div>
 	</div>
 
@@ -130,19 +130,19 @@
 	<div class='box' style='vertical-align:top;' >
 		<h4>Status</h4>
 		<label class='input-control radio small-check' >
-			<input type='radio' name='annonce_status' id='annonce_status_inactive' checked='checked' value='0' />
+			<input type='radio' name='status' id='status_inactive' checked='checked' value='0' />
 			<span class='check' ></span>
-			<span class='caption' for='annonce_status_inactive' >Inativo</span>
+			<span class='caption' for='status_inactive' >Inativo</span>
 		</label>
 		<label class='input-control radio small-check' >
-			<input type='radio' name='annonce_status' id='annonce_status_ctive' value='1' />
+			<input type='radio' name='status' id='status_ctive' value='1' />
 			<span class='check' ></span>
-			<span class='caption' for='annonce_status_ctive' >Ativo</span>
+			<span class='caption' for='status_ctive' >Ativo</span>
 		</label>
 		<label class='input-control radio small-check' >
-			<input type='radio' name='annonce_status' id='annonce_status_closed' value='2' />
+			<input type='radio' name='status' id='status_closed' value='2' />
 			<span class='check' ></span>
-			<span class='caption' for='annonce_status_closed' >Encerrado</span>
+			<span class='caption' for='status_closed' >Encerrado</span>
 		</label>
 	</div>
 
@@ -150,7 +150,7 @@
 	<div class='box' style='vertical-align:top;' >
 		<h4>Termos e condições</h4>
 		<label class='input-control checkbox small-check' >
-			<input type='checkbox' name='annonce_terms' id='annonce_terms' required />
+			<input type='checkbox' name='terms' id='terms' required />
 			<span class='check' ></span>
 			<span class='caption' >Concordo com os termos e condições</span>
 		</label>
@@ -165,6 +165,6 @@
 
 </form>
 
-<div id='annonce_success' data-role='dialog' data-close-button='true' data-overlay='true' data-overlay-color='dialog_overlay' >
+<div id='success' data-role='dialog' data-close-button='true' data-overlay='true' data-overlay-color='dialog_overlay' >
 	Registrado com sucesso!
 </div>

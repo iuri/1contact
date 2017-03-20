@@ -142,29 +142,24 @@ ad_proc -public 1c_annonce::annonce::add_file {
 
 ad_proc -public 1c_annonce::annonce::add {
     {-item_id ""}
+    {-title ""}
     {-type_of_transaction ""}
     {-type_of_property ""}
-    {-other_property ""}
-    {-type_of_commerce ""}
-    {-type_of_activity ""}
-    {-type_of_residence ""}
-    {-type_of_announcer ""}
+    {-rent_price ""}
+    {-rent_taxes ""}
     {-available_date ""}
-    {-title ""}
-    {-ref_code ""}
     {-room_qty ""}
     {-lavatory_qty ""}
     {-bathroom_qty ""}
-    {-floor ""}
-    {-rent_price ""}
-    {-rent_taxes ""}
+    {-floor_qty ""}
     {-surface ""}
-    {-auto_commission_p ""}
-    {-on_demand_p ""}
+    {-type_of_announcer ""}
     {-description ""}
-    {-status ""}
-    {-lchars ""}
-    {-terms_conditions_p ""}
+    {-charac_req ""}
+    {-charac_opt_gen ""}
+    {-charac_opt_arc ""}
+    {-charac_opt_vic ""}
+    {-status ""}    
     {-creation_ip ""}
     {-creation_user ""}
     {-context_id ""}    
@@ -188,6 +183,8 @@ ad_proc -public 1c_annonce::annonce::add {
     if {![exists_and_not_null item_id]} {
 	set item_id [db_nextval "acs_object_id_seq"]
 	
+	set ref_code "${type_of_transaction}${type_of_property}${room_qty}${item_id}"
+
 
 	db_transaction {
 	    content::item::new \
@@ -207,24 +204,16 @@ ad_proc -public 1c_annonce::annonce::add {
 				    :ref_code,
 				    :type_of_transaction,
 				    :type_of_property,
-				    :type_of_residence,
-				    :type_of_commerce,
-				    :type_of_activity,
-				    :other_property,
-				    :type_of_announcer,
+				    :rent_price,
+				    :rent_taxes,
 				    :available_date,
 				    :room_qty,
 				    :lavatory_qty,
 				    :bathroom_qty,
-				    :floor,
-				    :rent_price,
-				    :rent_taxes,
+				    :floor_qty,
 				    :surface,
-				    :auto_commission_p,
-				    :on_demand_p,
-				    :status,
-				    :lchars,
-				    :terms_conditions_p);
+				    :type_of_announcer,
+				    :status);
 	    }
 	}	
     }	
