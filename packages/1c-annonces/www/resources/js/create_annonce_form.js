@@ -1,25 +1,66 @@
 function form_submit() {
 
-	var announce_title = $('#announce_title').val();
-	var announce_business = $('#announce_business').val();
-	var announce_type = $('#announce_type').val();
-	var announce_price = $('#announce_price').val();
-	var announce_taxes = $('#announce_taxes').val();
-	var announce_availability = $('#announce_availability').val();
-	var announce_rooms = $('#announce_rooms').val();
-	var announce_lavatory = $('#announce_lavatory').val();
-	var announce_bathroom = $('#announce_bathroom').val();
-	var announce_floorsnmb = $('#announce_floorsnmb').val();
-	var announce_surface = $('#announce_surface').val();
-	var announce_announcer = $('#announce_announcer').val();
-	
-	var radio = $('#charreq_1090').filter(':checked').data("title");
+	// Tipo de negócio
+	var annonce_business = "";
+	$('#abusiness option:selected').each( function() {
+		annonce_business += ($(this).val()+',') ;
+	});
+	$('#annonce_business').val(annonce_business);
 
-	var announce_business = $('#announce_business').val();
-	var announce_business = $('#announce_business').val();
-	var announce_business = $('#announce_business').val();
-	var announce_business = $('#announce_business').val();
+	// Tipo de imóvel
+	var annonce_type = "";
+	$('#atype option:selected').each( function() {
+		annonce_type += ($(this).val()+',') ;
+	});
+	$('#annonce_type').val(annonce_type);
 
-	alert(radio);
+	// Tipo de anunciante
+	var annonce_annoncer = "";
+	$('#aannoncer option:selected').each( function() {
+		annonce_annoncer += ($(this).val()+',') ;
+	});
+	$('#annonce_annoncer').val(annonce_annoncer);
+
+	// Características obrigatórias
+	var annonce_charac_req = "";
+	$("input[type='radio']").each( function() {
+		if ( $(this).attr('name').includes('charac_req_') ) {
+			if ( $(this).is(':checked') ) {
+				var id = $(this).attr("id");
+				annonce_charac_req += (id + ',');
+			}
+		}
+	});
+	$('#charac_required').val(annonce_charac_req);
+
+	// Características generais
+	var annonce_charac_gen = "";
+	$('#charac_gen option:selected').each( function() {
+		annonce_charac_gen += ($(this).val()+',') ;
+	});
+	$('#annonce_charac_opt_gen').val(annonce_charac_gen);
+
+	// Características arquitetura
+	var annonce_charac_arc = "";
+	$('#charac_arc option:selected').each( function() {
+		annonce_charac_arc += ($(this).val()+',') ;
+	});
+	$('#annonce_charac_opt_arc').val(annonce_charac_arc);
+
+	// Características vizinhança
+	var annonce_charac_vic = "";
+	$('#charac_vic option:selected').each( function() {
+		annonce_charac_vic += ($(this).val()+',') ;
+	});
+	$('#annonce_charac_opt_vic').val(annonce_charac_vic);
+
+	$.ajax({
+		type: "POST",
+		url: url,
+		data: $("#create_annonce_form").serialize(),
+		success: function(data) {
+			alert(data);
+		}
+	});
 
 }

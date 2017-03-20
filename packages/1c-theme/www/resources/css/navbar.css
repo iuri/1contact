@@ -1,15 +1,15 @@
 .navbar {
 	width: 100%;
 	display: table;
+	margin: 0 auto;
 	text-align: center;
 	vertical-align: middle;
 	background-color: #404040;
 }
 
 .navbar_row {
-	text-align: center;
 	display: table-row;
-	background-color: blue;
+	text-align: center;
 }
 
 .navbar_cell {

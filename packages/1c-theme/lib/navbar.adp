@@ -1,4 +1,4 @@
-<div > <!-- class='navbar_row' > -->
+<div class='navbar_row' >
 
 <!-- Botoões de pesquisa ou oferta -->
 <div class='navbar_cell' >

@@ -2,6 +2,5 @@
 
 
 <script>
-javascript:metroDialog.open('#login_form');
-
+	javascript:metroDialog.open('#login_form');
 </script>

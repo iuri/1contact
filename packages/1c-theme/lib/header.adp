@@ -39,7 +39,7 @@
 
 
 <!-- Popup com formulário de login -->
-<include src='../../1c-users/lib/login' return_url="@return_url@"/>
+<include src='../../1c-users/lib/login' return_url="@return_url@" />
 
 
 
