@@ -85,7 +85,7 @@ if {[string equal $mode "save"]} {
     
 
 
-    set user_email [party::email [ad_conn user_id] ]
+    set user_email [party::email -party_id [ad_conn user_id] ]
     set body "Bonjour,
 Un nouveau bien vient d'être créé sur"
     
