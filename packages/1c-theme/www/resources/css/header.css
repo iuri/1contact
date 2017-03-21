@@ -12,6 +12,7 @@
 
 .header_logo {
 	width: 80px;
+	text-align: right;
 }
 
 .header_logo a img {

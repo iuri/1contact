@@ -2,9 +2,11 @@
 	<div class='header_cell header_logo' >
 		<a href='@system_url@' ><img src='/resources/1c-theme/images/logo.png' /></a>
 	</div>
+<!--
 	<div class='header_cell header_title' >
 		45 Rue de la Servette<br>1202 Genève SUISSE<br>+41 022 782 8370
 	</div>
+-->
 	<div class='header_cell' >
 		<a href='#' ><span class='mif-menu mif-2x'></span></a>
 	</div>
@@ -39,7 +41,7 @@
 
 
 <!-- Popup com formulário de login -->
-<include src='../../1c-users/lib/login' return_url="@return_url@"/>
+<include src='../../1c-users/lib/login' return_url="@return_url@" />
 
 
 

@@ -2,8 +2,8 @@
 set add_annonce_url [export_vars -base "annonce-edit" {return_url}] 
 
 set actions {
-    "#1c-annonce.Add_annonce#" "annonce-edit?return_url=/annonces" "#1c-annonce.Add_a_new_annonce#"
-    "#1c-annonce.Import_CSV_file#" "import-csv-file?return_url=/1c-annonce" "#1c-annonce.Import_csv_file#"
+    "#1c-annonces.Add_annonce#" "annonce-edit?return_url=/annonces" "#1c-annonces.Add_a_new_annonce#"
+    "#1c-annonces.Import_CSV_file#" "import-csv-file?return_url=/1c-annonce" "#1c-annonces.Import_csv_file#"
 }
 
 set bulk_actions [list]
@@ -29,25 +29,25 @@ template::list::create \
     -row_pretty_plural "annonces" \
     -elements {
 	ref_code {
-	    label "[_ 1c-annonce.Refence_Code]"
+	    label "[_ 1c-annonces.Refence_Code]"
 	    display_template {
 		<a href="@annonces.annonce_url@">@annonces.ref_code;noquote@</a>
 	    }
 	}
 	title {
-	    label "[_ 1c-annonce.Title]"
+	    label "[_ 1c-annonces.Title]"
 	    display_template {
 		@annonces.title;noquote@
 	    }
 	}
 	available_date {
-	    label "[_ 1c-annonce.Availability]"
+	    label "[_ 1c-annonces.Availability]"
 	}
 	status_pretty {
-	    label "[_ 1c-annonce.Status]"
+	    label "[_ 1c-annonces.Status]"
 	}
 	creation_user_name {
-	    label "[_ 1c-annonce.Creation_user]"
+	    label "[_ 1c-annonces.Creation_user]"
 	    display_template {
 		<a href="@annonces.creation_user_url@">@annonces.creation_user_name;noquote@</a>
 	    }
@@ -62,11 +62,8 @@ template::list::create \
     } 
 
 db_multirow -extend { annonce_url delete_url creation_user_url creation_user_name status_pretty} -unclobber annonces select_annonces {
-    SELECT ci.item_id, a.ref_code, cr.title, a.available_date, o.creation_user, a.status, a.type_of_transaction, a.type_of_property
-    FROM cr_items ci, cr_revisions cr, acs_objects o, annonces a
-    WHERE ci.latest_revision = cr.revision_id
-    AND o.object_id = ci.item_id
-    AND a.annonce_id =  ci.item_id
+    SELECT * FROM annonces a, cr_items ci, cr_revisions cr, acs_objects o
+    WHERE a.annonce_id = ci.item_id AND a.annonce_id = cr.item_id AND a.annonce_id = o.object_id
    
 } {
     set annonce_url [export_vars -base "annonce-edit" {{annonce_id $item_id}}]
@@ -79,10 +76,12 @@ db_multirow -extend { annonce_url delete_url creation_user_url creation_user_nam
 
     switch $status {
 	a {
-	    set status_pretty "[_ 1c-annonce.Active]"
+	    set status_pretty "[_ 1c-annonces.Active]"
 	    
 	}
     }
 	
 }
+
+
 

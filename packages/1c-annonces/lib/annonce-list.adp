@@ -3,5 +3,5 @@
   <listtemplate name="annonces"></listtemplate>
 </if>
 <else>
-  #1c-annonce.No_records#
+  #1c-annonces.No_records#
 </else>

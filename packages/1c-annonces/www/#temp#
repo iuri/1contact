@@ -1,0 +1,17 @@
+annonce_title = string
+annonce_business = array
+annonce_type = array
+annonce_price = int
+annonce_taxes = int
+annonce_availability = 22.03.2017
+annonce_rooms = int
+annonce_lavatory = int
+annonce_bathroom = int
+annonce_floorsnmb = int
+annonce_surface = int
+annonce_annoncer = array
+annonce_charac_opt_gen = array
+annonce_charac_opt_arc = array
+annonce_charac_opt_vic = array
+annonce_description = string
+annonce_status = int

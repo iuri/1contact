@@ -1,5 +1,3 @@
 <!-- Características do matching -->
 
-
-
-	@chars_html;noquote@
+@chars_html;noquote@

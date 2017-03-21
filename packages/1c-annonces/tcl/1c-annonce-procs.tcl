@@ -1,20 +1,23 @@
-# /packages/1c-mandat/tcl/1c-annonce-procs.tcl
+# /packages/1c-realties/tcl/1c-annonce-procs.tcl
 ad_library {
     Library to support the 1Contact procs
+    
+    @author Iuri Sampaio [iuri@iurix.com]
+    @creation-date Mon Sep 12 17:35:01 2016
+    @cvs-id $Id: 1c-realties-procs.tcl,v 0.1d 
+} 
+    
+    
+    
+    
+    
+    namespace eval 1c_annonces {}
+    
+    namespace eval 1c_annonces::annonce {}
+    
+    
 
-     @author Iuri Sampaio [iuri@iurix.com]
-     @creation-date Mon Sep 12 17:35:01 2016
-     @cvs-id $Id: ix-ndc-procs.tcl,v 0.1d 
-}
-
-
-namespace eval 1c_annonce {}
-
-namespace eval 1c_annonce::annonce {}
-
-
-
-ad_proc -public 1c_annonce::annonce::delete {
+ad_proc -public 1c_annonces::annonce::delete {
     annonce_id
 } {
     Deletes annonces
@@ -32,7 +35,7 @@ ad_proc -public 1c_annonce::annonce::delete {
 }
 
 
-ad_proc -public 1c_annonce::get_categories {
+ad_proc -public 1c_annonces::get_categories {
     {-package_id}
     {-tree_id}
 } {
@@ -58,7 +61,7 @@ ad_proc -public 1c_annonce::get_categories {
 }
 
 
-ad_proc -public 1c_annonce::category_get_options {
+ad_proc -public 1c_annonces::category_get_options {
     {-parent_id:required}
 } {
     @return Returns the category types for this instance as an
@@ -79,7 +82,7 @@ ad_proc -public 1c_annonce::category_get_options {
 
 
 
-ad_proc -public 1c_annonce::get_fs_package_id {
+ad_proc -public 1c_annonces::get_fs_package_id {
 } {
     Return the package_id of the filestorage instance that documents runs
 } {
@@ -94,7 +97,7 @@ ad_proc -public 1c_annonce::get_fs_package_id {
 
 
 
-ad_proc -public 1c_annonce::annonce::add_file {
+ad_proc -public 1c_annonces::annonce::add_file {
     {-tmp_filename:required}
     {-parent_id:required}
 } {
@@ -140,31 +143,26 @@ ad_proc -public 1c_annonce::annonce::add_file {
 
 
 
-ad_proc -public 1c_annonce::annonce::add {
+ad_proc -public 1c_annonces::annonce::add {
     {-item_id ""}
+    {-title ""}
     {-type_of_transaction ""}
     {-type_of_property ""}
-    {-other_property ""}
-    {-type_of_commerce ""}
-    {-type_of_activity ""}
-    {-type_of_residence ""}
-    {-type_of_announcer ""}
+    {-price ""}
+    {-taxes ""}
     {-available_date ""}
-    {-title ""}
-    {-ref_code ""}
     {-room_qty ""}
     {-lavatory_qty ""}
     {-bathroom_qty ""}
-    {-floor ""}
-    {-rent_price ""}
-    {-rent_taxes ""}
+    {-floors_qty ""}
     {-surface ""}
-    {-auto_commission_p ""}
-    {-on_demand_p ""}
+    {-type_of_announcer ""}
     {-description ""}
-    {-status ""}
-    {-lchars ""}
-    {-terms_conditions_p ""}
+    {-charac_req ""}
+    {-charac_opt_gen ""}
+    {-charac_opt_arc ""}
+    {-charac_opt_vic ""}
+    {-status ""}    
     {-creation_ip ""}
     {-creation_user ""}
     {-context_id ""}    
@@ -188,8 +186,27 @@ ad_proc -public 1c_annonce::annonce::add {
     if {![exists_and_not_null item_id]} {
 	set item_id [db_nextval "acs_object_id_seq"]
 	
+	set ref_code "${type_of_transaction}${type_of_property}${room_qty}${item_id}"
+
 
 	db_transaction {
+
+	    set realty_id [1c_realties::realty::add \
+			       -type_of_property $type_of_property \
+			       -room_qty $room_qty \
+			       -lavatory_qty $lavatory_qty \
+			       -bathroom_qty $bathroom_qty \
+			       -floors_qty $floors_qty \
+			       -surface $surface \
+			       -charac_req $charac_req \
+			       -charac_opt_gen $charac_opt_gen \
+			       -charac_opt_arc $charac_opt_arc \
+			       -charac_opt_vic $charac_opt_vic \
+			       -creation_ip $creation_ip \
+			       -creation_user $creation_user \
+			       -context_id $context_id]    
+	    
+	    ns_log Notice "$item_id $title $description $context_id  $context_id $creation_user $creation_ip"
 	    content::item::new \
 		-item_id $item_id \
 		-name "annonce-$item_id" \
@@ -206,25 +223,12 @@ ad_proc -public 1c_annonce::annonce::add {
 				    :item_id,
 				    :ref_code,
 				    :type_of_transaction,
-				    :type_of_property,
-				    :type_of_residence,
-				    :type_of_commerce,
-				    :type_of_activity,
-				    :other_property,
-				    :type_of_announcer,
+				    :price,
+				    :taxes,
 				    :available_date,
-				    :room_qty,
-				    :lavatory_qty,
-				    :bathroom_qty,
-				    :floor,
-				    :rent_price,
-				    :rent_taxes,
-				    :surface,
-				    :auto_commission_p,
-				    :on_demand_p,
+				    :type_of_announcer,
 				    :status,
-				    :lchars,
-				    :terms_conditions_p);
+				    :realty_id);
 	    }
 	}	
     }	
@@ -234,114 +238,4 @@ ad_proc -public 1c_annonce::annonce::add {
 
 
     
-ad_proc -public 1c_annonce::annonce::edit {
-    {-annonce_id ""}
-    {-type_of_transaction ""}
-    {-type_of_property ""}
-    {-other_property ""}
-    {-type_of_commerce ""}
-    {-type_of_residence ""}
-    {-type_of_activity ""}
-    {-type_of_announcer ""}
-    {-title ""}
-    {-ref_code ""}
-    {-available_date ""}
-    {-room_qty ""}
-    {-lavatory_qty ""}
-    {-bathroom_qty ""}
-    {-floor ""}
-    {-rent_price ""}
-    {-rent_taxes ""}
-    {-surface ""}
-    {-auto_commission_p ""}
-    {-on_demand_p ""}
-    {-description ""}
-    {-status ""}
-    {-lchars ""}
-    {-terms_conditions_p ""}
-} {
-    Ammends annonce's info
-} {
-    ns_log Notice "Running ad_proc edit"    
 
-
-    db_transaction {
-	
-	content::revision::new \
-	    -item_id $annonce_id \
-	    -title $title \
-	    -description $description
-	
-	
-	db_exec_plsql annonce_edit {
-	    
-	    SELECT annonce__edit(
-				 :annonce_id,
-				 :type_of_transaction,
-				 :type_of_property,
-				 :other_property,
-				 :type_of_commerce,
-				 :type_of_residence,
-				 :type_of_activity,
-				 :type_of_announcer,
-				 :ref_code,
-				 :available_date,
-				 :room_qty,
-				 :lavatory_qty,
-				 :bathroom_qty,
-				 :floor,
-				 :rent_price,
-				 :rent_taxes,
-				 :surface,
-				 :auto_commission_p,
-				 :on_demand_p,
-				 :status,
-				 :lchars,
-				 :terms_conditions_p);
-	}	
-       
-    }	
-    return
-}
-
-
-    
-
-ad_proc -public 1c_annonce::annonce::update_categories {
-    {-annonce_id}
-    {-category_1 ""} 
-    {-category_2 ""} 
-    {-category_3 ""} 
-    {-category_4 ""} 
-    {-category_5 ""} 
-    {-category_6 ""} 
-    {-category_7 ""} 
-    {-category_8 ""} 
-    {-category_9 ""} 
-} {
-    Updates Annonce's categories 
-} {
-
-
-    ns_log Notice "INSERT CAT $category_1 $category_2 $category_3 $category_4 $category_5 $category_6 $category_7 $category_8 $category_9"
-    
-    
-    db_transaction {
-	db_exec_plsql annonce_edit {
-	    SELECT annonce__update_categories(
-				    :annonce_id,
-    				    :category_1,
-				    :category_2,
-				    :category_3,
-				    :category_4,
-				    :category_5,
-				    :category_6,
-				    :category_7,
-				    :category_8,
-				    :category_9
-	    );
-	}
-    }
-
-    return 
-}

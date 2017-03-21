@@ -4862,7 +4862,7 @@ S2.define('select2/defaults',[
     this.defaults = {
       amdBase: './',
       amdLanguageBase: './i18n/',
-      closeOnSelect: true,
+      closeOnSelect: false,
       debug: false,
       dropdownAutoWidth: false,
       escapeMarkup: Utils.escapeMarkup,

@@ -18,7 +18,7 @@
   <msg key="Items_from">Items from</msg>
   <msg key="Items_until">Items until @pretty_end_date@</msg>
   <msg key="List">List</msg>
-  <description key="List">Description wanted from programmers. For nl_NL I need to know if I need to translate &quot;List&quot; as &quot;a list of something&quot; or as &quot;show me something&quot;.
+  <description key="List">Description wanted from programmers. For nl_NL I need to know if I need to translate &#34;List&#34; as &#34;a list of something&#34; or as &#34;show me something&#34;.
 
 -- Daniël Mantione</description>
 
