@@ -12,7 +12,7 @@ set tree_id 1067
 
 set chars_html ""
 
-foreach {cat_id cat_name} [1c_annonce::get_categories -package_id $package_id -tree_id $tree_id] {
+foreach {cat_id cat_name} [1c_annonces::get_categories -package_id $package_id -tree_id $tree_id] {
 
     
     append chars_html "
@@ -22,14 +22,14 @@ foreach {cat_id cat_name} [1c_annonce::get_categories -package_id $package_id -t
 
     set options_html ""
     
-    foreach option [1c_annonce::category_get_options -parent_id $cat_id] {
+    foreach option [1c_annonces::category_get_options -parent_id $cat_id] {
 	
 	   set option_name [lindex $option 0]
        set option_id [lindex $option 1]
 
 	   append options_html "
             <label class='input-control radio small-check' >
-            <input type='radio' name='charac_req_$cat_id' id='$option_id' value='$option_id' />
+            <input type='radio' name='charac_req_$cat_id' id='$option_id' value='$option_id' required />
             <span class='check' ></span>
             <span class='caption' for='charac_req_$option_id' >$option_name</span>
             </label>

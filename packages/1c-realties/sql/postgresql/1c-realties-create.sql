@@ -5,7 +5,7 @@
 -- Table c1_annonce
 ------------------------------------
 CREATE TABLE realties(
-  realty_id		integer,
+  realty_id		integer
 			CONSTRAINT realties_realty_id_pk PRIMARY KEY,
   code			varchar(255),
   type_of_property	varchar(10),
@@ -41,6 +41,7 @@ SELECT acs_object_type__create_type (
 
 
 CREATE OR REPLACE FUNCTION realty__new (
+  integer,	   -- realty_id 
   varchar,	   -- code
   varchar,	   -- type_of_property
   integer,	   -- room_qty		   
@@ -57,36 +58,37 @@ CREATE OR REPLACE FUNCTION realty__new (
   integer	   -- context_id
 ) RETURNS integer AS '
   DECLARE
-    p_code		ALIAS $1;
-    p_type_of_property	ALIAS $2;
-    p_room_qty		ALIAS $3;
-    p_lavatory_qty	ALIAS $4;
-    p_bathroom_qty	ALIAS $5;
-    p_floor_qty		ALIAS $6;
-    p_surface		ALIAS $7;
-    p_charac_required 	ALIAS $8;
-    p_charac_opt_gen	ALIAS $9;
-    p_charac_opt_arc	ALIAS $10;
-    p_charac_opt_vic 	ALIAS $11;      
-    p_creation_user	ALIAS $12;
-    p_creation_ip	ALIAS $13;
-    p_context_id	ALIAS $14;
+    p_realty_id		ALIAS FOR $1;
+    p_code		ALIAS FOR $2;
+    p_type_of_property	ALIAS FOR $3;
+    p_room_qty		ALIAS FOR $4;
+    p_lavatory_qty	ALIAS FOR $5;
+    p_bathroom_qty	ALIAS FOR $6;
+    p_floor_qty		ALIAS FOR $7;
+    p_surface		ALIAS FOR $8;
+    p_charac_required 	ALIAS FOR $9;
+    p_charac_opt_gen	ALIAS FOR $10;
+    p_charac_opt_arc	ALIAS FOR $11;
+    p_charac_opt_vic 	ALIAS FOR $12;      
+    p_creation_user	ALIAS FOR $13;
+    p_creation_ip	ALIAS FOR $14;
+    p_context_id	ALIAS FOR $15;
 
-    v_id	integer;
   
   BEGIN
-    v_id := acs_object__new (
-      null,  		    -- object_id
-      ''realties'',	    -- object_type
-      now(),		    -- creation_date
-      p_creation_user,	    -- creation_user
-      p_creation_ip,	    -- cretion_ip
-      p_context_id,	    -- context_id
-      true		    -- 
-    );
+
+    PERFORM acs_object__new (
+    	 p_realty_id,		-- object_id
+	 ''realty_object'',	-- object_type
+	 now(),			-- creation_date
+	 p_creation_ip,		-- cretion_ip
+	 p_creation_user,	-- creation_user
+	 p_context_id,		-- context_id
+	 true			-- 
+        );
 
 	
-  INSERT INTO realties (
+    INSERT INTO realties (
       realty_id,
       code,
       type_of_property,
@@ -100,7 +102,7 @@ CREATE OR REPLACE FUNCTION realty__new (
       charac_opt_arc,
       charac_opt_vic      
   ) VALUES (
-    v_id,
+    p_realty_id,
     p_code,
     p_type_of_property,
     p_room_qty,
@@ -115,7 +117,7 @@ CREATE OR REPLACE FUNCTION realty__new (
   );
 
 
-  RETURN v_id;
+  RETURN 0;
 END;' language 'plpgsql';
 
 

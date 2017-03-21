@@ -1,10 +1,15 @@
 ad_page_contract {
 } {
     {return_url "/"}
+    {available_date ""}
 }
 
 
 ns_log Notice "Running script SAVE ANNONCE"
+
+
+
+template::head::add_javascript -src "resources/js/create_annonce_form.js" -order 1
 
 set myform [ns_getform]
 if {[string equal "" $myform]} {
@@ -35,7 +40,7 @@ if {[string equal "" $myform]} {
 			-type_of_property $type \
 			-rent_price $price \
 			-rent_taxes $taxes \
-			-available_date $availability_date \
+			-available_date $available_date \
 			-room_qty $room_qty \
 			-lavatory_qty $lavatory_qty \
 			-bathroom_qty $bathroom_qty \

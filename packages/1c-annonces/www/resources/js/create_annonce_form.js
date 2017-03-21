@@ -1,18 +1,18 @@
 function form_submit() {
 
 	// Tipo de negócio
-	var business = "";
-	$('#abusiness option:selected').each( function() {
-		business += ($(this).val()+',') ;
+	var transaction = "";
+	$('#atypetransaction option:selected').each( function() {
+		transaction += ($(this).val()+',') ;
 	});
-	$('#business').val(business);
+	$('#type_of_transaction').val(transaction);
 
 	// Tipo de imóvel
-	var type = "";
-	$('#atype option:selected').each( function() {
-		type += ($(this).val()+',') ;
+	var property = "";
+	$('#atypeproperty option:selected').each( function() {
+		property += ($(this).val()+',') ;
 	});
-	$('#type').val(type);
+	$('#type_of_property').val(property);
 
 	// Tipo de anunciante
 	var announcer = "";
@@ -54,14 +54,19 @@ function form_submit() {
 	});
 	$('#charac_opt_vic').val(charac_vic);
 
+	// Dizendo ao tcl que o formulário está pronto para ser salvo
+	$('#mode').val('save');
+
 	// Processando a gravação dos dados no banco
-	$.ajax({
-		type: "POST",
-		url: "save-annonce",
-		data: $("#create_form").serialize(),
-		success: function(data) {
-			alert(data);
+	$.post(
+		'create-annonce',
+		$("#create_annonce_form").serialize(),
+		function (data) {
+			if ( data.toString() != "" ) {
+				metroDialog.open('#create_annonce_success');
+				setTimeout( function(){ window.location.href = '/' }, 3000);
+			}
 		}
-	});
+	);
 
 }

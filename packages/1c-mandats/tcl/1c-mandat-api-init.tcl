@@ -7,4 +7,4 @@ ad_library {
      @cvs-id $Id: 1c-mandat-api-init.tcl,v 0.1d 
 }
 
-xmlrpc::register_proc 1c_mandat.set_new_mandat_req
+#xmlrpc::register_proc 1c_mandat.set_new_mandat_req

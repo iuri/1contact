@@ -36,8 +36,8 @@ select content_type__create_type(
 'content_revision',		-- supertype
 'Annonce Object',		-- pretty_name,
 'Annonce Objects',		-- pretty_plural
-'NULL',				-- table_name
-'NULL',				-- id_column
+NULL,				-- table_name
+NULL,				-- id_column
 'annonce__get_code'		-- name_method
 );
 -- necessary to work around limitation of content repository:
@@ -53,15 +53,9 @@ CREATE OR REPLACE FUNCTION annonce__new (
        integer,	  	   -- annonce_id
        varchar,		   -- ref_code
        varchar,		   -- type_of_transaction
-       varchar,		   -- type_of_property
-       numeric,		   -- rent_price
-       numeric,		   -- rent_taxes
+       numeric,		   -- price
+       numeric,		   -- taxes
        timestamptz,	   -- available_Date
-       integer,		   -- room_qty
-       integer,		   -- lavatory_qty		   
-       integer,		   -- bathroom_qty
-       integer,		   -- floor_qty
-       numeric,		   -- surface       
        varchar,		   -- type_of_announcer
        varchar,		   -- status
        integer		   -- parent_id 
@@ -70,18 +64,12 @@ CREATE OR REPLACE FUNCTION annonce__new (
 	p_annonce_id		ALIAS FOR $1;
 	p_ref_code		ALIAS FOR $2;
 	p_type_of_transaction	ALIAS FOR $3;
-	p_type_of_property	ALIAS FOR $4;
-	p_rent_price		ALIAS FOR $5;
-	p_rent_taxes		ALIAS FOR $6;
-	p_available_date	ALIAS FOR $7;
-	p_room_qty		ALIAS FOR $8;
-	p_lavatory_qty		ALIAS FOR $9;
-	p_bathroom_qty		ALIAS FOR $10;
-	p_floor_qty		ALIAS FOR $11;
-	p_surface		ALIAS FOR $12;
-	p_type_of_announcer	ALIAS FOR $13;
-	p_status		ALIAS FOR $14;
-	p_parent_id		ALIAS FOR $15;
+	p_price			ALIAS FOR $4;
+	p_taxes			ALIAS FOR $5;
+	p_available_date	ALIAS FOR $6;
+	p_type_of_announcer	ALIAS FOR $7;
+	p_status		ALIAS FOR $8;
+	p_parent_id		ALIAS FOR $9;
 
   BEGIN
 
@@ -89,15 +77,9 @@ CREATE OR REPLACE FUNCTION annonce__new (
 	       annonce_id,
 	       ref_code,
 	       type_of_transaction,
-	       type_of_property,
-	       rent_price,
-	       rent_taxes,
+	       price,
+	       taxes,
 	       available_date,
-	       room_qty,
-	       lavatory_qty,
-	       bathroom_qty,
-	       floor_qty,
-	       surface,
 	       type_of_announcer,
 	       status,
 	       parent_id
@@ -105,15 +87,9 @@ CREATE OR REPLACE FUNCTION annonce__new (
 	  p_annonce_id,
 	  p_ref_code,
 	  p_type_of_transaction,
-	  p_type_of_property,
-	  p_rent_price,
-	  p_rent_taxes,
+	  p_price,
+	  p_taxes,
 	  p_available_date,
-	  p_room_qty,
-	  p_lavatory_qty,
-	  p_bathroom_qty,
-	  p_floor_qty,
-	  p_surface,
 	  p_type_of_announcer,
 	  p_status,
 	  p_parent_id
