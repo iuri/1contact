@@ -6,9 +6,9 @@
   <msg key="authentication_authority">Authority</msg>
   <description key="authentication_authority">The identifying label for an authentication server, such as an  LDAP or RADIUS server.</description>
 
-  <msg key="common_Actions">Actions</msg>
   <msg key="Bio">Biography</msg>
   <msg key="Bios">Biographies</msg>
+  <msg key="common_Actions">Actions</msg>
   <description key="common_Actions">Header for a list of actions which may be taken on the displayed content</description>
 
   <msg key="common_actions">actions</msg>
@@ -148,8 +148,8 @@
   <msg key="URL">URL</msg>
   <msg key="URLs">URLs</msg>
   <msg key="User">User</msg>
-  <msg key="Users">Users</msg>
   <msg key="Username">Username</msg>
   <msg key="Usernames">Usernames</msg>
+  <msg key="Users">Users</msg>
   <msg key="Visitor">Visitor</msg>
 </message_catalog>

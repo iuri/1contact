@@ -23,7 +23,7 @@ CREATE TABLE realties(
 
 
 ------------------------------------
--- Object Type: cn_import_order
+-- Object Type: realty_object
 ------------------------------------
 
 SELECT acs_object_type__create_type (
@@ -57,20 +57,22 @@ CREATE OR REPLACE FUNCTION realty__new (
   integer	   -- context_id
 ) RETURNS integer AS '
   DECLARE
-  
-  p_code		ALIAS $1;
-  p_type_of_property	ALIAS $2;
-  p_room_qty		ALIAS $3;
-  p_lavatory_qty	ALIAS $4;
-  p_bathroom_qty	ALIAS $5;
-  p_floor_qty		ALIAS $6;
-  p_surface		ALIAS $7;
-  p_charac_required 	ALIAS $8;
-  p_charac_opt_gen	ALIAS $9;
-  p_charac_opt_arc	ALIAS $10;
-  p_charac_opt_vic 	ALIAS $11;      
+    p_code		ALIAS $1;
+    p_type_of_property	ALIAS $2;
+    p_room_qty		ALIAS $3;
+    p_lavatory_qty	ALIAS $4;
+    p_bathroom_qty	ALIAS $5;
+    p_floor_qty		ALIAS $6;
+    p_surface		ALIAS $7;
+    p_charac_required 	ALIAS $8;
+    p_charac_opt_gen	ALIAS $9;
+    p_charac_opt_arc	ALIAS $10;
+    p_charac_opt_vic 	ALIAS $11;      
+    p_creation_user	ALIAS $12;
+    p_creation_ip	ALIAS $13;
+    p_context_id	ALIAS $14;
 
-  v_id	integer;
+    v_id	integer;
   
   BEGIN
     v_id := acs_object__new (
@@ -83,9 +85,8 @@ CREATE OR REPLACE FUNCTION realty__new (
       true		    -- 
     );
 
-
 	
-    INSERT INTO realties (
+  INSERT INTO realties (
       realty_id,
       code,
       type_of_property,
@@ -112,6 +113,7 @@ CREATE OR REPLACE FUNCTION realty__new (
     p_charac_opt_arc,
     p_charac_opt_vic      
   );
+
 
   RETURN v_id;
 END;' language 'plpgsql';

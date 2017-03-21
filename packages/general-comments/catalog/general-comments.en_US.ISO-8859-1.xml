@@ -70,16 +70,16 @@
   <msg key="lt_No_comments_available">No comments available</msg>
   <msg key="lt_no_gc_package_instanc">no gc package instance</msg>
   <msg key="lt_Note_if_the_text_abov">Note: if the text above has lost all of its paragraph breaks then you
-  probably should have selected &quot;Plain Text&quot; rather than HTML.  Use
-  your browser's Back button to return to the submission form.</msg>
+  probably should have selected &#34;Plain Text&#34; rather than HTML.  Use
+  your browser&#39;s Back button to return to the submission form.</msg>
   <msg key="lt_Note_if_the_text_abov_1">Note: if the text above has a bunch of visible HTML tags then you probably
-  should have selected &quot;HTML&quot; rather than &quot;Plain Text&quot;.  Use your
-  browser's Back button to return to the submission form.</msg>
+  should have selected &#34;HTML&#34; rather than &#34;Plain Text&#34;.  Use your
+  browser&#39;s Back button to return to the submission form.</msg>
   <msg key="lt_Test_page_for_General">Test page for General Comments</msg>
   <msg key="lt_The_comment_id_does_n">The comment_id does not refer to a valid comment.</msg>
   <msg key="lt_This_revision_is_live">This revision is live.</msg>
   <msg key="lt_This_revision_is_not_">This revision is not live.</msg>
-  <msg key="lt_Use_the_Browse_button">Use the &quot;Browse...&quot; button to locate your file, then click &quot;Open&quot;.</msg>
+  <msg key="lt_Use_the_Browse_button">Use the &#34;Browse...&#34; button to locate your file, then click &#34;Open&#34;.</msg>
   <msg key="lt_Your_file_is_too_larg">Your file is too large.</msg>
   <msg key="lt_Your_file_is_zero-len">Your file is zero-length.  Either you attempted to upload a zero length file, a file which does not exists, or something went wrong during the transfer.</msg>
   <msg key="no_attachments">no attachments</msg>

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <message_catalog package_key="1c-theme" locale="en_US" charset="ISO-8859-1">
 
+  <msg key="Agenda">Agenda</msg>
   <msg key="All_annonces">All annonces</msg>
   <msg key="All_profiles">All profiles</msg>
+  <msg key="Annonceurs">Annonceurs</msg>
   <msg key="Confirmed_visits">Confirmed visits</msg>
   <msg key="Contact">Contact</msg>
   <msg key="Create_annonce">Create a new annonce</msg>
@@ -15,11 +17,14 @@
   <msg key="Logout">Logout</msg>
   <msg key="My_annonces">My annonces</msg>
   <msg key="My_mandats_lt">My researches mandats</msg>
+  <msg key="Offerings">Offerings</msg>
   <msg key="or_use">or use:</msg>
   <msg key="plain">1Contact Plain</msg>
   <msg key="Portuguese">Português</msg>
   <msg key="Register">Register</msg>
   <msg key="Remeber_me">Remember me</msg>
+  <msg key="Research">Research</msg>
+  <msg key="Researcher">Researcher</msg>
   <msg key="Selected_annonces">Selected annonces</msg>
   <msg key="Selected_profiles">Selected profiles</msg>
   <msg key="Suggested_visits">Suggested visits</msg>

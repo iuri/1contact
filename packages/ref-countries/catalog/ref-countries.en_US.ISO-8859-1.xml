@@ -42,7 +42,7 @@
   <msg key="CF">Central African Republic</msg>
   <msg key="CG">Congo</msg>
   <msg key="CH">Switzerland</msg>
-  <msg key="CI">Cote D'ivoire</msg>
+  <msg key="CI">Cote D&#39;ivoire</msg>
   <msg key="CK">Cook Islands</msg>
   <msg key="CL">Chile</msg>
   <msg key="CM">Cameroon</msg>
@@ -116,12 +116,12 @@
   <msg key="KI">Kiribati</msg>
   <msg key="KM">Comoros</msg>
   <msg key="KN">Saint Kitts and Nevis</msg>
-  <msg key="KP">Korea, Democratic People's Republic of</msg>
+  <msg key="KP">Korea, Democratic People&#39;s Republic of</msg>
   <msg key="KR">Korea, Republic of</msg>
   <msg key="KW">Kuwait</msg>
   <msg key="KY">Cayman Islands</msg>
   <msg key="KZ">Kazakstan</msg>
-  <msg key="LA">Lao People's Democratic Republic</msg>
+  <msg key="LA">Lao People&#39;s Democratic Republic</msg>
   <msg key="LB">Lebanon</msg>
   <msg key="LC">Saint Lucia</msg>
   <msg key="LI">Liechtenstein</msg>

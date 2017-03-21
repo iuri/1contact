@@ -36,3 +36,12 @@
 	margin-left: -25px;
 	margin-right: -25px;
 }
+
+.sidebar_title {
+	font-family: Abel;
+	text-transform:uppercase;
+}
+
+.sidebar_title::first-letter {
+	font-size: 125%;
+}
