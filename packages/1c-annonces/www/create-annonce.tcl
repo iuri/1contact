@@ -42,8 +42,8 @@ if {[string equal $mode "save"]} {
 	    set varname [ns_set key $myform $i]
 	    set varvalue [ns_set value $myform $i]
 	    if {[string match {cat_*} $varname]} {
-		set varname [lindex [split $varname "_"] 1]  
-		lappend lchars "$varname $varvalue"
+		#set varname [lindex [split $varname "_"] 1]  
+		#lappend lchars "$varname $varvalue"
 	    }
 	}
     }

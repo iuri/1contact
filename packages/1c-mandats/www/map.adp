@@ -1,25 +1,13 @@
-<master src="/www/blank-master">
+<master>
+
+										      <div id="map"></div>
+        <script async defer
+	        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzF7IlGi2Ue-EI6E6bizGVZ69NhFU7yGI&signed_in=true&callback=initMap"></script>
+		  </body>
+		  </html>
 
 
 
- <style>
 
-							     </style>
-							       </head>
-							         <body>
-								     <div id="map"></div>
-<script>
 
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 11,
-          center: {lat: 41.876, lng: -87.624}
-	    });
 
-  var ctaLayer = new google.maps.KmlLayer({
-      url: 'http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml',
-          map: map
-	    });
-	    }
-
-    </script>
