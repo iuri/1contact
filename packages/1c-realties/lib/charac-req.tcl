@@ -29,7 +29,7 @@ foreach {cat_id cat_name} [1c_annonces::get_categories -package_id $package_id -
 
 	   append options_html "
             <label class='input-control radio small-check' >
-            <input type='radio' name='charac_req_$cat_id' id='$option_id' value='$option_id' required />
+            <input type='radio' name='charac_req_$cat_id' id='$option_id' value='$option_id' />
             <span class='check' ></span>
             <span class='caption' for='charac_req_$option_id' >$option_name</span>
             </label>
