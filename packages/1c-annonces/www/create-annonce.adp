@@ -130,9 +130,38 @@
 	<br>
 
 	<!-- Endereço e mapa -->
-	<div class='box' style='vertical-align:top;' >
+	<div class='box' >
+
+		<h4>#1c-annonces.Address#</h4>
+
 		<div class='input-control text' style='width:30em;' >
-			<input type='text' name='address' id='address' placeholder='#1c-realties.Address#' title='#1c-realties.Address#' onFocus='javascript:geolocate();' style='width:100%;' />
+			<input type='text' name='address' id='address' placeholder='#1c-theme.ResearchAddress#' title='#1c-theme.ResearchAddress#' onFocus='javascript:geolocate();' style='width:100%;' />
+			<button class='button white' onClick='javascript:clearAddress();return false;' ><span class='mif-search' ></span></button>
+		</div>
+		<br>
+		<div class='input-control text' style='width:4em;' >
+			<input type='text' id='street_number' placeholder='#1c-realties.Number#' title='#1c-realties.Number#' style='width:100%;' />
+		</div>
+		<div class='input-control text' style='width:15em;' >
+			<input type='text' id='route' placeholder='#1c-realties.Route#' title='#1c-realties.Route#' style='width:100%;' />
+		</div>
+		<div class='input-control text' style='width:15em;' >
+			<input type='text' name='complement' id='complement' placeholder='#1c-realties.Complement#' title='#1c-realties.Complement#' style='width:100%;' />
+		</div>
+		<div class='input-control text' style='width:15em;' >
+			<input type='text' id='sublocality' placeholder='#1c-realties.Neighborhood#' title='#1c-realties.Neighborhood#' style='width:100%;'  />
+		</div>
+		<div class='input-control text' style='width:15em;' >
+			<input type='text' id='locality' placeholder='#1c-realties.City#' title='#1c-realties.City#' style='width:100%;'  />
+		</div>
+		<div class='input-control text' style='width:15em;' >
+			<input type='text' name='complement' id='administrative_area_level_1' placeholder='#1c-realties.State#' title='#1c-realties.Complement#' style='width:100%;' />
+		</div>
+		<div class='input-control text' style='width:15em;' >
+			<input type='text' id='country' placeholder='#1c-realties.Country#' title='#1c-realties.Country#' style='width:100%;'  />
+		</div>
+		<div class='input-control text' style='width:15em;' >		
+			<input type='text' id='postal_code' placeholder='#1c-realties.PostalCode#' title='#1c-realties.PostalCode#' style='width:100%;'  />
 		</div>
 	</div>
 
