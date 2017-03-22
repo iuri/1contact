@@ -23,19 +23,27 @@ foreach {cat_id cat_name} [1c_annonces::get_categories -package_id $package_id -
     set options_html ""
     
     foreach option [1c_annonces::category_get_options -parent_id $cat_id] {
-	
-	   set option_name [lindex $option 0]
-       set option_id [lindex $option 1]
 
-	   append options_html "
-            <label class='input-control radio small-check' >
-            <input type='radio' name='charac_req_$cat_id' id='$option_id' value='$option_id' />
-            <span class='check' ></span>
-            <span class='caption' for='charac_req_$option_id' >$option_name</span>
-            </label>
-	"
+		set package_key [apm_package_key_from_id $package_id]
+		ns_log Notice "dsdsdd $package_key" 
+
+		if {[string equal [apm_package_key_from_id $package_id] "1c-annonces"]} {
+	    	if {![string equal [category::get_name [lindex $option 1] "en_US" ] "Indifferent"]} {
+		
+			set option_name [lindex $option 0]
+			set option_id [lindex $option 1]
+		
+			append options_html "
+		    	<label class='input-control radio small-check' >
+		    	<input type='radio' name='charac_req_$cat_id' id='$option_id' value='$option_id' />
+		    	<span class='check' ></span>
+		    	<span class='caption' for='charac_req_$option_id' >$option_name</span>
+		    	</label>"
+		
+	    	}
+		}
     }
-
+    
     append chars_html "$options_html </div>"
     
 }

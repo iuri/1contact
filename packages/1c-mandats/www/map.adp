@@ -1,29 +1,25 @@
-<master>
+<master src="/www/blank-master">
 
 
-<style>
-      html, body {
-              height: 100%;
-	              margin: 0;
-		              padding: 0;
-			            }
-				          #map {
-					          height: 100%;
-						        }
-							    </style>
-							      </head>
-							        <body>
-								    <div id="map"></div>
-								        <script>
 
-var map;
+ <style>
+
+							     </style>
+							       </head>
+							         <body>
+								     <div id="map"></div>
+<script>
+
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+  var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 11,
+          center: {lat: 41.876, lng: -87.624}
+	    });
+
+  var ctaLayer = new google.maps.KmlLayer({
+      url: 'http://googlemaps.github.io/js-v2-samples/ggeoxml/cta.kml',
+          map: map
 	    });
 	    }
 
     </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD--S3gqs6BVLUD1mgBSMaxJhFOuHSZO4s&callback=initMap"
-	        async defer></script>
