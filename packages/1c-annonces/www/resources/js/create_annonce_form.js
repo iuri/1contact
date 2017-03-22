@@ -1,3 +1,47 @@
+function updateValue() {
+	var price = $('#price').val();
+	var taxes = $('#taxes').val();
+	$('#total_value').val( Number(price) + Number(taxes) );
+}
+
+function updateArea() {
+	var inner = $('#inner_surface').val();
+	var outer = $('#outer_surface').val();
+	$('#total_surface').val( Number(inner) + Number(outer) );
+}
+
+function showFiles() {
+
+	var names = $('#files_names');
+	names.empty();
+
+	var files = $('#files')[0].files;
+
+	for (var i = 0; i < files.length; i++) {
+
+		var n = files[i].name.split('.');
+
+		if ( ['jpg', 'png', 'gif', 'tif'].includes(n[1]) ) {
+			icon = 'file-image';
+		} else if ( ['zip', '7z', 'rar', 'arc'].includes(n[1]) ) {
+			icon = 'file-zip';
+		} else if ( ['txt', 'doc', 'rtf'].includes(n[1]) ) {
+			icon = 'file-word';
+		} else if ( ['xls', 'xlsx'].includes(n[1]) ) {
+			icon = 'file-excel';
+		} else if ( ['pdf'].includes(n[1]) ) {
+			icon = 'file-pdf';
+		} else {
+			icon = '';
+		}
+
+ 		names.append ( "<span class='mif-"+icon+"' ><span class='normal_text' >&nbsp;"+n[0]+("</span></span>") );
+
+ 		if ( files.length > 1 && i < (files.length-1) ) { names.append( '&nbsp;' ); }
+ 	}
+
+}
+
 function form_submit() {
 
 	// Tipo de negócio
@@ -58,6 +102,20 @@ function form_submit() {
 	$('#mode').val('save');
 
 	// Processando a gravação dos dados no banco
+	$.ajax({
+		url: 'create-annonce',
+		type: 'POST',
+		data: new FormData( $("#create_annonce_form")[0] ),
+		processData: false,
+		contentType: false,
+		success: function (data) {
+			if ( data.toString() != "" ) {
+				metroDialog.open('#create_annonce_success');
+				setTimeout( function(){ window.location.href = '/' }, 3000);
+			}
+		}
+	});
+	/*
 	$.post(
 		'create-annonce',
 		$("#create_annonce_form").serialize(),
@@ -68,5 +126,39 @@ function form_submit() {
 			}
 		}
 	);
+	*/
 
+}
+
+var placeSearch, autocomplete;
+var componentForm = {
+  street_number: 'short_name',
+  route: 'long_name',
+  locality: 'long_name',
+  administrative_area_level_1: 'short_name',
+  country: 'long_name',
+  postal_code: 'short_name'
+};
+
+function initAutocomplete() {
+  autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('address')),
+      {types: ['geocode']});
+  autocomplete.addListener('place_changed', fillInAddress);
+}
+
+function geolocate() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var geolocation = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      var circle = new google.maps.Circle({
+        center: geolocation,
+        radius: position.coords.accuracy
+      });
+      autocomplete.setBounds(circle.getBounds());
+    });
+  }
 }
