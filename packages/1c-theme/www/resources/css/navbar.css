@@ -30,7 +30,7 @@
 }
 
 .radio_button input[type=radio]:not(old) + label {
-	width: 4.5em;
+	width: 5em;
 	padding: .25rem;
 	margin: .15rem;
 	display: inline-block;

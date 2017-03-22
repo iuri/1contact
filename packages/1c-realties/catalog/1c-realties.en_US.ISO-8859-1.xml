@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <message_catalog package_key="1c-realties" locale="en_US" charset="ISO-8859-1">
 
+  <msg key="Apartment">Apartment</msg>
   <msg key="BathroomQty">Bathrooms</msg>
   <msg key="CharacArchitecture">Architecture characteristics</msg>
   <msg key="CharacGeneral">General characteristics</msg>
-  <msg key="CharacNeighbornhood">Neighbornhood characteristics</msg>
+  <msg key="CharacNeighborhood">Neighborhood characteristics</msg>
   <msg key="Commerce">Commerce</msg>
   <msg key="FloorQty">Floors</msg>
   <msg key="House">House</msg>
   <msg key="LavatoryQty">Lavatories</msg>
+  <msg key="OptionalChars">Optional characteristics</msg>
+  <msg key="RequiredChars">Required characteristics</msg>
   <msg key="RoomQty">Rooms</msg>
   <msg key="TotalArea">Total Area</msg>
-  <msg key="TypeOfProperty">Tipe of property</msg>
+  <msg key="TypeOfProperty">Type of property</msg>
 </message_catalog>
