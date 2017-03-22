@@ -23,7 +23,11 @@
 	color: #FFF;
 }
 
-.sidebar_list li li a {
+.sidebar_list li li ul {
+	margin-left: 1em;
+}
+
+.sidebar_list li a {
 	color: #FFF;
 	font-weight: normal;
 }

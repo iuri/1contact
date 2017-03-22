@@ -15,7 +15,7 @@ function showFiles() {
 	var names = $('#files_names');
 	names.empty();
 
-	var files = $('#files')[0].files;
+	var files = $('#upload_file')[0].files;
 
 	for (var i = 0; i < files.length; i++) {
 
@@ -101,32 +101,31 @@ function form_submit() {
 	// Dizendo ao tcl que o formulário está pronto para ser salvo
 	$('#mode').val('save');
 
+	// Verifica se todos os campos [required] foram preenchidos (para naveadores que não suportam a tag required do HTML5)
+	var process = true;
+    $('#create_annonce_form :input:visible[required="required"]').each( function () {
+		if (!this.validity.valid) {
+   			metroDialog.open('#create_annonce_required_err');
+   			process = false;
+   		}
+   	});
+
 	// Processando a gravação dos dados no banco
-	$.ajax({
-		url: 'create-annonce',
-		type: 'POST',
-		data: new FormData( $("#create_annonce_form")[0] ),
-		processData: false,
-		contentType: false,
-		success: function (data) {
-			if ( data.toString() != "" ) {
-				metroDialog.open('#create_annonce_success');
-				setTimeout( function(){ window.location.href = '/' }, 3000);
+	if ( process ) {
+		$.ajax({
+			url: 'create-annonce',
+			type: 'POST',
+			data: new FormData( $("#create_annonce_form")[0] ),
+			processData: false,
+			contentType: false,
+			success: function (data) {
+				if ( data.toString() != "" ) {
+					metroDialog.open('#create_annonce_success');
+					setTimeout( function(){ window.location.href = '/' }, 3000);
+				}
 			}
-		}
-	});
-	/*
-	$.post(
-		'create-annonce',
-		$("#create_annonce_form").serialize(),
-		function (data) {
-			if ( data.toString() != "" ) {
-				metroDialog.open('#create_annonce_success');
-				setTimeout( function(){ window.location.href = '/' }, 3000);
-			}
-		}
-	);
-	*/
+		});
+	}
 
 }
 

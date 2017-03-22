@@ -1,6 +1,11 @@
 <master>
+  <property name="context">@context;literal@</property>
+  <property name="doc(title)">@page_title;literal@</property>
+  <property name="focus">create_annonce_form.title</property>
 
-<form method='post' action='javascript:form_submit()' id='create_annonce_form'  enctype='multipart/form-data' >
+
+
+<form method='post' action='javascript:form_submit();' id='create_annonce_form'  enctype='multipart/form-data' >
 
 <div style='position:relative;' >
 
@@ -62,7 +67,7 @@
 
 		<!-- Num de quartos -->
 		<div class='input-control text' style='width:6em;' >
-			<input type='number' name='badroom_qty' id='badroom_qty' placeholder='#1c-realties.RoomQty#' title='#1c-realties.RoomQty#' min='0' max='999' style='width:100%;' />
+			<input type='number' name='badroom_qty' id='badroom_qty' placeholder='#1c-realties.BedroomQty#' title='#1c-realties.BedroomQty#' min='0' max='999' style='width:100%;' />
 		</div>
 
 		<!-- Num de lavabos -->
@@ -98,9 +103,9 @@
 		<!-- Tipo de anunciante -->
 		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='#1c-annonces.Announcer#' title='#1c-annonces.Announcer#' style='width:14.5em;' >
 			<select name='aannouncer' id='aannouncer' multiple='multiple' style='width:100%;' >
-				<option value='1' >#1c-realties.Owner#</option>
-				<option value='2' >#1c-realties.Guarantor#</option>
-				<option value='3' >#1c-realties.Agent#</option>
+				<option value='1' >#1c-annonces.Owner#</option>
+				<option value='2' >#1c-annonces.Guarantor#</option>
+				<option value='3' >#1c-annonces.Agent#</option>
 			</select>
 			<input type='text' name='announcer' id='announcer' hidden />
 		</div>
@@ -140,28 +145,28 @@
 		</div>
 		<br>
 		<div class='input-control text' style='width:4em;' >
-			<input type='text' id='street_number' placeholder='#1c-realties.Number#' title='#1c-realties.Number#' style='width:100%;' />
+			<input type='text' name='street_number' id='street_number' placeholder='#1c-realties.Number#' title='#1c-realties.Number#' style='width:100%;' />
 		</div>
 		<div class='input-control text' style='width:15em;' >
-			<input type='text' id='route' placeholder='#1c-realties.Route#' title='#1c-realties.Route#' style='width:100%;' />
+			<input type='text' name='route' id='route' placeholder='#1c-realties.Route#' title='#1c-realties.Route#' style='width:100%;' />
 		</div>
 		<div class='input-control text' style='width:15em;' >
 			<input type='text' name='complement' id='complement' placeholder='#1c-realties.Complement#' title='#1c-realties.Complement#' style='width:100%;' />
 		</div>
 		<div class='input-control text' style='width:15em;' >
-			<input type='text' id='sublocality' placeholder='#1c-realties.Neighborhood#' title='#1c-realties.Neighborhood#' style='width:100%;'  />
+			<input type='text' name='sublocality' id='sublocality' placeholder='#1c-realties.Neighborhood#' title='#1c-realties.Neighborhood#' style='width:100%;'  />
 		</div>
 		<div class='input-control text' style='width:15em;' >
-			<input type='text' id='locality' placeholder='#1c-realties.City#' title='#1c-realties.City#' style='width:100%;'  />
+			<input type='text' name='locality' id='locality' placeholder='#1c-realties.City#' title='#1c-realties.City#' style='width:100%;'  />
 		</div>
 		<div class='input-control text' style='width:15em;' >
-			<input type='text' name='complement' id='administrative_area_level_1' placeholder='#1c-realties.State#' title='#1c-realties.Complement#' style='width:100%;' />
+			<input type='text' name='administrative_area_level_1' id='administrative_area_level_1' placeholder='#1c-realties.State#' title='#1c-realties.Complement#' style='width:100%;' />
 		</div>
 		<div class='input-control text' style='width:15em;' >
-			<input type='text' id='country' placeholder='#1c-realties.Country#' title='#1c-realties.Country#' style='width:100%;'  />
+			<input type='text' name='country' id='country' placeholder='#1c-realties.Country#' title='#1c-realties.Country#' style='width:100%;'  />
 		</div>
 		<div class='input-control text' style='width:15em;' >		
-			<input type='text' id='postal_code' placeholder='#1c-realties.PostalCode#' title='#1c-realties.PostalCode#' style='width:100%;'  />
+			<input type='text' name='postal_code' id='postal_code' placeholder='#1c-realties.PostalCode#' title='#1c-realties.PostalCode#' style='width:100%;'  />
 		</div>
 	</div>
 
@@ -169,9 +174,9 @@
 
 	<!-- Upload arquivios -->
 	<div class='box' style='vertical-align:top;' >
-		<h4>#1c-annonces.AddFiles#</h4>
-		<div class='input-control file' data-role='input' >
-    		<input type='file' name='files' id='files' multiple='multiple' title='#1c-annonces.AddFiles#' onChange='javascript:showFiles();' >
+		<h4>#1c-theme.AddFiles#</h4>
+		<div class='input-control file' data-role='input' style='width:20em;' >
+    		<input type='file' name='upload_file' id='upload_file' multiple='multiple' title='#1c-annonces.AddFiles#' onChange='javascript:showFiles();' >
     		<button class='button clear' ><span class='mif-folder' ></span></button>
 		</div>
 		<br>
@@ -181,7 +186,7 @@
 	<!-- Descrição -->
 	<div class='box' >
 		<h4>#1c-annonces.Description#</h4>
-		<div class='input-control textarea' data-role='input' data-text-auto-resize='true' style='width:25em;' >
+		<div class='input-control textarea' data-role='input' data-text-auto-resize='true' style='width:30em;' >
 			<textarea name='description' id='description' title='#1c-annonces.Description#' ></textarea>
 		</div>
 	</div>
@@ -212,7 +217,7 @@
 	<div class='box' style='vertical-align:top;' >
 		<h4>#1c-annonces.Terms#</h4>
 		<label class='input-control checkbox small-check' >
-			<input type='checkbox' name='terms' id='terms' />
+			<input type='checkbox' name='terms' id='terms' required />
 			<span class='check' ></span>
 			<span class='caption' >#1c-annonces.IAcceptTheTerms#</span>
 		</label>
@@ -223,15 +228,23 @@
 		<input type='submit' class='button' value='#1c-theme.Save#' />
 	</span>
 
+	<!-- Modo de salvamento inválido, apenas se torna válido quando recarregar a página com o formulário preenchido -->
 	<input type='text' name='mode' id='mode' hidden />
 
 </div>
 
 </form>
 
-<div id='create_annonce_success' data-role='dialog' data-overlay='true' data-overlay-color='dialog_overlay' class='padding20' >
-	<b>#1c-annonces.Success#</b>
+<!-- Mensagem de formulário salvo com sucesso -->
+<div id='create_annonce_success' data-role='dialog' data-overlay='true' data-overlay-color='dialog_overlay' data-close-button='true' class='padding20' >
+	<p><b>#1c-annonces.Success#</b></p>
 </div>
 
+<!-- Mensagem de erro durante o save do formulário -->
+<div id='create_annonce_required_err' data-role='dialog' data-overlay='true' data-overlay-color='dialog_overlay' data-hide='3000' data-close-button='true' class='padding20' >
+	<p><b>Fill all the fields before save the form.</b></p>
+</div>
+
+<!-- Call google maps api -->
 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDzF7IlGi2Ue-EI6E6bizGVZ69NhFU7yGI&signed_in=true&libraries=places&callback=initAutocomplete' async defer >
 </script>

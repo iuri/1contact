@@ -14,7 +14,6 @@ ad_page_contract {
     {title ""}
     {lock_title_p:boolean 0}
     {name ""}
-
 } -properties {
     folder_id:onevalue
     context:onevalue

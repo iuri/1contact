@@ -10,7 +10,7 @@ ad_page_contract {
     title:onevalue
 }
 
-set title "[_ 1c-annonce.Annonces]"
+set title "[_ 1c-annonces.Annonces]"
 set context [list $title]
 
 set return_url [ad_return_url]
