@@ -203,3 +203,6 @@
 <div id='create_annonce_success' data-role='dialog' data-overlay='true' data-overlay-color='dialog_overlay' class='padding20' >
 	<b>#1c-annonces.Success#</b>
 </div>
+
+<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDzF7IlGi2Ue-EI6E6bizGVZ69NhFU7yGI&signed_in=true&libraries=places&callback=initAutocomplete' async defer >
+</script>
