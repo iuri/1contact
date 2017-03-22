@@ -13,7 +13,6 @@ template::head::add_javascript -src "/resources/1c-theme/js/select2.js" -order 1
 
 
 
-
 if {![info exists skip_link]} {
     set skip_link "#content-wrapper"
 }

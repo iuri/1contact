@@ -1,4 +1,8 @@
-ad_page_contract {}
+ad_page_contract {
+    It displays Google Map, using Google Maps API
+
+}
+
 
 
 
