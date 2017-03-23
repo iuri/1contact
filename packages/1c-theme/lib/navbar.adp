@@ -1,4 +1,4 @@
-<form method='post' id='search_form' action='/' >
+<form method='post' id='search_form' action='javascript:proceed_search();' >
 
 <div class='navbar_row' >
 
@@ -74,6 +74,7 @@
 
 <script type='text/javascript' >
 
+	/* Verificação e correção dos valores minimo e máximo */
 	function checkBudget() {
 		var bud = $('#search_budget').val();
 		var v = bud.split('a');
@@ -89,45 +90,9 @@
 		$('#search_budget').val(xx+' a '+yy);
 	}
 
-	var type;
-	var transaction;
-	var characteristics;
-	var place;
-	var budget_min;
-	var budget_max;
-
-	$( "#search_type" ).change( function() {
-		type = $( "#search_type" ).val();
-		proceed_search();
-	});
-
-	$( "#search_transaction" ).change( function() {
-		transaction = $( "#search_transaction" ).val();
-		proceed_search();
-	});
-
-	$( "#search_characteristics" ).change( function() {
-		characteristics = $( "#search_characteristics" ).val();
-		proceed_search();
-	});
-
-	$( "#search_place" ).change( function() {
-		place = $( "#search_place" ).val();
-		proceed_search();
-	});
-
-	$( "#search_budget_min" ).change( function() {
-		budget_min = $( "#search_budget_min" ).val();
-		proceed_search();
-	});
-
-	$( "#search_budget_max" ).change( function() {
-		budget_max = $( "#search_budget_max" ).val();
-		proceed_search();
-	});
-
+	/* Realizando a pesquisa */
 	function proceed_search() {
-		//metroDialog.open('dialog');
+		alert('pesquisar');
 	};
 
 </script>
