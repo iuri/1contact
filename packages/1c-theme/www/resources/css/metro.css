@@ -6051,7 +6051,8 @@ div.square-button.big-button {
 .input-control textarea {
   position: relative;
   min-height: 6.25rem;
-  font-family: "Segoe UI", "Open Sans", sans-serif, serif;
+  font-family: inherit;
+  /*font-family: "Segoe UI", "Open Sans", sans-serif, serif;*/
 }
 .input-control.textarea {
   height: auto;

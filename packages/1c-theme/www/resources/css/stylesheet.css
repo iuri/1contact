@@ -9,7 +9,7 @@ html, body {
 	min-height: 100%;
 }
 
-html, body, a, input, select {
+html, body, a, input, select, textarea {
 	font-family: Abel;
 	font-size: 1em;
 	color: #333;
@@ -60,6 +60,10 @@ b {
 	font-weight: 600;
 }
 
+textarea {
+	resize: none;
+}
+
 /* Classes */
 
 .wrapper {
@@ -69,7 +73,7 @@ b {
 }
 
 .plane {
-	padding-bottom: 60px;
+	padding-bottom: 40px;
 }
 
 .content_wrapper {

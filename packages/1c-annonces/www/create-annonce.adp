@@ -176,7 +176,7 @@
 	<div class='box' style='vertical-align:top;' >
 		<h4>#1c-theme.AddFiles#</h4>
 		<div class='input-control file' data-role='input' style='width:20em;' >
-    		<input type='file' name='upload_file' id='upload_file' multiple='multiple' title='#1c-annonces.AddFiles#' onChange='javascript:showFiles();' >
+    		<input type='file' name='upload_file' id='upload_file' multiple='multiple' title='#1c-theme.AddFiles#' onChange='javascript:showFiles();' >
     		<button class='button clear' ><span class='mif-folder' ></span></button>
 		</div>
 		<br>

@@ -20,7 +20,8 @@ ad_page_contract {
     {charac_opt_vic ""}
     {charac_opt_gen ""}
     {status ""}
-    {upload_file:multiple ""}
+    upload_file:trim,multiple,optional
+    upload_file.tmpfile:tmpfile,multiple,optional
 }
 
 set page_title "Create Annonce [ad_conn instance_name]"
@@ -41,16 +42,15 @@ if {[string equal $mode "save"]} {
 	for {set i 0} {$i < [ns_set size $myform]} {incr i} {
 	    set varname [ns_set key $myform $i]
 	    set varvalue [ns_set value $myform $i]
-	    if {[string match {cat_*} $varname]} {
-		#set varname [lindex [split $varname "_"] 1]  
-		#lappend lchars "$varname $varvalue"
-	    }
 	}
     }
     
     
     
     
+    ns_log Notice "$upload_file"
+    ns_log Notice "$upload_file.tmpfile"
+
     
     set available_date1  "[string trim $available_date]"
     set available_date2 "[string map {. -} $available_date1]"
@@ -85,37 +85,26 @@ if {[string equal $mode "save"]} {
     if {[lindex $upload_file 0] ne ""} {
 	ns_log Notice "UPDLOAD FILE"
 	ns_log Notice "$upload_file"
+	ns_log Notice "$upload_file.tmpfile"
 
 	
-	if {(![info exists unpack_p] || $unpack_p eq "")} {
-	    set unpack_p f
-	}
-	if { $unpack_p
-	     && $unpack_binary ne ""
-	     && [file extension [template::util::file::get_property filename $upload_file]] eq ".zip"
-	 } {
 	    
-	    set path [ad_tmpnam]
-	    file mkdir $path
-	    
-	    
-	    catch { exec $unpack_binary -jd $path ${upload_file.tmpfile} } errmsg
-	    
+	set path [ad_tmpnam]
+	file mkdir $path
+	
+	
+	
 	    # More flexible parameter design could be:
-	    # zip {unzip -jd {out_path} {in_file}} tar {tar xf {in_file} {out_path}} tgz {tar xzf {in_file} {out_path}} 
-	    
-	    set upload_files [list]
-	    set upload_tmpfiles [list]
-	    
-	    foreach file [glob -nocomplain "$path/*"] {
-		lappend upload_files [file tail $file]
-		lappend upload_tmpfiles $file
-	    }
-	    
-	} else {
-	    set upload_files [list [template::util::file::get_property filename $upload_file]]
-	    set upload_tmpfiles [list [template::util::file::get_property tmp_filename $upload_file]]
+	# zip {unzip -jd {out_path} {in_file}} tar {tar xf {in_file} {out_path}} tgz {tar xzf {in_file} {out_path}} 
+	
+	set upload_files [list]
+	set upload_tmpfiles [list]
+	
+	foreach file [glob -nocomplain "$path/*"] {
+	    lappend upload_files [file tail $file]
+	    lappend upload_tmpfiles $file
 	}
+
 	set mime_type ""
 
 
