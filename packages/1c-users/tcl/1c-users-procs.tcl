@@ -66,6 +66,14 @@ ad_proc -public 1c_users::user::add {
         default {
 	    if {[lindex $creation_info(element_messages) 0] eq "email" } {
 		set user_id [party::get_by_email -email $email]
+	    } else {
+		# Display the message on a separate page
+		ad_returnredirect \
+		    -message $creation_info(account_message) \
+		    -html \
+		    "[subsite::get_element -element url]register/account-closed"
+		ad_script_abort
+		
 	    }
         }
        

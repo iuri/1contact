@@ -37,7 +37,7 @@ ad_page_contract {
 
 }
 
-template::head::add_javascript -src "resources/js/create_mandat_form.js" -order 1
+auth::require_login
 
 set page_title "Create Mandat [ad_conn instance_name]"
 set context [list [list "." "Mandat"] "Create"]
@@ -87,11 +87,85 @@ if {[string equal $mode "save"]} {
 			 -houseproprietary $customer_houseproprietary \
 			 -mortgage $customer_mortgage] 
     
-    
-    if {$customer_id eq "data_error"} {
-	ad_return_complaint 1 "<li>This email is already registered on the system. We cannot create a new user with this email."
-	ad_script_abort
-    }
+
+
+
+        set housemate_id [1c_users::user::add \
+			 -entitlement $housemate_entitlement \
+			 -first_names $housemate_name \
+			 -last_name $housemate_surname \
+			 -birthday $housemate_birthday \
+			 -nationality $housemate_nationality \
+			 -civilstate $housemate_civilstate \
+			 -children_qty $housemate_children_qty \
+			 -children_ages $housemate_children_ages \
+			 -animal_p $housemate_animals \
+			 -animals_type $housemate_animals_type \
+			 -animals_qty $housemate_animals_qty \
+			 -mobilenumber $housemate_mobilenumber \
+			 -phonenumber $housemate_phonenumber \
+			 -email $housemate_email \
+			 -noexpirecontract_p $housemate_noexpirecontract \
+			 -job $housemate_job \
+			 -jobactivity $housemate_jobactivity \
+			 -datestartjob $housemate_datestartjob \
+			 -salary $housemate_salary \
+			 -salary_month $housemate_salary_month \
+			 -independentjob $housemate_independentjob \
+			 -jobother $housemate_jobother \
+			 -otherincoming $housemate_otherincoming \
+			 -address $housemate_address \
+			 -houseproperty $housemate_houseproperty \
+			 -houseproprietary $housemate_houseproprietary \
+			 -mortgage $housemate_mortgage] 
+
+
+
+    set guarantor_id [1c_users::user::add \
+			 -entitlement $guarantor_entitlement \
+			 -first_names $guarantor_name \
+			 -last_name $guarantor_surname \
+			 -birthday $guarantor_birthday \
+			 -nationality $guarantor_nationality \
+			 -civilstate $guarantor_civilstate \
+			 -children_qty $guarantor_children_qty \
+			 -children_ages $guarantor_children_ages \
+			 -animal_p $guarantor_animals \
+			 -animals_type $guarantor_animals_type \
+			 -animals_qty $guarantor_animals_qty \
+			 -mobilenumber $guarantor_mobilenumber \
+			 -phonenumber $guarantor_phonenumber \
+			 -email $guarantor_email \
+			 -noexpirecontract_p $guarantor_noexpirecontract \
+			 -job $guarantor_job \
+			 -jobactivity $guarantor_jobactivity \
+			 -datestartjob $guarantor_datestartjob \
+			 -salary $guarantor_salary \
+			 -salary_month $guarantor_salary_month \
+			 -independentjob $guarantor_independentjob \
+			 -jobother $guarantor_jobother \
+			 -otherincoming $guarantor_otherincoming \
+			 -address $guarantor_address \
+			 -houseproperty $guarantor_houseproperty \
+			 -houseproprietary $guarantor_houseproprietary \
+			 -mortgage $guarantor_mortgage] 
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
+
+
+
+
+
+template::head::add_javascript -src "resources/js/create_mandat_form.js" -order 1
