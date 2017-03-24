@@ -15,7 +15,7 @@ function showFiles() {
 	var names = $('#files_names');
 	names.empty();
 
-	var files = $('#files')[0].files;
+	var files = $('#upload_file')[0].files;
 
 	for (var i = 0; i < files.length; i++) {
 
@@ -101,50 +101,64 @@ function form_submit() {
 	// Dizendo ao tcl que o formulário está pronto para ser salvo
 	$('#mode').val('save');
 
+	// Verifica se todos os campos [required] foram preenchidos (para naveadores que não suportam a tag required do HTML5)
+	var process = true;
+    $('#create_annonce_form :input:visible[required="required"]').each( function () {
+		if (!this.validity.valid) {
+   			metroDialog.open('#create_annonce_required_err');
+   			process = false;
+   		}
+   	});
+
 	// Processando a gravação dos dados no banco
-	$.ajax({
-		url: 'create-annonce',
-		type: 'POST',
-		data: new FormData( $("#create_annonce_form")[0] ),
-		processData: false,
-		contentType: false,
-		success: function (data) {
-			if ( data.toString() != "" ) {
-				metroDialog.open('#create_annonce_success');
-				setTimeout( function(){ window.location.href = '/' }, 3000);
+	if ( process ) {
+		$.ajax({
+			url: 'create-annonce',
+			type: 'POST',
+			data: new FormData( $("#create_annonce_form")[0] ),
+			processData: false,
+			contentType: false,
+			success: function (data) {
+				if ( data.toString() != "" ) {
+					metroDialog.open('#create_annonce_success');
+					setTimeout( function(){ window.location.href = '/' }, 3000);
+				}
 			}
-		}
-	});
-	/*
-	$.post(
-		'create-annonce',
-		$("#create_annonce_form").serialize(),
-		function (data) {
-			if ( data.toString() != "" ) {
-				metroDialog.open('#create_annonce_success');
-				setTimeout( function(){ window.location.href = '/' }, 3000);
-			}
-		}
-	);
-	*/
+		});
+	}
 
 }
 
 var placeSearch, autocomplete;
 var componentForm = {
-  street_number: 'short_name',
-  route: 'long_name',
-  locality: 'long_name',
-  administrative_area_level_1: 'short_name',
-  country: 'long_name',
-  postal_code: 'short_name'
+	street_number: 'short_name',
+	route: 'long_name',
+	locality: 'long_name',
+	sublocality: 'long_name',
+	administrative_area_level_1: 'short_name',
+	country: 'long_name',
+	postal_code: 'short_name',
 };
 
 function initAutocomplete() {
   autocomplete = new google.maps.places.Autocomplete(
-      /** @type {!HTMLInputElement} */(document.getElementById('address')),
-      {types: ['geocode']});
+  	(document.getElementById('address')),
+  	{types: ['geocode']});
   autocomplete.addListener('place_changed', fillInAddress);
+}
+
+function fillInAddress() {
+  var place = autocomplete.getPlace();
+  for (var component in componentForm) {
+    document.getElementById(component).value = '';
+  }
+  for (var i = 0; i < place.address_components.length; i++) {
+    var addressType = place.address_components[i].types[0];
+    if (componentForm[addressType]) {
+      var val = place.address_components[i][componentForm[addressType]];
+      document.getElementById(addressType).value = val;
+    }
+  }
 }
 
 function geolocate() {
@@ -161,4 +175,12 @@ function geolocate() {
       autocomplete.setBounds(circle.getBounds());
     });
   }
+}
+
+function clearAddress() {
+	$('#number').val('');
+    $('#complement').val('');
+	for (var component in componentForm) {
+		document.getElementById(component).value = '';
+    }
 }

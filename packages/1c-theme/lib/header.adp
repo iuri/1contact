@@ -23,11 +23,11 @@
 			<a href="@logout_url@" title="#acs-subsite.Logout_from_system#" >#1c-theme.Logout#</a>
 		</if>
 		<else>
-			<a href="javascript:metroDialog.open('#login_form');" title="#acs-subsite.Log_in_to_system#" >#1c-theme.Log_In#</a>
+			<a href="javascript:metroDialog.open('#login_form_popup');" title="#acs-subsite.Log_in_to_system#" >#1c-theme.Log_In#</a>
 		</else>
 
 		<br>
-		<a href='#' >#1c-theme.Contact#</a>
+		<a href="javascript:metroDialog.open('#contact_form_popup');" >#1c-theme.Contact#</a>
 <!--
 		<br>
 		<select name='select_language' onChange='change_locale();' id='select_language' style='margin:0;padding:0;' >
@@ -39,9 +39,8 @@
 	</div>
 </div>
 
-
 <!-- Popup com formulário de login -->
 <include src='../../1c-users/lib/login' return_url="@return_url@" />
 
-
-
+<!-- Popup com formulário de contato -->
+<include src='../../1c-users/lib/contact' return_url="@return_url@" />

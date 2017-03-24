@@ -1,6 +1,6 @@
 <property name='focus' >@focus;literal@</property>
 
-<div id='login_form' data-role='dialog' data-close-button='true' data-overlay='true' data-overlay-color='dialog_overlay' >
+<div id='login_form_popup' data-role='dialog' data-close-button='true' data-overlay='true' data-overlay-color='dialog_overlay' >
 	<div style='text-align:center;position:relative;padding: 1rem 4rem;' >
 		<p style='text-align:center;' ><b>#1c-users.Login#</b></p>
 

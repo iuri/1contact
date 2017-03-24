@@ -1,10 +1,12 @@
 .sidbar {
 	padding: .5rem;
+	min-width: 210px;
 	width: 210px;
 	display: table-cell;
 	vertical-align: top;
 	background-color: #404040;
 	border-top: 2px solid #FFF;
+	border-bottom: 2px solid #FFF;
 }
 
 .sidebar_list {
@@ -20,12 +22,20 @@
 }
 
 .sidebar_list li {
-	color: #FFF;
+	color: #F0F0F0;
 }
 
-.sidebar_list li li a {
-	color: #FFF;
+.sidebar_list li li ul {
+	margin-left: 1em;
+}
+
+.sidebar_list li a {
+	color: #DCDCDC;
 	font-weight: normal;
+}
+
+.sidebar_list li a:hover {
+	color: #FFF;
 }
 
 .sidebar_title {
@@ -34,9 +44,4 @@
 	text-transform: uppercase;
 	padding: 0;
 	margin: 0;
-}
-
-.sidebar_title::first-letter {
-	display: block;
-	font-size: 125%;
 }
