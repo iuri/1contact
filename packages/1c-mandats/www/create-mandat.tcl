@@ -37,84 +37,15 @@ ad_page_contract {
 
 }
 
+auth::require_login
+
 set page_title "Create Mandat [ad_conn instance_name]"
 set context [list [list "." "Mandat"] "Create"]
 
-
-
 ns_log Notice "Running create-mandat..."
-ns_log Notice "$mode"
-
-set mode "search"
-if {[lindex $mode 0] eq "search"} {
-    # search <type> <field>
-    ns_log Notice "Searching for user ..."
-    set user_type [lindex $mode 1]
-
-    set user_attrib [lindex $mode 2]
-    set attrib_value [lindex $mode 3]
-
-    ns_log Notice "$attrib_value"
-    switch ($user_attrib) {
-	"email" {
-	    set user_id [party::get_by_email -email [lindex $mode 3]]
-	    set user_info [list \
-			       [party::name -email isampaio@1contact.ch] \    
-			  ]
-	    
-	    set user_info [db_list select_userinfo {
-		SELECT userinfo_id,
-		entitlement,
-		birthday,
-		nationality,
-		civilstate,
-		children_qty,
-		children_ages,
-		animal_p,
-		animals_type,
-		animals_qty,
-		mobilenumber,
-		phonenumber,
-		email,
-		noexpirecontract_p,
-		job,
-		jobactivity,
-		datestartjob,
-		salary,
-		salary_month,
-		independentjob_p,
-		jobother,
-		otherincoming,
-		address,
-		houseproperty,
-		houseproprietary,
-		mortgage,
-		user_id
-		FROM user_ext_info
-		WHERE user_id = :user_id
-
-
-	    }]
-	    ns_log Notice "LIST" 
-	    
-	    ns_log Notice "$user_info" 
-	   // util::json::array::create 
-
-	    
-	}
-	mobilenumber {
-	}
-	phonenumber {
-	    
-	}
-    }
-}
-
-
 
 if {[string equal $mode "save"]} {
 
-    
     set myform [ns_getform]
     if {[string equal "" $myform]} {
 	ns_log Notice "No Form was submited"
@@ -126,8 +57,6 @@ if {[string equal $mode "save"]} {
 	    set varvalue [ns_set value $myform $i]
 	}
     }    
-
-    
     
     set customer_id [1c_users::user::add \
 			 -entitlement $customer_entitlement \
@@ -158,13 +87,79 @@ if {[string equal $mode "save"]} {
 			 -houseproprietary $customer_houseproprietary \
 			 -mortgage $customer_mortgage] 
     
-    
-    if {$customer_id eq "data_error"} {
-	ad_return_complaint 1 "<li>This email is already registered on the system. We cannot create a new user with this email."
-	ad_script_abort
-    }
-    
-    
+
+
+
+        set housemate_id [1c_users::user::add \
+			 -entitlement $housemate_entitlement \
+			 -first_names $housemate_name \
+			 -last_name $housemate_surname \
+			 -birthday $housemate_birthday \
+			 -nationality $housemate_nationality \
+			 -civilstate $housemate_civilstate \
+			 -children_qty $housemate_children_qty \
+			 -children_ages $housemate_children_ages \
+			 -animal_p $housemate_animals \
+			 -animals_type $housemate_animals_type \
+			 -animals_qty $housemate_animals_qty \
+			 -mobilenumber $housemate_mobilenumber \
+			 -phonenumber $housemate_phonenumber \
+			 -email $housemate_email \
+			 -noexpirecontract_p $housemate_noexpirecontract \
+			 -job $housemate_job \
+			 -jobactivity $housemate_jobactivity \
+			 -datestartjob $housemate_datestartjob \
+			 -salary $housemate_salary \
+			 -salary_month $housemate_salary_month \
+			 -independentjob $housemate_independentjob \
+			 -jobother $housemate_jobother \
+			 -otherincoming $housemate_otherincoming \
+			 -address $housemate_address \
+			 -houseproperty $housemate_houseproperty \
+			 -houseproprietary $housemate_houseproprietary \
+			 -mortgage $housemate_mortgage] 
+
+
+
+    set guarantor_id [1c_users::user::add \
+			 -entitlement $guarantor_entitlement \
+			 -first_names $guarantor_name \
+			 -last_name $guarantor_surname \
+			 -birthday $guarantor_birthday \
+			 -nationality $guarantor_nationality \
+			 -civilstate $guarantor_civilstate \
+			 -children_qty $guarantor_children_qty \
+			 -children_ages $guarantor_children_ages \
+			 -animal_p $guarantor_animals \
+			 -animals_type $guarantor_animals_type \
+			 -animals_qty $guarantor_animals_qty \
+			 -mobilenumber $guarantor_mobilenumber \
+			 -phonenumber $guarantor_phonenumber \
+			 -email $guarantor_email \
+			 -noexpirecontract_p $guarantor_noexpirecontract \
+			 -job $guarantor_job \
+			 -jobactivity $guarantor_jobactivity \
+			 -datestartjob $guarantor_datestartjob \
+			 -salary $guarantor_salary \
+			 -salary_month $guarantor_salary_month \
+			 -independentjob $guarantor_independentjob \
+			 -jobother $guarantor_jobother \
+			 -otherincoming $guarantor_otherincoming \
+			 -address $guarantor_address \
+			 -houseproperty $guarantor_houseproperty \
+			 -houseproprietary $guarantor_houseproprietary \
+			 -mortgage $guarantor_mortgage] 
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
@@ -173,11 +168,4 @@ if {[string equal $mode "save"]} {
 
 
 
-
-
-
-
-
-
-
-
+template::head::add_javascript -src "resources/js/create_mandat_form.js" -order 1

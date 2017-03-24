@@ -1,0 +1,59 @@
+ad_page_contract {
+
+} {
+    {mode ""}
+    
+} 
+
+
+
+set userinfo [list]
+
+    set myform [ns_getform]
+    if {[string equal "" $myform]} {
+	ns_log Notice "No Form was submited"
+    } else {
+	ns_log Notice "FORM"
+	ns_set print $myform
+	for {set i 0} {$i < [ns_set size $myform]} {incr i} {
+	    set varname [ns_set key $myform $i]
+	    set varvalue [ns_set value $myform $i]
+	}
+    }    
+    
+
+ns_log Notice "MODE $mode"
+
+
+
+# set mode "search customer email luiz@1contact.ch"
+
+if {[lindex $mode 0] eq "search"} {
+    # search <type> <field>
+    ns_log Notice "Searching for user ...[lindex $mode 3]"
+
+    set user_type [lindex $mode 1]
+    set user_attrib [lindex $mode 2]
+    set attrib_value [lindex $mode 3]
+
+    ns_log Notice "$user_attrib"
+
+    switch $user_attrib {
+	email {
+	    set user_id [party::get_by_email -email [lindex $mode 3]]
+	    set fullname [party::name -email [lindex $mode 3]]
+
+	    set name [lindex $fullname 0] 
+	    set surname [lindex $fullname 1] 
+	    set email [lindex $mode 3]
+	    
+	    ns_log Notice "$user_id"
+
+	    set userinfo [list "\
+			      \"name\": \"$name\",\
+			      \"surname\": \"$surname\",\
+			      \"email\": \"$email\""]	    
+	    
+	}
+    }
+}

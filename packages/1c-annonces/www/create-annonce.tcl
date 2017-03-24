@@ -24,6 +24,8 @@ ad_page_contract {
     upload_file.tmpfile:tmpfile,multiple,optional
 }
 
+auth::require_login
+
 set page_title "Create Annonce [ad_conn instance_name]"
 set context [list [list "." "Annonces"] "Create"]
 

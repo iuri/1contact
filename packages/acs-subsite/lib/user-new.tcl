@@ -108,8 +108,7 @@ ad_form -extend -name register -on_request {
         }
     }
     
-    # Handle registration problems
-    
+    # Handle registration problems    
     switch $creation_info(creation_status) {
         ok {
             # Continue below
