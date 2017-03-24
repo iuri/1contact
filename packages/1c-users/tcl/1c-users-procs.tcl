@@ -50,67 +50,69 @@ ad_proc -public 1c_users::user::add {
     It adds a user on OpenACS and extra personal information.
 } {
     ns_log Notice "Running ad_proc 1c_users::user::add " 
-    
-    
-    # Pre-generate user_id for double-click protection
-    set user_id [db_nextval acs_object_id_seq]
-    
+        
     array set creation_info [auth::create_user \
-				 -user_id $user_id \
 				 -email $email \
 				 -first_names $first_names \
 				 -last_name $last_name]
     
     
-    ns_log Notice "ARRAY [parray creation_info]"
-
     # Handle registration problems
-    if {$creation_info(creation_status) eq "data_error"} {
-	return $creation_info(creation_status)
+    switch $creation_info(creation_status) {
+        ok {
+            # Continue below
+	    set user_id [party::get_by_email -email $email]
+        }
+        default {
+	    if {[lindex $creation_info(element_messages) 0] eq "email" } {
+		set user_id [party::get_by_email -email $email]
+	    }
+        }
+       
     }
-
-	
     
-    set userinfo_id [db_nextval "user_info_id_seq"]
-    
-    db_transaction {
+    if {[info exists user_id]} {
+	ns_log Notice "Creating userinfo"
+	set userinfo_id [db_nextval "user_info_id_seq"]
 	
-	db_exec_plsql insert_user {
-	    SELECT userinfo__new(
-				 :userinfo_id,
-				 :entitlement,
-				 :birthday,
-				 :nationality,
-				 :civilstate,
-				 :children_qty,
-				 :children_ages,
-				 :animal_p,
-				 :animals_type,
-				 :animals_qty,
-				 :mobilenumber,
-				 :phonenumber,
-				 :email,
-				 :job,
-				 :noexpirecontract_p,
-				 :jobactivity,
-				 :datestartjob,
-				 :salary,
-				 :salary_month,
-				 :independentjob_p,
-				 :jobother,
-				 :otherincoming,
-				 :address,
-				 :houseproperty,
-				 :houseproprietary,
-				 :mortgage,
-				 :user_id
-				 );
+	db_transaction {
+	    
+	    db_exec_plsql insert_user {
+		SELECT userinfo__new(
+				     :userinfo_id,
+				     :entitlement,
+				     :birthday,
+				     :nationality,
+				     :civilstate,
+				     :children_qty,
+				     :children_ages,
+				     :animal_p,
+				     :animals_type,
+				     :animals_qty,
+				     :mobilenumber,
+				     :phonenumber,
+				     :email,
+				     :job,
+				     :noexpirecontract_p,
+				     :jobactivity,
+				     :datestartjob,
+				     :salary,
+				     :salary_month,
+				     :independentjob_p,
+				     :jobother,
+				     :otherincoming,
+				     :address,
+				     :houseproperty,
+				     :houseproprietary,
+				     :mortgage,
+				     :user_id
+				     );
+		
+	    }
 	    
 	}
 	
     }
-    
-    
     
     return $user_id
 }

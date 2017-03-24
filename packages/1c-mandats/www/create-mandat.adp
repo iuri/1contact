@@ -66,8 +66,12 @@
 			<!-- Localidade e mapa -->
 			<div>
 				<b>#1c-mandats.ChooseDesirebleAreas#<b><br>
+
+				
 				<!-- Exibição do mapa -->
-				<br><br>(Renato's map will appear here)<br><br>
+				<div id='map' style='width:600px;height:480px;' ></div>
+
+
 				<!-- Áreas indesejadas -->
 				<div class='input-control text' style='width:534px' >
 					<input type='text' name='unwanted_areas' id='unwanted_areas' placeholder='#1c-mandats.Undesired#' title='#1c-mandats.Undesired#' style='width:100%;' />
@@ -158,3 +162,18 @@
 <div id='create_mandat_required_err' data-role='dialog' data-overlay='true' data-overlay-color='dialog_overlay' data-hide='3000' data-close-button='true' class='padding20' >
 	<p><b>Fill all the fields before save the form.</b></p>
 </div>
+
+<script type='text/javascript' >
+					function initMap() {
+  						var map = new google.maps.Map(document.getElementById('map'), {
+    						zoom: 12,
+    						center: {lat: 46.20477325630342, lng: 6.160965718519719}
+  						});
+  						var GELayer = new google.maps.KmlLayer({
+    						url: 'http://www.google.com/maps/d/kml?forcekml=1&mid=1vhl1snn5KUNES0aG-nIHAN2UxBM&lid=M36XZtFqRJg',
+    						map: map
+  						});
+					}
+				</script>
+
+				<script  type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDzF7IlGi2Ue-EI6E6bizGVZ69NhFU7yGI&callback=initMap' async defer ></script>
