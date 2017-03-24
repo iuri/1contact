@@ -45,17 +45,62 @@ set context [list [list "." "Mandat"] "Create"]
 ns_log Notice "Running create-mandat..."
 ns_log Notice "$mode"
 
+set mode "search"
 if {[lindex $mode 0] eq "search"} {
     # search <type> <field>
     ns_log Notice "Searching for user ..."
     set user_type [lindex $mode 1]
 
     set user_attrib [lindex $mode 2]
+    set attrib_value [lindex $mode 3]
 
-    
-
+    ns_log Notice "$attrib_value"
     switch ($user_attrib) {
-	email {
+	"email" {
+	    set user_id [party::get_by_email -email [lindex $mode 3]]
+	    set user_info [list \
+			       [party::name -email isampaio@1contact.ch] \    
+			  ]
+	    
+	    set user_info [db_list select_userinfo {
+		SELECT userinfo_id,
+		entitlement,
+		birthday,
+		nationality,
+		civilstate,
+		children_qty,
+		children_ages,
+		animal_p,
+		animals_type,
+		animals_qty,
+		mobilenumber,
+		phonenumber,
+		email,
+		noexpirecontract_p,
+		job,
+		jobactivity,
+		datestartjob,
+		salary,
+		salary_month,
+		independentjob_p,
+		jobother,
+		otherincoming,
+		address,
+		houseproperty,
+		houseproprietary,
+		mortgage,
+		user_id
+		FROM user_ext_info
+		WHERE user_id = :user_id
+
+
+	    }]
+	    ns_log Notice "LIST" 
+	    
+	    ns_log Notice "$user_info" 
+	   // util::json::array::create 
+
+	    
 	}
 	mobilenumber {
 	}

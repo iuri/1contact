@@ -9,7 +9,7 @@ CREATE TABLE user_ext_info(
   userinfo_id		integer
       			CONSTRAINT uei_userinfo_id_pk PRIMARY KEY,
   entitlement		integer,
-  birthay		timestamp,
+  birthday		timestamp,
   nationality		varchar(255),
   civilstate		integer,
   children_qty		integer,
@@ -79,7 +79,7 @@ CREATE OR REPLACE FUNCTION userinfo__new (
   DECLARE
     p_userinfo_id		ALIAS FOR $1;
     p_entitlement		ALIAS FOR $2;
-    p_birthay 			ALIAS FOR $3;
+    p_birthday 			ALIAS FOR $3;
     p_nationality 		ALIAS FOR $4;
     p_civilstate 		ALIAS FOR $5;
     p_children_qty		ALIAS FOR $6;
@@ -110,7 +110,7 @@ CREATE OR REPLACE FUNCTION userinfo__new (
 	INSERT INTO user_ext_info (
 	       userinfo_id,
 	       entitlement,
-	       birthay,
+	       birthday,
 	       nationality,
 	       civilstate,
 	       children_qty,
@@ -138,7 +138,7 @@ CREATE OR REPLACE FUNCTION userinfo__new (
 	) VALUES (
 	  	 p_userinfo_id,	
 	  	 p_entitlement,
-		 p_birthay,
+		 p_birthday,
 		 p_nationality,
 		 p_civilstate,
 		 p_children_qty,
