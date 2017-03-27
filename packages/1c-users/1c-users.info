@@ -9,13 +9,13 @@
     <implements-subsite-p>f</implements-subsite-p>
     <inherit-templates-p>f</inherit-templates-p>
     
-    <version name="0.1d" url="http://openacs.org/repository/download/apm/1c-users-0.1d.apm">
+    <version name="0.2d" url="http://openacs.org/repository/download/apm/1c-users-0.2d.apm">
         <owner url="mailto:iuri@iurix.com">Iuri Sampaio</owner>
         <summary>A package to extend users features and functions</summary>
         <description format="text/html">A package to extend users features and functions</description>
         <maturity>0</maturity>
 
-        <provides url="1c-users" version="0.1d"/>
+        <provides url="1c-users" version="0.2d"/>
 
         <callbacks>
         </callbacks>

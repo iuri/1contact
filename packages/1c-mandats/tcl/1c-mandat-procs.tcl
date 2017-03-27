@@ -82,75 +82,6 @@ ad_proc -public 1c_mandat::category_get_options {
 
 
 
-ad_proc -public 1c_mandat::mandat::edit {
-    {-mandat_id ""}
-    {-type_of_transaction ""}
-    {-type_of_property ""}
-    {-type_of_commerce ""}
-    {-type_of_residence ""}
-    {-code ""}
-    {-room_qty ""}
-    {-surface_min ""}
-    {-budget_min ""}
-    {-budget_max ""}
-    {-searching_motive ""}
-    {-remarks1 ""} 
-    {-remarks2 ""}
-    {-confirmation ""}
-    {-origin ""}
-    {-origin_other ""}
-    {-payment_p ""}
-    {-status ""}
-    {-lchars ""}
-    {-other_chars ""}
-    {-terms_conditions_p ""}
-} {
-    Edits mandat info
-} {
-
-    db_transaction {
-
-	content::revision::new \
-	    -item_id $mandat_id \
-	    -title $code \
-	    -description "$remarks1\nremarks2\n\n$searching_motive"
-	
-
-	db_exec_plsql mandat_edit {
-
-	    SELECT mandat__edit(
-			       :mandat_id,
-			       :type_of_transaction,
-			       :type_of_property,
-			       :type_of_commerce,
-			       :type_of_residence,
-			       :code,
-			       :room_qty,
-			       :surface_min,
-			       :budget_min,
-			       :budget_max,
-			       :searching_motive,
-			       :remarks1,
-			       :remarks2,
-			       :confirmation,
-			       :origin,
-			       :origin_other,
-			       :payment_p,
-			       :status,
-			       :lchars,
-			       :other_chars,
-			       :terms_conditions_p);
-	    
-	}
-	
-    }
-
-    
-    return 0
-    
-    
-}
-
 
 
 ad_proc 1c_mandat::mandat::publish {
@@ -165,27 +96,22 @@ ad_proc 1c_mandat::mandat::publish {
 
 
 ad_proc 1c_mandat::mandat::add {
-    {-mandat_id ""}
     {-type_of_transaction ""}
     {-type_of_property ""}
-    {-type_of_residence ""}
-    {-type_of_commerce ""}
-    {-code ""}
-    {-room_qty ""}
-    {-surface_min ""}
+    {-rooms_qty ""}
+    {-surface ""}
     {-budget_min ""}
     {-budget_max ""}
-    {-searching_motive ""}
-    {-remarks1 ""} 
-    {-remarks2 ""}
-    {-confirmation ""}
-    {-origin ""}
-    {-origin_other ""}
-    {-payment_p ""}
+    {-unwanted_areas ""}
+    {-charac_required ""}
+    {-charac_opt_gen ""}
+    {-charac_opt_arc ""}
+    {-charac_opt_vic ""}
+    {-extra_info ""}
     {-status ""}
-    {-lchars ""}
-    {-other_chars ""}
-    {-terms_conditions_p:required}
+    {-customer_id ""}
+    {-guarantor_id ""}
+    {-cotenant_id ""}
     {-creation_user ""}
     {-creation_ip ""}
     {-context_id ""}
@@ -194,12 +120,8 @@ ad_proc 1c_mandat::mandat::add {
 
     @author Iuri Sampaio
 } {
-
-
-
-#    set link [util_text_to_url -replacement "" -text $link]
+    # set link [util_text_to_url -replacement "" -text $link]
    
-
     if {$creation_ip == ""} {
 	set creation_ip [ad_conn peeraddr]
     }
@@ -223,35 +145,35 @@ ad_proc 1c_mandat::mandat::add {
 		-package_id $context_id \
 		-creation_user $creation_user \
 		-creation_ip $creation_ip 
-	}
-	
-	db_exec_plsql insert_mandat {
-	    SELECT mandat__new(
-			       :mandat_id,
-			       :type_of_transaction,
-			       :type_of_property,
-			       :type_of_residence,
-			       :type_of_commerce,
-			       :code,
-			       :room_qty,
-			       :surface_min,
-			       :budget_min,
-			       :budget_max,
-			       :searching_motive,
-			       :remarks1,
-			       :remarks2,
-			       :confirmation,
-			       :origin,
-			       :origin_other,
-			       :payment_p,
-			       :status,
-			       :lchars,
-			       :other_chars,
-			       :terms_conditions_p);
+	    
+	    
+	    set code "${type_of_transaction}${type_of_property}${mandat_id}"
+	    db_exec_plsql insert_mandat {
+		SELECT mandat__new(
+				   :mandat_id,
+				   :type_of_transaction,
+				   :type_of_property,
+				   :code, 
+				   :rooms_qty,
+				   :surface,
+				   :budget_min,
+				   :budget_max,
+				   :unwanted_areas,
+				   :charac_required,
+				   :charac_opt_gen,
+				   :charac_opt_arc,
+				   :charac_opt_vic,
+				   :extra_info,
+				   :status,
+				   :customer_id,
+				   :guarantor_id,
+				   :cotenant_id);
+		
+	    }
 	}
     }
     
-    
     return $mandat_id
 }
+
 

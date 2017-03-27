@@ -5,6 +5,51 @@
 <div style='position:relative;' >
 
 	<h3>#1c-mandats.NewMandat#</h3>
+	
+	<div class='box' >
+		<h4>#1c-mandats.InfosAboutRequestedRealty#</h4>
+		<!-- Tipo de negociação (locação ou venda) -->
+		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='#1c-mandats.TypeOfTransaction#' title='#1c-mandats.TypeOfTransaction#' style='width:11.5em;' >
+			<select name='atypetransaction' id='atypetransaction' multiple='multiple' style='width:100%;' >
+				<option value='1' >#1c-mandats.Rent#</option>
+				<option value='2' >#1c-mandats.Buy#</option>
+			</select>
+			<input type='text' name='type_of_transaction' id='type_of_transaction' hidden />
+		</div>
+		<!-- Tipo de imóvel -->
+		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='#1c-realties.TypeOfProperty#' title='#1c-realties.TypeOfProperty#' style='width:18em;' >
+			<select name='atypeproperty' id='atypeproperty' multiple='multiple' style='width:100%;' >
+				<option value='1' >#1c-realties.House#</option>
+				<option value='2' >#1c-realties.Apartment#</option>
+				<option value='3' >#1c-realties.Commerce#</option>
+			</select>
+			<input type='text' name='type_of_property' id='type_of_property' hidden />
+		</div>
+		<!-- Num de cômodos -->
+		<div class='input-control text' style='width:5.5em;' >
+			<input type='number' name='rooms_qty' id='rooms_qty' placeholder='#1c-realties.RoomQty#' title='#1c-realties.RoomQty#' min='0' max='999' style='width:100%;' />
+		</div>
+		<!-- Num de banheiros -->
+		<div class='input-control text' style='width:5.5em;' >
+			<input type='number' name='bathrooms_qty' id='bathrooms_qty' placeholder='#1c-realties.BathroomQty#' title='#1c-realties.BathroomQty#' min='0' max='999' style='width:100%;' />
+		</div>
+		<!-- Num de toaletes -->
+		<div class='input-control text' style='width:5.5em;' >
+			<input type='number' name='toilets_qty' id='toilets_qty' placeholder='#1c-realties.ToiletsQty#' title='#1c-realties.ToiletsQty#' min='0' max='999' style='width:100%;' />
+		</div>
+		<!-- Num de andares -->
+		<div class='input-control text' style='width:5.5em;' >
+			<input type='number' name='floors_qty' id='floors_qty' placeholder='#1c-realties.FloorQty#' title='#1c-realties.FloorQty#' min='0' max='999' style='width:100%;' />
+		</div>
+		<!-- Área total -->
+		<div class='input-control text' style='width:5.5em;' >
+			<input type='text' name='surface' id='surface' placeholder='#1c-realties.TotalArea#' title='#1c-realties.TotalArea#' style='width:100%;' />
+		</div>
+		<!-- Preço  -->
+		<div class='input-control text' style='width:9em;' >
+			<input type='text' name='budget' id='budget' placeholder='#1c-theme.Budget#' title='#1c-theme.BudgetHelp#' onChange='javascript:mandatCheckBudget();' style='width:100%;' />
+		</div>
+	</div>
 
 	<div style='display:table;width:100%;vertical-align:top;' >
 
@@ -27,55 +72,29 @@
 
 	<div class='box' >
 	
-		<div style='padding:.5rem;' >
-
-			<h4>#1c-mandats.InfosAboutRequestedRealty#</h4>
-			<!-- Tipo de negociação (locação ou venda) -->
-			<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='#1c-mandats.TypeOfTransaction#' title='#1c-mandats.TypeOfTransaction#' style='width:11.5em;' >
-				<select name='atypetransaction' id='atypetransaction' multiple='multiple' style='width:100%;' >
-					<option value='1' >#1c-mandats.Rent#</option>
-					<option value='2' >#1c-mandats.Buy#</option>
-				</select>
-				<input type='text' name='type_of_transaction' id='type_of_transaction' hidden />
-			</div>
-			<!-- Tipo de imóvel -->
-			<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='#1c-realties.TypeOfProperty#' title='#1c-realties.TypeOfProperty#' style='width:18em;' >
-				<select name='atypeproperty' id='atypeproperty' multiple='multiple' style='width:100%;' >
-					<option value='1' >#1c-realties.House#</option>
-					<option value='2' >#1c-realties.Apartment#</option>
-					<option value='3' >#1c-realties.Commerce#</option>
-				</select>
-				<input type='text' name='type_of_property' id='type_of_property' hidden />
-			</div>
-			<!-- Num de cômodos -->
-			<div class='input-control text' style='width:5.5em;' >
-				<input type='number' name='rooms' id='rooms' placeholder='#1c-mandats.RoomsQty#' title='#1c-mandats.RoomsQty#' min='0' max='999' style='width:100%;' />
-			</div>
-			<!-- Área total -->
-			<div class='input-control text' style='width:5.5em;' >
-				<input type='text' name='surface' id='surface' placeholder='#1c-mandats.TotalArea#' title='#1c-mandats.TotalArea#' style='width:100%;' />
-			</div>
-			<!-- Preço min  -->
-			<div class='input-control text' style='width:5em;' >
-				<input type='text' name='price_min' id='price_min' placeholder='#1c-mandats.PriceMin#' title='#1c-mandats.PriceMin#' style='width:100%;' />
-			</div>
-			<!-- Preço max  -->
-			<div class='input-control text' style='width:5em;' >
-				<input type='text' name='price_max' id='price_max' placeholder='#1c-mandats.PriceMax#' title='#1c-mandats.PriceMax#' style='width:100%;' />
-			</div>
-			<!-- Localidade e mapa -->
-			<div>
-				<b>#1c-mandats.ChooseDesirebleAreas#<b><br>
-
+		<div style='padding-left:.5rem;' >
 				
-				<!-- Exibição do mapa -->
-				<div id='map' style='width:600px;height:480px;' ></div>
-
-
-				<!-- Áreas indesejadas -->
-				<div class='input-control text' style='width:534px' >
-					<input type='text' name='unwanted_areas' id='unwanted_areas' placeholder='#1c-mandats.Undesired#' title='#1c-mandats.Undesired#' style='width:100%;' />
+			<!-- Exibição do mapa -->
+			<div style='display:table;width:100%;' >
+				<div style='display:table-cell;vertical-align:top;width:20%;' >
+					<div><h4>Zonas:</h4></div>
 				</div>
+				<div style='display:table-cell;text-align:center;vertical-align:top;width:60%;' >
+					<h4>#1c-mandats.ChooseDesirebleAreas#</h4>
+					<div style='text-align:left;' >
+						<include src='/packages/1c-realties/lib/map' />
+					</div>
+					<b>Clique com o botão esquerdo para selecionar/remover, e com o botão direito para ver as informações</b>
+				</div>
+				<div style='display:table-cell;vertical-align:top;text-align:left;padding-left:.25rem;width:20%;height:100%;' >
+					<div><h4>Áreas selecionadas:</h4></div>
+					<div id='SelectedAreas_List' ></div>
+				</div>
+			</div>
+
+			<!-- Áreas indesejadas -->
+			<div class='input-control text' style='width:100%' >
+				<input type='text' name='unwanted_areas' id='unwanted_areas' placeholder='#1c-mandats.Undesired#' title='#1c-mandats.Undesired#' style='width:100%;' />
 			</div>
 
 		</div>
@@ -110,7 +129,7 @@
 	<div class='box' >
 		<h4>#1c-mandats.Requests#</h4>
 		<div class='input-control textarea' data-role='input' data-text-auto-resize='true' style='width:30em;' >
-			<textarea name='requests' id='requests' title='#1c-mandats.Requests#' ></textarea>
+			<textarea name='extra_info' id='extra_info' title='#1c-mandats.Requests#' ></textarea>
 		</div>
 	</div>
 	<br>
@@ -137,7 +156,7 @@
 	<div class='box' style='vertical-align:top;' >
 		<h4>#1c-mandats.Terms#</h4>
 		<label class='input-control checkbox small-check' >
-			<input type='checkbox' name='terms' id='terms' required />
+			<input type='checkbox' name='terms_p' id='terms_p' required />
 			<span class='check' ></span>
 			<span class='caption' >#1c-mandats.AcceptTerms#</span>
 		</label>
@@ -164,16 +183,26 @@
 </div>
 
 <script type='text/javascript' >
-					function initMap() {
-  						var map = new google.maps.Map(document.getElementById('map'), {
-    						zoom: 12,
-    						center: {lat: 46.20477325630342, lng: 6.160965718519719}
-  						});
-  						var GELayer = new google.maps.KmlLayer({
-    						url: 'http://www.google.com/maps/d/kml?forcekml=1&mid=1vhl1snn5KUNES0aG-nIHAN2UxBM&lid=M36XZtFqRJg',
-    						map: map
-  						});
-					}
-				</script>
 
-				<script  type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDzF7IlGi2Ue-EI6E6bizGVZ69NhFU7yGI&callback=initMap' async defer ></script>
+	/* Verificação e correção dos valores minimo e máximo */
+	function mandatCheckBudget() {
+		var bud = $('#budget').val();
+		var v = bud.split('a');
+
+		var x = parseInt(v[0]);
+		var y = parseInt(v[1]);
+
+		if ( isNaN(x) ) { var x = 0; }
+		if ( isNaN(y) ) { var y = 0; }
+
+		if ( y < x ) { xx = y; yy = x; } else { xx = x; yy = y; }
+
+		$('#budget').val(xx+' a '+yy);
+	}
+
+	/* Realizando a pesquisa */
+	function proceed_search() {
+		alert('pesquisar');
+	};
+
+</script>
