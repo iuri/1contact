@@ -134,6 +134,12 @@ if {[string equal $mode "save"]} {
     if {$terms} {
 	
 	if {[exists_and_not_null customer_email]} {
+
+	    set customer_birthday1  "[string trim $customer_birthday]"
+	    set customer_birthday2 "[string map {. -} $customer_birthday1]"
+	    set customer_birthday3 "[template::util::date::get_property year $customer_birthday2] [template::util::date::get_property month $customer_birthday2] [template::util::date::get_property day $customer_birthday2]"
+	    
+	    
 	    set customer_datestartjob1  "[string trim $customer_datestartjob]"
 	    set customer_datestartjob2 "[string map {. -} $customer_datestartjob1]"
 	    set customer_datestartjob3 "[template::util::date::get_property year $customer_datestartjob2] [template::util::date::get_property month $customer_datestartjob2] [template::util::date::get_property day $customer_datestartjob2]"
@@ -142,7 +148,7 @@ if {[string equal $mode "save"]} {
 				  -entitlement $customer_entitlement \
 				  -first_names $customer_name \
 				  -last_name $customer_surname \
-				  -birthday $customer_birthday \
+				  -birthday $customer_birthday3 \
 				  -nationality $customer_nationality \
 				  -civilstate $customer_civilstate \
 				  -children_qty $customer_children_qty \
@@ -169,6 +175,10 @@ if {[string equal $mode "save"]} {
 	}
 
 	if {[exists_and_not_null guarantor_email]} {
+	    set guarantor_birthday1  "[string trim $guarantor_birthday]"
+	    set guarantor_birthday2 "[string map {. -} $guarantor_birthday1]"
+	    set guarantor_birthday3 "[template::util::date::get_property year $guarantor_birthday2] [template::util::date::get_property month $guarantor_birthday2] [template::util::date::get_property day $guarantor_birthday2]"
+
 	    set guarantor_datestartjob1  "[string trim $guarantor_datestartjob]"
 	    set guarantor_datestartjob2 "[string map {. -} $guarantor_datestartjob1]"
 	    set guarantor_datestartjob3 "[template::util::date::get_property year $guarantor_datestartjob2] [template::util::date::get_property month $guarantor_datestartjob2] [template::util::date::get_property day $guarantor_datestartjob2]"
@@ -177,7 +187,7 @@ if {[string equal $mode "save"]} {
 				   -entitlement $guarantor_entitlement \
 				   -first_names $guarantor_name \
 				   -last_name $guarantor_surname \
-				   -birthday $guarantor_birthday \
+				   -birthday $guarantor_birthday3 \
 				   -nationality $guarantor_nationality \
 				   -civilstate $guarantor_civilstate \
 				   -children_qty $guarantor_children_qty \
