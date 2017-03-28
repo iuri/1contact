@@ -11,11 +11,34 @@ ad_library {
     
     
     
-    namespace eval 1c_annonces {}
+namespace eval 1c_annonces {}
+
+namespace eval 1c_annonces::annonce {}
+
     
-    namespace eval 1c_annonces::annonce {}
+
+ad_proc -public 1c_annonces::nuke_annonces {
+} {
+    Erase all annonces and their dependencies 
+} {
+
+    set l_ids [db_list select_items "SELECT item_id FROM cr_items WHERE content_type = 'annonce_object' "]
     
+    foreach id $l_ids {
+	content::item::delete -item_id $id
+    }
     
+
+    set package_id [apm_package_id_from_key 1c-annonces]
+    set l_ids [db_list select_items "SELECT object_id FROM acs_objects WHERE object_type = 'cr_item_child_rel' AND package_id = :package_id)"]
+    
+    foreach id $l_ids {
+	::xo::db::sql::acs_object delete -object_id $id
+    }
+    
+    return 0
+}
+
 
 ad_proc -public 1c_annonces::annonce::delete {
     annonce_id
@@ -26,6 +49,9 @@ ad_proc -public 1c_annonces::annonce::delete {
 
     content::item::delete -item_id $annonce_id
     db_transaction {
+
+
+
 	db_exec_plsql delete_annonce {
 	    SELECT annonce__delete(:annonce_id);
 	}

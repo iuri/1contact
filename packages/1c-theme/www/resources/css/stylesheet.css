@@ -153,9 +153,25 @@ input[type='submit'] {
 }
 
 .select_field {
-	display: inline-block;
+	display: block;
 	padding: .25rem;
 	margin: .1rem;
-	border: 1px solid #d9d9d9;
-	background-color: #EDEDED;
+	border: 1px solid rgba(0,0,0,0.25);
+	border-radius: 3px;
+}
+
+.field_blue {
+	background-color: #c0c0ff;
+}
+
+.field_green {
+	background-color: #c0ffc0;
+}
+
+.field_red {
+	background-color: #ffc0c0;
+}
+
+.field_yellow {
+	background-color: #ffffc0;
 }

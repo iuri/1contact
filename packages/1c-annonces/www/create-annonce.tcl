@@ -86,8 +86,8 @@ if {[string equal $mode "save"]} {
 
 	# Create folder for annonce
 	db_transaction {
-	    # 1432 is the folder_id of Annonces
-	    set parent_id 1432
+	    # 5420 is the folder_id of Annonces
+	    set parent_id 5420
 	    set folder_name "annonce-${annonce_id}"
 	    if {$title eq ""} {
 		set title $folder_name

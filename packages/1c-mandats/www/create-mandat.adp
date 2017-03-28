@@ -75,22 +75,7 @@
 		<div style='padding-left:.5rem;' >
 				
 			<!-- Exibição do mapa -->
-			<div style='display:table;width:100%;' >
-				<div style='display:table-cell;vertical-align:top;width:20%;' >
-					<div><h4>Zonas:</h4></div>
-				</div>
-				<div style='display:table-cell;text-align:center;vertical-align:top;width:60%;' >
-					<h4>#1c-mandats.ChooseDesirebleAreas#</h4>
-					<div style='text-align:left;' >
-						<include src='/packages/1c-realties/lib/map' />
-					</div>
-					<b>Clique com o botão esquerdo para selecionar/remover, e com o botão direito para ver as informações</b>
-				</div>
-				<div style='display:table-cell;vertical-align:top;text-align:left;padding-left:.25rem;width:20%;height:100%;' >
-					<div><h4>Áreas selecionadas:</h4></div>
-					<div id='SelectedAreas_List' ></div>
-				</div>
-			</div>
+			<include src='/packages/1c-realties/lib/map' />
 
 			<!-- Áreas indesejadas -->
 			<div class='input-control text' style='width:100%' >
@@ -206,3 +191,4 @@
 	};
 
 </script>
+
