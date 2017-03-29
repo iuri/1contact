@@ -126,7 +126,7 @@
 	<!-- Características opcionais -->
 	<div class='box' >
 		<h4>#1c-realties.OptionalChars#</h4>
-		<include src='../../1c-realties/lib/charac-opt' package_id='@package_id@'/>
+		<include src='../../1c-realties/lib/charac-opt' />
 		<input type='text' name='charac_opt_gen' id='charac_opt_gen' hidden />
 		<input type='text' name='charac_opt_arc' id='charac_opt_arc' hidden />
 		<input type='text' name='charac_opt_vic' id='charac_opt_vic' hidden />

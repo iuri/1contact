@@ -50,7 +50,7 @@ if {[string equal $mode "save"]} {
     set available_date2 "[string map {. -} $available_date1]"
     set available_date3 "[template::util::date::get_property year $available_date2] [template::util::date::get_property month $available_date2] [template::util::date::get_property day $available_date2]"
 
-    if {$type_of_transaction eq ""} {
+    if {$type_of_transaction ne ""} {
 	set annonce_id [1c_annonces::annonce::add \
 			    -title $title \
 			    -type_of_transaction $type_of_transaction \
@@ -75,8 +75,7 @@ if {[string equal $mode "save"]} {
     if {[info exists annonce_id] && [info exists upload_file]} {
 	# Create folder for annonce
 	db_transaction {
-	    # 5420 is the folder_id of Annonces
-	    set parent_id 5420
+	    set parent_id [1c_annonces::get_folder_id]
 	    set folder_name "annonce-${annonce_id}"
 	    if {$title eq ""} {
 		set title $folder_name

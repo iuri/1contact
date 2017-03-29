@@ -15,7 +15,14 @@ namespace eval 1c_annonces {}
 
 namespace eval 1c_annonces::annonce {}
 
+ad_proc -public 1c_annonces::get_folder_id {
+} {
+    It returns Annonces folder
+} {    
     
+    return [fs::get_folder -name "annonces" -parent_id 965]
+
+}
 
 ad_proc -public 1c_annonces::nuke_annonces {
 } {
@@ -28,7 +35,6 @@ ad_proc -public 1c_annonces::nuke_annonces {
 	content::item::delete -item_id $id
     }
     
-
     set package_id [apm_package_id_from_key 1c-annonces]
     set l_ids [db_list select_items "SELECT object_id FROM acs_objects WHERE object_type = 'cr_item_child_rel' AND package_id = :package_id)"]
     
@@ -45,13 +51,12 @@ ad_proc -public 1c_annonces::annonce::delete {
 } {
     Deletes annonces
 } {
-    
-
+       
     content::item::delete -item_id $annonce_id
+
+    ::xo::db::sql::acs_object delete -object_id $annonce_id
+
     db_transaction {
-
-
-
 	db_exec_plsql delete_annonce {
 	    SELECT annonce__delete(:annonce_id);
 	}
@@ -155,7 +160,7 @@ ad_proc -public 1c_annonces::annonce::add {
 
 
 	db_transaction {
-
+	    
 	    set realty_id [1c_realties::realty::add \
 			       -type_of_property $type_of_property \
 			       -room_qty $room_qty \
@@ -170,8 +175,9 @@ ad_proc -public 1c_annonces::annonce::add {
 			       -creation_ip $creation_ip \
 			       -creation_user $creation_user \
 			       -context_id $context_id]    
+
 	    
-	   # ns_log Notice "$item_id $title $description $context_id  $context_id $creation_user $creation_ip"
+	   # ns_log Notice "$item_id $title $description $realty_id $context_id $creation_user $creation_ip"
 	    content::item::new \
 		-item_id $item_id \
 		-name "annonce-$item_id" \
@@ -182,6 +188,9 @@ ad_proc -public 1c_annonces::annonce::add {
 		-package_id $context_id \
 		-creation_user $creation_user \
 		-creation_ip $creation_ip 
+
+
+
 	    
 	    db_exec_plsql insert_annonce {
 		SELECT annonce__new(
@@ -195,7 +204,13 @@ ad_proc -public 1c_annonces::annonce::add {
 				    :status,
 				    :realty_id);
 	    }
-	}	
+	} on_error {
+	    ns_log notice "AIGH! something bad happened! $errmsg"
+	    ad_return_complaint 1 "ERROR"
+	    
+	    ad_script_abort
+
+	}
     }	
     
     return $item_id

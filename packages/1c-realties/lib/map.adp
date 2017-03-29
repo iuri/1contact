@@ -7,6 +7,9 @@
 		<label class='select_field field_green' onclick='javascript:initMap(1);' >Centre Rive Gauge</label>
 		<label class='select_field field_red' onclick='javascript:initMap(2);' >Campagne Rive Doite</label>
 		<label class='select_field field_yellow' onclick='javascript:initMap(3);' >Campagne Rive Gauge</label>
+		<p style='text-align:left;' >Selecione a zona nos botões acima;</p>
+		<p style='text-align:left;' >Clique com o botão esquerdo do mouse no mapa para selecionar/remover a área;</p>
+		<p style='text-align:left;' >Clique com o botão direito do mouse no mapa para ver as informações e as ruas da área;</p>
 	</div>
 
 	<!-- Gmap -->
@@ -15,7 +18,6 @@
 		<div style='text-align:left;' >
 			<div id='map' style='width:100%;height:500px;' ></div>
 		</div>
-		<b>Clique com o botão esquerdo para selecionar/remover, e com o botão direito para ver as informações</b>
 	</div>
 
 	<!-- Lista de áreas selecionadas pelo cliente -->
@@ -29,16 +31,25 @@
 <script type='text/javascript' >
 
 var map;
-
 var selected_areas = Array();
 var poligons = Array();
 
 function initMap(zone=0) {
 
+	// Setando as coordenadas do mapa de acordo com a zona
+	function centre(zone) {
+		switch (zone) {
+			case 0: return [{lat: 46.21730207731562, lng: 6.131954945814641}, 14];
+			case 1: return [{lat: 46.195565115294585, lng: 6.152725972425969}, 14];
+			case 2: return [{lat: 46.24308099706767, lng: 6.0781391041398365}, 12];
+			case 3: return [{lat: 46.206502759738854, lng: 6.13547400404218}, 12];
+		}
+	}
+
 	// Definindo o mapa
 	map = new google.maps.Map(document.getElementById('map'), {
-		center: {lat: 46.21730207731562, lng: 6.131954945814641},
-		zoom: 14,
+		center: centre(zone)[0],
+		zoom: centre(zone)[1],
 		zoomControl: true,
 		mapTypeControl: false,
 		scaleControl: false,
@@ -55,18 +66,26 @@ function initMap(zone=0) {
 			var json = JSON.parse(data);
 
 			for ( pid in json.Polygons) {
+
+				if ( selected_areas.includes(zone+'-'+pid) ) {
+					var bgc = fillColor(zone);
+				} else {
+					var bgc = '#999999';
+				}
+
 				var pol = new google.maps.Polygon({
 					paths: eval(('['+json.Polygons[pid].coords+']')),
 					strokeColor: '#000000',
 					strokeOpacity: 0.25,
 					strokeWeight: 2,
-					fillColor: '#000000',
-					fillOpacity: 0.25,
-					id: zone+'-'+pid,
+					fillColor: bgc,
+					fillOpacity: 0.5,
+					zone: zone,
+					id: pid,
 					name: json.Polygons[pid].name,
 					description: json.Polygons[pid].description,
 				});
-				poligons[pol.id] = pol.name;
+				poligons[pol.zone+'-'+pol.id] = pol.name;
 				pol.setMap(map);
 				pol.addListener('rightclick', showArrays);
 				pol.addListener('click', changeSelection);
@@ -77,7 +96,7 @@ function initMap(zone=0) {
 
 	// Estilizando o mapa
 	var stylesArray = [
-		{ featureType: "all", stylers: [ { saturation: -100 } ] },
+		//{ featureType: "all", stylers: [ { saturation: -100 } ] },
 		{ elementType: "labels", stylers: [ { visibility: "off" } ] },
 		{ elementType: "road", stylers: [ { visibility: "on" } ] }
 	]
@@ -117,34 +136,40 @@ function initMap(zone=0) {
 
 	// Alterando o estado de seleção dos polígonos
 	function changeSelection(event) {
-		switch ( zone ) {
-			case 0: color = '#c0c0ff'; break;
-			case 1: color = '#c0ffc0'; break;
-			case 2: color = '#ffc0c0'; break;
-			case 3: color = '#ffffc0'; break;
-		}
-		if ( selected_areas.includes(this.id) ) {
-			this.setOptions({fillColor: '#000000', fillOpacity: 0.25});
-			selected_areas.splice( selected_areas.indexOf(this.id), 1 );
+		var pid = this.zone+'-'+this.id
+		if ( selected_areas.includes(pid) ) {
+			this.setOptions({fillColor: '#999999'});
+			selected_areas.splice( selected_areas.indexOf(pid), 1 );
 		} else {
-			this.setOptions({fillColor: color, fillOpacity: 0.75});
-			selected_areas.push(this.id);
+			this.setOptions({fillColor: fillColor(this.zone)});
+			selected_areas.push(pid);
 		}
 		infoWindow.close(map);
+		updateList();
+	}
+
+	// Atualizando a lista de áreas selecionadas
+	function updateList() {
 		$('#SelectedAreas_List').empty();
 		for ( var i in selected_areas ) {
-
 			var c = selected_areas[i].split('-');
-			switch ( c[0] ) {
-				case 0: clas='blue'; break;
-				case 1: clas='green'; break;
-				case 2: clas='red'; break;
-				case 3: clas='yellow'; break;
+			switch ( parseInt(c[0]) ) {
+				case 0: var clas = 'blue'; break;
+				case 1: var clas = 'green'; break;
+				case 2: var clas = 'red'; break;
+				case 3: var clas = 'yellow'; break;
 			}
+			$("<label class='select_field field_"+clas+"' onClick='initMap("+c[0]+");' >"+poligons[selected_areas[i]]+'</label>').appendTo('#SelectedAreas_List');
+		}
+	}
 
-			if ( !isNaN(i) ) {
-				$("<label class='select_field field_"+clas+"' >"+poligons[selected_areas[i]]+'</label>').appendTo('#SelectedAreas_List');
-			}
+	// Setando as cores de acordo com a zona
+	function fillColor(zone) {
+		switch ( parseInt(zone) ) {
+			case 0: return '#6060ff';
+			case 1: return '#60ff60';
+			case 2: return '#ff6060';
+			case 3: return '#ffff60';
 		}
 	}
 

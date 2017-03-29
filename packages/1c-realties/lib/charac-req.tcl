@@ -7,8 +7,6 @@ ad_page_contract {
 
 set package_id [ad_conn package_id]
 
-ns_log Notice "CHARAC REQ $package_id"
-
 set tree_id [category_tree::get_id "Required Chars" "en_US"]
 
 set chars_html ""

@@ -71,7 +71,7 @@ ad_proc -public 1c_core::utils::upload_file {
 		    -creation_ip [ad_conn peeraddr] \
 		    -title  "${filename}-${object_id}-${this_file_id}" \
 		    -description "${filename}-${object_id}-${this_file_id}"   \
-		    -package_id [1c_annonces::get_fs_package_id] \
+		    -package_id 950 \
 		    -mime_type $mime_type		
 		
 		file delete $tmpfile
