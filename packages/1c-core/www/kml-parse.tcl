@@ -1,5 +1,8 @@
-ad_page_contract {}
+ad_page_contract {} {
+    {zone "0"}
+}
 
+ns_log Notice "ZONE $zone"
 
 #set queryHeaders [ns_set create]
 #ns_set update $queryHeaders Host https://1c.1contact.ch
@@ -8,7 +11,24 @@ ad_page_contract {}
 #set xmlFile [ns_http run -headers $queryHeaders -timeout 10.0 -method GET $url]
 
 
-set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/Geneve-Centre-Rive-Droite.kml" r]
+
+switch $zone {
+    0 {
+	set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/Geneve-Centre-Rive-Droite.kml" r]
+    }
+    1 {
+	set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/Geneve-Centre-Rive-Gauche.kml" r]
+    }
+    2 {
+	set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/Campagne-Rive-Droite.kml" r]
+    }
+    3 {
+	set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/Campagne-Rive-Gauche.kml" r]
+    }
+    default {
+	set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/Geneve-Centre-Rive-Gauche.kml" r]	
+    }
+}
 
 set xmlData [read $xmlFile]
 
@@ -26,7 +46,7 @@ if {[catch {set root [$doc documentElement]} err]} {
 
 if {[$root hasChildNodes]} {
     set documentNode [$root childNodes]
- #   ns_log Notice "$documentNode | [$documentNode nodeName]"
+    # ns_log Notice "$documentNode | [$documentNode nodeName]"
 
     
     if {[$documentNode hasChildNodes]} {
@@ -37,7 +57,7 @@ if {[$root hasChildNodes]} {
 
 	set result_json "\{\"Polygons\": \["
 	
-#	ns_log Notice "$PlacemarkNodes"
+	# ns_log Notice "$PlacemarkNodes"
 	foreach node $PlacemarkNodes {
 	    #ns_log Notice "[$node nodeName]"
 	    set nodes [$node childNodes]
@@ -48,7 +68,13 @@ if {[$root hasChildNodes]} {
 		switch $name {
 		    name {
 			set value [[$node1 firstChild] nodeValue]
-			set value [string trim [string map "- \" \"" [lindex [split $value "h"] 0]] " "]
+			if {[regexp -all "http*" $value '']} {
+			    set value [lreplace $value end end]
+			}
+			set value [string trimright $value "-"]
+			
+			#set value [string trim [string map {"\"" " " - " "} $value] " "]
+			#ns_log Notice "$value" 
 			append result_json " \{\"$name\":\"$value\","
 			
 		    }
@@ -63,7 +89,7 @@ if {[$root hasChildNodes]} {
 			foreach row $coordinates {
 			    set elems [split $row ,]
 			    append result_json "\{ lng: [lindex $elems 0], lat: [lindex $elems 1] \},"
-
+			    
 			    #ns_log Notice "\{ lng: [lindex $elems 0], lat: [lindex $elems 1] \},"
 			}
 			append result_json "\"\},"
@@ -74,17 +100,10 @@ if {[$root hasChildNodes]} {
 	set result_json [string trim $result_json ","]
 	append result_json "\]\}"
 
-	#ns_log Notice "$result_json"
+	# ns_log Notice "$result_json"
     }    
 }
 
-
 $doc delete
 
-
-
-
 ns_return 200 text/html "$result_json"
-
-
-

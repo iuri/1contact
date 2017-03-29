@@ -83,7 +83,7 @@ if {[string equal $mode "save"]} {
 	    }
 	    
 	    set folder_id [fs::new_folder \
-			   -name $folder_name \
+			       -name $folder_name \
 			       -pretty_name $title \
 			       -parent_id $parent_id \
 			       -creation_user [ad_conn user_id] \

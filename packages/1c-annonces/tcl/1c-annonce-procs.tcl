@@ -68,7 +68,7 @@ ad_proc -public 1c_annonces::get_categories {
     Returns cateogories
 } {
 
-    ns_log Notice "Running ad_proc 1c_annonce::get_categories"
+#    ns_log Notice "Running ad_proc 1c_annonce::get_categories"
     set locale [ad_conn locale]
     set category_trees [category_tree::get_mapped_trees $package_id]
 
