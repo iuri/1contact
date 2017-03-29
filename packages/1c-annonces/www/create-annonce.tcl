@@ -30,12 +30,9 @@ auth::require_login
 set page_title "Create Annonce [ad_conn instance_name]"
 set context [list [list "." "Annonces"] "Create"]
 
-set package_id [ad_conn package_id]
-ns_log Notice "FORM $package_id"
 template::head::add_javascript -src "resources/js/create_annonce_form.js" -order 1
 
 if {[string equal $mode "save"]} {
-
 
     set myform [ns_getform]
     if {[string equal "" $myform]} {
@@ -48,13 +45,7 @@ if {[string equal $mode "save"]} {
 	    set varvalue [ns_set value $myform $i]
 	}
     }
-    
-    
-    
-
-
-    
-    
+  
     set available_date1  "[string trim $available_date]"
     set available_date2 "[string map {. -} $available_date1]"
     set available_date3 "[template::util::date::get_property year $available_date2] [template::util::date::get_property month $available_date2] [template::util::date::get_property day $available_date2]"
@@ -78,13 +69,10 @@ if {[string equal $mode "save"]} {
 			    -charac_opt_gen $charac_opt_gen \
 			    -charac_opt_arc $charac_opt_arc \
 			    -charac_opt_vic $charac_opt_vic \
-			    -status $status]
-	
-	
+			    -status $status]	
     }
     # Handle upload files
     if {[info exists annonce_id] && [info exists upload_file]} {
-
 	# Create folder for annonce
 	db_transaction {
 	    # 5420 is the folder_id of Annonces
@@ -107,39 +95,27 @@ if {[string equal $mode "save"]} {
 	    
 	    ad_script_abort
 	}
-       
 	
+ 	
 	1c_core::utils::upload_file \
 	    -object_id $annonce_id \
 	    -folder_id $folder_id \
 	    -tmpfiles ${upload_file.tmpfile} \
 	    -filenames $upload_file \
-	    -filetypes ${upload_file.content-type}
-	
+	    -filetypes ${upload_file.content-type}	
     }
-    
-    
-    
-
-
-# Semd email to parties     
-
+       
+    # Semd email to parties         
     set user_email [party::email -party_id [ad_conn user_id] ]
     set body "Bonjour, Un nouveau bien vient d'être créé sur"
     
-#    ns_log Notice "$body"
+    #    ns_log Notice "$body"
     acs_mail_lite::send -subject "1Contact Sàrl - Annonce Confirmation" \
 	-mime_type "text/html" \
 	-body $body \
 	-to_addr $user_email \
 	-from_addr "no-reply@1contact.ch" \
-	-send_immediately
-
-    
-
-
-    
-  
+	-send_immediately  
     
     ad_returnredirect $return_url
     ad_script_abort

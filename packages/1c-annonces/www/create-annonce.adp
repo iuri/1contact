@@ -117,7 +117,7 @@
 	<!-- Características obrigatórias -->
 	<div class='box' >
 		<h4>#1c-realties.RequiredChars#</h4>
-		<include src='../../1c-realties/lib/charac-req' package_id=@package_id@/>
+		<include src="../../1c-realties/lib/charac-req" />
 		<input type='text' name='charac_required' id='charac_required' hidden />
 	</div>
 
