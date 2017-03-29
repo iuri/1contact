@@ -276,7 +276,7 @@ if {[string equal $mode "save"]} {
 	    # Create folder for annonce
 	    db_transaction {
 		# 1432 is the folder_id of Mandats
-		set parent_id 1432
+		set parent_id 5480
 		set folder_name "mandat-${mandat_id}"
 		if {$title eq ""} {
 		    set title $folder_name

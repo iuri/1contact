@@ -49,6 +49,8 @@
 		<div class='input-control text' style='width:9em;' >
 			<input type='text' name='budget' id='budget' placeholder='#1c-theme.Budget#' title='#1c-theme.BudgetHelp#' onChange='javascript:mandatCheckBudget();' style='width:100%;' />
 		</div>
+		<input type='text' id='budget_min' readonly hidden />
+		<input type='text' id='budget_max' readonly hidden />
 	</div>
 
 	<div style='display:table;width:100%;vertical-align:top;' >
@@ -183,6 +185,8 @@
 		if ( y < x ) { xx = y; yy = x; } else { xx = x; yy = y; }
 
 		$('#budget').val(xx+' a '+yy);
+		$('#budget_min').val(xx);
+		$('#budget_max').val(yy);
 	}
 
 	/* Realizando a pesquisa */
