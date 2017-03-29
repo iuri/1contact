@@ -28,84 +28,85 @@
 
 <script type='text/javascript' >
 
-	var map;
+var map;
 
-	var selected_areas = Array();
+var selected_areas = Array();
+var poligons = Array();
 
-	function initMap() {
+function initMap() {
 
-		// Definindo o mapa
-		map = new google.maps.Map(document.getElementById('map'), {
-			center: {lat: 46.2044841, lng: 6.1433119},
-			zoom: 14,
-			zoomControl: true,
-			mapTypeControl: false,
-			scaleControl: false,
-			streetViewControl: false,
-			rotateControl: false,
-		});
+	// Definindo o mapa
+	map = new google.maps.Map(document.getElementById('map'), {
+		center: {lat: 46.21730207731562, lng: 6.131954945814641},
+		zoom: 14,
+		zoomControl: true,
+		mapTypeControl: false,
+		scaleControl: false,
+		streetViewControl: false,
+		rotateControl: false,
+	});
 
-		// Estilizando o mapa
-		var stylesArray = [
-			{ featureType: "all", stylers: [ { saturation: -100 } ] },
-			{ elementType: "labels", stylers: [ { visibility: "off" } ] },
-			{ elementType: "road", stylers: [ { visibility: "on" } ] }
-		]
-		map.setOptions({styles: stylesArray});
+	// Estilizando o mapa
+	var stylesArray = [
+		{ featureType: "all", stylers: [ { saturation: -100 } ] },
+		{ elementType: "labels", stylers: [ { visibility: "off" } ] },
+		{ elementType: "road", stylers: [ { visibility: "on" } ] }
+	]
+	map.setOptions({styles: stylesArray});
 
-		// Carregando o KML
-		loadMap();
+	// Carregando o KML
+	loadMap();
 
+	// Obtendo as coordenadas do centro do polígono
+	function polygonCenter(poly) {
+		var lowx,
+		highx,
+		lowy,
+		highy,
+		lats = [],
+		lngs = [],
+		vertices = poly.getPath();
+   		for(var i=0; i<vertices.length; i++) {
+			lngs.push(vertices.getAt(i).lng());
+			lats.push(vertices.getAt(i).lat());
+		}
+		lats.sort();
+		lngs.sort();
+		lowx = lats[0];
+		highx = lats[vertices.length - 1];
+		lowy = lngs[0];
+		highy = lngs[vertices.length - 1];
+		center_x = lowx + ((highx-lowx) / 2);
+		center_y = lowy + ((highy - lowy) / 2);
+		return (new google.maps.LatLng(center_x, center_y));
 	}
 
-		// Obtendo as coordenadas do centro do polígono
-		function polygonCenter(poly) {
-			var lowx,
-			highx,
-			lowy,
-			highy,
-			lats = [],
-			lngs = [],
-			vertices = poly.getPath();
-    		for(var i=0; i<vertices.length; i++) {
-				lngs.push(vertices.getAt(i).lng());
-				lats.push(vertices.getAt(i).lat());
-			}
-			lats.sort();
-			lngs.sort();
-			lowx = lats[0];
-			highx = lats[vertices.length - 1];
-			lowy = lngs[0];
-			highy = lngs[vertices.length - 1];
-			center_x = lowx + ((highx-lowx) / 2);
-			center_y = lowy + ((highy - lowy) / 2);
-			return (new google.maps.LatLng(center_x, center_y));
-		}
-
 	// Exibindo a janela de informações do polígono
-		var infoWindow = new google.maps.InfoWindow();
+	var infoWindow = new google.maps.InfoWindow();
 
-		function showArrays(event) {
-			infoWindow.setContent('<b>'+this.name+'</b>'+'<br><br>'+this.description);
-			infoWindow.setPosition(polygonCenter(this));
-  			infoWindow.open(map);
-		}
+	function showArrays(event) {
+		infoWindow.setContent('<b>'+this.name+'</b>'+'<br>'+this.description);
+		infoWindow.setPosition(polygonCenter(this));
+		infoWindow.open(map);
+	}
 
-		// Alterando o estado de seleção dos polígonos
-		function changeSelection(event) {
-			if ( selected_areas.includes(this.id) ) {
-				this.setOptions({fillColor: '#000000'});
-				selected_areas.splice( selected_areas.indexOf(this.id), 1 );
-			} else {
-				this.setOptions({fillColor: '#4848ff'});
-				selected_areas.push(this.id);
-			}
-			infoWindow.close(map);
-			$('#SelectedAreas_List').empty();
-			for ( var i in selected_areas ) {
-				$("<label class='select_field field_blue' >"+poligons[selected_areas[i]].name+'</label>').appendTo('#SelectedAreas_List');
+	// Alterando o estado de seleção dos polígonos
+	function changeSelection(event) {
+		if ( selected_areas.includes(this.id) ) {
+			this.setOptions({fillColor: '#000000'});
+			selected_areas.splice( selected_areas.indexOf(this.id), 1 );
+		} else {
+			this.setOptions({fillColor: '#4848ff'});
+			selected_areas.push(this.id);
+		}
+		infoWindow.close(map);
+		$('#SelectedAreas_List').empty();
+		for ( var i in selected_areas ) {
+			if ( !isNaN(i) ) {
+				$("<label class='select_field field_blue' >"+poligons[i]+'</label>').appendTo('#SelectedAreas_List');
 			}
 		}
+	}
 
 	// Carregando o map
 	function loadMap() {
@@ -126,9 +127,11 @@
 						fillColor: '#000000',
 						fillOpacity: 0.25,
 						id: pid,
-						title: json.Polygons[pid].name,
+						name: json.Polygons[pid].name,
 						description: json.Polygons[pid].description,
 					});
+
+					poligons[pol.id] = pol.name;
 
 					pol.setMap(map);
 					pol.addListener('rightclick', showArrays);
@@ -140,6 +143,8 @@
 			}
 		});
 	}
+
+}
 
 </script>
 

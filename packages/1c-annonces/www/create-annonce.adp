@@ -117,7 +117,7 @@
 	<!-- Características obrigatórias -->
 	<div class='box' >
 		<h4>#1c-realties.RequiredChars#</h4>
-		<include src='../../1c-realties/lib/charac-req' />
+		<include src='../../1c-realties/lib/charac-req' package_id=@package_id@/>
 		<input type='text' name='charac_required' id='charac_required' hidden />
 	</div>
 
@@ -126,7 +126,7 @@
 	<!-- Características opcionais -->
 	<div class='box' >
 		<h4>#1c-realties.OptionalChars#</h4>
-		<include src='../../1c-realties/lib/charac-opt' />
+		<include src='../../1c-realties/lib/charac-opt' package_id='@package_id@'/>
 		<input type='text' name='charac_opt_gen' id='charac_opt_gen' hidden />
 		<input type='text' name='charac_opt_arc' id='charac_opt_arc' hidden />
 		<input type='text' name='charac_opt_vic' id='charac_opt_vic' hidden />

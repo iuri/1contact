@@ -30,7 +30,8 @@ auth::require_login
 set page_title "Create Annonce [ad_conn instance_name]"
 set context [list [list "." "Annonces"] "Create"]
 
-
+set package_id [ad_conn package_id]
+ns_log Notice "FORM $package_id"
 template::head::add_javascript -src "resources/js/create_annonce_form.js" -order 1
 
 if {[string equal $mode "save"]} {

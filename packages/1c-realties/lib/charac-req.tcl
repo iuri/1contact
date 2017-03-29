@@ -4,10 +4,12 @@ ad_page_contract {
     @author Iuri Sampaio (iuri@iurix.com)
     @creation-date 2017-03-17
 
+} {
+    {package_id ""}
 }
 
+ns_log Notice "CHARAC REQ $package_id"
 # find out a way to make package_id and tree_id dynamic
-set package_id 2393
 set tree_id 1067
 
 set chars_html ""
