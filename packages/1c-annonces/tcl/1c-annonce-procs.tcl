@@ -11,11 +11,34 @@ ad_library {
     
     
     
-    namespace eval 1c_annonces {}
+namespace eval 1c_annonces {}
+
+namespace eval 1c_annonces::annonce {}
+
     
-    namespace eval 1c_annonces::annonce {}
+
+ad_proc -public 1c_annonces::nuke_annonces {
+} {
+    Erase all annonces and their dependencies 
+} {
+
+    set l_ids [db_list select_items "SELECT item_id FROM cr_items WHERE content_type = 'annonce_object' "]
     
+    foreach id $l_ids {
+	content::item::delete -item_id $id
+    }
     
+
+    set package_id [apm_package_id_from_key 1c-annonces]
+    set l_ids [db_list select_items "SELECT object_id FROM acs_objects WHERE object_type = 'cr_item_child_rel' AND package_id = :package_id)"]
+    
+    foreach id $l_ids {
+	::xo::db::sql::acs_object delete -object_id $id
+    }
+    
+    return 0
+}
+
 
 ad_proc -public 1c_annonces::annonce::delete {
     annonce_id
@@ -26,6 +49,9 @@ ad_proc -public 1c_annonces::annonce::delete {
 
     content::item::delete -item_id $annonce_id
     db_transaction {
+
+
+
 	db_exec_plsql delete_annonce {
 	    SELECT annonce__delete(:annonce_id);
 	}
@@ -79,67 +105,6 @@ ad_proc -public 1c_annonces::category_get_options {
 
     return $children
 }
-
-
-
-ad_proc -public 1c_annonces::get_fs_package_id {
-} {
-    Return the package_id of the filestorage instance that documents runs
-} {
-    
-    db_1row select_package_id {
-	select object_id FROM site_nodes WHERE name = 'file-storage';
-    }
-
-    return $object_id
-
-}
-
-
-
-ad_proc -public 1c_annonces::annonce::add_file {
-    {-tmp_filename:required}
-    {-parent_id:required}
-} {
-    Adds announce files/images 
-} {
-
-    set file_id [db_nextval "acs_object_id_seq"]
-    
-
-    ns_log Notice "TMP FILE $tmp_filename"
-    if {[exists_and_not_null tmp_filename]} {
-	
-	set n_bytes [file size $tmp_filename]
-	ns_log Notice "$n_bytes"
-
-	set guessed_file_type [ns_guesstype $tmp_filename]
-	set suggest_name [lang::util::suggest_key $name]
-
-	set revision_id [cr_import_content \
-			     -item_id $file_id \
-			     -storage_type file \
-			     -creation_user $user_id \
-			     -creation_ip $creation_ip \
-			     -description $description \
-			     -package_id $package_id \
-			     $parent_id \
-			     $tmp_filename \
-			     $n_bytes \
-			     $guessed_file_type \
-			     annonce-$package_id-$user_id-$suggest_name-$n_bytes]
-	
-	ns_log Notice "RVID $revision_id"
-	
-	item::publish -item_id $file_id -revision_id $revision_id
-    }
-    
-	return 
-}
-
-
-
-
 
 
 
@@ -206,7 +171,7 @@ ad_proc -public 1c_annonces::annonce::add {
 			       -creation_user $creation_user \
 			       -context_id $context_id]    
 	    
-	    ns_log Notice "$item_id $title $description $context_id  $context_id $creation_user $creation_ip"
+	   # ns_log Notice "$item_id $title $description $context_id  $context_id $creation_user $creation_ip"
 	    content::item::new \
 		-item_id $item_id \
 		-name "annonce-$item_id" \

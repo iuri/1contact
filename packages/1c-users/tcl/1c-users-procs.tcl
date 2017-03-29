@@ -78,48 +78,26 @@ ad_proc -public 1c_users::user::add {
         }
        
     }
+
     
     if {[info exists user_id]} {
-	ns_log Notice "Creating userinfo"
-	set userinfo_id [db_nextval "user_info_id_seq"]
-	
-	db_transaction {
+
+	if {![db_0or1row user_info_p {
+	    SELECT userinfo_id FROM user_ext_info WHERE user_id = :user_id
+	}]} {
+	   
+	    ns_log Notice "Creating userinfo"
+	    set userinfo_id [db_nextval "user_info_id_seq"]
 	    
-	    db_exec_plsql insert_user {
-		SELECT userinfo__new(
-				     :userinfo_id,
-				     :entitlement,
-				     :birthday,
-				     :nationality,
-				     :civilstate,
-				     :children_qty,
-				     :children_ages,
-				     :animal_p,
-				     :animals_type,
-				     :animals_qty,
-				     :mobilenumber,
-				     :phonenumber,
-				     :email,
-				     :job,
-				     :noexpirecontract_p,
-				     :jobactivity,
-				     :datestartjob,
-				     :salary,
-				     :salary_month,
-				     :independentjob_p,
-				     :jobother,
-				     :otherincoming,
-				     :address,
-				     :houseproperty,
-				     :houseproprietary,
-				     :mortgage,
-				     :user_id
-				     );
+	    db_transaction {
+		db_exec_plsql insert_userinfo {}		
+	    }	    
+	} else {
+	    db_transaction {
+		db_exec_plsql update_userinfo {}
 		
 	    }
-	    
 	}
-	
     }
     
     return $user_id
