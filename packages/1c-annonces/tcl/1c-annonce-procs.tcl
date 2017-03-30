@@ -190,8 +190,9 @@ ad_proc -public 1c_annonces::annonce::add {
 		-creation_ip $creation_ip 
 
 
-
 	    
+	    set type_of_transaction [string trimright $type_of_transaction ","]
+	    	    
 	    db_exec_plsql insert_annonce {
 		SELECT annonce__new(
 				    :item_id,

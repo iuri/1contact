@@ -245,9 +245,9 @@ CREATE OR REPLACE FUNCTION userinfo__update (
       animals_type = p_animals_type,
       animals_qty = p_animals_qty,
       mobilenumber = p_mobilenumber,
-      phonenumber = p_phonenumb.er,
+      phonenumber = p_phonenumber,
       email = p_email,
-      noexpirecontract_p = noexpirecontract_p,
+      noexpirecontract_p = p_noexpirecontract_p,
       job = p_job,
       jobactivity = p_jobactivity,
       datestartjob = p_datestartjob,
@@ -259,8 +259,8 @@ CREATE OR REPLACE FUNCTION userinfo__update (
       address =  p_address,
       houseproperty = p_houseproperty,
       houseproprietary = p_houseproprietary,
-      mortgage = mortgage
-      WHERE user_id = :user_id;
+      mortgage = p_mortgage
+      WHERE user_id = p_user_id;
 
   RETURN 0;
 END;' language 'plpgsql';

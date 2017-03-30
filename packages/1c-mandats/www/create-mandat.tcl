@@ -34,6 +34,7 @@ ad_page_contract {
     {customer_houseproperty ""}
     {customer_houseproprietary ""}
     {customer_mortgage ""}
+    {guarantor_id ""}
     {guarantor_entitlement ""}
     {guarantor_name ""}
     {guarantor_surname ""}
@@ -62,6 +63,7 @@ ad_page_contract {
     {guarantor_houseproperty ""}
     {guarantor_houseproprietary ""}
     {guarantor_mortgage ""}
+    {cotenant_id ""}
     {cotenant_entitlement ""}
     {cotenant_name ""}
     {cotenant_surname ""}
@@ -101,15 +103,13 @@ ad_page_contract {
     {budgetmin ""}
     {budgetmax ""}
     {unwanted_areas ""}
+    {selected_regions ""}
     {charac_required ""}
     {charac_opt_gen ""}
     {charac_opt_arc ""}
     {charac_opt_vic ""}
     {extra_info ""}
     {status ""}
-    {customer_id ""}
-    {guarantor_id ""}
-    {cotenant_id ""}
     {terms_p ""}
 }
 
@@ -135,11 +135,10 @@ if {[string equal $mode "save"]} {
     }    
     
 
-    if {$terms_p} {
-	
-	if {[exists_and_not_null customer_email]} {
+    if {$terms_p ne ""} {
 
-	    set customer_birthday1  "[string trim $customer_birthday]"
+	if {$customer_email ne ""} {
+	    set customer_birthday1 "[string trim $customer_birthday]"
 	    set customer_birthday2 "[string map {. -} $customer_birthday1]"
 	    set customer_birthday3 "[template::util::date::get_property year $customer_birthday2] [template::util::date::get_property month $customer_birthday2] [template::util::date::get_property day $customer_birthday2]"
 	    
@@ -147,47 +146,47 @@ if {[string equal $mode "save"]} {
 	    set customer_datestartjob1  "[string trim $customer_datestartjob]"
 	    set customer_datestartjob2 "[string map {. -} $customer_datestartjob1]"
 	    set customer_datestartjob3 "[template::util::date::get_property year $customer_datestartjob2] [template::util::date::get_property month $customer_datestartjob2] [template::util::date::get_property day $customer_datestartjob2]"
-
-	    set $customer_id [1c_users::user::add \
-				  -entitlement $customer_entitlement \
-				  -first_names $customer_name \
-				  -last_name $customer_surname \
-				  -birthday $customer_birthday3 \
-				  -nationality $customer_nationality \
-				  -civilstate $customer_civilstate \
-				  -children_qty $customer_children_qty \
-				  -children_ages $customer_children_ages \
-				  -animal_p $customer_animals \
-				  -animals_type $customer_animals_type \
-				  -animals_qty $customer_animals_qty \
-				  -mobilenumber $customer_mobilenumber \
-				  -phonenumber $customer_phonenumber \
-				  -email $customer_email \
-				  -noexpirecontract_p $customer_noexpirecontract \
-				  -job $customer_job \
-				  -jobactivity $customer_jobactivity \
-				  -datestartjob $customer_datestartjob3 \
-				  -salary $customer_salary \
-				  -salary_month $customer_salary_month \
-				  -independentjob $customer_independentjob \
-				  -jobother $customer_jobother \
-				  -otherincoming $customer_otherincoming \
-				  -address $customer_address \
-				  -houseproperty $customer_houseproperty \
-				  -houseproprietary $customer_houseproprietary \
-				  -mortgage $customer_mortgage] 	    
+	    
+	    set customer_id [1c_users::user::add \
+				 -entitlement $customer_entitlement \
+				 -first_names $customer_name \
+				 -last_name $customer_surname \
+				 -birthday $customer_birthday3 \
+				 -nationality $customer_nationality \
+				 -civilstate $customer_civilstate \
+				 -children_qty $customer_children_qty \
+				 -children_ages $customer_children_ages \
+				 -animal_p $customer_animals \
+				 -animals_type $customer_animals_type \
+				 -animals_qty $customer_animals_qty \
+				 -mobilenumber $customer_mobilenumber \
+				 -phonenumber $customer_phonenumber \
+				 -email $customer_email \
+				 -noexpirecontract_p $customer_noexpirecontract \
+				 -job $customer_job \
+				 -jobactivity $customer_jobactivity \
+				 -datestartjob $customer_datestartjob3 \
+				 -salary $customer_salary \
+				 -salary_month $customer_salary_month \
+				 -independentjob $customer_independentjob \
+				 -jobother $customer_jobother \
+				 -otherincoming $customer_otherincoming \
+				 -address $customer_address \
+				 -houseproperty $customer_houseproperty \
+				 -houseproprietary $customer_houseproprietary \
+				 -mortgage $customer_mortgage] 	    
 	}
-
-	if {[exists_and_not_null guarantor_email]} {
+	
+	if {$guarantor_email ne ""} {
 	    set guarantor_birthday1  "[string trim $guarantor_birthday]"
 	    set guarantor_birthday2 "[string map {. -} $guarantor_birthday1]"
 	    set guarantor_birthday3 "[template::util::date::get_property year $guarantor_birthday2] [template::util::date::get_property month $guarantor_birthday2] [template::util::date::get_property day $guarantor_birthday2]"
-
+	    
 	    set guarantor_datestartjob1  "[string trim $guarantor_datestartjob]"
 	    set guarantor_datestartjob2 "[string map {. -} $guarantor_datestartjob1]"
 	    set guarantor_datestartjob3 "[template::util::date::get_property year $guarantor_datestartjob2] [template::util::date::get_property month $guarantor_datestartjob2] [template::util::date::get_property day $guarantor_datestartjob2]"
 	    
-	    set $guarantor_id [1c_users::user::add \
+	    set guarantor_id [1c_users::user::add \
 				   -entitlement $guarantor_entitlement \
 				   -first_names $guarantor_name \
 				   -last_name $guarantor_surname \
@@ -218,13 +217,13 @@ if {[string equal $mode "save"]} {
 	}
 
 	
-	if {[exists_and_not_null cotenant_email]} { 
+	if {$cotenant_email ne "" } { 
 	    set cotenant_datestartjob1  "[string trim $cotenant_datestartjob]"
 	    set cotenant_datestartjob2 "[string map {. -} $cotenant_datestartjob1]"
 	    set cotenant_datestartjob3 "[template::util::date::get_property year $cotenant_datestartjob2] [template::util::date::get_property month $cotenant_datestartjob2] [template::util::date::get_property day $cotenant_datestartjob2]"
 
 
-	    set $cotenant_id [1c_users::user::add \
+	    set cotenant_id [1c_users::user::add \
 				  -entitlement $cotenant_entitlement \
 				  -first_names $cotenant_name \
 				  -last_name $cotenant_surname \
@@ -256,8 +255,7 @@ if {[string equal $mode "save"]} {
 	
 
 
-	ns_log Notice "CUSTOMER ID : $customer_id"
-	if {$customer_id ne ""} {
+	if {[exists_and_not_null customer_id]} {
 	# Actual Mandat Info	
 	    set mandat_id [1c_mandat::mandat::add \
 			       -type_of_transaction  $type_of_transaction \
@@ -269,9 +267,10 @@ if {[string equal $mode "save"]} {
 			       -surface $surface \
 			       -budget_min $budgetmin \
 			       -budget_max $budgetmax \
+			       -selected_regions $selected_regions \
 			       -unwanted_areas $unwanted_areas \
 			       -charac_required $charac_required \
-			       -charac_opt_gen $charac_required \
+			       -charac_opt_gen $charac_opt_gen \
 			       -charac_opt_arc $charac_opt_arc \
 			       -charac_opt_vic $charac_opt_vic \
 			       -extra_info $extra_info \
@@ -280,8 +279,12 @@ if {[string equal $mode "save"]} {
 			       -guarantor_id $guarantor_id \
 			       -cotenant_id $cotenant_id \
 			      ]
+	} else {
+	    ns_log notice "AIGH! something bad happened! Customer info is required"
+	    ad_return_complaint 1 "Mandat is not created!"
+	    ad_script_abort
 	}
-	
+
 	# Handle upload files
 	if {[info exists mandat_id] && [info exists upload_file]} {
 	    
@@ -304,8 +307,7 @@ if {[string equal $mode "save"]} {
 	    } on_error {
 		ns_log notice "AIGH! something bad happened! $errmsg"
 		ad_return_complaint 1 [_ file-storage.lt_Either_there_is_alrea [list folder_name $folder_name directory_url "index?folder_id=$parent_id"]]
-		
-		ad_script_abort
+       		ad_script_abort
 	    }
 	    
 	    

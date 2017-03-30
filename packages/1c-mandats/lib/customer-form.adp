@@ -174,6 +174,6 @@
 </div>
 
 <!-- Mensagem de atualização de dados do usuário -->
-<div id='customer_exists' data-role='dialog' data-overlay='true' data-overlay-color='dialog_overlay' data-hide='5000' data-close-button='true' class='padding20' >
+<div id='customer_exists' data-role='dialog' data-overlay='true' data-overlay-color='dialog_overlay' data-hide='3000' data-close-button='true' class='padding20' >
 	<p>Customer localized in the system.<br>Its name will be update when the mandat be saved.</p>
 </div>

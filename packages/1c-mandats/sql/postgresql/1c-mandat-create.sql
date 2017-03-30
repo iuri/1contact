@@ -17,6 +17,7 @@ CREATE TABLE mandats (
        surface 			numeric,
        budget_min 		numeric,
        budget_max 		numeric,
+       selected_regions		text,
        unwanted_areas		text,
        charac_required		varchar(255),
        charac_opt_gen		varchar(255),
@@ -59,7 +60,6 @@ SELECT content_folder__register_content_type(-100,'mandat_object','t');
 
 
 
-
 CREATE OR REPLACE FUNCTION mandat__new(
   integer,
   varchar,
@@ -72,6 +72,7 @@ CREATE OR REPLACE FUNCTION mandat__new(
   numeric,
   numeric,
   numeric,
+  text,
   text,
   varchar,
   varchar,
@@ -95,16 +96,17 @@ DECLARE
   p_surface 		ALIAS FOR $9;
   p_budget_min 		ALIAS FOR $10;
   p_budget_max 		ALIAS FOR $11;
-  p_unwanted_areas 	ALIAS FOR $12;
-  p_charac_required 	ALIAS FOR $13;
-  p_charac_opt_gen 	ALIAS FOR $14;
-  p_charac_opt_arc 	ALIAS FOR $15;
-  p_charac_opt_vic 	ALIAS FOR $16;
-  p_extra_info 	   	ALIAS FOR $17;
-  p_status 		ALIAS FOR $18;
-  p_customer_id 	ALIAS FOR $19;
-  p_guarantor_id 	ALIAS FOR $20;
-  p_cotenant_id 	ALIAS FOR $21;
+  p_selected_regions	ALIAS FOR $12;
+  p_unwanted_areas 	ALIAS FOR $13;
+  p_charac_required 	ALIAS FOR $14;
+  p_charac_opt_gen 	ALIAS FOR $15;
+  p_charac_opt_arc 	ALIAS FOR $16;
+  p_charac_opt_vic 	ALIAS FOR $17;
+  p_extra_info 	   	ALIAS FOR $18;
+  p_status 		ALIAS FOR $19;
+  p_customer_id 	ALIAS FOR $20;
+  p_guarantor_id 	ALIAS FOR $21;
+  p_cotenant_id 	ALIAS FOR $22;
   
  
 BEGIN
@@ -120,6 +122,7 @@ BEGIN
 	 surface,
 	 budget_min,
 	 budget_max,
+	 selected_regions,
 	 unwanted_areas,
 	 charac_required,
 	 charac_opt_gen,
@@ -142,6 +145,7 @@ BEGIN
 	 p_surface,
 	 p_budget_min,
 	 p_budget_max,
+	 p_selected_regions,
 	 p_unwanted_areas,
 	 p_charac_required,
 	 p_charac_opt_gen,

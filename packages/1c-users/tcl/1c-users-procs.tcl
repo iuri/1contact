@@ -97,10 +97,12 @@ ad_proc -public 1c_users::user::add {
 		db_exec_plsql update_userinfo {}
 		
 	    }
-	}
+	}    
+	return $user_id
+
     }
     
-    return $user_id
+    return
 }
 
 

@@ -13,20 +13,26 @@ ns_log Notice "ZONE $zone"
 
 
 switch $zone {
-    0 {
-	set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/Geneve-Centre-Rive-Droite.kml" r]
+	0 {
+	set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/GE.kml" r]
     }
     1 {
-	set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/Geneve-Centre-Rive-Gauche.kml" r]
+	set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/Geneve.kml" r]
     }
     2 {
-	set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/Campagne-Rive-Droite.kml" r]
+	set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/Geneve-Centre-Rive-Droite.kml" r]
     }
     3 {
+    set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/Campagne-Rive-Droite.kml" r]
+    }
+    4 {
+	set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/Geneve-Centre-Rive-Gauche.kml" r]
+    }
+    5 {
 	set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/Campagne-Rive-Gauche.kml" r]
     }
     default {
-	set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/Geneve-Centre-Rive-Gauche.kml" r]	
+	set xmlFile [open "/var/www/1contact/packages/1c-core/www/resources/GE.kml" r]	
     }
 }
 

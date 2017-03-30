@@ -70,26 +70,30 @@ ad_proc -public 1c_realties::realty::add {
     
     set code "${type_of_property}${room_qty}${realty_id}"
 
+    set type_of_property [string trimright $type_of_property ","]
+    set charac_required [string trimright $charac_required ","]
+    set charac_opt_gen [string trimright $charac_opt_gen ","]
+    set charac_opt_arc [string trimright $charac_opt_arc ","]
+    set charac_opt_vic [string trimright $charac_opt_vic ","]
+
+
     ns_log Notice "
-
-	   $realty_id \n
-			   $code \n
-			   $type_of_property  \n
-			   $room_qty  \n
-			   $lavatory_qty  \n
-			   $bathroom_qty  \n		
-			   $floors_qty	  \n	
-			   $surface   \n
-			   $charac_req  \n
-			   $charac_opt_gen  \n
-			   $charac_opt_arc  \n
-			   $charac_opt_vic  \n
-			   $creation_ip  \n
-			   $creation_user  \n
-			   $context_id   \n
-	
-
-"
+	$realty_id \n
+	$code \n
+	$type_of_property  \n
+	$room_qty  \n
+	$lavatory_qty  \n
+	$bathroom_qty  \n		
+	$floors_qty	  \n	
+	$surface   \n
+	$charac_req  \n
+	$charac_opt_gen  \n
+	$charac_opt_arc  \n
+	$charac_opt_vic  \n
+	$creation_ip  \n
+	$creation_user  \n
+	$context_id   \n
+    "
     
     db_exec_plsql insert_realty {
 	SELECT realty__new(

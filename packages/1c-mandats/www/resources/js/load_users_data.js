@@ -49,7 +49,9 @@ function overite_infos(field, data) {
 	$('#'+field+'_name').val(json.name);
 	$('#'+field+'_surname').val(json.surname);
 	var date = new Date(json.birthday);
-	$('#'+field+'_birthday').val( date.getDate()+'.'+(date.getMonth()+1)+'.'+date.getFullYear() );
+	if ( !isNaN(date.getTime()) ) {
+		$('#'+field+'_birthday').val( date.getDate()+'.'+(date.getMonth()+1)+'.'+date.getFullYear() );	
+	}
 	$('#'+field+'_nationality').val(json.nationality);
 	$('#'+field+'_civilstate').val(json.civilstate);
 	$('#'+field+'_children_qty').val(json.children_qty);
@@ -69,7 +71,9 @@ function overite_infos(field, data) {
 	$('#'+field+'_job').val(json.job);
 	$('#'+field+'_jobactivity').val(json.jobactivity);
 	var date = new Date(json.datestartjob);
-	$('#'+field+'_datestartjob').val( date.getDate()+'.'+(date.getMonth()+1)+'.'+date.getFullYear() );
+	if ( !isNaN(date.getTime()) ) {
+		$('#'+field+'_datestartjob').val( date.getDate()+'.'+(date.getMonth()+1)+'.'+date.getFullYear() );
+	}
 	$('#'+field+'_salary').val(json.salary);
 	$('#'+field+'_salary_month').val(json.salary_month);
 	if ( json.independentjob_p == 't' ) {

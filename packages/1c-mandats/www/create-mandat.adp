@@ -49,8 +49,8 @@
 		<div class='input-control text' style='width:9em;' >
 			<input type='text' name='budget' id='budget' placeholder='#1c-theme.Budget#' title='#1c-theme.BudgetHelp#' onChange='javascript:mandatCheckBudget();' style='width:100%;' />
 		</div>
-		<input type='text' id='budget_min' readonly hidden />
-		<input type='text' id='budget_max' readonly hidden />
+		<input type='text' name='budget_min' id='budget_min' readonly hidden />
+		<input type='text' name='budget_max' id='budget_max' readonly hidden />
 	</div>
 
 	<div style='display:table;width:100%;vertical-align:top;margin-left:0;' >
@@ -140,7 +140,7 @@
 	<div class='box' style='vertical-align:top;margin-left:0;' >
 		<h4>#1c-mandats.Terms#</h4>
 		<label class='input-control checkbox small-check' >
-			<input type='checkbox' name='terms_p' id='terms_p' required />
+			<input type='checkbox' name='terms_p' id='terms_p' required value="true"/>
 			<span class='check' ></span>
 			<span class='caption' >#1c-mandats.AcceptTerms#</span>
 		</label>

@@ -161,20 +161,32 @@ input[type='submit'] {
 	cursor: default;
 }
 
-.field_blue {
-	background-color: #c0c0ff;
+.field_red {
+	background-color: #ffa8a8;
+}
+
+.field_orange {
+	background-color: #ffce9c;
+}
+
+.field_yellow {
+	background-color: #ffff9c;
 }
 
 .field_green {
 	background-color: #c0ffc0;
 }
 
-.field_red {
-	background-color: #ffc0c0;
+.field_cyan {
+	background-color: #c0ffff;
 }
 
-.field_yellow {
-	background-color: #ffffc0;
+.field_blue {
+	background-color: #c0c0ff;
+}
+
+.field_violet {
+	background-color: #ffc0ff;
 }
 
 .close_cross {

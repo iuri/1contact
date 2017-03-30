@@ -105,6 +105,7 @@ ad_proc 1c_mandat::mandat::add {
     {-surface ""}
     {-budget_min ""}
     {-budget_max ""}
+    {-selected_regions ""}
     {-unwanted_areas ""}
     {-charac_required ""}
     {-charac_opt_gen ""}
@@ -151,8 +152,12 @@ ad_proc 1c_mandat::mandat::add {
 		-creation_ip $creation_ip 
 	    
 	    
-	    set type_of_transcation [string trimright $type_of_transaction ","]
+	    set type_of_transaction [string trimright $type_of_transaction ","]
 	    set type_of_property [string trimright $type_of_property ","]
+	    set charac_required [string trimright $charac_required ","]
+	    set charac_opt_gen [string trimright $charac_opt_gen ","]
+	    set charac_opt_arc [string trimright $charac_opt_arc ","]
+	    set charac_opt_vic [string trimright $charac_opt_vic ","]
 	    
 	    
 	    set code "${type_of_transaction}${type_of_property}${mandat_id}"
@@ -169,6 +174,7 @@ ad_proc 1c_mandat::mandat::add {
 				   :surface,
 				   :budget_min,
 				   :budget_max,
+				   :selected_regions,
 				   :unwanted_areas,
 				   :charac_required,
 				   :charac_opt_gen,
