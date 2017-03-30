@@ -99,6 +99,9 @@ ad_proc 1c_mandat::mandat::add {
     {-type_of_transaction ""}
     {-type_of_property ""}
     {-rooms_qty ""}
+    {-bathrooms_qty ""}
+    {-toilets_qty ""}
+    {-floors_qty ""}
     {-surface ""}
     {-budget_min ""}
     {-budget_max ""}
@@ -135,6 +138,7 @@ ad_proc 1c_mandat::mandat::add {
     }
 
     db_transaction {
+
 	if {![exists_and_not_null mandat_id]} {
 	    set mandat_id [db_nextval "acs_object_id_seq"]
 	    content::item::new \
@@ -147,6 +151,10 @@ ad_proc 1c_mandat::mandat::add {
 		-creation_ip $creation_ip 
 	    
 	    
+	    set type_of_transcation [string trimright $type_of_transaction ","]
+	    set type_of_property [string trimright $type_of_property ","]
+	    
+	    
 	    set code "${type_of_transaction}${type_of_property}${mandat_id}"
 	    db_exec_plsql insert_mandat {
 		SELECT mandat__new(
@@ -155,6 +163,9 @@ ad_proc 1c_mandat::mandat::add {
 				   :type_of_property,
 				   :code, 
 				   :rooms_qty,
+				   :bathrooms_qty,
+				   :toilets_qty,
+				   :floors_qty,
 				   :surface,
 				   :budget_min,
 				   :budget_max,
@@ -171,6 +182,11 @@ ad_proc 1c_mandat::mandat::add {
 		
 	    }
 	}
+    } on_error {
+	ns_log notice "AIGH! something bad happened! $errmsg"
+	ad_return_complaint 1 "ERROR"
+	
+	return
     }
     
     return $mandat_id

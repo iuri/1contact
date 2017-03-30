@@ -6,7 +6,7 @@
 
 	<h3>#1c-mandats.NewMandat#</h3>
 	
-	<div class='box' >
+	<div class='box' style='margin-left:0;' >
 		<h4>#1c-mandats.InfosAboutRequestedRealty#</h4>
 		<!-- Tipo de negociação (locação ou venda) -->
 		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='#1c-mandats.TypeOfTransaction#' title='#1c-mandats.TypeOfTransaction#' style='width:11.5em;' >
@@ -53,7 +53,7 @@
 		<input type='text' id='budget_max' readonly hidden />
 	</div>
 
-	<div style='display:table;width:100%;vertical-align:top;' >
+	<div style='display:table;width:100%;vertical-align:top;margin-left:0;' >
 
 		<!-- Carregando lista de clientes -->
 		<div style='display:table-cell;width:30%;padding-right:.5rem;' >
@@ -72,28 +72,25 @@
 
 	</div>
 
-	<div class='box' >
-	
-		<div style='padding-left:.5rem;' >
-				
-			<!-- Exibição do mapa -->
-			<include src='/packages/1c-realties/lib/map' />
+	<div class='box' style='margin-left:0;' >
+		
+		<!-- Exibição do mapa -->
+		<include src='/packages/1c-realties/lib/map' />
 
-			<!-- Áreas indesejadas -->
-			<div class='input-control text' style='width:100%' >
-				<input type='text' name='unwanted_areas' id='unwanted_areas' placeholder='#1c-mandats.Undesired#' title='#1c-mandats.Undesired#' style='width:100%;' />
-			</div>
-
+		<!-- Áreas indesejadas -->
+		<div class='input-control text' style='width:100%' >
+			<input type='text' name='unwanted_areas' id='unwanted_areas' placeholder='#1c-mandats.Undesired#' title='#1c-mandats.Undesired#' style='width:100%;' />
 		</div>
+
 		<!-- Características obrigatórias -->
-		<div class='box' >
+		<div class='box' style='margin-left:0;' >
 			<h4>#1c-realties.RequiredChars#</h4>
 			<include src='../../1c-realties/lib/charac-req' />
 			<input type='text' name='charac_required' id='charac_required' hidden />
 		</div>
 		<br>
 		<!-- Características opcionais -->
-		<div class='box' >
+		<div class='box' style='margin-left:0;' >
 			<h4>#1c-realties.OptionalChars#</h4>
 			<include src='../../1c-realties/lib/charac-opt' />
 			<input type='text' name='charac_opt_gen' id='charac_opt_gen' hidden />
@@ -103,7 +100,7 @@
 
 	</div>
 	<!-- Upload arquivios -->
-	<div class='box' style='vertical-align:top;' >
+	<div class='box' style='vertical-align:top;margin-left:0;' >
 		<h4>#1c-theme.AddFiles#</h4>
 		<div class='input-control file' data-role='input' style='width:20em;' >
 			<input type='file' name='upload_file' id='upload_file' multiple='multiple' title='#1c-theme.AddFiles#' onChange='javascript:showFiles();' >
@@ -113,7 +110,7 @@
 		<div id='files_names' ></div>
 	</div>
 	<!-- Observações -->
-	<div class='box' >
+	<div class='box' style='margin-left:0;' >
 		<h4>#1c-mandats.Requests#</h4>
 		<div class='input-control textarea' data-role='input' data-text-auto-resize='true' style='width:30em;' >
 			<textarea name='extra_info' id='extra_info' title='#1c-mandats.Requests#' ></textarea>
@@ -121,26 +118,26 @@
 	</div>
 	<br>
 	<!-- Status do mandato -->
-	<div class='box' style='vertical-align:top;' >
+	<div class='box' style='vertical-align:top;margin-left:0;' >
 		<h4>#1c-mandats.Status#</h4>
 		<label class='input-control radio small-check' >
-			<input type='radio' name='status' id='status_inactive' checked='checked' />
+			<input type='radio' name='status' id='status_inactive' checked='checked' value='0' />
 			<span class='check' ></span>
 			<span class='caption' >#1c-mandats.Inactive#</span>
 		</label>
 		<label class='input-control radio small-check' >
-			<input type='radio' name='status' id='status_ctive' />
+			<input type='radio' name='status' id='status_active' value='1' />
 			<span class='check' ></span>
 			<span class='caption' >#1c-mandats.Active#</span>
 		</label>
 		<label class='input-control radio small-check' >
-			<input type='radio' name='status' id='status_closed' />
+			<input type='radio' name='status' id='status_closed' value='2' />
 			<span class='check' ></span>
 			<span class='caption' >#1c-mandats.Closed#</span>
 		</label>
 	</div>
 	<!-- Termos de uso -->
-	<div class='box' style='vertical-align:top;' >
+	<div class='box' style='vertical-align:top;margin-left:0;' >
 		<h4>#1c-mandats.Terms#</h4>
 		<label class='input-control checkbox small-check' >
 			<input type='checkbox' name='terms_p' id='terms_p' required />

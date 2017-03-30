@@ -5,27 +5,31 @@
 --
 
 
-
 DROP FUNCTION mandat__new(
   integer,
   varchar,
   varchar,
   varchar,
   integer,
-  numeric,
-  numeric,
-  numeric,
-  text,
-  varchar,
-  varchar,
-  varchar,
-  varchar,
-  text,
   integer,
+  integer,
+  integer,
+  numeric,
+  numeric,
+  numeric,
+  text,
+  varchar,
+  varchar,
+  varchar,
+  varchar,
+  text,
+  varchar,
   integer,
   integer,
   integer
 );
+
+
 
 DROP FUNCTION mandat__delete(integer);
 

@@ -1,5 +1,5 @@
 <!-- Informações do fiador -->
-<div class='box' style='width:100%;vertical-align:top;' >
+<div class='box' style='width:100%;vertical-align:top;margin: auto 0;' >
 	<h4>Informações do fiador</h4>
 	<!-- Email -->
 	<div class='input-control email' style='width:100%;' >

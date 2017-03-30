@@ -93,9 +93,13 @@ ad_page_contract {
     {type_of_transaction ""}
     {type_of_property ""}
     {rooms_qty ""}
+    {bathrooms_qty ""}
+    {toilets_qty ""}
+    {floors_qty ""}
     {surface ""}
-    {budget_min ""}
-    {budget_max ""}
+    {budget ""}
+    {budgetmin ""}
+    {budgetmax ""}
     {unwanted_areas ""}
     {charac_required ""}
     {charac_opt_gen ""}
@@ -106,7 +110,7 @@ ad_page_contract {
     {customer_id ""}
     {guarantor_id ""}
     {cotenant_id ""}
-    {terms ""}
+    {terms_p ""}
 }
 
 auth::require_login
@@ -131,7 +135,7 @@ if {[string equal $mode "save"]} {
     }    
     
 
-    if {$terms} {
+    if {$terms_p} {
 	
 	if {[exists_and_not_null customer_email]} {
 
@@ -250,25 +254,33 @@ if {[string equal $mode "save"]} {
 				  -mortgage $cotenant_mortgage] 	    
 	}
 	
+
+
+	ns_log Notice "CUSTOMER ID : $customer_id"
+	if {$customer_id ne ""} {
 	# Actual Mandat Info	
-	set mandat_id [1c_mandat::mandat::add \
-			   -type_of_transaction  $type_transaction \
-			   -type_of_property $type_of_property \
-			   -rooms_qty $rooms_qty \
-			   -surface $surface \
-			   -budget_min $budgetmin \
-			   -budget_max $budget_max \
-			   -unwanted_areas $unwanted_areas \
-			   -charac_required $charac_rquired \
-			   -charac_opt_gen $charac_required \
-			   -charac_opt_arc $charac_opt_arc \
-			   -charac_opt_vic $charac_opt_vic \
-			   -extra_info $extra_info \
-			   -status $status \
-			   -customer_id $customer_id \
-			   -guarantor_id $guarantor_id \
-			   -cotenant_id $cotenant_id \
-			  ]
+	    set mandat_id [1c_mandat::mandat::add \
+			       -type_of_transaction  $type_of_transaction \
+			       -type_of_property $type_of_property \
+			       -rooms_qty $rooms_qty \
+			       -bathrooms_qty $bathrooms_qty \
+			       -toilets_qty $toilets_qty \
+			       -floors_qty $floors_qty \
+			       -surface $surface \
+			       -budget_min $budgetmin \
+			       -budget_max $budgetmax \
+			       -unwanted_areas $unwanted_areas \
+			       -charac_required $charac_required \
+			       -charac_opt_gen $charac_required \
+			       -charac_opt_arc $charac_opt_arc \
+			       -charac_opt_vic $charac_opt_vic \
+			       -extra_info $extra_info \
+			       -status $status \
+			       -customer_id $customer_id \
+			       -guarantor_id $guarantor_id \
+			       -cotenant_id $cotenant_id \
+			      ]
+	}
 	
 	# Handle upload files
 	if {[info exists mandat_id] && [info exists upload_file]} {

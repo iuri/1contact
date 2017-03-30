@@ -207,9 +207,8 @@ ad_proc -public 1c_annonces::annonce::add {
 	} on_error {
 	    ns_log notice "AIGH! something bad happened! $errmsg"
 	    ad_return_complaint 1 "ERROR"
-	    
-	    ad_script_abort
 
+	    return 
 	}
     }	
     

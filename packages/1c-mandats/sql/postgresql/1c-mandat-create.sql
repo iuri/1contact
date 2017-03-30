@@ -10,7 +10,10 @@ CREATE TABLE mandats (
        type_of_transaction 	varchar(10),		-- (1) purchase or (2) rent 
        type_of_property 	varchar(10),	 	-- (1) commerce or (2) residence
        code 			varchar(50),		
-       room_qty 		integer,			
+       rooms_qty 		integer,			
+       bathrooms_qty 		integer,			
+       toilets_qty 		integer,			
+       floors_qty 		integer,			
        surface 			numeric,
        budget_min 		numeric,
        budget_max 		numeric,
@@ -20,17 +23,17 @@ CREATE TABLE mandats (
        charac_opt_arc		varchar(255),
        charac_opt_vic		varchar(255),
        extra_info		text,
-       status 			integer,
+       status 			varchar(10),
        customer_id		integer
   				CONSTRAINT mandats_customer_id_fk
   				REFERENCES users ON DELETE CASCADE
 				CONSTRAINT mandats_customer_id_un UNIQUE,
-       guarantor		integer
-       				CONSTRAINT mandats_guarantor_id_fk
+       guarantor_id		integer
+				CONSTRAINT mandats_guarantor_id_fk
   				REFERENCES users ON DELETE CASCADE
-				CONSTRAINT mndats_guarantor_id_un UNIQUE,
-       cotentant_id 		integer
-       				CONSTRAINT mandats_cotenant_id_fk
+				CONSTRAINT mandats_guarantor_id_un UNIQUE,
+       cotenant_id 		integer
+         			CONSTRAINT mandats_cotenant_id_fk
   				REFERENCES users ON DELETE CASCADE
 				CONSTRAINT mandats_cotenant_id_un UNIQUE
 );
@@ -63,16 +66,19 @@ CREATE OR REPLACE FUNCTION mandat__new(
   varchar,
   varchar,
   integer,
-  numeric,
-  numeric,
-  numeric,
-  text,
-  varchar,
-  varchar,
-  varchar,
-  varchar,
-  text,
   integer,
+  integer,
+  integer,
+  numeric,
+  numeric,
+  numeric,
+  text,
+  varchar,
+  varchar,
+  varchar,
+  varchar,
+  text,
+  varchar,
   integer,
   integer,
   integer
@@ -83,19 +89,22 @@ DECLARE
   p_type_of_property 	ALIAS FOR $3;
   p_code 		ALIAS FOR $4;
   p_rooms_qty 		ALIAS FOR $5;
-  p_surface 		ALIAS FOR $6;
-  p_budget_min 		ALIAS FOR $7;
-  p_budget_max 		ALIAS FOR $8;
-  p_unwanted_areas 	ALIAS FOR $9;
-  p_charac_required 	ALIAS FOR $10;
-  p_charac_opt_gen 	ALIAS FOR $11;
-  p_charac_opt_arc 	ALIAS FOR $12;
-  p_charac_opt_vic 	ALIAS FOR $13;
-  p_extra_info 	   	ALIAS FOR $14;
-  p_status 		ALIAS FOR $15;
-  p_customer_id 	ALIAS FOR $16;
-  p_guarantor_id 	ALIAS FOR $17;
-  p_cotenant_id 	ALIAS FOR $18;
+  p_bathrooms_qty 	ALIAS FOR $6;
+  p_toilets_qty 	ALIAS FOR $7;
+  p_floors_qty 		ALIAS FOR $8;
+  p_surface 		ALIAS FOR $9;
+  p_budget_min 		ALIAS FOR $10;
+  p_budget_max 		ALIAS FOR $11;
+  p_unwanted_areas 	ALIAS FOR $12;
+  p_charac_required 	ALIAS FOR $13;
+  p_charac_opt_gen 	ALIAS FOR $14;
+  p_charac_opt_arc 	ALIAS FOR $15;
+  p_charac_opt_vic 	ALIAS FOR $16;
+  p_extra_info 	   	ALIAS FOR $17;
+  p_status 		ALIAS FOR $18;
+  p_customer_id 	ALIAS FOR $19;
+  p_guarantor_id 	ALIAS FOR $20;
+  p_cotenant_id 	ALIAS FOR $21;
   
  
 BEGIN
@@ -105,6 +114,9 @@ BEGIN
 	 type_of_property,
 	 code,
 	 rooms_qty,
+	 bathrooms_qty,
+	 toilets_qty,
+	 floors_qty,
 	 surface,
 	 budget_min,
 	 budget_max,
@@ -124,6 +136,9 @@ BEGIN
 	 p_type_of_property,
 	 p_code,
 	 p_rooms_qty,
+	 p_bathrooms_qty,
+	 p_toilets_qty,
+	 p_floors_qty,
 	 p_surface,
 	 p_budget_min,
 	 p_budget_max,
