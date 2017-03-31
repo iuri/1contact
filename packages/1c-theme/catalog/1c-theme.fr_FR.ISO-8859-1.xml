@@ -2,8 +2,8 @@
 <message_catalog package_key="1c-theme" locale="fr_FR" charset="ISO-8859-1">
 
   <msg key="Agenda">Agenda</msg>
-  <msg key="All_annonces">Toute les annonces</msg>
-  <msg key="All_profiles">Toute les profils</msg>
+  <msg key="All_annonces">Toutes les annonces</msg>
+  <msg key="All_profiles">Toutes les profils</msg>
   <msg key="Annonceurs">Annonceurs</msg>
   <msg key="Confirmed_visits">Visites confirmées</msg>
   <msg key="Contact">Contact</msg>
@@ -13,7 +13,7 @@
   <msg key="Forgot_password">Mot de passe oblié</msg>
   <msg key="French">Français</msg>
   <msg key="Idiom">Idiome</msg>
-  <msg key="Log_In">Connectez-Vous</msg>
+  <msg key="Log_In">S&#39;identifier</msg>
   <msg key="Logout">Quitter</msg>
   <msg key="My_annonces">Mes annonces</msg>
   <msg key="My_mandats_lt">Mes mandats de recherche</msg>
@@ -24,6 +24,7 @@
   <msg key="Remeber_me">Se souvenir de moi</msg>
   <msg key="Research">Recherches</msg>
   <msg key="Researcher">Rechercheurs</msg>
+  <msg key="Save">Enregistrer</msg>
   <msg key="Selected_annonces">Annonces sélectionnées</msg>
   <msg key="Selected_profiles">Profils sélectionnées</msg>
   <msg key="Suggested_visits">Visites proosées</msg>

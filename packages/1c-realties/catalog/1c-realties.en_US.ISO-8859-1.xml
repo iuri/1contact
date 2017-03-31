@@ -3,16 +3,28 @@
 
   <msg key="Apartment">Apartment</msg>
   <msg key="BathroomQty">Bathrooms</msg>
+  <msg key="BedroomQty">Bedrooms</msg>
   <msg key="CharacArchitecture">Architecture characteristics</msg>
   <msg key="CharacGeneral">General characteristics</msg>
   <msg key="CharacNeighborhood">Neighborhood characteristics</msg>
+  <msg key="City">City</msg>
   <msg key="Commerce">Commerce</msg>
+  <msg key="Complement">Complement</msg>
+  <msg key="Country">Country</msg>
   <msg key="FloorQty">Floors</msg>
   <msg key="House">House</msg>
+  <msg key="InnerArea">Inner area</msg>
   <msg key="LavatoryQty">Lavatories</msg>
+  <msg key="Neighborhood">Neighborhood</msg>
+  <msg key="Number">Number</msg>
   <msg key="OptionalChars">Optional characteristics</msg>
+  <msg key="OuterArea">Outer area</msg>
+  <msg key="PostalCode">Postal code</msg>
   <msg key="RequiredChars">Required characteristics</msg>
   <msg key="RoomQty">Rooms</msg>
+  <msg key="Route">Route</msg>
+  <msg key="State">State</msg>
+  <msg key="ToiletsQty">Toilets</msg>
   <msg key="TotalArea">Total Area</msg>
   <msg key="TypeOfProperty">Type of property</msg>
 </message_catalog>

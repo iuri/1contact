@@ -88,7 +88,7 @@
   <msg key="lt_Calendar_Choose_Calen">Calendario: elegir calendario</msg>
   <msg key="lt_Calendar_detail_listi">Detalles del calendario: mostrando toda la información del calendario personal</msg>
   <msg key="lt_Calendar_Item_Adminis">Administración de eventos</msg>
-  <msg key="lt_Calendar_Item_Permiss">&quot;Permisos sobre eventos del calendario&quot;</msg>
+  <msg key="lt_Calendar_Item_Permiss">&#34;Permisos sobre eventos del calendario&#34;</msg>
   <msg key="lt_Calendars_Repeating_E">Calendarios: eventos periódicos</msg>
   <msg key="lt_Create_a_new_calendar">Crear un nuevo calendario</msg>
   <msg key="lt_delete_all_occurrence">borrar todas las ocurrencias</msg>
@@ -116,7 +116,7 @@
         
             &amp;lt;if %days.active_p% true&amp;gt;
               &amp;lt;if %days.today_p% true&amp;gt;
-                &amp;lt;td class=&amp;quot;today&amp;quot; onclick=&amp;quot;javascript:location.href='%days.url%';&amp;quot;&amp;gt;
+                &amp;lt;td class=&amp;quot;today&amp;quot; onclick=&amp;quot;javascript:location.href=&#39;%days.url%&#39;;&amp;quot;&amp;gt;
                   &amp;lt;a href=&amp;quot;%days.url%&amp;quot; title=&amp;quot;&amp;lt;#_ Go to %month_name% %days.day_number%, %year%</msg>
   <msg key="lt_Hide_Checked_Calendar">Ocultar los calendarios seleccionados</msg>
   <msg key="lt_Manage_Calendar_Audie">Administrar las Audiencias del Calendario</msg>

@@ -13615,37 +13615,37 @@ p [data-hint] {
   min-width: 64px;
 }
 .dialog.success {
-  background-color: #60a917;
-  color: #ffffff;
+  background-color: #90ff90;
+  color: #333;
 }
 .dialog.success .dialog-close-button {
-  background-color: #7ad61d;
-  color: #ffffff;
+  background-color: #90ff90;
+  color: #333;
 }
-.dialog.success .dialog-close-button:active {
-  background-color: #128023;
+.dialog.success .dialog-close-button:hover {
+  background-color: rgba(255,255,255,0.35);
 }
 .dialog.warning {
-  background-color: #fa6800;
-  color: #ffffff;
+  background-color: #ffff9c;
+  color: #333;
 }
 .dialog.warning .dialog-close-button {
-  background-color: #ffc194;
-  color: #ffffff;
+  background-color: #ffff9c;
+  color: #333;
 }
-.dialog.warning .dialog-close-button:active {
-  background-color: #bf5a15;
+.dialog.warning .dialog-close-button:hover {
+  background-color: rgba(255,255,255,0.35);
 }
 .dialog.alert {
-  background-color: #ce352c;
-  color: #ffffff;
+  background-color: #ffa8a8;
+  color: #333;
 }
 .dialog.alert .dialog-close-button {
-  background-color: #da5a53;
+  background-color: #ffa8a8;
   color: #ffffff;
 }
-.dialog.alert .dialog-close-button:active {
-  background-color: #9a1616;
+.dialog.alert .dialog-close-button:hover {
+  background-color: rgba(255,255,255,0.35);
 }
 .dialog.info {
   background-color: #1ba1e2;

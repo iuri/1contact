@@ -23,13 +23,13 @@
   <msg key="lt_Folder_folder_name_is">Le dossier %folder_name% est vide</msg>
   <msg key="lt_Found_file-storage_fo">Dossier XXX folder_name XXX... Voulez-vous les lier?</msg>
   <msg key="lt_No_file-storage_folde">Aucun dossier trouvé. Voulez-vous en créer un?</msg>
-  <msg key="lt_No_such_attachment_fo">Pas d'attache pour cet objet</msg>
-  <msg key="lt_The_specified_parent_">Le dossier père n'est pas valide.</msg>
+  <msg key="lt_No_such_attachment_fo">Pas d&#39;attache pour cet objet</msg>
+  <msg key="lt_The_specified_parent_">Le dossier père n&#39;est pas valide.</msg>
   <msg key="lt_To_attach_a_file_alre">Pour attacher un document existant dans un dossier, ouvrez le dossier en cliquant sur le nom du dossier, puis cliquez le lien &amp;quot;[ Choisir ]&amp;quot;. Pour envoyer un nouveau document dans un dossier, ouvrez le dossier en cliquant sur son nom, puis cliquez le lien &amp;quot;Attacher un nouveau: Document | Lien&amp;quot;</msg>
   <msg key="lt_Upload_New_Attachment">Envoyer une nouvelle attache</msg>
-  <msg key="lt_Use_the_Browse_button">Utilisez le bouton &quot;Browse...&quot; pour localiser votre document, puis cliquez sur &quot;Ouvrir&quot;.</msg>
+  <msg key="lt_Use_the_Browse_button">Utilisez le bouton &#34;Browse...&#34; pour localiser votre document, puis cliquez sur &#34;Ouvrir&#34;.</msg>
   <msg key="lt_You_are_attaching_a_d">Document attaché à %pretty_object_name%.</msg>
-  <msg key="lt_You_probably_clicked_">Il est probable que vous ayez cliqué plusieurs fois sur &quot;Ajouter&quot;. Vérifiez que le document ait bien été ajouté au &lt;a href=&quot;%folder_url%&quot;&gt;dossier&lt;/a&gt; que vous avez choisi, ou bien revenez en arrière pour recommencer l'opération.</msg>
+  <msg key="lt_You_probably_clicked_">Il est probable que vous ayez cliqué plusieurs fois sur &#34;Ajouter&#34;. Vérifiez que le document ait bien été ajouté au &lt;a href=&#34;%folder_url%&#34;&gt;dossier&lt;/a&gt; que vous avez choisi, ou bien revenez en arrière pour recommencer l&#39;opération.</msg>
   <msg key="lt_Your_file_is_larger_t">La taille de votre document dépasse la valeur autorisée (%max_number_of_bytes% octets)</msg>
   <msg key="Name">Nom</msg>
   <msg key="No_such_type">Type non existant</msg>

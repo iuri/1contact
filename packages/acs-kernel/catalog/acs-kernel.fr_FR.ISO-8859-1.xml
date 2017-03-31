@@ -34,10 +34,10 @@
   <msg key="common_go">Accèder</msg>
   <msg key="common_Help">Aide</msg>
   <msg key="common_help">Aide</msg>
-  <msg key="common_Login">S'identifier</msg>
-  <msg key="common_login">s'identifier</msg>
-  <msg key="common_Needs_Approval">A Besoin d'une Approbation</msg>
-  <msg key="common_needs_approval">a besoin d'une approbation</msg>
+  <msg key="common_Login">S&#39;identifier</msg>
+  <msg key="common_login">s&#39;identifier</msg>
+  <msg key="common_Needs_Approval">A Besoin d&#39;une Approbation</msg>
+  <msg key="common_needs_approval">a besoin d&#39;une approbation</msg>
   <msg key="common_New">New</msg>
   <msg key="common_new">nouveau</msg>
   <msg key="common_Next">Suivant</msg>
@@ -50,8 +50,8 @@
   <msg key="common_open">Ouvrir</msg>
   <msg key="common_Previous">Précédent</msg>
   <msg key="common_previous">Précédent</msg>
-  <msg key="common_Register">S'enregistrer</msg>
-  <msg key="common_register">s'enregistrer</msg>
+  <msg key="common_Register">S&#39;enregistrer</msg>
+  <msg key="common_register">s&#39;enregistrer</msg>
   <msg key="common_Repeat">Répéter</msg>
   <msg key="common_repeat">Répéter</msg>
   <msg key="common_Reset">Remise à zéro</msg>
@@ -69,6 +69,7 @@
   <msg key="common_view">Vue</msg>
   <msg key="common_Yes">Oui</msg>
   <msg key="common_yes">Oui</msg>
+  <msg key="Main_Site">Accueil</msg>
   <msg key="Member_role_pretty_name">Membre</msg>
   <msg key="member_role_pretty_name">Membre</msg>
   <msg key="Member_role_pretty_plural">Membres</msg>
@@ -79,8 +80,8 @@
   <msg key="member_state_banned">banni</msg>
   <msg key="member_state_Deleted">Effacé</msg>
   <msg key="member_state_deleted">Supprimé</msg>
-  <msg key="member_state_Needs_Approval">A Besoin d'une Approbation</msg>
-  <msg key="member_state_needs_approval">a besoin d'une approbation</msg>
+  <msg key="member_state_Needs_Approval">A Besoin d&#39;une Approbation</msg>
+  <msg key="member_state_needs_approval">a besoin d&#39;une approbation</msg>
   <msg key="member_state_Rejected">Rejeté</msg>
   <msg key="member_state_rejected">rejeté</msg>
 </message_catalog>

@@ -39,7 +39,6 @@
   <msg key="localization-pm_str">PM</msg>
   <msg key="localization-positive_sign">+</msg>
   <msg key="localization-t_fmt">%r</msg>
-  <msg key="localization-thousands_sep">,</msg>
   <msg key="Resolve_message_conflicts">Resolver mensagens conflitantes</msg>
   <msg key="Spanish">Espanhol</msg>
   <msg key="this-language">Português</msg>

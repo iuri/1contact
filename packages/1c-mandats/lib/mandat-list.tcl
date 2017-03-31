@@ -3,7 +3,7 @@
 template::list::create \
     -name mandats \
     -multirow mandats \
-    -actions { "#1c-mandat.Add_Mandat#" mandat-edit} \
+    -actions { "#1c-mandats.Add_Mandat#" mandat-edit} \
     -elements {
 	edit {
 	    link_url_col edit_url
@@ -13,13 +13,13 @@ template::list::create \
 	    sub_class narrow
 	}
 	code {
-	    label "[_ 1c-mandat.Code]"
+	    label "[_ 1c-mandats.Code]"
 	}
 	type_of_transaction_pretty {
-	    label "[_ 1c-mandat.Type_of_Transaction]"
+	    label "[_ 1c-mandats.Type_of_Transaction]"
 	}
        	actions {
-	    label {"[_ 1c-mandat.Actions]"}
+	    label "[_ 1c-mandats.Actions]"
 	    display_template {
 		<a href="@mandats.delete_url@"><img src="/resources/acs-subsite/Delete16.gif" width="16" height =”16”></a>
 		<a href="@mandats.matching_url@">Matching</a>
@@ -45,20 +45,20 @@ db_multirow  -extend {
     
     switch $type_of_transaction_pretty {
 	"a" {
-	    set type_of_transaction_pretty [lang::util::localize "[_ 1c-mandat.Achat]"] 
+	    set type_of_transaction_pretty [lang::util::localize "[_ 1c-mandats.Achat]"] 
 	}
 
 	"p" {
-	    set type_of_transaction_pretty [lang::util::localize "[_ 1c-mandat.Purchase]"] 
+	    set type_of_transaction_pretty [lang::util::localize "[_ 1c-mandats.Purchase]"] 
 	}
 	default {
-	    set type_of_transaction_pretty [lang::util::localize "[_ 1c-mandat.No_message]"] 
+	    set type_of_transaction_pretty [lang::util::localize "[_ 1c-mandats.No_message]"] 
 	}
     }
     
     switch $type_of_property {
 	c {
-	    set type_of_property_pretty [lang::util::localize "1c-mandat.Commerce"] 
+	    set type_of_property_pretty [lang::util::localize "1c-mandats.Commerce"] 
 	}
 	r {
 	    set type_of_property_pretty [lang::util::localize "Residence"] 

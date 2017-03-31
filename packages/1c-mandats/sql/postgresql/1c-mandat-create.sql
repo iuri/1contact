@@ -28,15 +28,12 @@ CREATE TABLE mandats (
        customer_id		integer
   				CONSTRAINT mandats_customer_id_fk
   				REFERENCES users ON DELETE CASCADE
-				CONSTRAINT mandats_customer_id_un UNIQUE,
        guarantor_id		integer
 				CONSTRAINT mandats_guarantor_id_fk
   				REFERENCES users ON DELETE CASCADE
-				CONSTRAINT mandats_guarantor_id_un UNIQUE,
        cotenant_id 		integer
          			CONSTRAINT mandats_cotenant_id_fk
   				REFERENCES users ON DELETE CASCADE
-				CONSTRAINT mandats_cotenant_id_un UNIQUE
 );
 
 

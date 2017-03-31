@@ -70,8 +70,7 @@ function form_submit() {
 	$("input[type='radio']").each( function() {
 		if ( $(this).attr('name').includes('charac_req_') ) {
 			if ( $(this).is(':checked') ) {
-				var id = $(this).attr("id");
-				charac_req += (id + ',');
+				charac_req += ($(this).val()+',');
 			}
 		}
 	});

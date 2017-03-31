@@ -36,7 +36,7 @@ ad_proc -public 1c_annonces::nuke_annonces {
     }
     
     set package_id [apm_package_id_from_key 1c-annonces]
-    set l_ids [db_list select_items "SELECT object_id FROM acs_objects WHERE object_type = 'cr_item_child_rel' AND package_id = :package_id)"]
+    set l_ids [db_list select_items "SELECT object_id FROM acs_objects WHERE object_type = 'cr_item_child_rel' AND package_id = :package_id"]
     
     foreach id $l_ids {
 	::xo::db::sql::acs_object delete -object_id $id
@@ -44,6 +44,8 @@ ad_proc -public 1c_annonces::nuke_annonces {
     
     return 0
 }
+
+
 
 
 ad_proc -public 1c_annonces::annonce::delete {
@@ -206,7 +208,7 @@ ad_proc -public 1c_annonces::annonce::add {
 				    :realty_id);
 	    }
 	} on_error {
-	    ns_log notice "AIGH! something bad happened! $errmsg"
+	    ns_log notice "AIGH11! something bad happened! $errmsg"
 	    ad_return_complaint 1 "ERROR"
 
 	    return 

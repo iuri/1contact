@@ -15,4 +15,4 @@
 
 
 
-<include src="/packages/1c-mandat/lib/mandat-list" return_url="@return_url@">
+<include src="/packages/1c-mandats/lib/mandat-list" return_url="@return_url@">

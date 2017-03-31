@@ -71,7 +71,7 @@ ad_proc -public 1c_realties::realty::add {
     set code "${type_of_property}${room_qty}${realty_id}"
 
     set type_of_property [string trimright $type_of_property ","]
-    set charac_required [string trimright $charac_required ","]
+    set charac_req [string trimright $charac_req ","]
     set charac_opt_gen [string trimright $charac_opt_gen ","]
     set charac_opt_arc [string trimright $charac_opt_arc ","]
     set charac_opt_vic [string trimright $charac_opt_vic ","]

@@ -40,4 +40,5 @@
   <msg key="localization-thousands_sep">.</msg>
   <msg key="Spanish">Espagnol</msg>
   <msg key="this-language">Français (FR)</msg>
+  <msg key="Translated_messages_on_this_page">Messages traduits sur cette page (%locale%)</msg>
 </message_catalog>

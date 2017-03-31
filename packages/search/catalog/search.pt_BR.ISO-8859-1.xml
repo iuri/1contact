@@ -6,7 +6,7 @@
   <msg key="Date_Range">Intervalo de Data</msg>
   <msg key="details">detelhes</msg>
   <msg key="Feeling_Lucky">Sinto-me com Sorte</msg>
-  <msg key="lt_bstopwordsb_is_a_very">&quot;&lt;b&gt;%stopwords%&lt;/b&gt;&quot; é uma palavra muito comum e não foi incluída na sua pesquisa.</msg>
+  <msg key="lt_bstopwordsb_is_a_very">&#34;&lt;b&gt;%stopwords%&lt;/b&gt;&#34; é uma palavra muito comum e não foi incluída na sua pesquisa.</msg>
   <msg key="lt_FtsEngineDriver_not_a">FtsEngineDriver não está disponível!</msg>
   <msg key="lt_Make_sure_all_words_a">Tenha certeza de que todas as palavras são soletradas corretamente.</msg>
   <msg key="lt_Try_different_keyword">Tente palavras-chave diferentes.</msg>

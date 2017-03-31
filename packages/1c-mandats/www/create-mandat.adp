@@ -46,7 +46,7 @@
 			<input type='text' name='surface' id='surface' placeholder='#1c-realties.TotalArea#' title='#1c-realties.TotalArea#' style='width:100%;' />
 		</div>
 		<!-- Preço  -->
-		<div class='input-control text' style='width:9em;' >
+		<div class='input-control text' style='width:8em;' >
 			<input type='text' name='budget' id='budget' placeholder='#1c-theme.Budget#' title='#1c-theme.BudgetHelp#' onChange='javascript:mandatCheckBudget();' style='width:100%;' />
 		</div>
 		<input type='text' name='budget_min' id='budget_min' readonly hidden />
@@ -72,7 +72,7 @@
 
 	</div>
 
-	<div class='box' style='margin-left:0;' >
+	<div class='box' style='margin-left:0;position:relative;' >
 		
 		<!-- Exibição do mapa -->
 		<include src='/packages/1c-realties/lib/map' />
@@ -146,7 +146,7 @@
 		</label>
 	</div>
 	<!-- Salvando o formulário -->
-	<span style='position:absolute;right:0;bottom:0;' >
+	<span style='position:absolute;right:.5rem;bottom:.5rem;' >
 		<input type='submit' class='button' value='Salvar' required />
 	</span>
 	<!-- Propriedade que indica quando o formulário será salvo (alterado pelo javascript) -->

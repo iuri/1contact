@@ -13,6 +13,31 @@ namespace eval 1c_mandat {}
 namespace eval 1c_mandat::mandat {}
 
 
+ad_proc -public 1c_mandat::nuke_mandats {
+} {
+    Erase all mandats and their dependencies 
+} {
+
+    set l_ids [db_list select_items "SELECT item_id FROM cr_items WHERE content_type = 'mandat_object' "]
+    
+    foreach id $l_ids {
+	content::item::delete -item_id $id
+    }
+    
+    set package_id [apm_package_id_from_key 1c-mandats]
+    set l_ids [db_list select_items "SELECT object_id FROM acs_objects WHERE object_type = 'cr_item_child_rel' AND package_id = :package_id"]
+    
+    foreach id $l_ids {
+	::xo::db::sql::acs_object delete -object_id $id
+    }
+
+
+    
+    
+    return 0
+}
+
+
 
 ad_proc -public 1c_mandat::mandat::delete {
     mandat_id

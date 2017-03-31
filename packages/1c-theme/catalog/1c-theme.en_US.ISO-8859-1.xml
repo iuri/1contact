@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <message_catalog package_key="1c-theme" locale="en_US" charset="ISO-8859-1">
 
+  <msg key="AddFiles">Add files and pictures</msg>
   <msg key="Agenda">Agenda</msg>
   <msg key="All_annonces">All annonces</msg>
   <msg key="All_profiles">All profiles</msg>
   <msg key="Annonceurs">Annonceurs</msg>
-  <msg key="BudgetMax">Budget max</msg>
-  <msg key="BudgetMin">Budget min</msg>
+  <msg key="Budget">Budget</msg>
+  <msg key="BudgetHelp">Min a Max</msg>
   <msg key="Buy">Buy</msg>
   <msg key="Characteristics">Characteristics</msg>
   <msg key="Commercial">Commercial</msg>
@@ -32,6 +33,7 @@
   <msg key="Remeber_me">Remember me</msg>
   <msg key="Rent">Rent</msg>
   <msg key="Research">Research</msg>
+  <msg key="ResearchAddress">Research address</msg>
   <msg key="Researcher">Researcher</msg>
   <msg key="Residential">Residential</msg>
   <msg key="Save">Save</msg>

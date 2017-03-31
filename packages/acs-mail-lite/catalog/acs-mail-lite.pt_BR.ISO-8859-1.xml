@@ -3,7 +3,7 @@
 
   <msg key="Associated_files">Arquivos Associados:</msg>
   <msg key="CC">CC</msg>
-  <msg key="cc_help">Enviar cópia para múltiplos endereços de email separados por &quot;;&quot;</msg>
+  <msg key="cc_help">Enviar cópia para múltiplos endereços de email separados por &#34;;&#34;</msg>
   <msg key="check_uncheck">Marcar/Desmarcar</msg>
   <msg key="lt_there_was_an_error_processing">Ocorreu um erro ao processar esta solicitação.</msg>
   <msg key="Message">Mensagem</msg>

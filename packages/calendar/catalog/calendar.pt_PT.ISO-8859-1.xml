@@ -20,9 +20,9 @@
   <msg key="Calendar_Item_Delete">Eliminar Item do Calendário</msg>
   <msg key="Calendar_Item_Types">Tipos de Item do Calendário</msg>
   <msg key="Calendar_Name">Nome do Calendário</msg>
-  <msg key="Calendar_Permissions">&quot;Permissões do Calendário&quot;</msg>
+  <msg key="Calendar_Permissions">&#34;Permissões do Calendário&#34;</msg>
   <msg key="Calendar_Permissions_1">Permissões do Calendário</msg>
-  <msg key="Calendar_Preferences">&quot;Preferências do Calendário&quot;</msg>
+  <msg key="Calendar_Preferences">&#34;Preferências do Calendário&#34;</msg>
   <msg key="Calendars">Calendários</msg>
   <msg key="Choose">Escolha</msg>
   <msg key="Current_Permissions">Permissões Actuais</msg>
@@ -50,7 +50,7 @@
   <msg key="lt_Calendar_Choose_Calen">Calendário: Escolher Calendário</msg>
   <msg key="lt_Calendar_detail_listi">Detalhe do calendário: lista de toda a informação sobre o calendário individual</msg>
   <msg key="lt_Calendar_Item_Adminis">Administração do Item do Calendário</msg>
-  <msg key="lt_Calendar_Item_Permiss">&quot;Permissões do Item do Calendário&quot;</msg>
+  <msg key="lt_Calendar_Item_Permiss">&#34;Permissões do Item do Calendário&#34;</msg>
   <msg key="lt_Calendars_Repeating_E">Calendários: Eventos Repetitivos</msg>
   <msg key="lt_Create_a_new_calendar">Criar um novo calendário</msg>
   <msg key="lt_delete_all_occurrence">eliminar todas as ocorrências</msg>
