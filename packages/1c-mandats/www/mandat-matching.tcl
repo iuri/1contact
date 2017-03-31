@@ -135,7 +135,10 @@ template::list::create \
 
 
 db_multirow -extend { annonce_url delete_url creation_user_url creation_user_name status_pretty } -unclobber annonces select_annonces "
-    SELECT a.ref_code, a.ref_code AS title, a.available_date FROM annonces a, cr_items ci WHERE a.annonce_id = ci.item_id;
+    SELECT a.ref_code, a.ref_code AS title, a.available_date FROM annonces a, cr_items ci 
+    WHERE a.annonce_id = ci.item_id
+    AND a.parent_id IN ([join :realty_ids ,]) 
+
 " {
 }
 

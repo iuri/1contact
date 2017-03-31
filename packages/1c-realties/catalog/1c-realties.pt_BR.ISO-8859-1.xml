@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="1c-realties" locale="pt_BR" charset="ISO-8859-1">
+
+  <msg key="Apartment">Apartamento</msg>
+  <msg key="BathroomQty">Banheiros</msg>
+  <msg key="CharacArchitecture">Características da arquitetura</msg>
+  <msg key="CharacGeneral">Características gerais</msg>
+  <msg key="CharacNeighborhood">Características da vizinhança</msg>
+  <msg key="Commerce">Comércio</msg>
+  <msg key="FloorQty">Andares</msg>
+  <msg key="House">Casa</msg>
+  <msg key="LavatoryQty">Lavabos</msg>
+  <msg key="OptionalChars">Características opcionais</msg>
+  <msg key="RequiredChars">Características obrigatórias</msg>
+  <msg key="RoomQty">Cômodos</msg>
+  <msg key="TotalArea">Área total</msg>
+  <msg key="TypeOfProperty">Tipo de propriedade</msg>
+</message_catalog>

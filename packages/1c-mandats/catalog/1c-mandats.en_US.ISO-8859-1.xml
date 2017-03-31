@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="1c-mandats" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="AcceptTerms">I have read and accept the terms</msg>
+  <msg key="Active">Active</msg>
+  <msg key="BudgetMax">Budget Max</msg>
+  <msg key="BudgetMin">Budget Min</msg>
+  <msg key="Buy">Buy</msg>
+  <msg key="ChooseDesirebleAreas">Choose in the map desireble areas</msg>
+  <msg key="Closed">Closed</msg>
+  <msg key="Inactive">Inactive</msg>
+  <msg key="InfosAboutRequestedRealty">Informations about requested realty</msg>
+  <msg key="NewMandat">Create new mandat</msg>
+  <msg key="PriceMax">Price max</msg>
+  <msg key="PriceMin">Price min</msg>
+  <msg key="Rent">Rent</msg>
+  <msg key="Requests">Requests</msg>
+  <msg key="RoomsQty">Rooms</msg>
+  <msg key="Status">Status</msg>
+  <msg key="Success">Mandat saved successfully!</msg>
+  <msg key="Terms">Terms</msg>
+  <msg key="TotalArea">Total area</msg>
+  <msg key="TypeOfTransaction">Type of transaction</msg>
+  <msg key="Undesired">Places or rotes undesired</msg>
+</message_catalog>

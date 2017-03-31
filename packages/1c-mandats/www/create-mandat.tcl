@@ -138,20 +138,21 @@ if {[string equal $mode "save"]} {
     if {$terms_p ne ""} {
 
 	if {$customer_email ne ""} {
-	    set customer_birthday1 "[string trim $customer_birthday]"
-	    set customer_birthday2 "[string map {. -} $customer_birthday1]"
-	    set customer_birthday3 "[template::util::date::get_property year $customer_birthday2] [template::util::date::get_property month $customer_birthday2] [template::util::date::get_property day $customer_birthday2]"
+	    set customer_birthday "[string trim $customer_birthday]"
+	    set customer_birthday "[string map {. -} $customer_birthday]"
+	    set customer_birthday "[template::util::date::get_property year $customer_birthday] [template::util::date::get_property month $customer_birthday] [template::util::date::get_property day $customer_birthday]"
 	    
+
 	    
-	    set customer_datestartjob1  "[string trim $customer_datestartjob]"
-	    set customer_datestartjob2 "[string map {. -} $customer_datestartjob1]"
-	    set customer_datestartjob3 "[template::util::date::get_property year $customer_datestartjob2] [template::util::date::get_property month $customer_datestartjob2] [template::util::date::get_property day $customer_datestartjob2]"
+	    set customer_datestartjob "[string trim $customer_datestartjob]"
+	    set customer_datestartjob "[string map {. -} $customer_datestartjob]"
+	    set customer_datestartjob "[template::util::date::get_property year $customer_datestartjob] [template::util::date::get_property month $customer_datestartjob] [template::util::date::get_property day $customer_datestartjob]"
 	    
 	    set customer_id [1c_users::user::add \
 				 -entitlement $customer_entitlement \
 				 -first_names $customer_name \
 				 -last_name $customer_surname \
-				 -birthday $customer_birthday3 \
+				 -birthday $customer_birthday \
 				 -nationality $customer_nationality \
 				 -civilstate $customer_civilstate \
 				 -children_qty $customer_children_qty \
@@ -165,7 +166,7 @@ if {[string equal $mode "save"]} {
 				 -noexpirecontract_p $customer_noexpirecontract \
 				 -job $customer_job \
 				 -jobactivity $customer_jobactivity \
-				 -datestartjob $customer_datestartjob3 \
+				 -datestartjob $customer_datestartjob \
 				 -salary $customer_salary \
 				 -salary_month $customer_salary_month \
 				 -independentjob $customer_independentjob \
@@ -178,19 +179,19 @@ if {[string equal $mode "save"]} {
 	}
 	
 	if {$guarantor_email ne ""} {
-	    set guarantor_birthday1  "[string trim $guarantor_birthday]"
-	    set guarantor_birthday2 "[string map {. -} $guarantor_birthday1]"
-	    set guarantor_birthday3 "[template::util::date::get_property year $guarantor_birthday2] [template::util::date::get_property month $guarantor_birthday2] [template::util::date::get_property day $guarantor_birthday2]"
+	    set guarantor_birthday  "[string trim $guarantor_birthday]"
+	    set guarantor_birthday "[string map {. -} $guarantor_birthday]"
+	    set guarantor_birthday "[template::util::date::get_property year $guarantor_birthday] [template::util::date::get_property month $guarantor_birthday] [template::util::date::get_property day $guarantor_birthday]"
 	    
-	    set guarantor_datestartjob1  "[string trim $guarantor_datestartjob]"
-	    set guarantor_datestartjob2 "[string map {. -} $guarantor_datestartjob1]"
-	    set guarantor_datestartjob3 "[template::util::date::get_property year $guarantor_datestartjob2] [template::util::date::get_property month $guarantor_datestartjob2] [template::util::date::get_property day $guarantor_datestartjob2]"
+	    set guarantor_datestartjob "[string trim $guarantor_datestartjob]"
+	    set guarantor_datestartjob "[string map {. -} $guarantor_datestartjob]"
+	    set guarantor_datestartjob "[template::util::date::get_property year $guarantor_datestartjob] [template::util::date::get_property month $guarantor_datestartjob] [template::util::date::get_property day $guarantor_datestartjob]"
 	    
 	    set guarantor_id [1c_users::user::add \
 				   -entitlement $guarantor_entitlement \
 				   -first_names $guarantor_name \
 				   -last_name $guarantor_surname \
-				   -birthday $guarantor_birthday3 \
+				   -birthday $guarantor_birthday \
 				   -nationality $guarantor_nationality \
 				   -civilstate $guarantor_civilstate \
 				   -children_qty $guarantor_children_qty \
@@ -204,7 +205,7 @@ if {[string equal $mode "save"]} {
 				   -noexpirecontract_p $guarantor_noexpirecontract \
 				   -job $guarantor_job \
 				   -jobactivity $guarantor_jobactivity \
-				   -datestartjob $guarantor_datestartjob3 \
+				   -datestartjob $guarantor_datestartjob \
 				   -salary $guarantor_salary \
 				   -salary_month $guarantor_salary_month \
 				   -independentjob $guarantor_independentjob \
@@ -218,9 +219,9 @@ if {[string equal $mode "save"]} {
 
 	
 	if {$cotenant_email ne "" } { 
-	    set cotenant_datestartjob1  "[string trim $cotenant_datestartjob]"
-	    set cotenant_datestartjob2 "[string map {. -} $cotenant_datestartjob1]"
-	    set cotenant_datestartjob3 "[template::util::date::get_property year $cotenant_datestartjob2] [template::util::date::get_property month $cotenant_datestartjob2] [template::util::date::get_property day $cotenant_datestartjob2]"
+	    set cotenant_datestartjob  "[string trim $cotenant_datestartjob]"
+	    set cotenant_datestartjob "[string map {. -} $cotenant_datestartjob]"
+	    set cotenant_datestartjob "[template::util::date::get_property year $cotenant_datestartjob] [template::util::date::get_property month $cotenant_datestartjob] [template::util::date::get_property day $cotenant_datestartjob]"
 
 
 	    set cotenant_id [1c_users::user::add \
@@ -241,7 +242,7 @@ if {[string equal $mode "save"]} {
 				  -noexpirecontract_p $cotenant_noexpirecontract \
 				  -job $cotenant_job \
 				  -jobactivity $cotenant_jobactivity \
-				  -datestartjob $cotenant_datestartjob3 \
+				  -datestartjob $cotenant_datestartjob \
 				  -salary $cotenant_salary \
 				  -salary_month $cotenant_salary_month \
 				  -independentjob $cotenant_independentjob \

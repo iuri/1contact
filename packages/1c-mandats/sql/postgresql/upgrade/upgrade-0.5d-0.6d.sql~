@@ -1,0 +1,4 @@
+
+ALTER TABLE mandats DROP CONSTRAINT mandats_customer_id_un UNIQUE;
+ALTER TABLE mandats DROP CONSTRAINT mandats_guarantor_id_un UNIQUE;
+ALTER TABLE mandats DROP CONSTRAINT mandats_cotenant_id_un UNIQUE

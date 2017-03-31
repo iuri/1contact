@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="1c-annonces" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="Active">Active</msg>
+  <msg key="AddFiles">Add files</msg>
+  <msg key="Announcer">Announcer</msg>
+  <msg key="AvailabilityDate">Availability date</msg>
+  <msg key="Closed">Closed</msg>
+  <msg key="CreateNewAnnonce">Create new annonce</msg>
+  <msg key="Description">Description</msg>
+  <msg key="GeneralChars">General characteristics</msg>
+  <msg key="IAcceptTheTerms">I have read and accept the terms</msg>
+  <msg key="Inactive">Inactive</msg>
+  <msg key="OptionalChars">Optional characteristics</msg>
+  <msg key="Price">Price</msg>
+  <msg key="Purchase">Purchase</msg>
+  <msg key="Rent">Rent</msg>
+  <msg key="RequiredChars">Required characteristics</msg>
+  <msg key="Status">Status</msg>
+  <msg key="Success">Annonce saved successfully!</msg>
+  <msg key="Taxes">Taxes</msg>
+  <msg key="Terms">Terms and conditions</msg>
+  <msg key="Title">Title</msg>
+  <msg key="TypeOfTransaction">Type of transaction</msg>
+</message_catalog>
