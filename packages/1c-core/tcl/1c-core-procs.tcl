@@ -63,13 +63,13 @@ ad_proc -public 1c_core::utils::upload_file {
 		
 		# ns_log Notice "$upload_file \ $this_file_id \n $tmpfile \n"	
 		fs::add_file \
-		    -name $filename \
+		    -name "${object_id}-${this_file_id}" \
 		    -item_id $this_file_id \
 		    -parent_id $folder_id \
 		    -tmp_filename $tmpfile \
 		    -creation_user [ad_conn user_id] \
 		    -creation_ip [ad_conn peeraddr] \
-		    -title  "${filename}-${object_id}-${this_file_id}" \
+		    -title $filename \
 		    -description "${filename}-${object_id}-${this_file_id}"   \
 		    -package_id 950 \
 		    -mime_type $mime_type		

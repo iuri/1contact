@@ -14,6 +14,15 @@ CREATE TABLE realties(
   bathroom_qty		integer,
   floor_qty		integer,
   surface		numeric,
+  address		text,
+  street_number		varchar(255),
+  route			varchar(255),
+  complement 		varchar(255),
+  sublocality 		varchar(255),
+  locality		varchar(255),
+  state			varchar(255),
+  country		varchar(255),
+  postal_code		varchar(255),
   charac_required 	text,
   charac_opt_gen	text,
   charac_opt_arc	text,
@@ -49,6 +58,15 @@ CREATE OR REPLACE FUNCTION realty__new (
   integer,	   -- bathroom_qty
   integer,	   -- floor_qty
   numeric,	   -- surface
+  text,		   -- address
+  varchar,	   -- street_number
+  varchar,	   -- route
+  varchar,	   -- complement	   
+  varchar,	   -- neighborhood
+  varchar,	   -- locality 
+  varchar,	   -- state
+  varchar,	   -- country
+  varchar,	   -- postal_code
   text,		   -- charac_req
   text,		   -- charac_opt_gen
   text,		   -- charac_opt_arc
@@ -66,13 +84,22 @@ CREATE OR REPLACE FUNCTION realty__new (
     p_bathroom_qty	ALIAS FOR $6;
     p_floor_qty		ALIAS FOR $7;
     p_surface		ALIAS FOR $8;
-    p_charac_required 	ALIAS FOR $9;
-    p_charac_opt_gen	ALIAS FOR $10;
-    p_charac_opt_arc	ALIAS FOR $11;
-    p_charac_opt_vic 	ALIAS FOR $12;      
-    p_creation_user	ALIAS FOR $13;
-    p_creation_ip	ALIAS FOR $14;
-    p_context_id	ALIAS FOR $15;
+    p_address		ALIAS FOR $9;
+    p_street_number	ALIAS FOR $10;
+    p_route		ALIAS FOR $11;
+    p_complement	ALIAS FOR $12;
+    p_neighborhood	ALIAS FOR $13; 
+    p_locality		ALIAS FOR $14;
+    p_state		ALIAS FOR $15;
+    p_country		ALIAS FOR $16;
+    p_postal_code	ALIAS FOR $17;
+    p_charac_required 	ALIAS FOR $18;
+    p_charac_opt_gen	ALIAS FOR $19;
+    p_charac_opt_arc	ALIAS FOR $20;
+    p_charac_opt_vic 	ALIAS FOR $21;      
+    p_creation_user	ALIAS FOR $22;
+    p_creation_ip	ALIAS FOR $23;
+    p_context_id	ALIAS FOR $24;
 
   
   BEGIN
@@ -97,6 +124,15 @@ CREATE OR REPLACE FUNCTION realty__new (
       bathroom_qty,		
       floor_qty,		
       surface,
+      address,
+      street_number,
+      route,
+      complement,
+      neighborhood, 
+      locality,
+      state,
+      country,
+      postal_code,
       charac_required,
       charac_opt_gen,
       charac_opt_arc,
@@ -110,6 +146,15 @@ CREATE OR REPLACE FUNCTION realty__new (
     p_bathroom_qty,		
     p_floor_qty,		
     p_surface,
+    p_address,
+    p_street_number,
+    p_route,
+    p_complement,
+    p_neighborhood, 
+    p_locality,
+    p_state,
+    p_country,
+    p_postal_code,
     p_charac_required,
     p_charac_opt_gen,
     p_charac_opt_arc,

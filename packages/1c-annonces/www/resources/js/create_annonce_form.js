@@ -112,7 +112,7 @@ function form_submit() {
 	// Processando a gravação dos dados no banco
 	if ( process ) {
 		$.ajax({
-			url: 'create-annonce',
+			url: 'create-announcement',
 			type: 'POST',
 			data: new FormData( $("#create_annonce_form")[0] ),
 			processData: false,
@@ -142,7 +142,7 @@ var componentForm = {
 function initAutocomplete() {
   autocomplete = new google.maps.places.Autocomplete(
   	(document.getElementById('address')),
-  	{types: ['geocode']});
+  	{types: ['address']});
   autocomplete.addListener('place_changed', fillInAddress);
 }
 

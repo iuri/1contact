@@ -58,7 +58,7 @@
 
 <!-- Preço mínimo e máximo -->
 <div class='navbar_cell' >
-	<div class='input-control text' style='width:9em;' >
+	<div class='input-control text' style='width:8em;' >
 		<input type='text' name='search_budget' id='search_budget' placeholder='#1c-theme.Budget#' title='#1c-theme.BudgetHelp#' onChange='javascript:checkBudget();' style='width:100%;' />
 	</div>
 </div>

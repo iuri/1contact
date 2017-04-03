@@ -39,6 +39,15 @@ ad_proc -public 1c_realties::realty::add {
     {-bathroom_qty ""}
     {-floors_qty ""}
     {-surface ""}
+    {-address ""}
+    {-street_number ""}
+    {-route ""}
+    {-complement ""}
+    {-neighborhood ""}
+    {-locality ""}
+    {-state ""}
+    {-country ""}
+    {-postal_code ""} 
     {-charac_req ""}
     {-charac_opt_gen ""}
     {-charac_opt_arc ""}
@@ -105,6 +114,15 @@ ad_proc -public 1c_realties::realty::add {
 			   :bathroom_qty,		
 			   :floors_qty,		
 			   :surface,
+			   :address,
+			   :street_number,
+			   :route,
+			   :complement,
+			   :neighborhood, 
+			   :locality,
+			   :state,
+			   :country,
+			   :postal_code,
 			   :charac_req,
 			   :charac_opt_gen,
 			   :charac_opt_arc,

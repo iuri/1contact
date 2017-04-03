@@ -179,7 +179,6 @@ function updateList() {
 		}
 	}
 	$('#selected_routes').val( selectedroutes );
-	alert(selectedroutes);
 
 }
 

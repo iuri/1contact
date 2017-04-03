@@ -20,7 +20,7 @@ CREATE TABLE annonces(
        available_date		timestamptz,
        type_of_announcer	varchar(10),
        status			varchar(10),
-       parent_id		integer
+       realty_id		integer
        				CONSTRAINT annonces_realty_id_fk
 				REFERENCES realties ON DELETE CASCADE
 				CONSTRAINT annonces_realty_id_un UNIQUE 
@@ -58,7 +58,7 @@ CREATE OR REPLACE FUNCTION annonce__new (
        timestamptz,	   -- available_Date
        varchar,		   -- type_of_announcer
        varchar,		   -- status
-       integer		   -- parent_id 
+       integer		   -- realty_id 
 ) RETURNS integer AS '
   DECLARE
 	p_annonce_id		ALIAS FOR $1;
@@ -69,7 +69,7 @@ CREATE OR REPLACE FUNCTION annonce__new (
 	p_available_date	ALIAS FOR $6;
 	p_type_of_announcer	ALIAS FOR $7;
 	p_status		ALIAS FOR $8;
-	p_parent_id		ALIAS FOR $9;
+	p_realty_id		ALIAS FOR $9;
 
   BEGIN
 
@@ -82,7 +82,7 @@ CREATE OR REPLACE FUNCTION annonce__new (
 	       available_date,
 	       type_of_announcer,
 	       status,
-	       parent_id
+	       realty_id
 	) VALUES (
 	  p_annonce_id,
 	  p_ref_code,
@@ -92,7 +92,7 @@ CREATE OR REPLACE FUNCTION annonce__new (
 	  p_available_date,
 	  p_type_of_announcer,
 	  p_status,
-	  p_parent_id
+	  p_realty_id
  	);
 
 

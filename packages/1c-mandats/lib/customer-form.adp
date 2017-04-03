@@ -3,12 +3,12 @@
 	<h4>Informações pessoais</h4>
 	<!-- Email -->
 	<div class='input-control email' style='width:100%;' >
-		<input type='email' name='customer_email' id='customer_email' placeholder='Email' title='Email' onChange='javascript:search_customer_email();' style='width:100%;' />
+		<input type='email' name='customer_email' id='customer_email' placeholder='Email' title='Email' onChange='javascript:search_customer_email();' required style='width:100%;' />
 	</div>
 	<br>
 	<!-- Celular -->
 	<div class='input-control text' style='width:100%;' >
-		<input type='text' name='customer_mobilenumber' id='customer_mobilenumber' placeholder='Celular' title='Celular' style='width:100%;' />
+		<input type='text' name='customer_mobilenumber' id='customer_mobilenumber' placeholder='Celular' title='Celular' required style='width:100%;' />
 	</div>
 	<br>
 	<!-- Telefone -->
@@ -18,7 +18,7 @@
 	<br>
 	<!-- Tratamento -->
 	<div class='input-control select' style='width:100%;' >
-		<select name='customer_entitlement' id='customer_entitlement' title='Tratamento' style='width:100%;' >
+		<select name='customer_entitlement' id='customer_entitlement' title='Tratamento' required style='width:100%;' >
 			<option value='' disabled selected hidden >Tratamento</option>
 			<option value='1' >Senhor</option>
 			<option value='2' >Senhora</option>
@@ -28,28 +28,28 @@
 	<br>
 	<!-- Nome -->
 	<div class='input-control text' style='width:100%;' >
-		<input type='text' name='customer_name' id='customer_name' placeholder='Nome' title='Nome' style='width:100%;' />
+		<input type='text' name='customer_name' id='customer_name' placeholder='Nome' title='Nome' required style='width:100%;' />
 	</div>
 	<br>
 	<!-- Sobrenome -->
 	<div class='input-control text' style='width:100%;' >
-		<input type='text' name='customer_surname' id='customer_surname' placeholder='Sobrenome' title='Sobrenome' style='width:100%;' />
+		<input type='text' name='customer_surname' id='customer_surname' placeholder='Sobrenome' title='Sobrenome' required style='width:100%;' />
 	</div>
 	<br>
 	<!-- Data de nascimento -->
 	<div class='input-control text' data-role='datepicker' data-scheme='darcula' data-locale='pt' data-format='dd.mm.yyyy' style='width:100%;' >
-		<input type='text' name='customer_birthday' id='customer_birthday' placeholder='Data de nascimento' title='Data de nascimento' style='width:100%;' />
+		<input type='text' name='customer_birthday' id='customer_birthday' placeholder='Data de nascimento' title='Data de nascimento' required style='width:100%;' />
 		<button class='button clear' ><span class='mif-calendar' ></span></button>
 	</div>
 	<br>
 	<!-- Nacionalidade -->
 	<div class='input-control text' style='width:100%;' >
-		<input type='text' name='customer_nationality' id='customer_nationality' placeholder='Nacionalidade' title='Nacionalidade' style='width:100%;' />
+		<input type='text' name='customer_nationality' id='customer_nationality' placeholder='Nacionalidade' title='Nacionalidade' required style='width:100%;' />
 	</div>
 	<br>
 	<!-- Estado civil -->
 	<div class='input-control select' style='width:100%;' >
-		<select name='customer_civilstate' id='customer_civilstate' title='Estado civil' style='width:100%;' >
+		<select name='customer_civilstate' id='customer_civilstate' title='Estado civil' required style='width:100%;' >
 			<option value='' disabled selected hidden >Estado civil</option>
 			<option value='0' >Solteiro</option>
 			<option value='1' >Em um relacionamento</option>
@@ -62,17 +62,17 @@
 	<br>
 	<!-- Filhos -->
 	<div class='input-control text' style='width:100%;' >
-		<input type='number' name='customer_children_qty' id='customer_children_qty' placeholder='Filhos' title='Filhos' min='0' style='width:100%;' />
+		<input type='number' name='customer_children_qty' id='customer_children_qty' placeholder='Filhos' title='Filhos' min='0' required style='width:100%;' />
 	</div>
 	<br>
 	<!-- Idades dos filhos -->
 	<div class='input-control text' style='width:100%;' >
-		<input type='text' name='customer_children_ages' id='customer_children_ages' placeholder='Idades dos filhos' title='Idades dos filhos' style='width:100%;' />
+		<input type='text' name='customer_children_ages' id='customer_children_ages' placeholder='Idades dos filhos' title='Idades dos filhos' required style='width:100%;' />
 	</div>
 	<br>
 	<!-- Animais -->
 	<div class='input-control select' style='width:100%;' >
-		<select name='customer_animals' id='customer_animals' title='Animais' style='width:100%;' >
+		<select name='customer_animals' id='customer_animals' title='Animais' required style='width:100%;' >
 			<option value='' disabled selected hidden >Animais</option>
 			<option value='true' >Animais: Sim</option>
 			<option value='false' >Animais: Não</option>
@@ -81,17 +81,17 @@
 	<br>
 	<!-- Tipo de animais -->
 	<div class='input-control text' style='width:100%;' >
-		<input type='text' name='customer_animals_type' id='customer_animals_type' placeholder='Tipo de animais' title='Tipo de animais' style='width:100%;' />
+		<input type='text' name='customer_animals_type' id='customer_animals_type' placeholder='Tipo de animais' title='Tipo de animais' required style='width:100%;' />
 	</div>
 	<br>
 	<!-- Quantidade de animais -->
 	<div class='input-control text' style='width:100%;' >
-		<input type='text' name='customer_animals_qty' id='customer_animals_qty' placeholder='Quantidade de animais' title='Quantidade de animais' style='width:100%;' />
+		<input type='text' name='customer_animals_qty' id='customer_animals_qty' placeholder='Quantidade de animais' title='Quantidade de animais' required style='width:100%;' />
 	</div>
 	<br>
 	<!-- Contrato por tempo indeterminado -->
 	<div class='input-control select' style='width:100%;' >
-		<select name='customer_noexpirecontract' id='customer_noexpirecontract' title='Aceita contrato tempo por indeterminado' style='width:100%;' >
+		<select name='customer_noexpirecontract' id='customer_noexpirecontract' title='Aceita contrato tempo por indeterminado' required style='width:100%;' >
 			<option value='' disabled selected hidden >Contrato tempo por indeterminado</option>
 			<option value='true' >Contrato tempo por indeterminado: Sim</option>
 			<option value='false' >Contrato tempo por indeterminado: Não</option>
@@ -100,23 +100,23 @@
 	<h4>Informações profissionais</h4>
 	<!-- Profissão -->
 	<div class='input-control text' style='width:100%;' >
-		<input type='text' name='customer_job' id='customer_job' placeholder='Proissão' title='Proissão' style='width:100%;' />
+		<input type='text' name='customer_job' id='customer_job' placeholder='Proissão' title='Proissão' required style='width:100%;' />
 	</div>
 	<br>
 	<!-- Ramo da profissão -->
 	<div class='input-control text' style='width:100%;' >
-		<input type='text' name='customer_jobactivity' id='customer_jobactivity' placeholder='Ramo da atividade' title='Ramo da atividade' style='width:100%;' />
+		<input type='text' name='customer_jobactivity' id='customer_jobactivity' placeholder='Ramo da atividade' title='Ramo da atividade' required style='width:100%;' />
 	</div>
 	<br>
 	<!-- Data de início do trabalho -->
 	<div class='input-control text' data-role='datepicker' data-scheme='darcula' data-locale='pt' data-format='dd.mm.yyyy' style='width:100%;' >
-		<input type='text' name='customer_datestartjob' id='customer_datestartjob' placeholder='Data de contratação' title='Data contratação' style='width:100%;' />
+		<input type='text' name='customer_datestartjob' id='customer_datestartjob' placeholder='Data de contratação' title='Data contratação' required style='width:100%;' />
 		<button class='button clear' ><span class='mif-calendar' ></span></button>
 	</div>
 	<br>
 	<!-- Salário mensal -->
 	<div class='input-control text' style='width:100%;' >
-		<input type='text' name='customer_salary' id='customer_salary' placeholder='Salário mensal' title='Salário mensal' style='width:100%;' />
+		<input type='text' name='customer_salary' id='customer_salary' placeholder='Salário mensal' title='Salário mensal' required style='width:100%;' />
 	</div>
 	<br>
 	<!-- Meses de salario -->
@@ -130,7 +130,7 @@
 	<br>
 	<!-- Autônomo -->
 	<div class='input-control select' style='width:100%;' >
-		<select name='customer_independentjob' id='customer_independentjob' title='Autônomo' style='width:100%;' >
+		<select name='customer_independentjob' id='customer_independentjob' title='Autônomo' required style='width:100%;' >
 			<option value='' disabled selected hidden >Autônomo</option>
 			<option value='true' >Autônomo: Sim</option>
 			<option value='false' >Autônomo: Não</option>
@@ -149,7 +149,7 @@
 	<h4>Informações de residência</h4>
 	<!-- Endereço atual -->
 	<div class='input-control text' style='width:100%;' >
-		<input type='text' name='customer_address' id='customer_address' placeholder='Endereço atual' title='Endereço atual' style='width:100%;' />
+		<input type='text' name='customer_address' id='customer_address' placeholder='Endereço atual' title='Endereço atual' onFocus='javascript:geolocate();' required style='width:100%;' />
 	</div>
 	<br>
 	<!-- Propridade do imóvel atual -->
@@ -164,12 +164,12 @@
 	<br>
 	<!-- Proprietário do imóvel -->
 	<div class='input-control text' style='width:100%;' >
-		<input type='text' name='customer_houseproprietary' id='customer_houseproprietary' placeholder='Proprietário do imóvel (nome ou imobiliária)' title='Proprietário do imóvel (nome ou imobiliária)' style='width:100%;' />
+		<input type='text' name='customer_houseproprietary' id='customer_houseproprietary' placeholder='Proprietário do imóvel (nome ou imobiliária)' title='Proprietário do imóvel (nome ou imobiliária)' required style='width:100%;' />
 	</div>
 	<br>
 	<!-- Hipoteca -->
 	<div class='input-control text' style='width:100%;' >
-		<input type='text' name='customer_mortgage' id='customer_mortgage' placeholder='Hipoteca' title='Hipoteca' style='width:100%;' />
+		<input type='text' name='customer_mortgage' id='customer_mortgage' placeholder='Hipoteca' title='Hipoteca' required style='width:100%;' />
 	</div>
 </div>
 

@@ -44,7 +44,7 @@ foreach {cat_id cat_name} [1c_annonces::get_categories -package_id $package_id -
 	    if {![string equal [category::get_name [lindex $option 1] "en_US" ] "Indifferent"]} {	
 	   	append options_html "
 		    	<label class='input-control radio small-check' >
-		    	<input type='radio' name='charac_req_$cat_id' id='$option_id' value='$cat_id-$option_id' />
+		    	<input type='radio' name='charac_req_$cat_id' id='$option_id' value='$cat_id-$option_id' required />
 		    	<span class='check' ></span>
 		    	<span class='caption' for='charac_req_$option_id' >$option_name</span>
 		    	</label>"	    
@@ -54,7 +54,7 @@ foreach {cat_id cat_name} [1c_annonces::get_categories -package_id $package_id -
 		
 		append options_html "
 		    	<label class='input-control radio small-check' >
-		    	<input type='radio' name='charac_req_$cat_id' id='$option_id' value='$cat_id-$option_id' />
+		    	<input type='radio' name='charac_req_$cat_id' id='$option_id' value='$cat_id-$option_id' required />
 		    	<span class='check' ></span>
 		    	<span class='caption' for='charac_req_$option_id' >$option_name</span>
 		    	</label>"	    

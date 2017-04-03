@@ -10,7 +10,7 @@
 		<h4>#1c-mandats.InfosAboutRequestedRealty#</h4>
 		<!-- Tipo de negociação (locação ou venda) -->
 		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='#1c-mandats.TypeOfTransaction#' title='#1c-mandats.TypeOfTransaction#' style='width:11.5em;' >
-			<select name='atypetransaction' id='atypetransaction' multiple='multiple' style='width:100%;' >
+			<select name='atypetransaction' id='atypetransaction' multiple='multiple' required style='width:100%;' >
 				<option value='1' >#1c-mandats.Rent#</option>
 				<option value='2' >#1c-mandats.Buy#</option>
 			</select>
@@ -18,7 +18,7 @@
 		</div>
 		<!-- Tipo de imóvel -->
 		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='#1c-realties.TypeOfProperty#' title='#1c-realties.TypeOfProperty#' style='width:18em;' >
-			<select name='atypeproperty' id='atypeproperty' multiple='multiple' style='width:100%;' >
+			<select name='atypeproperty' id='atypeproperty' multiple='multiple' required style='width:100%;' >
 				<option value='1' >#1c-realties.House#</option>
 				<option value='2' >#1c-realties.Apartment#</option>
 				<option value='3' >#1c-realties.Commerce#</option>
@@ -27,27 +27,27 @@
 		</div>
 		<!-- Num de cômodos -->
 		<div class='input-control text' style='width:5.5em;' >
-			<input type='number' name='rooms_qty' id='rooms_qty' placeholder='#1c-realties.RoomQty#' title='#1c-realties.RoomQty#' min='0' max='999' style='width:100%;' />
+			<input type='number' name='rooms_qty' id='rooms_qty' placeholder='#1c-realties.RoomQty#' title='#1c-realties.RoomQty#' min='0' max='999' required style='width:100%;' />
 		</div>
 		<!-- Num de banheiros -->
 		<div class='input-control text' style='width:5.5em;' >
-			<input type='number' name='bathrooms_qty' id='bathrooms_qty' placeholder='#1c-realties.BathroomQty#' title='#1c-realties.BathroomQty#' min='0' max='999' style='width:100%;' />
+			<input type='number' name='bathrooms_qty' id='bathrooms_qty' placeholder='#1c-realties.BathroomQty#' title='#1c-realties.BathroomQty#' min='0' max='999' required style='width:100%;' />
 		</div>
 		<!-- Num de toaletes -->
 		<div class='input-control text' style='width:5.5em;' >
-			<input type='number' name='toilets_qty' id='toilets_qty' placeholder='#1c-realties.ToiletsQty#' title='#1c-realties.ToiletsQty#' min='0' max='999' style='width:100%;' />
+			<input type='number' name='toilets_qty' id='toilets_qty' placeholder='#1c-realties.ToiletsQty#' title='#1c-realties.ToiletsQty#' min='0' max='999' required style='width:100%;' />
 		</div>
 		<!-- Num de andares -->
 		<div class='input-control text' style='width:5.5em;' >
-			<input type='number' name='floors_qty' id='floors_qty' placeholder='#1c-realties.FloorQty#' title='#1c-realties.FloorQty#' min='0' max='999' style='width:100%;' />
+			<input type='number' name='floors_qty' id='floors_qty' placeholder='#1c-realties.FloorQty#' title='#1c-realties.FloorQty#' min='0' max='999' required style='width:100%;' />
 		</div>
 		<!-- Área total -->
 		<div class='input-control text' style='width:5.5em;' >
-			<input type='text' name='surface' id='surface' placeholder='#1c-realties.TotalArea#' title='#1c-realties.TotalArea#' style='width:100%;' />
+			<input type='text' name='surface' id='surface' placeholder='#1c-realties.TotalArea#' title='#1c-realties.TotalArea#' required style='width:100%;' />
 		</div>
 		<!-- Preço  -->
 		<div class='input-control text' style='width:8em;' >
-			<input type='text' name='budget' id='budget' placeholder='#1c-theme.Budget#' title='#1c-theme.BudgetHelp#' onChange='javascript:mandatCheckBudget();' style='width:100%;' />
+			<input type='text' name='budget' id='budget' placeholder='#1c-theme.Budget#' title='#1c-theme.BudgetHelp#' onChange='javascript:mandatCheckBudget();' required style='width:100%;' />
 		</div>
 		<input type='text' name='budget_min' id='budget_min' readonly hidden />
 		<input type='text' name='budget_max' id='budget_max' readonly hidden />
@@ -76,11 +76,6 @@
 		
 		<!-- Exibição do mapa -->
 		<include src='/packages/1c-realties/lib/map' />
-
-		<!-- Áreas indesejadas -->
-		<div class='input-control text' style='width:100%' >
-			<input type='text' name='unwanted_areas' id='unwanted_areas' placeholder='#1c-mandats.Undesired#' title='#1c-mandats.Undesired#' style='width:100%;' />
-		</div>
 
 		<!-- Características obrigatórias -->
 		<div class='box' style='margin-left:0;' >
@@ -121,17 +116,17 @@
 	<div class='box' style='vertical-align:top;margin-left:0;' >
 		<h4>#1c-mandats.Status#</h4>
 		<label class='input-control radio small-check' >
-			<input type='radio' name='status' id='status_inactive' checked='checked' value='0' />
+			<input type='radio' name='status' id='status_inactive' checked='checked' value='0' required />
 			<span class='check' ></span>
 			<span class='caption' >#1c-mandats.Inactive#</span>
 		</label>
 		<label class='input-control radio small-check' >
-			<input type='radio' name='status' id='status_active' value='1' />
+			<input type='radio' name='status' id='status_active' value='1' required />
 			<span class='check' ></span>
 			<span class='caption' >#1c-mandats.Active#</span>
 		</label>
 		<label class='input-control radio small-check' >
-			<input type='radio' name='status' id='status_closed' value='2' />
+			<input type='radio' name='status' id='status_closed' value='2' required />
 			<span class='check' ></span>
 			<span class='caption' >#1c-mandats.Closed#</span>
 		</label>
@@ -193,3 +188,5 @@
 
 </script>
 
+<script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDzF7IlGi2Ue-EI6E6bizGVZ69NhFU7yGI&libraries=places' ></script>
+<script type='text/javascript' src='resources/js/autocompleteAddress.js' ></script>

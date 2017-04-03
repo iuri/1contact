@@ -128,6 +128,15 @@ ad_proc -public 1c_annonces::annonce::add {
     {-bathroom_qty ""}
     {-floors_qty ""}
     {-surface ""}
+    {-address ""}
+    {-street_number ""}
+    {-route ""}
+    {-complement ""}
+    {-neighborhood ""}
+    {-locality ""}
+    {-state ""}
+    {-country ""}
+    {-postal_code ""} 
     {-type_of_announcer ""}
     {-description ""}
     {-charac_req ""}
@@ -158,6 +167,9 @@ ad_proc -public 1c_annonces::annonce::add {
     if {![exists_and_not_null item_id]} {
 	set item_id [db_nextval "acs_object_id_seq"]
 	
+	set type_of_transaction [string trimright $type_of_transaction ","]
+	set type_of_property [string trimright $type_of_property ","]
+	
 	set ref_code "${type_of_transaction}${type_of_property}${room_qty}${item_id}"
 
 
@@ -170,6 +182,15 @@ ad_proc -public 1c_annonces::annonce::add {
 			       -bathroom_qty $bathroom_qty \
 			       -floors_qty $floors_qty \
 			       -surface $surface \
+			       -address $address \
+			       -street_number $street_number \
+			       -route $route \
+			       -complement $complement \
+			       -neighborhood $neighborhood \
+			       -locality $locality \
+			       -state $state \
+			       -country $country \
+			       -postal_code $postal_code \
 			       -charac_req $charac_req \
 			       -charac_opt_gen $charac_opt_gen \
 			       -charac_opt_arc $charac_opt_arc \

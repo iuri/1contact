@@ -1,8 +1,7 @@
 -- /package/c1-realties/sql/postgresql/c1-realties-create.sql
 
-
 DROP FUNCTION realty__new (
-  integer,    	   -- realty_id
+  integer,	   -- realty_id 
   varchar,	   -- code
   varchar,	   -- type_of_property
   integer,	   -- room_qty		   
@@ -10,6 +9,15 @@ DROP FUNCTION realty__new (
   integer,	   -- bathroom_qty
   integer,	   -- floor_qty
   numeric,	   -- surface
+  text,		   -- address
+  varchar,	   -- street_number
+  varchar,	   -- route
+  varchar,	   -- complement	   
+  varchar,	   -- neighborhood
+  varchar,	   -- locality 
+  varchar,	   -- state
+  varchar,	   -- country
+  varchar,	   -- postal_code
   text,		   -- charac_req
   text,		   -- charac_opt_gen
   text,		   -- charac_opt_arc

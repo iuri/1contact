@@ -323,5 +323,7 @@ if {[string equal $mode "save"]} {
     }        
 }
 
-
 template::head::add_javascript -src "resources/js/create_mandat_form.js" -order 1
+template::head::add_javascript -src "resources/js/load_users_data.js" -order 1
+#template::head::add_javascript -src "https://maps.googleapis.com/maps/api/js?key=AIzaSyDzF7IlGi2Ue-EI6E6bizGVZ69NhFU7yGI&libraries=places" -order 2
+#template::head::add_javascript -src "resources/js/autocompleteAddress.js" -order 3
