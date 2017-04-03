@@ -151,7 +151,7 @@ function initMap(zone=0) {
 // Atualizando a lista de áreas selecionadas
 function updateList() {
 
-	var routes_names = Array();
+	routes_names = Array();
 	// Exibindo lista de áreas selecionadas
 	$('#SelectedAreas_List').empty();
 	var selectedareas = '';
@@ -161,21 +161,25 @@ function updateList() {
 			closeButton = "<span class='mif-cross close_cross' onClick=" + '"javascript:removeSelection(' + "'" + selected_areas[i] + "'" + ');"' + "></span>";
 			$("<label class='select_field field_"+getFillColor(parseInt(c[0]))[1]+"' style='padding-right:2em;position:relative;' >"+poligons_names[selected_areas[i]]+closeButton+'</label>').appendTo('#SelectedAreas_List');
 			selectedareas += (poligons_names[selected_areas[i]]+';');
-			routes_names.push(poligons_desc[selected_areas[i]]);
+			var routs_array = poligons_desc[selected_areas[i]].split('<br>');
+			for ( var j in routs_array ) {
+				routes_names.push(routs_array[j]);
+			}
 		}
 	}
 	$('#selected_regions').val( selectedareas );
 
 	// Exibindo lista de ruas das áreas selecionadas
-	$('#selected_routes').empty();
-	selectedroutes = '';
+	$('#selectedroutes_list').empty();
+	var selectedroutes = '';
 	for ( var i in routes_names ) {
 		if ( typeof routes_names[i] === "string" ) {
 			$("<div>"+routes_names[i]+"</div>").appendTo('#selectedroutes_list');
-			selectedroutes += routes_names[i];
+			selectedroutes += (routes_names[i]+';');
 		}
 	}
 	$('#selected_routes').val( selectedroutes );
+	alert(selectedroutes);
 
 }
 
@@ -205,18 +209,19 @@ function getFillColor(zone) {
 // Pesquisando se endereço faz parte da área selecionada
 $(function() {
 	$('#search_route_button').click( function(event) {
-		for ( var i in routes_names ) {
-
-			alert(routes_names[i]);
-
-			for ( var j in routes_names[i] ) {
-				if ( routes_names[i][j].toLowerCase().includes($('#search_route').val().toLowerCase()) ) {
-					metroDialog.open('#route_exists');
-					return;
-				} else {
-					metroDialog.open('#route_not_exists');
-					return;
+		if ( $('#search_route').val() != "" ) {
+			var exists = false;
+			for ( var i in routes_names ) {
+				if ( typeof routes_names[i] === "string" ) {
+					if ( routes_names[i].toLowerCase().includes($('#search_route').val().toLowerCase()) ) {
+						exists = true;
+					}
 				}
+			}
+			if ( exists ) {
+				metroDialog.open('#route_exists');
+			} else {
+				metroDialog.open('#route_not_exists');
 			}
 		}
 		event.preventDefault();
