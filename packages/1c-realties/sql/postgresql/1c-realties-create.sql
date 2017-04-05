@@ -9,16 +9,18 @@ CREATE TABLE realties(
 			CONSTRAINT realties_realty_id_pk PRIMARY KEY,
   code			varchar(255),
   type_of_property	varchar(10),
+  subtype_of_property  varchar(10),
   room_qty		integer,
   lavatory_qty		integer,
   bathroom_qty		integer,
   floor_qty		integer,
-  surface		numeric,
+  inner_surface		numeric,
+  outer_surface		numeric,
   address		text,
   street_number		varchar(255),
   route			varchar(255),
   complement 		varchar(255),
-  sublocality 		varchar(255),
+  neighborhood 		varchar(255),
   locality		varchar(255),
   state			varchar(255),
   country		varchar(255),
@@ -53,11 +55,13 @@ CREATE OR REPLACE FUNCTION realty__new (
   integer,	   -- realty_id 
   varchar,	   -- code
   varchar,	   -- type_of_property
+  varchar,     -- subtype_of_property
   integer,	   -- room_qty		   
   integer,	   -- lavatory_qty
   integer,	   -- bathroom_qty
   integer,	   -- floor_qty
-  numeric,	   -- surface
+  numeric,	   -- inner_surface
+  numeric,	   -- outer_surface
   text,		   -- address
   varchar,	   -- street_number
   varchar,	   -- route
@@ -79,27 +83,29 @@ CREATE OR REPLACE FUNCTION realty__new (
     p_realty_id		ALIAS FOR $1;
     p_code		ALIAS FOR $2;
     p_type_of_property	ALIAS FOR $3;
-    p_room_qty		ALIAS FOR $4;
-    p_lavatory_qty	ALIAS FOR $5;
-    p_bathroom_qty	ALIAS FOR $6;
-    p_floor_qty		ALIAS FOR $7;
-    p_surface		ALIAS FOR $8;
-    p_address		ALIAS FOR $9;
-    p_street_number	ALIAS FOR $10;
-    p_route		ALIAS FOR $11;
-    p_complement	ALIAS FOR $12;
-    p_neighborhood	ALIAS FOR $13; 
-    p_locality		ALIAS FOR $14;
-    p_state		ALIAS FOR $15;
-    p_country		ALIAS FOR $16;
-    p_postal_code	ALIAS FOR $17;
-    p_charac_required 	ALIAS FOR $18;
-    p_charac_opt_gen	ALIAS FOR $19;
-    p_charac_opt_arc	ALIAS FOR $20;
-    p_charac_opt_vic 	ALIAS FOR $21;      
-    p_creation_user	ALIAS FOR $22;
-    p_creation_ip	ALIAS FOR $23;
-    p_context_id	ALIAS FOR $24;
+    p_subtype_of_property  ALIAS FOR $4;
+    p_room_qty		ALIAS FOR $5;
+    p_lavatory_qty	ALIAS FOR $6;
+    p_bathroom_qty	ALIAS FOR $7;
+    p_floor_qty		ALIAS FOR $8;
+    p_inner_surface	ALIAS FOR $9;
+    p_outer_surface	ALIAS FOR $10;
+    p_address		ALIAS FOR $11;
+    p_street_number	ALIAS FOR $12;
+    p_route		ALIAS FOR $13;
+    p_complement	ALIAS FOR $14;
+    p_neighborhood	ALIAS FOR $15; 
+    p_locality		ALIAS FOR $16;
+    p_state		ALIAS FOR $17;
+    p_country		ALIAS FOR $18;
+    p_postal_code	ALIAS FOR $19;
+    p_charac_required 	ALIAS FOR $20;
+    p_charac_opt_gen	ALIAS FOR $21;
+    p_charac_opt_arc	ALIAS FOR $22;
+    p_charac_opt_vic 	ALIAS FOR $23;      
+    p_creation_user	ALIAS FOR $24;
+    p_creation_ip	ALIAS FOR $25;
+    p_context_id	ALIAS FOR $26;
 
   
   BEGIN
@@ -119,11 +125,13 @@ CREATE OR REPLACE FUNCTION realty__new (
       realty_id,
       code,
       type_of_property,
+      subtype_of_property,
       room_qty,
       lavatory_qty,
       bathroom_qty,		
       floor_qty,		
-      surface,
+      inner_surface,
+      outer_surface,
       address,
       street_number,
       route,
@@ -141,11 +149,13 @@ CREATE OR REPLACE FUNCTION realty__new (
     p_realty_id,
     p_code,
     p_type_of_property,
+    p_subtype_of_property,
     p_room_qty,
     p_lavatory_qty,
     p_bathroom_qty,		
     p_floor_qty,		
-    p_surface,
+    p_inner_surface,
+    p_outer_surface,
     p_address,
     p_street_number,
     p_route,

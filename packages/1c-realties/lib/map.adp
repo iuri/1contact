@@ -1,7 +1,7 @@
 <!-- Pesquisar por logradouro -->
 <div class='input-control text' data-role='input' style='width:100%' >
 	<input type='text' name='search_for_route' id='search_for_route' placeholder='Search for route or neighborhood' title='#1c-mandats.Undesired#' style='width:100%;' />
-	<button class='button' id='search_for_route_button' onClick='return false;' ><span class='mif-search'></span></button>
+	<button class='button' id='search_for_route_button' onClick='locate_address();return false;' ><span class='mif-search'></span></button>
 </div>
 
 <div style='display:table;width:100%;' >

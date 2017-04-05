@@ -6,8 +6,6 @@ var routes_names = Array();
 
 function initMap(zone=0) {
 
-	szone = zone;
-
 	// Definindo o mapa e suas propriedades
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: centre(zone)[0],
@@ -81,7 +79,7 @@ function initMap(zone=0) {
 			});
 		}
 		*/
-
+		
 		if ( zone == 2 || zone == 4 ) {
 			for ( var i in selected_areas ) {
 				if ( selected_areas[i][0] == '1' ) {
@@ -211,7 +209,7 @@ $(function() {
 		if ( $('#search_route').val() != "" ) {
 			var exists = false;
 			for ( var i in routes_names ) {
-				if ( typeof routes_names[i] === "string" ) {
+				if ( typeof routes_names[i] === "string" && !exists ) {
 					if ( routes_names[i].toLowerCase().includes($('#search_route').val().toLowerCase()) ) {
 						exists = true;
 					}
@@ -226,3 +224,9 @@ $(function() {
 		event.preventDefault();
 	});
 });
+
+
+// Localizar polígono através de endereço
+function locate_address() {
+	alert(1);
+}

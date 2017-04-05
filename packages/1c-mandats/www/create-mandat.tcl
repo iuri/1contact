@@ -6,6 +6,7 @@ ad_page_contract {
     @creation_date: 2017-03-23
 } {
     {mode ""}
+
     {customer_entitlement ""}
     {customer_name ""}
     {customer_surname ""}
@@ -34,6 +35,7 @@ ad_page_contract {
     {customer_houseproperty ""}
     {customer_houseproprietary ""}
     {customer_mortgage ""}
+
     {guarantor_id ""}
     {guarantor_entitlement ""}
     {guarantor_name ""}
@@ -63,6 +65,7 @@ ad_page_contract {
     {guarantor_houseproperty ""}
     {guarantor_houseproprietary ""}
     {guarantor_mortgage ""}
+
     {cotenant_id ""}
     {cotenant_entitlement ""}
     {cotenant_name ""}
@@ -92,8 +95,10 @@ ad_page_contract {
     {cotenant_houseproperty ""}
     {cotenant_houseproprietary ""}
     {cotenant_mortgage ""}
+
     {type_of_transaction ""}
     {type_of_property ""}
+    {subtype_of_property ""}
     {rooms_qty ""}
     {bathrooms_qty ""}
     {toilets_qty ""}
@@ -118,7 +123,7 @@ auth::require_login
 set page_title "Create Mandat [ad_conn instance_name]"
 set context [list [list "." "Mandat"] "Create"]
 
-ns_log Notice "Running create-mandat..."
+#ns_log Notice "Running create-mandat..."
 
 if {[string equal $mode "save"]} {
 
@@ -257,10 +262,12 @@ if {[string equal $mode "save"]} {
 
 
 	if {[exists_and_not_null customer_id]} {
-	# Actual Mandat Info	
+	# Actual Mandat Info
+
 	    set mandat_id [1c_mandat::mandat::add \
 			       -type_of_transaction  $type_of_transaction \
 			       -type_of_property $type_of_property \
+			       -subtype_of_property $subtype_of_property \
 			       -rooms_qty $rooms_qty \
 			       -bathrooms_qty $bathrooms_qty \
 			       -toilets_qty $toilets_qty \
@@ -323,7 +330,7 @@ if {[string equal $mode "save"]} {
     }        
 }
 
+template::head::add_javascript -src "https://maps.googleapis.com/maps/api/js?key=AIzaSyDzF7IlGi2Ue-EI6E6bizGVZ69NhFU7yGI&libraries=places" -order 0
 template::head::add_javascript -src "resources/js/create_mandat_form.js" -order 1
 template::head::add_javascript -src "resources/js/load_users_data.js" -order 1
-#template::head::add_javascript -src "https://maps.googleapis.com/maps/api/js?key=AIzaSyDzF7IlGi2Ue-EI6E6bizGVZ69NhFU7yGI&libraries=places" -order 2
-#template::head::add_javascript -src "resources/js/autocompleteAddress.js" -order 3
+template::head::add_javascript -src "resources/js/autocompleteAddress.js" -order 1

@@ -1,4 +1,4 @@
-template::head::add_css -href "/resources/1c-theme/css/navbar.css"
+template::head::add_css -href "/resources/1c-theme/css/navbar.css" -media "screen" -order 1
 
 
 set package_id 2393

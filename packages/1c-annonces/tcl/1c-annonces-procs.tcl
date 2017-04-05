@@ -120,6 +120,7 @@ ad_proc -public 1c_annonces::annonce::add {
     {-title ""}
     {-type_of_transaction ""}
     {-type_of_property ""}
+    {-subtype_of_property ""}
     {-price ""}
     {-taxes ""}
     {-available_date ""}
@@ -127,7 +128,8 @@ ad_proc -public 1c_annonces::annonce::add {
     {-lavatory_qty ""}
     {-bathroom_qty ""}
     {-floors_qty ""}
-    {-surface ""}
+    {-inner_surface ""}
+    {-outer_surface ""}
     {-address ""}
     {-street_number ""}
     {-route ""}
@@ -177,11 +179,13 @@ ad_proc -public 1c_annonces::annonce::add {
 	    
 	    set realty_id [1c_realties::realty::add \
 			       -type_of_property $type_of_property \
+			       -subtype_of_property $subtype_of_property \
 			       -room_qty $room_qty \
 			       -lavatory_qty $lavatory_qty \
 			       -bathroom_qty $bathroom_qty \
 			       -floors_qty $floors_qty \
-			       -surface $surface \
+			       -inner_surface $inner_surface \
+			       -outer_surface $outer_surface \
 			       -address $address \
 			       -street_number $street_number \
 			       -route $route \

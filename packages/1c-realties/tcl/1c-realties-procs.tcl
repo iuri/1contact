@@ -34,11 +34,13 @@ ad_proc -public 1c_realties::realty::delete {
 
 ad_proc -public 1c_realties::realty::add {
     {-type_of_property ""}
+    {-subtype_of_property ""}
     {-room_qty ""}
     {-lavatory_qty ""}
     {-bathroom_qty ""}
     {-floors_qty ""}
-    {-surface ""}
+    {-inner_surface ""}
+    {-outer_surface ""}
     {-address ""}
     {-street_number ""}
     {-route ""}
@@ -80,6 +82,7 @@ ad_proc -public 1c_realties::realty::add {
     set code "${type_of_property}${room_qty}${realty_id}"
 
     set type_of_property [string trimright $type_of_property ","]
+    set subtype_of_property [string trimright $subtype_of_property ","]
     set charac_req [string trimright $charac_req ","]
     set charac_opt_gen [string trimright $charac_opt_gen ","]
     set charac_opt_arc [string trimright $charac_opt_arc ","]
@@ -90,12 +93,22 @@ ad_proc -public 1c_realties::realty::add {
 	$realty_id \n
 	$code \n
 	$type_of_property  \n
+    $subtype_of_property  \n
 	$room_qty  \n
 	$lavatory_qty  \n
 	$bathroom_qty  \n		
 	$floors_qty	  \n	
-	$surface   \n
-	$charac_req  \n
+        $inner_surface \n
+        $outer_surface \n
+        $address  \n
+	$street_number  \n		
+	$route	  \n	
+	$complement   \n
+        $neighborhood  \n
+	$locality  \n		
+	$state	  \n	
+	$country   \n
+       	$charac_req  \n
 	$charac_opt_gen  \n
 	$charac_opt_arc  \n
 	$charac_opt_vic  \n
@@ -109,11 +122,13 @@ ad_proc -public 1c_realties::realty::add {
 			   :realty_id,
 			   :code,
 			   :type_of_property,
+               :subtype_of_property,
 			   :room_qty,
 			   :lavatory_qty,
 			   :bathroom_qty,		
 			   :floors_qty,		
-			   :surface,
+			   :inner_surface,
+			   :outer_surface,
 			   :address,
 			   :street_number,
 			   :route,

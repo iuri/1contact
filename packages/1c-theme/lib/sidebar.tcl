@@ -1,1 +1,1 @@
-template::head::add_css -href "/resources/1c-theme/css/sidebar.css"
+template::head::add_css -href "/resources/1c-theme/css/sidebar.css" -media "screen" -order 1

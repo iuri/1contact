@@ -1,18 +1,18 @@
 function form_submit() {
 
-	// Tipo de negócio
-	var transaction = "";
-	$('#atypetransaction option:selected').each( function() {
-		transaction += ($(this).val()+',') ;
-	});
-	$('#type_of_transaction').val(transaction);
-
-	// Tipo de imóvel
-	var property = "";
-	$('#atypeproperty option:selected').each( function() {
-		property += ($(this).val()+',') ;
-	});
-	$('#type_of_property').val(property);
+	// Subtipo de propriedade
+	var sub_property = "";
+	if ( $('#type_of_property').val() == 1 ) {
+		$('#subtype_res option:selected').each( function() {
+			sub_property += ($(this).val()+',') ;
+		});
+	}
+	if ( $('#type_of_property').val() == 2 ) {
+		$('#subtype_com option:selected').each( function() {
+			sub_property += ($(this).val()+',') ;
+		});
+	}
+	$('#subtype_of_property').val(sub_property);
 
 	// Características obrigatórias
 	var charac_req = "";
@@ -50,8 +50,8 @@ function form_submit() {
 	var process = true;
     $('#create_mandat_form :input:visible[required="required"]').each( function () {
 		if (!this.validity.valid) {
-   			metroDialog.open('#create_mandat_required_err');
-   			process = false;
+   			//metroDialog.open('#create_mandat_required_err');
+   			//process = false;
    		}
    	});
 

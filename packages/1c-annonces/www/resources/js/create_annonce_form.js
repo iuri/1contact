@@ -44,19 +44,19 @@ function showFiles() {
 
 function form_submit() {
 
-	// Tipo de negócio
-	var transaction = "";
-	$('#atypetransaction option:selected').each( function() {
-		transaction += ($(this).val()+',') ;
-	});
-	$('#type_of_transaction').val(transaction);
-
-	// Tipo de imóvel
-	var property = "";
-	$('#atypeproperty option:selected').each( function() {
-		property += ($(this).val()+',') ;
-	});
-	$('#type_of_property').val(property);
+	// Subtipo de propriedade
+	var sub_property = "";
+	if ( $('#type_of_property').val() == 1 ) {
+		$('#subtype_res option:selected').each( function() {
+			sub_property += ($(this).val()+',') ;
+		});
+	}
+	if ( $('#type_of_property').val() == 2 ) {
+		$('#subtype_com option:selected').each( function() {
+			sub_property += ($(this).val()+',') ;
+		});
+	}
+	$('#subtype_of_property').val(sub_property);
 
 	// Tipo de anunciante
 	var announcer = "";

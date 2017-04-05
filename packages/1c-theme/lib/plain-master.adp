@@ -1,3 +1,4 @@
+<property name="doc(title)">1Contact Annonces - Main Page </property>
 <master src='/www/blank-master' >
 
 <!-- Início do Wrapper -->
@@ -25,7 +26,7 @@
       </div>
       
       <!-- Carregando o conteúdo -->
-      <div class='content'>
+      <div class='content' >
         <slave>
       </div>
       <!-- Fim do conteúdo -->

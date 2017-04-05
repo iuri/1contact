@@ -1,0 +1,30 @@
+@media print {
+
+body {
+	color: black;
+}
+
+.noprint, .noprint *, #developer-toolbar *, .header *, .navbar *, .sidbar *, .footer *, .button {
+	display: none;
+}
+
+.sidbar {
+	width: 0px;
+	min-width: 0px;
+}
+
+.content {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.box, .box2, select, .select2, .input-control, input[type=text], input[type=email] {
+	border: none;
+}
+
+}
+
+@page {
+	margin: 0.5cm;
+}

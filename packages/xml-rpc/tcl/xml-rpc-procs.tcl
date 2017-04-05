@@ -540,18 +540,28 @@ ad_proc -private xmlrpc::httppost {
     ns_set put $req_hdrs "Content-type" "text/xml"
     ns_set put $req_hdrs "Content-length" [string length $content]
 
-#    set http [ns_httpopen POST $url $req_hdrs 30 $content]
-     set http [ns_httpopen POST $url $req_hdrs 30 $content]
+    set http [ns_httpopen POST $url $req_hdrs 30 $content]
+
+    # set http [ns_http run -method POST -headers $req_hdrs -timeout 30 -body $content $url]
+    #set http [util::http::post -headers $req_hdrs -timeout 30 -body $content -url $url]
+    
+    ns_log Notice "$http"
     set rfd [lindex $http 0]
+    ns_log Notice "HERE1"
     set wfd [lindex $http 1]
+    ns_log Notice "HERE2 - $wfd"
     set rpset [lindex $http 2]
+    ns_log Notice "HERE3 - $rpset"
 
     flush $wfd
     close $wfd
+    ns_log Notice "HERE4"
 
     set headers $rpset
     set response [ns_set name $headers]
     set status [lindex $response 1]
+
+    ns_log Notice "HERE $status"
 
     # follow 302
     if {$status == 302} {

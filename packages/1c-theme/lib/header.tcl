@@ -9,7 +9,7 @@ ad_page_contract {} {
 }
 
 
-ns_log Notice "$error \n $error_code \n $error_description \n $error_reason"
+# ns_log Notice "$error \n $error_code \n $error_description \n $error_reason"
 if {$error ne ""} {
     ad_returnredirect [export_vars -base "/users/login" {error_description} ]
 
@@ -51,7 +51,7 @@ if { $untrusted_user_id == 0 } {
 }
 
 
-template::head::add_css -href "/resources/1c-theme/css/header.css"
+template::head::add_css -href "/resources/1c-theme/css/header.css" -media "screen" -order 1
 
 template::head::add_javascript -script "
     function change_locale(l) {

@@ -2,7 +2,7 @@ ad_page_contract {} {
     {zone "0"}
 }
 
-ns_log Notice "ZONE $zone"
+#ns_log Notice "ZONE $zone"
 
 #set queryHeaders [ns_set create]
 #ns_set update $queryHeaders Host https://1c.1contact.ch

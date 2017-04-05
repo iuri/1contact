@@ -21,23 +21,40 @@
 		</div>
 
 		<!-- Tipo de negociação (locação ou venda) -->
-		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='#1c-annonces.TypeOfTransaction#' style='width:11.5em;' >
-			<select name='atypetransaction' id='atypetransaction' multiple='multiple' title='#1c-annonces.TypeOfTransaction#' required style='width:100%;' >
-				<option value='1' >#1c-annonces.Rent#</option>
-				<option value='2' >#1c-annonces.Purchase#</option>
+		<div class='input-control select' data-role='select' data-placeholder='#1c-mandats.TypeOfTransaction#' title='#1c-mandats.TypeOfTransaction#' style='width:11.5em;' >
+			<select name='type_of_transaction' id='type_of_transaction' required onChange='javascript:alterTypeofTransaction();' style='width:100%;' >
+				<option value='' disabled selected hidden >Tipe of transaction</option>
+				<option value='1' >#1c-mandats.Rent#</option>
+				<option value='2' >#1c-mandats.Buy#</option>
 			</select>
-			<input type='text' name='type_of_transaction' id='type_of_transaction' hidden />
+		</div>
+		<!-- Tipo de imóvel -->
+		<div class='input-control select' data-role='select' data-placeholder='#1c-realties.TypeOfProperty#' title='#1c-realties.TypeOfProperty#' style='width:10em;' >
+			<select name='type_of_property' id='type_of_property' onChange='change_business();' required style='width:100%;' >
+				<option value='' disabled selected hidden >Tipe of business</option>
+				<option value='1' >Residential</option>
+				<option value='2' >Commercial</option>
+			</select>
 		</div>
 
-		<!-- Tipo de imóvel -->
-		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='#1c-realties.TypeOfProperty#' style='width:18em;' >
-			<select name='atypeproperty' id='atypeproperty' multiple='multiple' title='#1c-realties.TypeOfProperty#' required style='width:100%;' >
-				<option value='1' >#1c-realties.House#</option>
-				<option value='2' >#1c-realties.Apartment#</option>
-				<option value='3' >#1c-realties.Commerce#</option>
+		<!-- Subipo de imóvel (residencial) -->
+		<div class='input-control select' data-role='select' data-allow-clear='true' data-placeholder='#1c-realties.TypeOfProperty#' title='#1c-realties.TypeOfProperty#' id='subtype_residential' style='width:15em;display:none;' >
+			<select name='subtype_res' id='subtype_res' multiple style='width:100%;' >
+				<option value='1' >House</option>
+				<option value='2' >Apartment</option>
 			</select>
-			<input type='text' name='type_of_property' id='type_of_property' hidden />
 		</div>
+
+		<!-- Subipo de imóvel (comercial) -->
+		<div class='input-control select' data-role='select' data-allow-clear='true' data-placeholder='#1c-realties.TypeOfProperty#' title='#1c-realties.TypeOfProperty#' id='subtype_comercial' style='width:15em;display:none;' >
+			<select name='subtype_com' id='subtype_com' multiple style='width:100%;' >
+				<option value='1' >Arcade</option>
+				<option value='2' >Locaux</option>
+				<option value='3' >Depot</option>
+			</select>
+		</div>
+
+		<input type='text' name='subtype_of_property' id='subtype_of_property' hidden />
 
 		<!-- Preço  -->
 		<div class='input-control text' style='width:6em;' >
@@ -236,15 +253,28 @@
 </form>
 
 <!-- Mensagem de formulário salvo com sucesso -->
-<div id='create_annonce_success' data-role='dialog' data-overlay='true' data-overlay-color='dialog_overlay' data-close-button='true' class='padding20' >
+<div id='create_annonce_success' data-role='dialog' data-overlay='true' data-type='success' data-overlay-color='dialog_overlay' data-close-button='true' class='padding20' >
 	<p><b>#1c-annonces.Success#</b></p>
 </div>
 
 <!-- Mensagem de erro durante o save do formulário -->
-<div id='create_annonce_required_err' data-role='dialog' data-overlay='true' data-overlay-color='dialog_overlay' data-hide='3000' data-close-button='true' class='padding20' >
+<div id='create_annonce_required_err' data-role='dialog' data-overlay='true' data-type='alert' data-overlay-color='dialog_overlay' data-hide='3000' data-close-button='true' class='padding20' >
 	<p><b>Fill all the fields before save the form.</b></p>
 </div>
 
 <!-- Call google maps api -->
 <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDzF7IlGi2Ue-EI6E6bizGVZ69NhFU7yGI&signed_in=true&libraries=places&callback=initAutocomplete' async defer >
+</script>
+
+<script type='text/javascript' >
+	// Mostrando as sub propriedades dos imóveis de acordo com o tipo (residencial ou comercial)
+	function change_business() {
+		if ( $('#type_of_property').val() == 1 ) {
+			$('#subtype_residential').show();
+			$('#subtype_comercial').hide();
+		} else {
+			$('#subtype_residential').hide();
+			$('#subtype_comercial').show();
+		}
+	}
 </script>

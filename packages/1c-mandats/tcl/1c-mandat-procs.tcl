@@ -123,6 +123,7 @@ ad_proc 1c_mandat::mandat::publish {
 ad_proc 1c_mandat::mandat::add {
     {-type_of_transaction ""}
     {-type_of_property ""}
+    {-subtype_of_property ""}
     {-rooms_qty ""}
     {-bathrooms_qty ""}
     {-toilets_qty ""}
@@ -178,6 +179,7 @@ ad_proc 1c_mandat::mandat::add {
 	    
 	    
 	    set type_of_transaction [string trimright $type_of_transaction ","]
+	    set subtype_of_transaction [string trimright $subtype_of_transaction ","]
 	    set type_of_property [string trimright $type_of_property ","]
 	    set charac_required [string trimright $charac_required ","]
 	    set charac_opt_gen [string trimright $charac_opt_gen ","]
@@ -191,6 +193,7 @@ ad_proc 1c_mandat::mandat::add {
 				   :mandat_id,
 				   :type_of_transaction,
 				   :type_of_property,
+				   :subtype_of_property,
 				   :code, 
 				   :rooms_qty,
 				   :bathrooms_qty,

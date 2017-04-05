@@ -9,13 +9,13 @@
     <implements-subsite-p>f</implements-subsite-p>
     <inherit-templates-p>f</inherit-templates-p>
     
-    <version name="0.6d" url="http://openacs.org/repository/download/apm/1c-mandats-0.6d.apm">
+    <version name="0.7d" url="http://openacs.org/repository/download/apm/1c-mandats-0.7d.apm">
         <owner url="mailto:iuri@iurix.com">Iuri Sampaio</owner>
         <summary>Application package for Mandats</summary>
         <description format="text/html">1C Mandats PKG</description>
         <maturity>0</maturity>
 
-        <provides url="1c-mandats" version="0.6d"/>
+        <provides url="1c-mandats" version="0.7d"/>
 
         <callbacks>
         </callbacks>

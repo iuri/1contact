@@ -12,14 +12,15 @@ ad_page_contract {
     {lavatory_qty ""}
     {bathroom_qty ""}
     {floors_qty ""}
-    {surface ""}
+    {inner_surface ""}
+    {outer_surface ""}
     {address ""}
     {street_number ""}
     {route ""}
     {complement ""}
     {sublocality ""}
     {locality ""}
-    {state ""}
+    {administrative_area_level_1 ""}
     {country ""}
     {postal_code ""} 
     {announcer ""}
@@ -33,6 +34,7 @@ ad_page_contract {
     upload_file.content-type:trim,multiple,optional
     upload_file.tmpfile:tmpfile,multiple,optional
 }
+
 
 template::head::add_javascript -src "resources/js/create_annonce_form.js" -order 1
 
@@ -71,7 +73,8 @@ if {[string equal $mode "save"]} {
 			    -lavatory_qty $lavatory_qty \
 			    -bathroom_qty $bathroom_qty \
 			    -floors_qty $floors_qty \
-			    -surface $surface \
+			    -inner_surface $inner_surface \
+			    -outer_surface $outer_surface \
 			    -address $address \
 			    -street_number $street_number \
 			    -route $route \

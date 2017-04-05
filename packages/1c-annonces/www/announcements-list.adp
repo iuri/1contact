@@ -1,39 +1,56 @@
 <master>
 
-<div style='display:table;table-layout:fixed;' >
+<if @announcements:rowcount@ gt 0>
 
+<div style='display:table;width:100%;' >
 
-	<div style='display:table-row;' >
+	<multiple name="announcements">
 
-<multiple name="announcements">
-
-		<div style='display:table-cell;vertical-align:top;' class='box' >
-			<div style='position:relative;' >
-				<img src='@image_url@' style='width:100%;height:auto;' />
+		<div style='display:table-row;width:100%;' >
+			<div style='display:table-cell;border: 1px solid #333;padding:.15rem;' >
+				<span>title</span>
+				<h4>@announcements.title@</h4>
 			</div>
-			<br>
-			<div style='text-align:center;' ><span style='font-size:1.3em;font-weight:bold;color:red;' >95%</span> conforme à votre recherche</div>
-			<p>
-				<span style='font-size:1.15em;font-weight:bold;' >Appartment</span><br>
-				<span>à Louer</span>
-			</p>
-			<p>
-				<span style='font-size:1.2em;font-weight:bold;' >Niort, Deux Sèvres (79)</span><br>
-			</p>
-			<p style='font-size:1.2em;font-weight:bold;'' >
-				<span>Loyer:&nbsp;</span><span style='color:red' >350 &euro; / mois</span><br>
-			</p>
-			<ul>
-				<li>35m² intèrieur / 40m² extèrieur</li>
-				<li>3 Piéces</li>
-				<li>1 Chambre, 1 Salle de bain, 1 WC</li>
-				<li>Parking 2 places</li>
-			</ul>
-			<ul>
-				<li>Moublé</li>
-			</ul>
+			<div style='display:table-cell;border: 1px solid #333;padding:.15rem;' >
+				<span>type of transaction</span>
+				<h4>@announcements.type_of_transaction@</h4>
+			</div>
+			<div style='display:table-cell;border: 1px solid #333;padding:.15rem;' >
+				<span>type of property</span>
+				<h4>@announcements.type_of_property@</h4>
+			</div>
+			<div style='display:table-cell;border: 1px solid #333;padding:.15rem;' >
+				<span>localization</span>
+				<h4>@announcements.neighborhood@</h4>
+			</div>
+			<div style='display:table-cell;border: 1px solid #333;padding:.15rem;' >
+				<span>pieces</span>
+				<h4>@announcements.room_qty@</h4>
+			</div>
+			<div style='display:table-cell;border: 1px solid #333;padding:.15rem;' >
+				<span>WC</span>
+				<h4>@announcements.bathroom_qty@</h4>
+			</div>
+			<div style='display:table-cell;border: 1px solid #333;padding:.15rem;' >
+				<span>lavatory</span>
+				<h4>@announcements.lavatory_qty@</h4>
+			</div>
+			<div style='display:table-cell;border: 1px solid #333;padding:.15rem;' >
+				<span>price</span>
+				<h4>@announcements.price@</h4>
+			</div>
+			<div style='display:table-cell;border: 1px solid #333;padding:.15rem;' >
+				<span>Actions</span>
+				<h4><a href='/annonces/annonces-matching?annonce_id=@announcements.item_id@'>Matching</a></h4>
+				<h4><a href='/annonces/create-announcement?annonce_id=@announcements.item_id@'>Edit</a></h4>
+			</div>
 		</div>
-</multiple>	
 
-	</div>
+	</multiple>
+
 </div>
+
+</if>
+<else>
+    NO RESULTS
+</else>

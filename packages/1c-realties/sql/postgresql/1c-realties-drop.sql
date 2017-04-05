@@ -4,6 +4,7 @@ DROP FUNCTION realty__new (
   integer,	   -- realty_id 
   varchar,	   -- code
   varchar,	   -- type_of_property
+  varchar,     -- subtype_of_property
   integer,	   -- room_qty		   
   integer,	   -- lavatory_qty
   integer,	   -- bathroom_qty
@@ -40,7 +41,8 @@ DROP FUNCTION realty__delete (
 
 SELECT acs_object_type__drop_type (
   'realty_object',      -- object_type
-  'f'
+  't',
+  't'
   );
 
 
@@ -49,4 +51,4 @@ SELECT acs_object_type__drop_type (
 ------------------------------------
 -- Table c1_annonce
 ------------------------------------
-DROP TABLE realties;
+DROP TABLE realties CASCADE;

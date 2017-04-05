@@ -9,6 +9,7 @@ CREATE TABLE mandats (
        mandat_id		integer,
        type_of_transaction 	varchar(10),		-- (1) purchase or (2) rent 
        type_of_property 	varchar(10),	 	-- (1) commerce or (2) residence
+       subtype_of_property   varchar(10),
        code 			varchar(50),		
        rooms_qty 		integer,			
        bathrooms_qty 		integer,			
@@ -62,6 +63,7 @@ CREATE OR REPLACE FUNCTION mandat__new(
   varchar,
   varchar,
   varchar,
+  varchar,
   integer,
   integer,
   integer,
@@ -85,25 +87,26 @@ DECLARE
   p_mandat_id		ALIAS FOR $1;
   p_type_of_transaction ALIAS FOR $2;
   p_type_of_property 	ALIAS FOR $3;
-  p_code 		ALIAS FOR $4;
-  p_rooms_qty 		ALIAS FOR $5;
-  p_bathrooms_qty 	ALIAS FOR $6;
-  p_toilets_qty 	ALIAS FOR $7;
-  p_floors_qty 		ALIAS FOR $8;
-  p_surface 		ALIAS FOR $9;
-  p_budget_min 		ALIAS FOR $10;
-  p_budget_max 		ALIAS FOR $11;
-  p_selected_regions	ALIAS FOR $12;
-  p_unwanted_areas 	ALIAS FOR $13;
-  p_charac_required 	ALIAS FOR $14;
-  p_charac_opt_gen 	ALIAS FOR $15;
-  p_charac_opt_arc 	ALIAS FOR $16;
-  p_charac_opt_vic 	ALIAS FOR $17;
-  p_extra_info 	   	ALIAS FOR $18;
-  p_status 		ALIAS FOR $19;
-  p_customer_id 	ALIAS FOR $20;
-  p_guarantor_id 	ALIAS FOR $21;
-  p_cotenant_id 	ALIAS FOR $22;
+  p_subtype_of_property  ALIAS FOR $4;
+  p_code 		ALIAS FOR $5;
+  p_rooms_qty 		ALIAS FOR $6;
+  p_bathrooms_qty 	ALIAS FOR $7;
+  p_toilets_qty 	ALIAS FOR $8;
+  p_floors_qty 		ALIAS FOR $9;
+  p_surface 		ALIAS FOR $10;
+  p_budget_min 		ALIAS FOR $11;
+  p_budget_max 		ALIAS FOR $12;
+  p_selected_regions	ALIAS FOR $13;
+  p_unwanted_areas 	ALIAS FOR $14;
+  p_charac_required 	ALIAS FOR $15;
+  p_charac_opt_gen 	ALIAS FOR $16;
+  p_charac_opt_arc 	ALIAS FOR $17;
+  p_charac_opt_vic 	ALIAS FOR $18;
+  p_extra_info 	   	ALIAS FOR $19;
+  p_status 		ALIAS FOR $20;
+  p_customer_id 	ALIAS FOR $21;
+  p_guarantor_id 	ALIAS FOR $22;
+  p_cotenant_id 	ALIAS FOR $23;
   
  
 BEGIN
@@ -111,6 +114,7 @@ BEGIN
   	 mandat_id,	
 	 type_of_transaction,
 	 type_of_property,
+   subtype_of_property,
 	 code,
 	 rooms_qty,
 	 bathrooms_qty,
@@ -134,6 +138,7 @@ BEGIN
  	 p_mandat_id,	
 	 p_type_of_transaction,
 	 p_type_of_property,
+   p_subtype_of_property,
 	 p_code,
 	 p_rooms_qty,
 	 p_bathrooms_qty,
