@@ -58,13 +58,6 @@ function form_submit() {
 	}
 	$('#subtype_of_property').val(sub_property);
 
-	// Tipo de anunciante
-	var announcer = "";
-	$('#aannouncer option:selected').each( function() {
-		announcer += ($(this).val()+',') ;
-	});
-	$('#announcer').val(announcer);
-
 	// Características obrigatórias
 	var charac_req = "";
 	$("input[type='radio']").each( function() {

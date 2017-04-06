@@ -19,6 +19,7 @@ CREATE TABLE mandats (
        budget_min 		numeric,
        budget_max 		numeric,
        selected_regions		text,
+       selected_routes		text,
        unwanted_areas		text,
        charac_required		varchar(255),
        charac_opt_gen		varchar(255),
@@ -73,6 +74,7 @@ CREATE OR REPLACE FUNCTION mandat__new(
   numeric,
   text,
   text,
+  text,
   varchar,
   varchar,
   varchar,
@@ -97,16 +99,17 @@ DECLARE
   p_budget_min 		ALIAS FOR $11;
   p_budget_max 		ALIAS FOR $12;
   p_selected_regions	ALIAS FOR $13;
-  p_unwanted_areas 	ALIAS FOR $14;
-  p_charac_required 	ALIAS FOR $15;
-  p_charac_opt_gen 	ALIAS FOR $16;
-  p_charac_opt_arc 	ALIAS FOR $17;
-  p_charac_opt_vic 	ALIAS FOR $18;
-  p_extra_info 	   	ALIAS FOR $19;
-  p_status 		ALIAS FOR $20;
-  p_customer_id 	ALIAS FOR $21;
-  p_guarantor_id 	ALIAS FOR $22;
-  p_cotenant_id 	ALIAS FOR $23;
+  p_selected_routes	ALIAS FOR $14;
+  p_unwanted_areas 	ALIAS FOR $15;
+  p_charac_required 	ALIAS FOR $16;
+  p_charac_opt_gen 	ALIAS FOR $17;
+  p_charac_opt_arc 	ALIAS FOR $18;
+  p_charac_opt_vic 	ALIAS FOR $19;
+  p_extra_info 	   	ALIAS FOR $20;
+  p_status 		ALIAS FOR $21;
+  p_customer_id 	ALIAS FOR $22;
+  p_guarantor_id 	ALIAS FOR $23;
+  p_cotenant_id 	ALIAS FOR $24;
   
  
 BEGIN
@@ -114,7 +117,7 @@ BEGIN
   	 mandat_id,	
 	 type_of_transaction,
 	 type_of_property,
-   subtype_of_property,
+   	 subtype_of_property,
 	 code,
 	 rooms_qty,
 	 bathrooms_qty,
@@ -124,6 +127,7 @@ BEGIN
 	 budget_min,
 	 budget_max,
 	 selected_regions,
+	 selected_routes,
 	 unwanted_areas,
 	 charac_required,
 	 charac_opt_gen,
@@ -138,7 +142,7 @@ BEGIN
  	 p_mandat_id,	
 	 p_type_of_transaction,
 	 p_type_of_property,
-   p_subtype_of_property,
+   	 p_subtype_of_property,
 	 p_code,
 	 p_rooms_qty,
 	 p_bathrooms_qty,
@@ -148,6 +152,7 @@ BEGIN
 	 p_budget_min,
 	 p_budget_max,
 	 p_selected_regions,
+	 p_selected_routes,
 	 p_unwanted_areas,
 	 p_charac_required,
 	 p_charac_opt_gen,

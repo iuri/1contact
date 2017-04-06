@@ -132,6 +132,7 @@ ad_proc 1c_mandat::mandat::add {
     {-budget_min ""}
     {-budget_max ""}
     {-selected_regions ""}
+    {-selected_routes ""}
     {-unwanted_areas ""}
     {-charac_required ""}
     {-charac_opt_gen ""}
@@ -179,8 +180,7 @@ ad_proc 1c_mandat::mandat::add {
 	    
 	    
 	    set type_of_transaction [string trimright $type_of_transaction ","]
-	    set subtype_of_transaction [string trimright $subtype_of_transaction ","]
-	    set type_of_property [string trimright $type_of_property ","]
+	    set subtype_of_property [string trimright $subtype_of_property ","]
 	    set charac_required [string trimright $charac_required ","]
 	    set charac_opt_gen [string trimright $charac_opt_gen ","]
 	    set charac_opt_arc [string trimright $charac_opt_arc ","]
@@ -203,6 +203,7 @@ ad_proc 1c_mandat::mandat::add {
 				   :budget_min,
 				   :budget_max,
 				   :selected_regions,
+				   :selected_routes,
 				   :unwanted_areas,
 				   :charac_required,
 				   :charac_opt_gen,

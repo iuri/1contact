@@ -1,10 +1,9 @@
-ad_page_contract {}
-
-set count 0
+ad_page_contract {
+}
 
 template::multirow create \
     announcements \
-    id \
+    item_id \
     title \
     ref_code \
     type_of_transaction \
@@ -19,11 +18,10 @@ template::multirow create \
     outer_surface \
     charac_required \
     neighborhood \
-    count 
   
 
 
-db_multirow -extend {count image_url} announcements select_announcements {
+db_foreach announcements {
 
     SELECT
     cr.item_id,
@@ -34,9 +32,8 @@ db_multirow -extend {count image_url} announcements select_announcements {
       WHEN '2' THEN 'Purchase'
     END AS type_of_transaction,
     CASE r.type_of_property
-      WHEN '1' THEN 'House'
-      WHEN '2' THEN 'Appartment'
-      WHEN '3' THEN 'Commerce'
+      WHEN '1' THEN 'Residential'
+      WHEN '2' THEN 'Commercial'
     END AS type_of_property,
     a.price,
     a.taxes,
@@ -52,13 +49,10 @@ db_multirow -extend {count image_url} announcements select_announcements {
     LEFT JOIN realties r ON r.realty_id = a.realty_id
     LEFT JOIN cr_revisions cr ON cr.item_id = a.annonce_id
     
-
 } {
-    
-    set matching_index "95%"
 
-    ns_log Notice "$charac_required"
-
+    ns_log Notice "$item_id \n"
+   
     template::multirow append \
 	announcements \
 	$item_id \
@@ -76,11 +70,5 @@ db_multirow -extend {count image_url} announcements select_announcements {
 	$outer_surface \
 	$charac_required \
 	$neighborhood \
-	$count
-
-    if {$count > 1} {
-        set count 0
-    }
-    incr $count
 
 }

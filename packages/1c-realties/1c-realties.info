@@ -9,13 +9,13 @@
     <implements-subsite-p>f</implements-subsite-p>
     <inherit-templates-p>f</inherit-templates-p>
     
-    <version name="0.2d" url="http://openacs.org/repository/download/apm/1c-properties-0.2d.apm">
+    <version name="0.4d" url="http://openacs.org/repository/download/apm/1c-properties-0.4d.apm">
         <owner url="mailto:luiz@1contact.ch">Luiz Valentim</owner>
         <summary>Package for realties</summary>
         <description format="text/html">Package for realties</description>
         <maturity>0</maturity>
 
-        <provides url="1c-realties" version="0.2d"/>
+        <provides url="1c-realties" version="0.4d"/>
 
         <callbacks>
         </callbacks>

@@ -6,10 +6,13 @@ ad_page_contract {
     {available_date ""}
     {type_of_transaction ""}
     {type_of_property ""}
+    {subtype_of_property ""}
     {price ""}
     {taxes ""}
     {room_qty ""}
+    {bedroom_qty ""}
     {lavatory_qty ""}
+    {toilete_qty ""}
     {bathroom_qty ""}
     {floors_qty ""}
     {inner_surface ""}
@@ -66,11 +69,14 @@ if {[string equal $mode "save"]} {
 			    -title $title \
 			    -type_of_transaction $type_of_transaction \
 			    -type_of_property $type_of_property \
+			    -subtype_of_property $subtype_of_property \
 			    -price $price \
 			    -taxes $taxes \
 			    -available_date $available_date \
 			    -room_qty $room_qty \
+			    -bedroom_qty $bedroom_qty \
 			    -lavatory_qty $lavatory_qty \
+			    -toilete_qty $toilete_qty \
 			    -bathroom_qty $bathroom_qty \
 			    -floors_qty $floors_qty \
 			    -inner_surface $inner_surface \

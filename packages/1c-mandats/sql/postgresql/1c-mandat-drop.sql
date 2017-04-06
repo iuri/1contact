@@ -20,6 +20,7 @@ DROP FUNCTION mandat__new(
   numeric,
   text,
   text,
+  text,
   varchar,
   varchar,
   varchar,
@@ -29,6 +30,8 @@ DROP FUNCTION mandat__new(
   integer,
   integer,
   integer);
+
+
 
 
 

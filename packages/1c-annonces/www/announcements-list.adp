@@ -1,8 +1,7 @@
 <master>
 
 <if @announcements:rowcount@ gt 0>
-
-<div style='display:table;width:100%;' >
+  <div style='display:table;width:100%;' >
 
 	<multiple name="announcements">
 
@@ -49,7 +48,6 @@
 	</multiple>
 
 </div>
-
 </if>
 <else>
     NO RESULTS

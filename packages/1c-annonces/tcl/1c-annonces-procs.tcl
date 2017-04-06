@@ -125,7 +125,9 @@ ad_proc -public 1c_annonces::annonce::add {
     {-taxes ""}
     {-available_date ""}
     {-room_qty ""}
+    {-bedroom_qty ""}
     {-lavatory_qty ""}
+    {-toilete_qty ""}
     {-bathroom_qty ""}
     {-floors_qty ""}
     {-inner_surface ""}
@@ -169,8 +171,7 @@ ad_proc -public 1c_annonces::annonce::add {
     if {![exists_and_not_null item_id]} {
 	set item_id [db_nextval "acs_object_id_seq"]
 	
-	set type_of_transaction [string trimright $type_of_transaction ","]
-	set type_of_property [string trimright $type_of_property ","]
+	set subtype_of_property [string trimright $subtype_of_property ","]
 	
 	set ref_code "${type_of_transaction}${type_of_property}${room_qty}${item_id}"
 
@@ -181,7 +182,9 @@ ad_proc -public 1c_annonces::annonce::add {
 			       -type_of_property $type_of_property \
 			       -subtype_of_property $subtype_of_property \
 			       -room_qty $room_qty \
+			       -bedroom_qty $bedroom_qty \
 			       -lavatory_qty $lavatory_qty \
+			       -toilete_qty $toilete_qty \
 			       -bathroom_qty $bathroom_qty \
 			       -floors_qty $floors_qty \
 			       -inner_surface $inner_surface \

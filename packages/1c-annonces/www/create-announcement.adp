@@ -40,6 +40,7 @@
 			<select name='subtype_res' id='subtype_res' multiple style='width:100%;' >
 				<option value='1' >House</option>
 				<option value='2' >Apartment</option>
+				<option value='3' >Room</option>
 			</select>
 		</div>
 		<!-- Subipo de imóvel (comercial) -->
@@ -74,13 +75,17 @@
 		</div>
 		<!-- Num de quartos -->
 		<div class='input-control text' style='width:6em;' >
-			<input type='number' name='badroom_qty' id='badroom_qty' placeholder='#1c-realties.BedroomQty#' title='#1c-realties.BedroomQty#' min='0' max='999' required style='width:100%;' />
+			<input type='number' name='bedroom_qty' id='bedroom_qty' placeholder='#1c-realties.BedroomQty#' title='#1c-realties.BedroomQty#' min='0' max='999' required style='width:100%;' />
 		</div>
 		<!-- Num de lavabos -->
 		<div class='input-control text' style='width:6em;' >
 			<input type='number' name='lavatory_qty' id='lavatory_qty' placeholder='#1c-realties.LavatoryQty#' title='#1c-realties.LavatoryQty#' min='0' max='999' required style='width:100%;' />
 		</div>
 		<!-- Num de banheiros -->
+		<div class='input-control text' style='width:6em;' >
+			<input type='number' name='toilete_qty' id='toilete_qty' placeholder='Toilete' title='Toilete' min='0' max='999' required style='width:100%;' />
+		</div>
+		<!-- Num de duchas -->
 		<div class='input-control text' style='width:6em;' >
 			<input type='number' name='bathroom_qty' id='bathroom_qty' placeholder='#1c-realties.BathroomQty#' title='#1c-realties.BathroomQty#' min='0' max='999' required style='width:100%;' />
 		</div>
@@ -102,13 +107,12 @@
 		</div>
 		<!-- Tipo de anunciante -->
 		<div class='input-control' data-role='select' data-placeholder='#1c-annonces.Announcer#' title='#1c-annonces.Announcer#' required style='width:14.5em;' >
-			<select name='aannouncer' id='aannouncer' style='width:100%;' >
+			<select name='type_of_announcer' id='type_of_announcer' style='width:100%;' >
 				<option value='' disabled selected hidden >Announcer</option>
-				<option value='1' >#1c-annonces.Owner#</option>
-				<option value='2' >#1c-annonces.Guarantor#</option>
-				<option value='3' >#1c-annonces.Agent#</option>
+				<option value='1' >Renter</option>
+				<option value='2' >Owner</option>
+				<option value='3' >Professional</option>
 			</select>
-			<input type='text' name='announcer' id='announcer' hidden />
 		</div>
 
 	</div>
@@ -192,8 +196,6 @@
 		</div>
 	</div>
 
-	<br>
-
 	<!-- Status da publicação (publicado / nao publicado) -->
 	<div class='box' style='vertical-align:top;' >
 		<h4>#1c-annonces.Status#</h4>
@@ -211,16 +213,6 @@
 			<input type='radio' name='status' id='status_closed' value='2' required />
 			<span class='check' ></span>
 			<span class='caption' for='status_closed' >#1c-annonces.Closed#</span>
-		</label>
-	</div>
-
-	<!-- Termos e condições -->
-	<div class='box' style='vertical-align:top;' >
-		<h4>#1c-annonces.Terms#</h4>
-		<label class='input-control checkbox small-check' >
-			<input type='checkbox' name='terms' id='terms' required />
-			<span class='check' ></span>
-			<span class='caption' >#1c-annonces.IAcceptTheTerms#</span>
 		</label>
 	</div>
 
