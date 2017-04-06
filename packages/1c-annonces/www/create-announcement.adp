@@ -19,7 +19,6 @@
 		<div class='input-control text' style='width:16.5em;' >
 			<input type='text' name='title' id='title' placeholder='#1c-annonces.Title#' title='#1c-annonces.Title#' required style='width:100%;' />
 		</div>
-
 		<!-- Tipo de negociação (locação ou venda) -->
 		<div class='input-control select' data-role='select' data-placeholder='#1c-mandats.TypeOfTransaction#' title='#1c-mandats.TypeOfTransaction#' style='width:11.5em;' >
 			<select name='type_of_transaction' id='type_of_transaction' required onChange='javascript:alterTypeofTransaction();' style='width:100%;' >
@@ -36,7 +35,6 @@
 				<option value='2' >Commercial</option>
 			</select>
 		</div>
-
 		<!-- Subipo de imóvel (residencial) -->
 		<div class='input-control select' data-role='select' data-allow-clear='true' data-placeholder='#1c-realties.TypeOfProperty#' title='#1c-realties.TypeOfProperty#' id='subtype_residential' style='width:15em;display:none;' >
 			<select name='subtype_res' id='subtype_res' multiple style='width:100%;' >
@@ -44,7 +42,6 @@
 				<option value='2' >Apartment</option>
 			</select>
 		</div>
-
 		<!-- Subipo de imóvel (comercial) -->
 		<div class='input-control select' data-role='select' data-allow-clear='true' data-placeholder='#1c-realties.TypeOfProperty#' title='#1c-realties.TypeOfProperty#' id='subtype_comercial' style='width:15em;display:none;' >
 			<select name='subtype_com' id='subtype_com' multiple style='width:100%;' >
@@ -53,73 +50,60 @@
 				<option value='3' >Depot</option>
 			</select>
 		</div>
-
 		<input type='text' name='subtype_of_property' id='subtype_of_property' hidden />
-
 		<!-- Preço  -->
 		<div class='input-control text' style='width:6em;' >
 			<input type='text' name='price' id='price' placeholder='#1c-annonces.Price#' title='#1c-annonces.Price#' min='0' required onChange='javascript:updateValue();' style='width:100%;' />
 		</div>
-
 		<!-- Taxas -->
 		<div class='input-control text' style='width:6em;' >
 			<input type='text' name='taxes' id='taxes' placeholder='#1c-annonces.Taxes#' title='#1c-annonces.Taxes#' min='0' required onChange='javascript:updateValue();' style='width:100%;' />
 		</div>
-
 		<!-- Valor total -->
 		<div class='input-control text' style='width:6em;' >
 			<input type='text' name='total_value' id='total_value' placeholder='#1c-annonces.TotalValue#' title='#1c-annonces.TotalValue#' readonly style='width:100%;' />
 		</div>
-
 		<!-- Data de disponibilidade -->
 		<div class='input-control text' data-role='datepicker' data-scheme='darcula' data-locale='pt' data-format='dd.mm.yyyy' style='width:13em;' >
 			<input type='text' name='available_date' id='available_date' placeholder='#1c-annonces.AvailabilityDate#' title='#1c-annonces.AvailabilityDate#' required style='width:100%;' />
 			<button class='button clear' ><span class='mif-calendar' ></span></button>
 		</div>
-
 		<!-- Num de cômodos -->
 		<div class='input-control text' style='width:6em;' >
 			<input type='number' name='room_qty' id='room_qty' placeholder='#1c-realties.RoomQty#' title='#1c-realties.RoomQty#' min='0' max='999' required style='width:100%;' />
 		</div>
-
 		<!-- Num de quartos -->
 		<div class='input-control text' style='width:6em;' >
 			<input type='number' name='badroom_qty' id='badroom_qty' placeholder='#1c-realties.BedroomQty#' title='#1c-realties.BedroomQty#' min='0' max='999' required style='width:100%;' />
 		</div>
-
 		<!-- Num de lavabos -->
 		<div class='input-control text' style='width:6em;' >
 			<input type='number' name='lavatory_qty' id='lavatory_qty' placeholder='#1c-realties.LavatoryQty#' title='#1c-realties.LavatoryQty#' min='0' max='999' required style='width:100%;' />
 		</div>
-
 		<!-- Num de banheiros -->
 		<div class='input-control text' style='width:6em;' >
 			<input type='number' name='bathroom_qty' id='bathroom_qty' placeholder='#1c-realties.BathroomQty#' title='#1c-realties.BathroomQty#' min='0' max='999' required style='width:100%;' />
 		</div>
-
 		<!-- Num de andares -->
 		<div class='input-control text' style='width:6em;' >
 			<input type='number' name='floors_qty' id='floors_qty' placeholder='#1c-realties.FloorQty#' title='#1c-realties.FloorQty#' min='0' max='999' required style='width:100%;' />
 		</div>
-
 		<!-- Área interna -->
 		<div class='input-control text' style='width:6em;' >
 			<input type='text' name='inner_surface' id='inner_surface' placeholder='#1c-realties.InnerArea#' title='#1c-realties.InnerArea#' required onChange='javascript:updateArea();' style='width:100%;' />
 		</div>
-
 		<!-- Área externa -->
 		<div class='input-control text' style='width:6em;' >
 			<input type='text' name='outer_surface' id='outer_surface' placeholder='#1c-realties.OuterArea#' title='#1c-realties.OuterArea#' required onChange='javascript:updateArea();' style='width:100%;' />
 		</div>
-
 		<!-- Área total -->
 		<div class='input-control text' style='width:6em;' >
 			<input type='text' name='total_surface' id='total_surface' placeholder='#1c-realties.TotalArea#' title='#1c-realties.TotalArea#' readonly style='width:100%;' />
 		</div>
-
 		<!-- Tipo de anunciante -->
-		<div class='input-control' data-role='select' data-allow-clear='true' data-placeholder='#1c-annonces.Announcer#' title='#1c-annonces.Announcer#' required style='width:14.5em;' >
-			<select name='aannouncer' id='aannouncer' multiple='multiple' style='width:100%;' >
+		<div class='input-control' data-role='select' data-placeholder='#1c-annonces.Announcer#' title='#1c-annonces.Announcer#' required style='width:14.5em;' >
+			<select name='aannouncer' id='aannouncer' style='width:100%;' >
+				<option value='' disabled selected hidden >Announcer</option>
 				<option value='1' >#1c-annonces.Owner#</option>
 				<option value='2' >#1c-annonces.Guarantor#</option>
 				<option value='3' >#1c-annonces.Agent#</option>
